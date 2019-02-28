@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class  MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -105,6 +106,9 @@ class  MenuViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.imgProfile.image = UIImage(named: LocalizationKeys.imageUserDefault)
             self.appDelegate.userObj.resetValuesOfUserAccount()
             CoreDataService.shared.resetAllRecordsOnCoreData()
+            do {
+                try Auth.auth().signOut()
+            } catch{}
         } else {
             performSegue(withIdentifier: "showLoginVC", sender: nil)
         }

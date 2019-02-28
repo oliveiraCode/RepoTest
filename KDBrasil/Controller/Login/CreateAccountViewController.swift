@@ -15,47 +15,13 @@ class CreateAccountViewController: UIViewController {
     //IBOutlets
     @IBOutlet weak var btnCreateAccount: UIButton!
     @IBOutlet weak var tfFirstName: UITextField!
-    @IBOutlet weak var tfLastName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var tfPasswordConfirm: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var scrollView: UIScrollView!
     
     //Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
- 
-    
-    func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(notification:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
-        let keyboardSize = keyboardInfo.cgRectValue.size
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentInset = .zero
-        scrollView.scrollIndicatorInsets = .zero
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +30,16 @@ class CreateAccountViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.registerKeyboardNotifications()
         setupUI()
     }
     
     //MARK - SetupUI
     func setupUI(){
-        btnCreateAccount?.layer.cornerRadius = 15
-        btnCreateAccount?.layer.masksToBounds = true
+        
+        btnCreateAccount.layer.borderColor = UIColor.black.cgColor
+        btnCreateAccount.layer.borderWidth = 0.5
+        btnCreateAccount.layer.cornerRadius = 20
+        btnCreateAccount.layer.masksToBounds = true
         
         profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2
         profileImageView.clipsToBounds = true
@@ -86,13 +54,7 @@ class CreateAccountViewController: UIViewController {
             return}
         guard tfPassword.text != "" else {self.showAlert(errorCode: .invalidSender)
             return}
-        guard tfPasswordConfirm.text != "" else {self.showAlert(errorCode: .invalidSender)
-            return}
-        
-        guard tfPassword.text == tfPasswordConfirm.text else {
-            self.showAlert(title: FirebaseAuthErrors.warning, message: CommonWarning.passwordDontMatch);
-            return
-        }
+
         
         self.activityIndicator.startAnimating()
         //check what the provider is
@@ -104,11 +66,8 @@ class CreateAccountViewController: UIViewController {
                     self.showAlert(title: "Conta Facebook", message: "A conta \(self.tfEmail.text!) já existe e é uma conta facebook. \n\nUse a opção facebook para se conectar.")
                 } else {
                     
-                    
-                        
                         //set all information to user object
                         self.appDelegate.userObj.firstName = self.tfFirstName.text
-                        self.appDelegate.userObj.lastName = self.tfLastName.text
                         self.appDelegate.userObj.email = self.tfEmail.text
                         self.appDelegate.userObj.password = self.tfPassword.text
                         self.appDelegate.userObj.image = self.profileImageView.image

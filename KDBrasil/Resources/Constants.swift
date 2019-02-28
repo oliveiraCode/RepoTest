@@ -43,7 +43,7 @@ enum LocalizationKeys {
     static let buttonPhotoLibrary = "Escolher Foto"
     
     //MyBusinessViewController
-    static let buttonSelectCategory = "Selecionar categoria"
+    static let buttonSelectCategory = "Selecionar"
     
     //Activity Indicator
     static let pleaseWait = "Por favor, aguarde um momento..."

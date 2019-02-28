@@ -25,9 +25,9 @@ class BusinessCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        self.imgLogo.layer.cornerRadius = 15
+        self.imgLogo.layer.cornerRadius = 10
         self.imgLogo.clipsToBounds = true
+        
 
     }
     

@@ -19,6 +19,8 @@
 		9C2CD85F21D92679005F688E /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CD85D21D92679005F688E /* BusinessCell.swift */; };
 		9C2CD86021D92679005F688E /* BusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CD85E21D92679005F688E /* BusinessCell.xib */; };
 		9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CD86121D96F96005F688E /* ListViewController.swift */; };
+		9C30CC7E222877E50021D03D /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC7D222877E50021D03D /* LoginMainViewController.swift */; };
+		9C30CC80222880BF0021D03D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC7F222880BF0021D03D /* LoginViewController.swift */; };
 		9C329D8C220BA69700A74EFA /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C329D8B220BA69700A74EFA /* NavController.swift */; };
 		9C5C7F08221F17F200109152 /* UIColor Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F07221F17F200109152 /* UIColor Extensions.swift */; };
 		9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */; };
@@ -32,7 +34,6 @@
 		9C8CA97B21FFAF970081B96B /* LocationManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */; };
 		9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */; };
 		9C8DE2E02202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */; };
-		9C8DE2E2220209E100BB79C1 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2E1220209E100BB79C1 /* FavoriteTableViewController.swift */; };
 		9C933D2C22061F7800F54782 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D2B22061F7800F54782 /* ProfileTableViewCell.swift */; };
 		9C933D2E2206639A00F54782 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D2D2206639A00F54782 /* EditProfileViewController.swift */; };
 		9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D31220A2DC500F54782 /* DailyHours.swift */; };
@@ -53,7 +54,6 @@
 		9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */; };
 		9CCE638122178A9B005EF258 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */; };
 		9CEF890122023D9A0015258F /* BusinessAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF890022023D9A0015258F /* BusinessAnnotation.swift */; };
-		9CEF8903220254E00015258F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF8902220254E00015258F /* LoginViewController.swift */; };
 		9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF8904220254F70015258F /* CreateAccountViewController.swift */; };
 		9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF10FED222458D60007B6EA /* Default-568h@2x.png */; };
 		9CF10FF022245C080007B6EA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10FEF22245C080007B6EA /* ProfileTableViewController.swift */; };
@@ -77,6 +77,8 @@
 		9C2CD85D21D92679005F688E /* BusinessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
 		9C2CD85E21D92679005F688E /* BusinessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessCell.xib; sourceTree = "<group>"; };
 		9C2CD86121D96F96005F688E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		9C30CC7D222877E50021D03D /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
+		9C30CC7F222880BF0021D03D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C329D8B220BA69700A74EFA /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		9C5C7F07221F17F200109152 /* UIColor Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extensions.swift"; sourceTree = "<group>"; };
 		9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
@@ -90,7 +92,6 @@
 		9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerService.swift; sourceTree = "<group>"; };
 		9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessViewController.swift; sourceTree = "<group>"; };
 		9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessCollectionViewCell.swift; sourceTree = "<group>"; };
-		9C8DE2E1220209E100BB79C1 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		9C933D2B22061F7800F54782 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9C933D2D2206639A00F54782 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9C933D31220A2DC500F54782 /* DailyHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHours.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesTableViewController.swift; sourceTree = "<group>"; };
 		9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		9CEF890022023D9A0015258F /* BusinessAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAnnotation.swift; sourceTree = "<group>"; };
-		9CEF8902220254E00015258F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9CEF8904220254F70015258F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9CF10FED222458D60007B6EA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9CF10FEF22245C080007B6EA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -248,9 +248,10 @@
 			isa = PBXGroup;
 			children = (
 				9CF10FEF22245C080007B6EA /* ProfileTableViewController.swift */,
-				9CEF8902220254E00015258F /* LoginViewController.swift */,
 				9CEF8904220254F70015258F /* CreateAccountViewController.swift */,
 				9C933D2D2206639A00F54782 /* EditProfileViewController.swift */,
+				9C30CC7D222877E50021D03D /* LoginMainViewController.swift */,
+				9C30CC7F222880BF0021D03D /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -344,7 +345,6 @@
 				9C2CD86121D96F96005F688E /* ListViewController.swift */,
 				9C01410221E504380002345D /* CategoryTableViewController.swift */,
 				9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */,
-				9C8DE2E1220209E100BB79C1 /* FavoriteTableViewController.swift */,
 				9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */,
 			);
 			path = Controller;
@@ -546,7 +546,6 @@
 				9C933D2C22061F7800F54782 /* ProfileTableViewCell.swift in Sources */,
 				9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */,
 				9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */,
-				9C8DE2E2220209E100BB79C1 /* FavoriteTableViewController.swift in Sources */,
 				9C25B73B21E80CBB00E332F8 /* FIRCollectionReference.swift in Sources */,
 				9C8CA97B21FFAF970081B96B /* LocationManagerService.swift in Sources */,
 				9C933D2E2206639A00F54782 /* EditProfileViewController.swift in Sources */,
@@ -562,7 +561,7 @@
 				9C8DE2E02202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift in Sources */,
 				9C5C7F0E221F3CA200109152 /* UIToolBar Extensions.swift in Sources */,
 				9C160BEE21F909B6009232DD /* UIVC Extensions.swift in Sources */,
-				9CEF8903220254E00015258F /* LoginViewController.swift in Sources */,
+				9C30CC7E222877E50021D03D /* LoginMainViewController.swift in Sources */,
 				9C2CD85F21D92679005F688E /* BusinessCell.swift in Sources */,
 				9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */,
 				9CC72AF521D43E930048C37B /* Contact.swift in Sources */,
@@ -583,6 +582,7 @@
 				9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */,
 				9C5C7F19221F516800109152 /* WeekHour.swift in Sources */,
 				9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */,
+				9C30CC80222880BF0021D03D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

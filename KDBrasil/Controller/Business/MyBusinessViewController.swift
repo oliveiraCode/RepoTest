@@ -410,6 +410,7 @@ class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICol
     
     @IBAction func btnWeekHourPressed(_ sender: UIButton) {
         indexWeek = sender.tag
+        self.tfState.resignFirstResponder()
         
         if customView != nil {
             customView.removeFromSuperview()
@@ -441,11 +442,12 @@ class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICol
         
         guard self.countThreePhotos >= 3 else { self.showAlert(title: General.warning, message: "São necessárias 3 imagens por anúncio"); return false}
         
-        guard self.tfName.text != "" else { self.showAlert(title: General.warning, message: "O campo nome deve ser preenchido"); return false}
+        
+        guard self.tfName.text != "" else {self.showAlert(title: General.warning, message: "O nome do título deve ser preenchido");return false}
         
         guard self.tvDescription.text != "Escreva aqui a descrição do seu anúncio." else { self.showAlert(title: General.warning, message: "O campo descrição deve ser preenchido"); return false}
         
-        guard self.btnCategory.titleLabel?.text != "Selecionar categoria" else { self.showAlert(title: General.warning, message: "A categoria deve ser selecionada."); return false}
+        guard self.btnCategory.titleLabel?.text != "Selecionar" else { self.showAlert(title: General.warning, message: "A categoria deve ser selecionada."); return false}
         
         guard self.tfCity.text != "" else { self.showAlert(title: General.warning, message: "O campo cidade deve ser preenchido"); return false}
         

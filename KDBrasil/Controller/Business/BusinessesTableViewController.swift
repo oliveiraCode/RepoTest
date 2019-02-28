@@ -9,6 +9,7 @@
 import UIKit
 import SWRevealViewController
 import Kingfisher
+import FirebaseAuth
 
 class BusinessesTableViewController: UITableViewController {
     
@@ -32,6 +33,23 @@ class BusinessesTableViewController: UITableViewController {
         return refreshControl
     }()
     
+    let topView: UIView = {
+        let tv = UIView()
+        tv.backgroundColor = UIColor.white
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.layer.masksToBounds = true
+        return tv
+    }()
+    
+    // Constraints (call in viewDidLoad)
+    func setupTopView() {
+        //x, y, width, height constraints
+        topView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        topView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        topView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        topView.heightAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
+    }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
@@ -41,7 +59,6 @@ class BusinessesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.refreshControl = refreshTableView
         
         let nibName = UINib(nibName: "BusinessCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "BusinessCell")
@@ -52,6 +69,17 @@ class BusinessesTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+ 
+        if Auth.auth().currentUser?.uid != nil{
+            self.tableView.refreshControl = refreshTableView
+            self.updateTableViewWithDataFromFirebase()
+        } else {
+            self.tableView.refreshControl = nil
+        }
+        
+    }
     func updateTableViewWithDataFromFirebase(){
         
         FIRFirestoreService.shared.readMyBusinesses { (business, error) in
@@ -88,6 +116,31 @@ class BusinessesTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerLabel = UILabel()
+        
+        headerLabel.frame = CGRect(x: (view.frame.width/2)-(200/2), y: 100, width: 200, height: 21*3)
+        headerLabel.text = "É necessário estar logado para visualizar os seus anúncios"
+        headerLabel.textColor = UIColor.black
+        headerLabel.numberOfLines = 3
+        headerLabel.textAlignment = .center
+        headerLabel.backgroundColor = UIColor.clear
+        
+        if Auth.auth().currentUser?.uid == nil {
+            topView.addSubview(headerLabel)
+        }
+        return topView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if Auth.auth().currentUser?.uid == nil {
+            return self.view.frame.height
+        } else {
+            return 0
+        }
+
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

@@ -20,29 +20,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INn-lA-ihZ">
-                        <rect key="frame" x="0.0" y="0.5" width="375" height="102.5"/>
+                        <rect key="frame" x="0.0" y="2" width="375" height="99.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hc9-q5-bHw">
-                                <rect key="frame" x="12" y="6.5" width="90" height="90"/>
+                                <rect key="frame" x="10" y="2.5" width="95" height="95"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="AoZ-5F-Fnx"/>
-                                    <constraint firstAttribute="width" constant="90" id="uvG-hv-zcT"/>
+                                    <constraint firstAttribute="height" constant="95" id="AoZ-5F-Fnx"/>
+                                    <constraint firstAttribute="width" constant="95" id="uvG-hv-zcT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TSA Tesouras" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4W1-QZ-Tmx">
-                                <rect key="frame" x="109" y="10" width="216" height="20.5"/>
+                                <rect key="frame" x="112" y="10" width="213" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Costura" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBL-3C-LD9">
-                                <rect key="frame" x="109" y="56.5" width="258" height="17"/>
+                                <rect key="frame" x="112" y="56.5" width="255" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpE-Qu-jMO" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="109" y="38.5" width="95" height="15"/>
+                                <rect key="frame" x="112" y="38.5" width="95" height="15"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="mHG-6a-ubK"/>
@@ -54,7 +54,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verdun" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OA-Su-NUz">
-                                <rect key="frame" x="109" y="83.5" width="177" height="14.5"/>
+                                <rect key="frame" x="112" y="83.5" width="174" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14.5" id="eE8-iT-eWX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +92,7 @@
                             <constraint firstAttribute="trailing" secondItem="rRs-th-vdZ" secondAttribute="trailing" constant="14" id="GW6-3V-C80"/>
                             <constraint firstItem="JtB-pS-SIU" firstAttribute="leading" secondItem="4W1-QZ-Tmx" secondAttribute="trailing" constant="5" id="I3w-qU-TWd"/>
                             <constraint firstItem="gBL-3C-LD9" firstAttribute="leading" secondItem="hc9-q5-bHw" secondAttribute="trailing" constant="7" id="KP9-qt-Kyt"/>
-                            <constraint firstItem="hc9-q5-bHw" firstAttribute="leading" secondItem="INn-lA-ihZ" secondAttribute="leading" constant="12" id="Nzj-sL-4sA"/>
+                            <constraint firstItem="hc9-q5-bHw" firstAttribute="leading" secondItem="INn-lA-ihZ" secondAttribute="leading" constant="10" id="Nzj-sL-4sA"/>
                             <constraint firstAttribute="trailing" secondItem="JtB-pS-SIU" secondAttribute="trailing" constant="20" id="b1Q-Cw-Ou2"/>
                             <constraint firstAttribute="trailing" secondItem="gBL-3C-LD9" secondAttribute="trailing" constant="8" id="bPR-tp-epQ"/>
                             <constraint firstItem="qpE-Qu-jMO" firstAttribute="top" secondItem="4W1-QZ-Tmx" secondAttribute="bottom" constant="8" id="cYk-JI-erP"/>
@@ -104,10 +107,10 @@
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="INn-lA-ihZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="0.5" id="EET-y3-Mra"/>
+                    <constraint firstItem="INn-lA-ihZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="EET-y3-Mra"/>
                     <constraint firstItem="INn-lA-ihZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="chq-Fc-iKY"/>
                     <constraint firstAttribute="trailing" secondItem="INn-lA-ihZ" secondAttribute="trailing" id="i07-1F-EAE"/>
-                    <constraint firstAttribute="bottom" secondItem="INn-lA-ihZ" secondAttribute="bottom" constant="0.5" id="q2a-aS-ksK"/>
+                    <constraint firstAttribute="bottom" secondItem="INn-lA-ihZ" secondAttribute="bottom" constant="2" id="q2a-aS-ksK"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -121,7 +124,7 @@
                 <outlet property="ratingCosmosView" destination="qpE-Qu-jMO" id="wtg-fh-l2j"/>
                 <outlet property="view" destination="INn-lA-ihZ" id="qSU-CU-ybO"/>
             </connections>
-            <point key="canvasLocation" x="543.20000000000005" y="183.05847076461771"/>
+            <point key="canvasLocation" x="542" y="200"/>
         </tableViewCell>
     </objects>
     <resources>
