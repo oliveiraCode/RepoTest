@@ -21,6 +21,10 @@
 		9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CD86121D96F96005F688E /* ListViewController.swift */; };
 		9C30CC7E222877E50021D03D /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC7D222877E50021D03D /* LoginMainViewController.swift */; };
 		9C30CC80222880BF0021D03D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC7F222880BF0021D03D /* LoginViewController.swift */; };
+		9C30CC82222976430021D03D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC81222976430021D03D /* PageViewController.swift */; };
+		9C30CC842229769E0021D03D /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC832229769E0021D03D /* ViewController3.swift */; };
+		9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC85222976AF0021D03D /* ViewController1.swift */; };
+		9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC87222976CB0021D03D /* ViewController2.swift */; };
 		9C329D8C220BA69700A74EFA /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C329D8B220BA69700A74EFA /* NavController.swift */; };
 		9C5C7F08221F17F200109152 /* UIColor Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F07221F17F200109152 /* UIColor Extensions.swift */; };
 		9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */; };
@@ -79,6 +83,10 @@
 		9C2CD86121D96F96005F688E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9C30CC7D222877E50021D03D /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		9C30CC7F222880BF0021D03D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9C30CC81222976430021D03D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		9C30CC832229769E0021D03D /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		9C30CC85222976AF0021D03D /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		9C30CC87222976CB0021D03D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		9C329D8B220BA69700A74EFA /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		9C5C7F07221F17F200109152 /* UIColor Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extensions.swift"; sourceTree = "<group>"; };
 		9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
@@ -361,6 +369,10 @@
 		9CD0BF06222720CE009FF480 /* Get start */ = {
 			isa = PBXGroup;
 			children = (
+				9C30CC81222976430021D03D /* PageViewController.swift */,
+				9C30CC832229769E0021D03D /* ViewController3.swift */,
+				9C30CC85222976AF0021D03D /* ViewController1.swift */,
+				9C30CC87222976CB0021D03D /* ViewController2.swift */,
 			);
 			path = "Get start";
 			sourceTree = "<group>";
@@ -544,7 +556,9 @@
 				9C25B73921E80A8E00E332F8 /* FIRFirestoreService.swift in Sources */,
 				9CC72AF721D440CD0048C37B /* MyBusinessViewController.swift in Sources */,
 				9C933D2C22061F7800F54782 /* ProfileTableViewCell.swift in Sources */,
+				9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */,
 				9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */,
+				9C30CC82222976430021D03D /* PageViewController.swift in Sources */,
 				9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */,
 				9C25B73B21E80CBB00E332F8 /* FIRCollectionReference.swift in Sources */,
 				9C8CA97B21FFAF970081B96B /* LocationManagerService.swift in Sources */,
@@ -553,7 +567,9 @@
 				9CC72AE421D403910048C37B /* MenuViewController.swift in Sources */,
 				9CC72B0121D44EBA0048C37B /* SettingsTableViewController.swift in Sources */,
 				9CC72AF321D43E930048C37B /* Business.swift in Sources */,
+				9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */,
 				9C329D8C220BA69700A74EFA /* NavController.swift in Sources */,
+				9C30CC842229769E0021D03D /* ViewController3.swift in Sources */,
 				9C160BEB21F8DEBE009232DD /* Service.swift in Sources */,
 				9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */,
 				9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */,

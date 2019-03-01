@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>FacebookAppID</key>
 	<string>351262325598781</string>
 	<key>FacebookDisplayName</key>
@@ -43,11 +43,12 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Our App needs to access your camera to take pictures</string>
+	<string>Esse acesso é necessário para que você possa tirar fotos usando a sua camera.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need it to calculate the distance between you and the business</string>
+	<string>A localização é necessária para encontrarmos negócios próximos e para calcularmos a sua distancia em relação a eles.
+Informações sobre a sua localização não são compartilhadas com ninguém.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Our App needs to access your library to select pictures</string>
+	<string>Esse acesso é necessário para que você possa selecionar fotos na sua biblioteca de fotos.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
