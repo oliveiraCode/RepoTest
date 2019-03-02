@@ -45,7 +45,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         //start once the page view controller
-        if !UserDefaults.standard.bool(forKey: "Welcome") {
+        if !(UserDefaults.standard.bool(forKey: "Welcome")) {
             let offset = 0.1
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(offset * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                 

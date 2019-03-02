@@ -111,7 +111,7 @@ PODS:
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.17.0)
   - GTMSessionFetcher/Core (1.2.1)
-  - Kingfisher (5.1.1)
+  - Kingfisher (5.2.0)
   - KRActivityIndicatorView (3.0.0)
   - KRProgressHUD (3.4.0):
     - KRActivityIndicatorView (= 3.0.0)
@@ -125,7 +125,7 @@ PODS:
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
-  - Cosmos (= 18.0.1)
+  - Cosmos
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
@@ -182,7 +182,7 @@ SPEC CHECKSUMS:
   "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
+  Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
   KRActivityIndicatorView: c414000730a6f4969eeb354bee4f2aebc89c2c2e
   KRProgressHUD: 79c8703f82179fe34b3602f10b30726f887983fa
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -190,6 +190,6 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: 61077551276fc54a1d02c55f81cb3907f9e4473b
+PODFILE CHECKSUM: 65b62a01483f3f445d68b40b72f57e48e20eb778
 
 COCOAPODS: 1.5.3

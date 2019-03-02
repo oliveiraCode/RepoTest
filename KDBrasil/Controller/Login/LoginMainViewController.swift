@@ -54,7 +54,7 @@ class LoginMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if Auth.auth().currentUser?.uid != nil {
+        if (UIApplication.shared.delegate as! AppDelegate).userObj.id != nil {
             self.dismiss(animated: true, completion: nil)
         }
     }

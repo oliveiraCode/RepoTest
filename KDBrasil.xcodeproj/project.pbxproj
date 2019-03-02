@@ -26,6 +26,8 @@
 		9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC85222976AF0021D03D /* ViewController1.swift */; };
 		9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC87222976CB0021D03D /* ViewController2.swift */; };
 		9C329D8C220BA69700A74EFA /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C329D8B220BA69700A74EFA /* NavController.swift */; };
+		9C4150EC2229F0D2009FC652 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4150EB2229F0D2009FC652 /* Rating.swift */; };
+		9C4150EE2229F0E4009FC652 /* Rating.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4150ED2229F0E4009FC652 /* Rating.xib */; };
 		9C5C7F08221F17F200109152 /* UIColor Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F07221F17F200109152 /* UIColor Extensions.swift */; };
 		9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */; };
 		9C5C7F0C221F3BB500109152 /* UIImage Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0B221F3BB500109152 /* UIImage Extensions.swift */; };
@@ -88,6 +90,8 @@
 		9C30CC85222976AF0021D03D /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		9C30CC87222976CB0021D03D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		9C329D8B220BA69700A74EFA /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		9C4150EB2229F0D2009FC652 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		9C4150ED2229F0E4009FC652 /* Rating.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Rating.xib; sourceTree = "<group>"; };
 		9C5C7F07221F17F200109152 /* UIColor Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extensions.swift"; sourceTree = "<group>"; };
 		9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
 		9C5C7F0B221F3BB500109152 /* UIImage Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage Extensions.swift"; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 			children = (
 				9C5C7F18221F516800109152 /* WeekHour.swift */,
 				9C5C7F1A221F517800109152 /* WeekHour.xib */,
+				9C4150EB2229F0D2009FC652 /* Rating.swift */,
+				9C4150ED2229F0E4009FC652 /* Rating.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 			files = (
 				9C2CD86021D92679005F688E /* BusinessCell.xib in Resources */,
 				9CC72ADC21D3FCA00048C37B /* LaunchScreen.storyboard in Resources */,
+				9C4150EE2229F0E4009FC652 /* Rating.xib in Resources */,
 				9CC72AD921D3FCA00048C37B /* Assets.xcassets in Resources */,
 				9CC72AD721D3FC9E0048C37B /* Main.storyboard in Resources */,
 				9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */,
@@ -571,6 +578,7 @@
 				9C329D8C220BA69700A74EFA /* NavController.swift in Sources */,
 				9C30CC842229769E0021D03D /* ViewController3.swift in Sources */,
 				9C160BEB21F8DEBE009232DD /* Service.swift in Sources */,
+				9C4150EC2229F0D2009FC652 /* Rating.swift in Sources */,
 				9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */,
 				9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */,
 				9CCA9DBE21E015C900ADA845 /* Category.swift in Sources */,

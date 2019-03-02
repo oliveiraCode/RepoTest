@@ -11,7 +11,7 @@ target 'KDBrasil' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
 
-  pod 'Cosmos', '18.0.1'
+  pod 'Cosmos'
   pod 'Kingfisher'
   pod 'FBSDKLoginKit'
   pod 'SWRevealViewController', '2.3.0'

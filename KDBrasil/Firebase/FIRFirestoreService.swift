@@ -560,7 +560,6 @@ class FIRFirestoreService {
         appDelegate.userObj.resetValuesOfUserAccount()
         
     }
-    
-    
+
 }
 
