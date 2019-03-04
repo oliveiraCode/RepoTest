@@ -20,6 +20,7 @@ class Business:Codable {
     var user_id:String?
     var hours:[DailyHours]?
     var photosURL:[String]?
+    var reviews:[Review]?
     
     
     init(id:String, description:String, name:String,  rating: Double,address:Address, contact:Contact, creationDate:String, category:String, user_id:String, hours:[DailyHours], photosURL:[String]) {

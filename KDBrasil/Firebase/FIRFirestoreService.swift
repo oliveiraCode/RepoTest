@@ -27,7 +27,7 @@ class FIRFirestoreService {
         
         let businessRef = Firestore.firestore().collection(FIRCollectionReference.business)
         business.id = businessRef.document().collection(businessRef.collectionID).document().documentID
-
+        
         for (index,image) in imageArray.enumerated() {
             
             uploading(business: business, img: image, index: index) { (url) in
@@ -307,6 +307,34 @@ class FIRFirestoreService {
     }
     
     
+    //MARK: - readAllReviewsFromBusiness
+    func readAllReviewsFromBusiness(business:Business,completionHandler: @escaping ([Review]?, Error?) -> Void) {
+        
+        let businessRef = self.db.collection(FIRCollectionReference.business)
+        let query = businessRef.whereField("id", isEqualTo: "\(business.id!)")
+        
+        query.getDocuments(source: .default) { (querySnapshot, err) in
+            
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completionHandler(nil, err)
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    guard let reviews = document["reviews"] as? [Any] else {return}
+                    
+                    var reviewsArray:[Review] = []
+                    for (_, value) in reviews.enumerated(){
+                        
+                        let dailyHoursObj = value as! [String:Any]
+                        reviewsArray.append(Review(data: dailyHoursObj)!)
+                    }
+                    
+                    completionHandler(reviewsArray, nil)
+                }
+            }
+        }
+    }
     
     
     
@@ -531,7 +559,7 @@ class FIRFirestoreService {
         }
         
         
-
+        
         
         //Remove user from Firebase Account
         Auth.auth().currentUser?.delete(completion: { (error) in
@@ -568,6 +596,6 @@ class FIRFirestoreService {
         appDelegate.userObj.resetValuesOfUserAccount()
         
     }
-
+    
 }
 

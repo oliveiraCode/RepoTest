@@ -25,6 +25,7 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var btnPhone: UIButton!
     @IBOutlet weak var btnWeb: UIButton!
     @IBOutlet weak var btnWhatsApp: UIButton!
+    @IBOutlet weak var btnReviews: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var userNameAndMember: UILabel!
@@ -57,8 +58,9 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setValuesToUI()
-        setAnnotationsOnTheMap()
+        self.setValuesToUI()
+        self.setAnnotationsOnTheMap()
+
         
         //set border to TextView
         tvDescription.layer.borderWidth = 0.6
@@ -67,7 +69,23 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
         userImage.layer.cornerRadius = userImage.bounds.height / 2
         userImage.clipsToBounds = true
         
+        FIRFirestoreService.shared.readAllReviewsFromBusiness(business: businessDetails) { (review, error) in
+            if error == nil {
+                self.businessDetails.reviews = review
+
+                if self.businessDetails.reviews!.count == 0 || self.businessDetails.reviews!.count == 1 {
+                    self.btnReviews.setTitle("(\(self.businessDetails.reviews!.count)) avaliação", for: .normal)
+                } else {
+                    self.btnReviews.setTitle("(\(self.businessDetails.reviews!.count)) avaliações", for: .normal)
+                }
+                
+            }
+        }
+        
     }
+    
+
+    
     
     //MARK - Set values to UI
     func setValuesToUI(){
@@ -187,6 +205,7 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
         self.lbAddress.text = getAddressFormatted()
         self.tvDescription.text = businessDetails.description
         self.pageControl.numberOfPages = 3
+    
         
     }
     
@@ -298,6 +317,20 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
     
     @IBAction func btnNextVersion(_ sender: Any) {
         KRProgressHUD.showMessage(General.featureUnavailable)
+    }
+    
+    @IBAction func btnReviews(_ sender: UIButton) {
+        performSegue(withIdentifier: "showReviewsVC", sender: nil)
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showReviewsVC" {
+            let destController = segue.destination as! ReviewsTableViewController
+            destController.business = businessDetails
+        }
     }
 }
 

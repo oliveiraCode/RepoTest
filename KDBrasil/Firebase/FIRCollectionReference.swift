@@ -16,4 +16,5 @@ enum FIRCollectionReference {
     static let users = "users"
     static let imageBusiness = "ImageBusiness"
     static let imageUsers = "ImageUsers"
+    static let reviews = "reviews"
 }

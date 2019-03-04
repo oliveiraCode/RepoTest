@@ -122,6 +122,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - SSProgressBar (1.0.1)
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
@@ -133,6 +134,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - Kingfisher
   - KRProgressHUD
+  - SSProgressBar
   - SWRevealViewController (= 2.3.0)
 
 SPEC REPOS:
@@ -161,6 +163,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - SSProgressBar
     - SWRevealViewController
 
 SPEC CHECKSUMS:
@@ -188,8 +191,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SSProgressBar: 868de6156882f96b7325685b3748fcc80aeb3b6f
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: 65b62a01483f3f445d68b40b72f57e48e20eb778
+PODFILE CHECKSUM: f5652ef5dc700f2f018d8de2c9901c7d381156e9
 
 COCOAPODS: 1.5.3
