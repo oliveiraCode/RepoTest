@@ -313,6 +313,14 @@ class FIRFirestoreService {
     //MARK: - createUser
     func createUser(completionHandler: @escaping (Error?) -> Void) {
         
+        //Remove user from Firebase Account
+        Auth.auth().currentUser?.delete(completion: { (error) in
+            if error == nil {
+                print("usuário deletado com sucesso")
+            }
+        })
+        
+        
         Auth.auth().createUser(withEmail: appDelegate.userObj.email, password: appDelegate.userObj.password) { (userResult, error) in
             
             if error != nil{

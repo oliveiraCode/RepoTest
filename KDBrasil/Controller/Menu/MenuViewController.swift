@@ -108,6 +108,8 @@ class  MenuViewController: UIViewController, UITableViewDelegate, UITableViewDat
             CoreDataService.shared.resetAllRecordsOnCoreData()
             do {
                 try Auth.auth().signOut()
+                //Login anonymously
+                Auth.auth().signInAnonymously(completion: nil)
             } catch{}
         } else {
             performSegue(withIdentifier: "showLoginVC", sender: nil)

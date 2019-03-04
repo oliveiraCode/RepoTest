@@ -63,6 +63,13 @@ class LoginMainViewController: UIViewController {
         //Show Activity Indicator
         self.activityIndicator.startAnimating()
         
+        //Remove user from Firebase Account
+        Auth.auth().currentUser?.delete(completion: { (error) in
+            if error == nil {
+                print("usuário deletado com sucesso")
+            }
+        })
+        
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         Auth.auth().signInAndRetrieveData(with: credential){(result,error) in
             

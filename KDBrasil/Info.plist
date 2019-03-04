@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>9</string>
 	<key>FacebookAppID</key>
 	<string>351262325598781</string>
 	<key>FacebookDisplayName</key>
@@ -43,12 +43,12 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Esse acesso é necessário para que você possa tirar fotos usando a sua camera.</string>
+	<string>Você pode tirar fotos e armazená-las no KD Brasil. Nenhuma foto será salva sem a sua permissão.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>A localização é necessária para encontrarmos negócios próximos e para calcularmos a sua distancia em relação a eles.
 Informações sobre a sua localização não são compartilhadas com ninguém.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Esse acesso é necessário para que você possa selecionar fotos na sua biblioteca de fotos.</string>
+	<string>Você pode selecionar fotos da sua galeria e armazená-las no KD Brasil. Nenhuma foto será salva sem a sua permissão.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
