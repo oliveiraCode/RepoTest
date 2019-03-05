@@ -9,6 +9,7 @@
 import UIKit
 import Cosmos
 import Firebase
+import Kingfisher
 
 class MyReviewViewController: UIViewController {
     
@@ -28,6 +29,24 @@ class MyReviewViewController: UIViewController {
         
         self.hideKeyboardWhenTappedAround()
         
+        self.imgBusiness.kf.indicatorType = .activity
+        self.imgBusiness.kf.setImage(
+            with: URL(string: self.business.photosURL![0]),
+            placeholder: UIImage(named: Placeholders.placeholder_photo),
+            options: [
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+    
+        //set border to TextView
+        tvDescription.layer.borderWidth = 0.6
+        tvDescription.layer.borderColor = UIColor.gray.cgColor
+        
+        self.lbNameBusiness.text = self.business.name
+        self.ratingBusiness.settings.fillMode = .half
+        
+
+        
     }
     
     @IBAction func btnSave(_ sender: UIBarButtonItem) {
@@ -46,43 +65,8 @@ class MyReviewViewController: UIViewController {
         arrayReview.append(reviewObj)
         business.reviews = arrayReview
         
-        
-        let businessRef = Firestore.firestore().collection(FIRCollectionReference.business)
-        
-        businessRef.document(business.id!).updateData(
-            [
-                "reviews": arrayReview.map({$0.dictionary})
-            ]
-        ) { (error) in
-            if error != nil {
-                print("error \(error!.localizedDescription)")
-            } else {
-                print("data saved business")
-            }
-        }
-       
-        businessRef.document(business.id!).updateData(
-            [
-                "rating": calculateRating()
-            ]
-        ) { (error) in
-            if error != nil {
-                print("error \(error!.localizedDescription)")
-            } else {
-                print("data saved business")
-            }
-        }
-        
-    }
-    
-    func calculateRating() -> Double {
-        
-        var totalRating:Double = 0.0
-        for value in (self.business.reviews?.enumerated())! {
-            totalRating += value.element.rating!
-        }
-        
-        return totalRating / Double((self.business.reviews?.count)!)
+        FIRFirestoreService.shared.updateReviewData(business: business)
+
     }
     
     @IBAction func btnCancel(_ sender: UIBarButtonItem) {

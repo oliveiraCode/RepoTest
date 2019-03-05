@@ -28,7 +28,8 @@ class BusinessCell: UITableViewCell {
         self.imgLogo.layer.cornerRadius = 10
         self.imgLogo.clipsToBounds = true
         
-
+        self.ratingCosmosView.settings.fillMode = .half
+        
     }
     
     @IBAction func btnNextVersion(_ sender: UIButton) {

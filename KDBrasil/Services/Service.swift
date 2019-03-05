@@ -87,6 +87,16 @@ class Service {
             break
         }
     }
+    
+    func calculateRating(reviews:[Review]) -> Double {
+        
+        var totalRating:Double = 0.0
+        for value in reviews.enumerated() {
+            totalRating += value.element.rating!
+        }
+        
+        return Double(round(10*(totalRating / Double((reviews.count))))/10)
+    }
 
 }
 

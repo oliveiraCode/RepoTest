@@ -128,6 +128,7 @@ enum CommonWarning {
     static let  errorEmail = "E-mail inválido"
     static let  errorWebSite = "URL inválida"
     static let  errorNewBusiness = "Você precisa estar conectado para cadastrar um anúncio."
+    static let  errorNewReviews = "Você precisa estar conectado para avaliar esse anúncio."
 }
 
 

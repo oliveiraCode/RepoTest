@@ -69,6 +69,8 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
         userImage.layer.cornerRadius = userImage.bounds.height / 2
         userImage.clipsToBounds = true
         
+        cvRating.settings.fillMode = .half
+        
         FIRFirestoreService.shared.readAllReviewsFromBusiness(business: businessDetails) { (review, error) in
             if error == nil {
                 self.businessDetails.reviews = review
@@ -78,7 +80,6 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
                 } else {
                     self.btnReviews.setTitle("(\(self.businessDetails.reviews!.count)) avaliações", for: .normal)
                 }
-                
             }
         }
         

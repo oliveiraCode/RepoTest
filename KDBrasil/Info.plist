@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -43,12 +45,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Você pode tirar fotos e armazená-las no KD Brasil. Nenhuma foto será salva sem a sua permissão.</string>
+	<string>Take photos and store them inside KD Brasil.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>A localização é necessária para encontrarmos negócios próximos e para calcularmos a sua distancia em relação a eles.
-Informações sobre a sua localização não são compartilhadas com ninguém.</string>
+	<string>KD Brasil needs your location to help you find nearby places you will like.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Você pode selecionar fotos da sua galeria e armazená-las no KD Brasil. Nenhuma foto será salva sem a sua permissão.</string>
+	<string>Select photos and store them inside KD Brasil.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

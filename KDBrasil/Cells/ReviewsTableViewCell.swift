@@ -20,7 +20,7 @@ class ReviewsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.cvRating.settings.fillMode = .half
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
