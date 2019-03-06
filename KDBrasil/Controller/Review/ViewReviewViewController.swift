@@ -16,6 +16,7 @@ class ViewReviewViewController: UIViewController {
     @IBOutlet weak var ratingBusiness: CosmosView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tvDescription: UITextView!
+    @IBOutlet weak var lbRatingString: UILabel!
     
     var business = Business()
     var myReview:[Review] = []
@@ -38,31 +39,20 @@ class ViewReviewViewController: UIViewController {
             ])
         
         //set border to TextView
-        tvDescription.layer.borderWidth = 0.2
-        tvDescription.layer.borderColor = UIColor.gray.cgColor
+        tvDescription.layer.borderWidth = 0.3
+        tvDescription.layer.borderColor = UIColor.lightGray.cgColor
         tvDescription.delegate = self as? UITextViewDelegate
         
         self.lbNameBusiness.text = self.business.name
         self.ratingBusiness.settings.fillMode = .half
         
-        updateUI()
-        
-    }
-    
-    func updateUI(){
+        self.lbRatingString.text = Service.shared.calculateRatingString(value: self.myReview[0].rating!)
         self.ratingBusiness.rating = self.myReview[0].rating!
         self.lbTitle.text = self.myReview[0].title
         self.tvDescription.text = self.myReview[0].description
+        
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

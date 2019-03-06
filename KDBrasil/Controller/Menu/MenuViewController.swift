@@ -16,7 +16,6 @@ class  MenuViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func unWindToMenu(segue:UIStoryboardSegue) {}
     
     let imgMenu = ["home_color",
                    "settings_color"]

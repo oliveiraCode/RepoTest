@@ -13,45 +13,58 @@ import Cosmos
 class ReviewsTableViewController: UITableViewController {
     
     
+    @IBOutlet weak var lbRatingValueString: UILabel!
     @IBOutlet weak var lbRating: UILabel!
     @IBOutlet weak var cvRating: CosmosView!
-    @IBOutlet weak var lbCountRating: UILabel!
-    @IBOutlet weak var btnReview: UIButton!
+    @IBOutlet weak var ratingView: GradientView!
     
     var business = Business()
     var myReview:[Review]? = []
     var isEditingReview:Bool?
     var indexPathSelected:IndexPath?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var btnReview = UIBarButtonItem()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Avaliações"
+        
+        btnReview = UIBarButtonItem(title: "Avaliar", style: .plain, target: self, action: #selector(btnReviews))
+        self.navigationItem.rightBarButtonItems = [btnReview]
+        
     }
     
+    @objc func btnReviews(){
+        
+        if appDelegate.userObj.id == nil {
+            
+            let alert = UIAlertController(title: "", message: CommonWarning.errorNewReviews, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: LocalizationKeys.buttonCancel, style: .cancel, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: LocalizationKeys.buttonLogin, style: .default, handler: { action in
+                self.performSegue(withIdentifier: "showLoginVC", sender: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            performSegue(withIdentifier: "showReviewVC", sender: nil)
+        }
+    }
     
     func updateUI(){
         
-        btnReview.layer.borderColor = UIColor.blue.cgColor
-        btnReview.layer.borderWidth = 0.5
-        btnReview.layer.cornerRadius = btnReview.bounds.height / 2
-        btnReview.clipsToBounds = true
-        btnReview.isEnabled = true
-        isEditingReview = false
+        ratingView.layer.cornerRadius = 15
+        ratingView.layer.backgroundColor = UIColor.init(displayP3Red: 101/255, green: 173/255, blue: 128/255, alpha: 0.7).cgColor
         
+        isEditingReview = false
+        btnReview.isEnabled = true
         
         guard var reviews = self.business.reviews else {return}
         self.cvRating.settings.fillMode = .half
         self.lbRating.text =   "\(Service.shared.calculateRating(reviews: reviews))"
         self.cvRating.rating = Service.shared.calculateRating(reviews: reviews)
-        
-        
-        if self.business.reviews!.count <= 1  {
-            self.lbCountRating.text = "(\(reviews.count)) comentário"
-        } else {
-            self.lbCountRating.text = "(\(reviews.count)) comentários"
-        }
         
         for (index, value) in reviews.enumerated() {
             if value.user_id == appDelegate.userObj.id {
@@ -64,14 +77,23 @@ class ReviewsTableViewController: UITableViewController {
         
         tableView.reloadData()
         
+        //check if the business is the user's own login
+        if business.user_id == appDelegate.userObj.id {
+            btnReview.isEnabled = false
+        }
+        
+        //check if myReview exists
+        if (myReview?.count)! > 0 {
+            btnReview.isEnabled = false
+        }
+        
+        self.lbRatingValueString.text = Service.shared.calculateRatingString(value: Service.shared.calculateRating(reviews: reviews))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
-        if (myReview?.count)! > 0 {
-            btnReview.isEnabled = false
-        }
+        
     }
     
     
@@ -186,26 +208,6 @@ class ReviewsTableViewController: UITableViewController {
     }
     
     
-    
-    @IBAction func btnReviews(_ sender: UIButton) {
-        
-        if appDelegate.userObj.id == nil {
-            
-            let alert = UIAlertController(title: "", message: CommonWarning.errorNewReviews, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: LocalizationKeys.buttonCancel, style: .cancel, handler: nil))
-            
-            alert.addAction(UIAlertAction(title: LocalizationKeys.buttonLogin, style: .default, handler: { action in
-                self.performSegue(withIdentifier: "showLoginVC", sender: nil)
-            }))
-            
-            self.present(alert, animated: true, completion: nil)
-            
-        } else {
-            performSegue(withIdentifier: "showReviewVC", sender: nil)
-        }
-        
-    }
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -219,7 +221,7 @@ class ReviewsTableViewController: UITableViewController {
                 destController.myReview = myReview!
             }
             
-
+            
         }
         if segue.identifier == "showViewReviewVC" {
             let destController = segue.destination as! ViewReviewViewController

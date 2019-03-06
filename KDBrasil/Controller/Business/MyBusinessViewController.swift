@@ -329,7 +329,7 @@ class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICol
         
         //to make a border on TextView
         tvDescription.layer.borderWidth = 0.3
-        tvDescription.layer.borderColor = UIColor.gray.cgColor
+        tvDescription.layer.borderColor = UIColor.lightGray.cgColor
    
     }
     

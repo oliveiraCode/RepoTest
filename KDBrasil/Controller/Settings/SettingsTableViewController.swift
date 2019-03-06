@@ -29,8 +29,10 @@ class SettingsTableViewController: UITableViewController {
                               NSLocalizedString(LocalizationKeys.settingsPrivacy, comment: "")]
     
     let img2:[UIImage] = [UIImage(named: "share_color")!,
+                          UIImage(named: "donate_color")!,
                           UIImage(named: "contact_us_color")!]
     let settings2:[String] = [NSLocalizedString(LocalizationKeys.settingsShare, comment: ""),
+                              NSLocalizedString(LocalizationKeys.settingsDonate, comment: ""),
                               NSLocalizedString(LocalizationKeys.settingsContactUs, comment: "")]
     
     override func viewDidLoad() {
@@ -129,6 +131,9 @@ class SettingsTableViewController: UITableViewController {
                 
                 break
             case 1:
+                performSegue(withIdentifier: "showDonateVC", sender: nil)
+                break
+            case 2:
                 let subject = "App KD Brasil"
                 let body = "Escreva aqui a sua mensagem."
                 let email = "leandro.oliveira@live.com"
@@ -139,7 +144,6 @@ class SettingsTableViewController: UITableViewController {
                 mailComposerVC.setMessageBody(body, isHTML: false)
                 self.present(mailComposerVC, animated: true, completion: nil)
                 
-                break
             default:
                 print("done")
             }

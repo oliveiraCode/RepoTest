@@ -97,19 +97,15 @@ class LoginMainViewController: UIViewController {
                                 FIRFirestoreService.shared.saveImageToStorage()
                                 FIRFirestoreService.shared.saveProfileToFireStore()
                                 CoreDataService.shared.saveCurrentUserToCoreData()
+                                
+                                self.activityIndicator.stopAnimating()
+                                self.dismiss(animated: true, completion: nil)
+                                
                             case .failure(let error):
                                 self.activityIndicator.stopAnimating()
                                 print("Job failed: \(error.localizedDescription)")
                             }
                         }
-                        
-                        self.activityIndicator.stopAnimating()
-                        let alert = UIAlertController(title: "", message: "Bem vindo \(self.appDelegate.userObj.firstName!)", preferredStyle: .alert)
-                        
-                        alert.addAction(UIAlertAction(title: General.OK, style: .default, handler: { (nil) in
-                            self.dismiss(animated: true, completion: nil)
-                        }))
-                        self.present(alert, animated: true, completion: nil)
                         
                     }else{
                         self.activityIndicator.stopAnimating()

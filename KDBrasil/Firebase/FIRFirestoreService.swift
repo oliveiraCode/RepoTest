@@ -380,7 +380,7 @@ class FIRFirestoreService {
                 self.appDelegate.userObj.id = Auth.auth().currentUser?.uid //get id from current user
                 
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                changeRequest?.displayName = "\(self.appDelegate.userObj.firstName!) \(self.appDelegate.userObj.lastName!)"
+                changeRequest?.displayName = "\(self.appDelegate.userObj.firstName!)"
                 changeRequest?.commitChanges(completion: { (error) in
                     if error == nil {
                         print("User display name changed!")

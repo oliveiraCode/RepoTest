@@ -64,35 +64,35 @@ class CreateAccountViewController: UIViewController {
                 if accountFacebook == "facebook.com" {
                     self.activityIndicator.stopAnimating()
                     self.showAlert(title: "Conta Facebook", message: "A conta \(self.tfEmail.text!) já existe e é uma conta facebook. \n\nUse a opção facebook para se conectar.")
-                } else {
-                    
-                        //set all information to user object
-                        self.appDelegate.userObj.firstName = self.tfFirstName.text
-                        self.appDelegate.userObj.email = self.tfEmail.text
-                        self.appDelegate.userObj.password = self.tfPassword.text
-                        self.appDelegate.userObj.image = self.profileImageView.image
-                        self.appDelegate.userObj.creationDate = Service.shared.getTodaysDate()
-                        self.appDelegate.userObj.isFacebook = false
-                        
-                        FIRFirestoreService.shared.createUser { (error) in
-                            if error != nil {
-                                if let errCode = AuthErrorCode(rawValue: (error?._code)!) {
-                                    self.activityIndicator.stopAnimating()
-                                    self.showAlert(errorCode: errCode)
-                                }
-                            } else {
-                                let alert = UIAlertController(title: General.congratulations, message: General.successfully, preferredStyle: UIAlertController.Style.alert)
-                                alert.addAction(UIAlertAction(title: General.OK, style: .default, handler: { (action) in
-                                    self.performSegue(withIdentifier: "unWindToMenuVC", sender: nil)
-                                }))
-                                self.activityIndicator.stopAnimating()
-                                self.present(alert, animated: true, completion: nil)
-                            }
-                        }
-                    
+                    return
                 }
             }
         }
+        
+        //set all information to user object
+        self.appDelegate.userObj.firstName = self.tfFirstName.text
+        self.appDelegate.userObj.email = self.tfEmail.text
+        self.appDelegate.userObj.password = self.tfPassword.text
+        self.appDelegate.userObj.image = self.profileImageView.image
+        self.appDelegate.userObj.creationDate = Service.shared.getTodaysDate()
+        self.appDelegate.userObj.isFacebook = false
+        
+        FIRFirestoreService.shared.createUser { (error) in
+            if error != nil {
+                if let errCode = AuthErrorCode(rawValue: (error?._code)!) {
+                    self.activityIndicator.stopAnimating()
+                    self.showAlert(errorCode: errCode)
+                }
+            } else {
+                let alert = UIAlertController(title: General.congratulations, message: General.successfully, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: General.OK, style: .default, handler: { (action) in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.activityIndicator.stopAnimating()
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     @IBAction func btnCancel(_ sender: Any) {

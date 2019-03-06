@@ -8,7 +8,6 @@
 
 import UIKit
 import Cosmos
-import Firebase
 import Kingfisher
 
 class MyReviewViewController: UIViewController {
@@ -18,7 +17,7 @@ class MyReviewViewController: UIViewController {
     @IBOutlet weak var ratingBusiness: CosmosView!
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var tvDescription: UITextView!
-    
+    @IBOutlet weak var lbRatingString: UILabel!
     
     var business = Business()
     var myReview:[Review] = []
@@ -47,15 +46,20 @@ class MyReviewViewController: UIViewController {
             ])
     
         //set border to TextView
-        tvDescription.layer.borderWidth = 0.6
-        tvDescription.layer.borderColor = UIColor.gray.cgColor
+        tvDescription.layer.borderWidth = 0.3
+        tvDescription.layer.borderColor = UIColor.lightGray.cgColor
         tvDescription.delegate = self as? UITextViewDelegate
         
         self.lbNameBusiness.text = self.business.name
         self.ratingBusiness.settings.fillMode = .half
         
         updateUI()
+        
+        ratingBusiness.didTouchCosmos = {ratingBusiness in
+            self.lbRatingString.text = Service.shared.calculateRatingString(value: ratingBusiness)
+        }
     }
+    
     
     func updateUI(){
         if myReview.count > 0 {

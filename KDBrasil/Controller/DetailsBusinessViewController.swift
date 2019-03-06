@@ -53,7 +53,6 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
         lbWeekArray.append(lbFriday)
         lbWeekArray.append(lbSaturday)
         lbWeekArray.append(lbSunday)
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -82,6 +81,7 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
                 }
             }
         }
+        
         
     }
     

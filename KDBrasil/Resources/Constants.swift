@@ -17,6 +17,7 @@ enum LocalizationKeys {
     static let settingsAccount = "Perfil"
     static let settingsShare = "Contar para um amigo"
     static let settingsContactUs = "Fale conosco"
+    static let settingsDonate = "Apoie esse projeto"
     static let settingsTermsOfUse = "Termos de uso"
     static let settingsPrivacy = "Política de privacidade"
     static let settingsAbout = "Sobre"

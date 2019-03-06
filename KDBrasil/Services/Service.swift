@@ -101,6 +101,24 @@ class Service {
         }
     }
     
+    func calculateRatingString(value:Double) -> String{
+        
+        switch value {
+        case let value where value >= 0.5 && value <= 1:
+            return "Terrível"
+        case let value where value >= 1.5 && value <= 2:
+            return "Fraco"
+        case let value where value >= 2.5 && value <= 3:
+            return "Mediano"
+        case let value where value >= 3.5 && value <= 4:
+            return "Muito bom"
+        case let value where value >= 4.5 && value <= 5:
+            return "Excelente"
+        default:
+            return "Indisponível"
+        }
+    }
+    
 }
 
 

@@ -63,6 +63,7 @@
 		9CCA9DBE21E015C900ADA845 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBD21E015C900ADA845 /* Category.swift */; };
 		9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */; };
 		9CCE638122178A9B005EF258 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */; };
+		9CDA3F4E222F5D250051180B /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA3F4D222F5D250051180B /* DonateViewController.swift */; };
 		9CEF890122023D9A0015258F /* BusinessAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF890022023D9A0015258F /* BusinessAnnotation.swift */; };
 		9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF8904220254F70015258F /* CreateAccountViewController.swift */; };
 		9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF10FED222458D60007B6EA /* Default-568h@2x.png */; };
@@ -133,6 +134,7 @@
 		9CCA9DBD21E015C900ADA845 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesTableViewController.swift; sourceTree = "<group>"; };
 		9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
+		9CDA3F4D222F5D250051180B /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		9CEF890022023D9A0015258F /* BusinessAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAnnotation.swift; sourceTree = "<group>"; };
 		9CEF8904220254F70015258F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9CF10FED222458D60007B6EA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 		9CC72AE721D404860048C37B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CDA3F4C222F5D010051180B /* Donation */,
 				9C1E4CE8222D789400939C97 /* Review */,
 				9CD0BF06222720CE009FF480 /* Get start */,
 				9CB72047220609D6001DE201 /* Login */,
@@ -398,6 +401,14 @@
 				9C30CC87222976CB0021D03D /* ViewController2.swift */,
 			);
 			path = "Get start";
+			sourceTree = "<group>";
+		};
+		9CDA3F4C222F5D010051180B /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				9CDA3F4D222F5D250051180B /* DonateViewController.swift */,
+			);
+			path = Donation;
 			sourceTree = "<group>";
 		};
 		AB33340FEB4CCA7DFCD717EA /* Frameworks */ = {
@@ -577,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CCE638122178A9B005EF258 /* TermsOfUseViewController.swift in Sources */,
+				9CDA3F4E222F5D250051180B /* DonateViewController.swift in Sources */,
 				9C1E4CEC222D78BE00939C97 /* MyReviewViewController.swift in Sources */,
 				9CC72AF421D43E930048C37B /* Address.swift in Sources */,
 				9C25B73921E80A8E00E332F8 /* FIRFirestoreService.swift in Sources */,
