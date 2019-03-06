@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>FirebaseScreenReportingEnabled</key>
-	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -30,11 +28,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>9</string>
+	<string>12</string>
 	<key>FacebookAppID</key>
 	<string>351262325598781</string>
 	<key>FacebookDisplayName</key>
 	<string>KD Brasil</string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -45,11 +45,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Take photos and store them inside KD Brasil.</string>
+	<string>O aplicativo precisa de acesso à sua câmera para realização de cadastro.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>KD Brasil needs your location to help you find nearby places you will like.</string>
+	<string>O aplicativo precisa do acesso à sua localização para mostrar resultados de busca próximos da sua região.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Select photos and store them inside KD Brasil.</string>
+	<string>O aplicativo precisa de acesso à suas fotos para realização de cadastro.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

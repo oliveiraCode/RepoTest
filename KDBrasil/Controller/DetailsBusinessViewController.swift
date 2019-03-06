@@ -87,7 +87,6 @@ class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate,
     
 
     
-    
     //MARK - Set values to UI
     func setValuesToUI(){
         

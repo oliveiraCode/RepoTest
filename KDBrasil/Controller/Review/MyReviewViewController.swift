@@ -19,7 +19,9 @@ class MyReviewViewController: UIViewController {
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var tvDescription: UITextView!
     
+    
     var business = Business()
+    var myReview:[Review] = []
     
     //Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -27,7 +29,13 @@ class MyReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Minha Avaliação"
         self.hideKeyboardWhenTappedAround()
+        
+        imgBusiness.layer.cornerRadius = imgBusiness.bounds.height / 2
+        imgBusiness.clipsToBounds = true
+        imgBusiness.layer.borderWidth = 0.6
+        imgBusiness.layer.borderColor = UIColor.black.cgColor
         
         self.imgBusiness.kf.indicatorType = .activity
         self.imgBusiness.kf.setImage(
@@ -41,12 +49,20 @@ class MyReviewViewController: UIViewController {
         //set border to TextView
         tvDescription.layer.borderWidth = 0.6
         tvDescription.layer.borderColor = UIColor.gray.cgColor
+        tvDescription.delegate = self as? UITextViewDelegate
         
         self.lbNameBusiness.text = self.business.name
         self.ratingBusiness.settings.fillMode = .half
         
-
-        
+        updateUI()
+    }
+    
+    func updateUI(){
+        if myReview.count > 0 {
+            self.ratingBusiness.rating = self.myReview[0].rating!
+            self.tfTitle.text = self.myReview[0].title
+            self.tvDescription.text = self.myReview[0].description
+        }
     }
     
     @IBAction func btnSave(_ sender: UIBarButtonItem) {
@@ -66,13 +82,12 @@ class MyReviewViewController: UIViewController {
         business.reviews = arrayReview
         
         FIRFirestoreService.shared.updateReviewData(business: business)
+        self.dismiss(animated: true, completion: nil)
 
     }
     
     @IBAction func btnCancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
     
 }

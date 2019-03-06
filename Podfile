@@ -16,6 +16,6 @@ target 'KDBrasil' do
   pod 'FBSDKLoginKit'
   pod 'SWRevealViewController', '2.3.0'
   pod 'KRProgressHUD'
-  pod 'SSProgressBar'
+  pod 'IQKeyboardManagerSwift'
 
 end

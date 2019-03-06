@@ -28,8 +28,6 @@
 		9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC85222976AF0021D03D /* ViewController1.swift */; };
 		9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC87222976CB0021D03D /* ViewController2.swift */; };
 		9C329D8C220BA69700A74EFA /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C329D8B220BA69700A74EFA /* NavController.swift */; };
-		9C4150EC2229F0D2009FC652 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4150EB2229F0D2009FC652 /* Rating.swift */; };
-		9C4150EE2229F0E4009FC652 /* Rating.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4150ED2229F0E4009FC652 /* Rating.xib */; };
 		9C5C7F08221F17F200109152 /* UIColor Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F07221F17F200109152 /* UIColor Extensions.swift */; };
 		9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */; };
 		9C5C7F0C221F3BB500109152 /* UIImage Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0B221F3BB500109152 /* UIImage Extensions.swift */; };
@@ -50,6 +48,8 @@
 		9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5A220B3BB200F54782 /* GradientButton.swift */; };
 		9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5C220B3DB000F54782 /* GradientView.swift */; };
 		9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */; };
+		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
+		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
 		9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC72AD121D3FC9E0048C37B /* AppDelegate.swift */; };
 		9CC72AD721D3FC9E0048C37B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CC72AD521D3FC9E0048C37B /* Main.storyboard */; };
 		9CC72AD921D3FCA00048C37B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CC72AD821D3FCA00048C37B /* Assets.xcassets */; };
@@ -67,7 +67,6 @@
 		9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF8904220254F70015258F /* CreateAccountViewController.swift */; };
 		9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF10FED222458D60007B6EA /* Default-568h@2x.png */; };
 		9CF10FF022245C080007B6EA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10FEF22245C080007B6EA /* ProfileTableViewController.swift */; };
-		9CF10FF2222488460007B6EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CF10FF1222488460007B6EA /* GoogleService-Info.plist */; };
 		D60EAE92B31DEAB8AC845799 /* Pods_KDBrasil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33963E89EE0C915AF7BB4F09 /* Pods_KDBrasil.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,8 +95,6 @@
 		9C30CC85222976AF0021D03D /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		9C30CC87222976CB0021D03D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		9C329D8B220BA69700A74EFA /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
-		9C4150EB2229F0D2009FC652 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
-		9C4150ED2229F0E4009FC652 /* Rating.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Rating.xib; sourceTree = "<group>"; };
 		9C5C7F07221F17F200109152 /* UIColor Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extensions.swift"; sourceTree = "<group>"; };
 		9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
 		9C5C7F0B221F3BB500109152 /* UIImage Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage Extensions.swift"; sourceTree = "<group>"; };
@@ -118,6 +115,8 @@
 		9C933D5A220B3BB200F54782 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		9C933D5C220B3DB000F54782 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
 		9CC72ACE21D3FC9E0048C37B /* KDBrasil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDBrasil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC72AD121D3FC9E0048C37B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CC72AD621D3FC9E0048C37B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,7 +137,6 @@
 		9CEF8904220254F70015258F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9CF10FED222458D60007B6EA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9CF10FEF22245C080007B6EA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
-		9CF10FF1222488460007B6EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9E1A1C03E46D488B596B99A /* Pods-KDBrasil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KDBrasil.release.xcconfig"; path = "Pods/Target Support Files/Pods-KDBrasil/Pods-KDBrasil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +166,7 @@
 			children = (
 				9C1E4CE9222D78AD00939C97 /* ReviewsTableViewController.swift */,
 				9C1E4CEB222D78BE00939C97 /* MyReviewViewController.swift */,
+				9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -252,8 +251,6 @@
 			children = (
 				9C5C7F18221F516800109152 /* WeekHour.swift */,
 				9C5C7F1A221F517800109152 /* WeekHour.xib */,
-				9C4150EB2229F0D2009FC652 /* Rating.swift */,
-				9C4150ED2229F0E4009FC652 /* Rating.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -318,6 +315,7 @@
 		9CC72AD021D3FC9E0048C37B /* KDBrasil */ = {
 			isa = PBXGroup;
 			children = (
+				9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */,
 				9C5C7F17221F514C00109152 /* xib */,
 				9C5C7F15221F45AB00109152 /* Resources */,
 				9CB91C9A220DF28600DD4933 /* Objects */,
@@ -331,7 +329,6 @@
 				9CC72AE621D404800048C37B /* Model */,
 				9CC72AE521D404740048C37B /* Cells */,
 				9CC72AD821D3FCA00048C37B /* Assets.xcassets */,
-				9CF10FF1222488460007B6EA /* GoogleService-Info.plist */,
 				9CC72AE921D406F20048C37B /* KDBrasil-Bridging-Header.h */,
 				9CC72ADD21D3FCA00048C37B /* Info.plist */,
 			);
@@ -484,13 +481,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2CD86021D92679005F688E /* BusinessCell.xib in Resources */,
+				9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */,
 				9CC72ADC21D3FCA00048C37B /* LaunchScreen.storyboard in Resources */,
-				9C4150EE2229F0E4009FC652 /* Rating.xib in Resources */,
 				9CC72AD921D3FCA00048C37B /* Assets.xcassets in Resources */,
 				9CC72AD721D3FC9E0048C37B /* Main.storyboard in Resources */,
 				9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */,
 				9C5C7F1B221F517800109152 /* WeekHour.xib in Resources */,
-				9CF10FF2222488460007B6EA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,11 +509,11 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SSProgressBar/SSProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -535,11 +531,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -600,10 +596,10 @@
 				9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */,
 				9C329D8C220BA69700A74EFA /* NavController.swift in Sources */,
 				9C30CC842229769E0021D03D /* ViewController3.swift in Sources */,
+				9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */,
 				9C160BEB21F8DEBE009232DD /* Service.swift in Sources */,
 				9C8DF5E7222D888300D8C976 /* Review.swift in Sources */,
 				9C8DF5EB222DA93700D8C976 /* ReviewsTableViewCell.swift in Sources */,
-				9C4150EC2229F0D2009FC652 /* Rating.swift in Sources */,
 				9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */,
 				9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */,
 				9CCA9DBE21E015C900ADA845 /* Category.swift in Sources */,

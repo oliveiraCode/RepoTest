@@ -193,7 +193,7 @@ class FIRFirestoreService {
         }
         
     }
-
+    
     //MARK - removeMyBusiness
     func updateReviewData(business:Business){
         
@@ -211,18 +211,6 @@ class FIRFirestoreService {
                 print("data updated business")
             }
         }
-        
-//        businessRef.document(business.id!).updateData(
-//            [
-//                "rating": Service.shared.calculateRating(reviews: business.reviews!)
-//            ]
-//        ) { (error) in
-//            if error != nil {
-//                print("error \(error!.localizedDescription)")
-//            } else {
-//                print("data saved business")
-//            }
-//        }
         
     }
     

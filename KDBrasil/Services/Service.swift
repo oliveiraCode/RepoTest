@@ -32,10 +32,10 @@ class Service {
     }
     
     func getTodaysDate() -> String{
-
+        
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
-      
+        
         return dateFormatterGet.string(from: Date())
     }
     
@@ -90,14 +90,17 @@ class Service {
     
     func calculateRating(reviews:[Review]) -> Double {
         
-        var totalRating:Double = 0.0
-        for value in reviews.enumerated() {
-            totalRating += value.element.rating!
+        if reviews.count > 0 {
+            var totalRating:Double = 0.0
+            for value in reviews.enumerated() {
+                totalRating += value.element.rating!
+            }
+            return Double(round(10*(totalRating / Double((reviews.count))))/10)
+        } else {
+            return 0
         }
-        
-        return Double(round(10*(totalRating / Double((reviews.count))))/10)
     }
-
+    
 }
 
 

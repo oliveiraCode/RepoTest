@@ -20,13 +20,16 @@ class ReviewsTableViewController: UITableViewController {
     
     var business = Business()
     var myReview:[Review]? = []
+    var isEditingReview:Bool?
+    var indexPathSelected:IndexPath?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Avaliações"
     }
+    
     
     func updateUI(){
         
@@ -34,9 +37,11 @@ class ReviewsTableViewController: UITableViewController {
         btnReview.layer.borderWidth = 0.5
         btnReview.layer.cornerRadius = btnReview.bounds.height / 2
         btnReview.clipsToBounds = true
+        btnReview.isEnabled = true
+        isEditingReview = false
         
         
-        guard let reviews = self.business.reviews else {return}
+        guard var reviews = self.business.reviews else {return}
         self.cvRating.settings.fillMode = .half
         self.lbRating.text =   "\(Service.shared.calculateRating(reviews: reviews))"
         self.cvRating.rating = Service.shared.calculateRating(reviews: reviews)
@@ -51,17 +56,24 @@ class ReviewsTableViewController: UITableViewController {
         for (index, value) in reviews.enumerated() {
             if value.user_id == appDelegate.userObj.id {
                 myReview = [reviews[index]]
-                self.business.reviews?.remove(at: index)
+                reviews.remove(at: index)
+                break
             }
         }
+        self.business.reviews = reviews
         
-        self.tableView.reloadData()
+        tableView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
+        if (myReview?.count)! > 0 {
+            btnReview.isEnabled = false
+        }
     }
+    
     
     // MARK: - Table view data source
     
@@ -82,10 +94,13 @@ class ReviewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        if section == 0 {
+        switch section {
+        case 0:
             return self.myReview?.count ?? 0
-        } else {
+        case 1:
             return self.business.reviews?.count ?? 0
+        default:
+            return 0
         }
         
     }
@@ -94,28 +109,34 @@ class ReviewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewsTableViewCell
         
-        guard let reviews = self.business.reviews else {return cell}
         
-        if indexPath.section == 0 {
+        if myReview!.count > 0 && indexPath.section == 0{
+            
             cell.lbTitle.text = myReview![indexPath.row].title
             cell.cvRating.rating = myReview![indexPath.row].rating!
             cell.lbRating.text = "\(myReview![indexPath.row].rating!)"
             cell.lbDescription.text = myReview![indexPath.row].description
-            cell.lbDate_review.text = "\(myReview?[indexPath.row].user_name!) \(myReview![indexPath.row].date_review!)"
-        }
-        
-        if indexPath.section == 1 {
-            cell.lbTitle.text = reviews[indexPath.row].title
-            cell.cvRating.rating = reviews[indexPath.row].rating!
-            cell.lbRating.text = "\(reviews[indexPath.row].rating!)"
-            cell.lbDescription.text = reviews[indexPath.row].description
-            cell.lbDate_review.text = "\(reviews[indexPath.row].user_name!) \(reviews[indexPath.row].date_review!)"
+            cell.lbDate_review.text = "\(myReview![indexPath.row].user_name!) \(myReview![indexPath.row].date_review!)"
             
         }
+        
+        if self.business.reviews!.count > 0 && indexPath.section == 1{
+            
+            cell.lbTitle.text = self.business.reviews![indexPath.row].title
+            cell.cvRating.rating = self.business.reviews![indexPath.row].rating!
+            cell.lbRating.text = "\(self.business.reviews![indexPath.row].rating!)"
+            cell.lbDescription.text = self.business.reviews![indexPath.row].description
+            cell.lbDate_review.text = "\(self.business.reviews![indexPath.row].user_name!) \(self.business.reviews![indexPath.row].date_review!)"
+            
+        }
+        
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.indexPathSelected = indexPath
+        performSegue(withIdentifier: "showViewReviewVC", sender: nil)
+    }
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -123,46 +144,32 @@ class ReviewsTableViewController: UITableViewController {
         
         if indexPath.section == 0 {
             return true
+        } else {
+            return false
         }
-        return false
+        
     }
     
-
+    
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-
-        
         let deleteAction = UIContextualAction(style: .destructive, title: "Deletar") { (contextualAction, view, success) in
             
-    
-//            for (index, value) in self.business.reviews!.enumerated() {
-//                if value.user_id == self.appDelegate.userObj.id {
-//                    self.myReview?.removeAll()
-//                    self.business.reviews?.remove(at: index)
-//                    tableView.deleteRows(at: [indexPath], with: .fade)
-//                    tableView.reloadData()
-//                    break
-//                }
-//            }
-//            
-            
-            
-        //    FIRFirestoreService.shared.updateReviewData(business: self.business)
+            FIRFirestoreService.shared.updateReviewData(business: self.business)
             
             self.myReview?.removeAll()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            print("indexPath \(indexPath)")
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.updateUI()
             success(true)
         }
         
         
         let editAction = UIContextualAction(style: .normal, title: "Editar") { (contextualAction, view, success) in
             
-           // self.businessIndexPathSelected = indexPath.row
-          //  self.performSegue(withIdentifier: "showEditBusinessVC", sender: nil)
+            self.isEditingReview = true
+            self.performSegue(withIdentifier: "showReviewVC", sender: nil)
             
             success(false)
         }
@@ -208,7 +215,25 @@ class ReviewsTableViewController: UITableViewController {
             let navController = segue.destination as! UINavigationController
             let destController = navController.topViewController as! MyReviewViewController
             destController.business = business
+            if isEditingReview! {
+                destController.myReview = myReview!
+            }
+            
+
         }
+        if segue.identifier == "showViewReviewVC" {
+            let destController = segue.destination as! ViewReviewViewController
+            destController.business = business
+            
+            if indexPathSelected?.section == 0 {
+                destController.myReview = myReview!
+            }
+            if indexPathSelected?.section == 1 {
+                destController.myReview = [business.reviews![(indexPathSelected?.row)!]]
+            }
+            
+        }
+        
         
         
     }
