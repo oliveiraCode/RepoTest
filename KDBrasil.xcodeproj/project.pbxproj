@@ -35,6 +35,7 @@
 		9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0F221F3D2400109152 /* GradientToolBar.swift */; };
 		9C5C7F19221F516800109152 /* WeekHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F18221F516800109152 /* WeekHour.swift */; };
 		9C5C7F1B221F517800109152 /* WeekHour.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F1A221F517800109152 /* WeekHour.xib */; };
+		9C6F03F92232EEFB000B828F /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F03F82232EEFB000B828F /* Countries.swift */; };
 		9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C71502A2204899F00DA86AA /* KDBrasil.xcdatamodeld */; };
 		9C8CA97921FF6A390081B96B /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CA97821FF6A390081B96B /* MenuTableViewCell.swift */; };
 		9C8CA97B21FFAF970081B96B /* LocationManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */; };
@@ -103,6 +104,8 @@
 		9C5C7F0F221F3D2400109152 /* GradientToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientToolBar.swift; sourceTree = "<group>"; };
 		9C5C7F18221F516800109152 /* WeekHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHour.swift; sourceTree = "<group>"; };
 		9C5C7F1A221F517800109152 /* WeekHour.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekHour.xib; sourceTree = "<group>"; };
+		9C6F03F82232EEFB000B828F /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		9C6F03FC223314F2000B828F /* Montreal.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Montreal.gpx; sourceTree = "<group>"; };
 		9C71502B2204899F00DA86AA /* BrasilNaMao.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrasilNaMao.xcdatamodel; sourceTree = "<group>"; };
 		9C8CA97821FF6A390081B96B /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerService.swift; sourceTree = "<group>"; };
@@ -215,6 +218,7 @@
 			children = (
 				9CEF890022023D9A0015258F /* BusinessAnnotation.swift */,
 				9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */,
+				9C6F03FC223314F2000B828F /* Montreal.gpx */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 				9CCA9DBD21E015C900ADA845 /* Category.swift */,
 				9C04E8F42204B14E00C46412 /* User.swift */,
 				9C933D31220A2DC500F54782 /* DailyHours.swift */,
+				9C6F03F82232EEFB000B828F /* Countries.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KDBrasil/Pods-KDBrasil-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
@@ -535,6 +541,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
@@ -620,6 +627,7 @@
 				9C160BEE21F909B6009232DD /* UIVC Extensions.swift in Sources */,
 				9C30CC7E222877E50021D03D /* LoginMainViewController.swift in Sources */,
 				9C2CD85F21D92679005F688E /* BusinessCell.swift in Sources */,
+				9C6F03F92232EEFB000B828F /* Countries.swift in Sources */,
 				9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */,
 				9CC72AF521D43E930048C37B /* Contact.swift in Sources */,
 				9C5C7F0C221F3BB500109152 /* UIImage Extensions.swift in Sources */,
@@ -797,7 +805,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W37KBBDQBC;
 				INFOPLIST_FILE = "$(SRCROOT)/KDBrasil/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -818,7 +826,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W37KBBDQBC;
 				INFOPLIST_FILE = "$(SRCROOT)/KDBrasil/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

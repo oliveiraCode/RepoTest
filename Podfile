@@ -17,5 +17,6 @@ target 'KDBrasil' do
   pod 'SWRevealViewController', '2.3.0'
   pod 'KRProgressHUD'
   pod 'IQKeyboardManagerSwift'
+  pod 'Alamofire'
 
 end

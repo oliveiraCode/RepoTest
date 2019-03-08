@@ -139,7 +139,7 @@ class BusinessesTableViewController: UITableViewController {
         } else {
             return 0
         }
-
+        
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -196,14 +196,29 @@ class BusinessesTableViewController: UITableViewController {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Deletar") { (contextualAction, view, success) in
             
-            //remove business from database and storage
-            FIRFirestoreService.shared.removeData(business: self.businesses[indexPath.row])
             
-            //remove business from TableView
-            self.businesses.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let alert = UIAlertController(title: "", message: "Tem certeza que você deseja deletar esse anúncio?", preferredStyle: .alert)
             
-            success(true)
+            alert.addAction(UIAlertAction(title: "Deletar", style: .destructive, handler: { (_) in
+                //remove business from database
+                FIRFirestoreService.shared.removeData(business: self.businesses[indexPath.row])
+                
+                //remove images from storage
+                FIRFirestoreService.shared.removeStorage(business: self.businesses[indexPath.row])
+                
+                
+                //remove business from TableView
+                self.businesses.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                success(true)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler:  { (_) in
+                success(false)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
         }
         
         

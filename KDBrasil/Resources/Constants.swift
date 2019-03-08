@@ -62,7 +62,7 @@ enum LocalizationKeys {
     static let termOfUse = "O aplicativo KD Brasil tem como objetivo a divulgação, informação e aproximação de clientes e prestadores de serviços. O KD Brasil é uma plataforma criada com o intuito de otimizar o contato inicial entre prestadores de serviços, previamente cadastrados no aplicativo, e consumidor final. \n\nA utilização deste aplicativo é gratuita para o usuário. Ao instalar o app e concordar com o presente Termo de Uso, o usuário entende que poderá receber notificações e ter sua localização determinada pelo KD Brasil. \n\nO usuário não pode utilizar o aplicativo para qualquer finalidade ilegal ou não autorizada. Você concorda em cumprir todas as leis, regras e regulamentações (por exemplo, federal estadual e municipal) aplicáveis ao seu uso do KD Brasil e seu conteúdo, incluindo, mas não limitado a leis de direitos autorais."
     
     //Share App
-    static let shareApp = "Você já conhece o app KD Brasil? Não? 😱😱\nSe liga na novidade e encontre o serviço que você mais precisa.\nBaixe agora, é grátis! \n"
+    static let shareApp = "Você já conhece o app KD Brasil? Não? 😱😱\nSe liga na novidade e encontre o serviço que você mais precisa.\nBaixe agora, é grátis! \nhttps://itunes.apple.com/ca/app/kd-brasil/id1454261196?mt=8"
     
 }
 
@@ -96,6 +96,7 @@ enum General {
     static let errorSigingUp = "Ocorreu um erro para logar, tente novamente."
     static let warningPhotoCameraDenied = "O acesso a sua biblioteca de fotos e/ou a câmera foi negado anteriormente, por favor, vá no menu configurações do seu celular e habilite novamente."
     static let businessCreated = "Anúncio criado com sucesso."
+    static let businessEdited = "Anúncio atualizado com sucesso."
     static let removeAccount = "Essa operação não poderá ser desfeita e os seus dados (perfil e anúncios) serão perdidos. Deseja continuar ?"
     static let featureUnavailable = "Recurso indisponível nessa versão."
     
@@ -132,22 +133,15 @@ enum CommonWarning {
     static let  errorNewReviews = "Você precisa estar conectado para avaliar esse anúncio."
 }
 
-
-enum State{
+enum API_GeoNames {
     
-    static let stateFull = ["AB - Alberta",
-                            "BC - Colúmbia Britânica",
-                            "MB - Manitoba",
-                            "NB - New Brunswick",
-                            "NL - Terra Nova e Labrador",
-                            "NS - Nova Escócia",
-                            "NT - Territórios do Noroeste",
-                            "NU - Nunavut",
-                            "ON - Ontário",
-                            "PE - Ilha do Príncipe Eduardo",
-                            "QC - Quebec",
-                            "SK - Saskatchewan",
-                            "YT - Yukon"]
-    static let stateAlphaCode =  ["AB","BC","MB","NB","NL","NS","NT","NU","ON","PE","QC","SK","YT"]
+    private static let username = "lfoliveira"
+    static let url_searchJSON_default = "http://api.geonames.org/searchJSON?username="+username
+    
+    
+    static let url_searchJSON_countryCode = "https://secure.geonames.org/countryCode?type=JSON&username="+username+"&"
+    
+    static let url_searchJSON_states = "https://secure.geonames.org/searchJSON?username="+username+"&featureCode=ADM1&adminCode1&style=MEDIUM&country="
+    
     
 }

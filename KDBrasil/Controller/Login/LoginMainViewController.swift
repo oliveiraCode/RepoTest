@@ -63,60 +63,52 @@ class LoginMainViewController: UIViewController {
         //Show Activity Indicator
         self.activityIndicator.startAnimating()
         
-        //Remove user from Firebase Account
-        Auth.auth().currentUser?.delete(completion: { (error) in
-            if error == nil {
-                print("usuário deletado com sucesso")
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signInAndRetrieveData(with: credential){(result,error) in
+            
+            if error == nil{
+                self.appDelegate.userObj.email = result?.user.email!
                 
-                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                Auth.auth().signInAndRetrieveData(with: credential){(result,error) in
-                    
-                    if error == nil{
-                        self.appDelegate.userObj.email = result?.user.email!
+                let fullName = result?.user.displayName
+                let fullNameArr = fullName!.components(separatedBy: " ")
+                self.appDelegate.userObj.firstName = fullNameArr[0]
+                self.appDelegate.userObj.lastName = fullNameArr[1]
+                self.appDelegate.userObj.id = result?.user.uid
+                self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
+                self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
+                self.appDelegate.userObj.isFacebook = true
+                
+                let dateFormatterGet = DateFormatter()
+                dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                
+                self.appDelegate.userObj.creationDate = dateFormatterGet.string(from: (result?.user.metadata.creationDate)!)
+                
+                var imageFacebook = UIImageView()
+                imageFacebook.kf.setImage(with: (result?.user.photoURL)!){
+                    result in
+                    switch result {
+                    case .success(let value):
+                        self.appDelegate.userObj.image = value.image
+                        FIRFirestoreService.shared.saveImageToStorage()
+                        FIRFirestoreService.shared.saveProfileToFireStore()
+                        CoreDataService.shared.saveCurrentUserToCoreData()
                         
-                        let fullName = result?.user.displayName
-                        let fullNameArr = fullName!.components(separatedBy: " ")
-                        self.appDelegate.userObj.firstName = fullNameArr[0]
-                        self.appDelegate.userObj.lastName = fullNameArr[1]
-                        self.appDelegate.userObj.id = result?.user.uid
-                        self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
-                        self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
-                        self.appDelegate.userObj.isFacebook = true
-                        
-                        let dateFormatterGet = DateFormatter()
-                        dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                        
-                        self.appDelegate.userObj.creationDate = dateFormatterGet.string(from: (result?.user.metadata.creationDate)!)
-                        
-                        var imageFacebook = UIImageView()
-                        imageFacebook.kf.setImage(with: (result?.user.photoURL)!){
-                            result in
-                            switch result {
-                            case .success(let value):
-                                self.appDelegate.userObj.image = value.image
-                                FIRFirestoreService.shared.saveImageToStorage()
-                                FIRFirestoreService.shared.saveProfileToFireStore()
-                                CoreDataService.shared.saveCurrentUserToCoreData()
-                                
-                                self.activityIndicator.stopAnimating()
-                                self.dismiss(animated: true, completion: nil)
-                                
-                            case .failure(let error):
-                                self.activityIndicator.stopAnimating()
-                                print("Job failed: \(error.localizedDescription)")
-                            }
-                        }
-                        
-                    }else{
                         self.activityIndicator.stopAnimating()
-                        self.showAlert(title: "Erro", message: "Não foi possível conectar usando os dados dessa conta, verifique o e-mail e tente novamente.")
-                        print("Could not Login user \(String(describing: error?.localizedDescription))")
+                        self.dismiss(animated: true, completion: nil)
+                        
+                    case .failure(let error):
+                        self.activityIndicator.stopAnimating()
+                        print("Job failed: \(error.localizedDescription)")
                     }
                 }
                 
+            }else{
+                self.activityIndicator.stopAnimating()
+                self.showAlert(title: "Erro", message: "Não foi possível conectar usando os dados dessa conta, verifique o e-mail e tente novamente.")
+                print("Could not Login user \(String(describing: error?.localizedDescription))")
             }
-        })
-        
+        }
+
     }
     
     @IBAction func btnLoginNotNow(_ sender: Any) {

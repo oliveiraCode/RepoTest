@@ -13,12 +13,14 @@ import Kingfisher
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //IBOoutlets
+    @IBOutlet weak var btnFlagCountry: UIBarButtonItem!
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //Properties
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var businesses = [Business]()
     var businessesFiltered = [Business]()
     var selectedSegmentIndex = 0 //value dafault is name
@@ -41,9 +43,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshTableView.endRefreshing()
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btnFlagCountry.image = UIImage(named: "\(appDelegate.currentCountry?.countryCode ?? "CA")")
+
         //start once the page view controller
         if !(UserDefaults.standard.bool(forKey: "Welcome")) {
             let offset = 0.1

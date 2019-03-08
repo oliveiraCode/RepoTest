@@ -63,13 +63,19 @@ class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICol
     ]
     
     let pickerView = ToolbarPickerView()
-    let stateFull = State.stateFull
-    let stateAlphaCode =  State.stateAlphaCode
-   
+    var stateFull:[String] = []
+    var stateAlphaCode:[String] = []
+    
+    func setStates(){
+        for (_,value) in (appDelegate.currentCountry?.allStates?.geonames.enumerated())!{
+            stateFull.append(value.name!)
+            stateAlphaCode.append((value.adminCodes1?.ISO3166_2)!)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setStates()
         self.dateFormatter.dateFormat = "HH:mm"
         
         self.tfState.inputView = self.pickerView
@@ -249,8 +255,14 @@ class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICol
                     
                     FIRFirestoreService.shared.saveData(business: business, imageArray: self.imageArrayForStorage)
                     
+                    var messageBusiness:String
+                    if self.isNewBusiness! {
+                        messageBusiness = General.businessCreated
+                    } else {
+                        messageBusiness = General.businessEdited
+                    }
                      self.activityIndicator.stopAnimating()
-                    let alert = UIAlertController(title: General.congratulations, message: General.businessCreated, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "", message: messageBusiness, preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: General.OK, style: .default, handler: { (nil) in
                         self.dismiss(animated: true, completion: nil)

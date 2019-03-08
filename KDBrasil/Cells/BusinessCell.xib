@@ -125,7 +125,7 @@
                 <outlet property="ratingCosmosView" destination="qpE-Qu-jMO" id="wtg-fh-l2j"/>
                 <outlet property="view" destination="INn-lA-ihZ" id="qSU-CU-ybO"/>
             </connections>
-            <point key="canvasLocation" x="542" y="200"/>
+            <point key="canvasLocation" x="541.60000000000002" y="199.70014992503749"/>
         </tableViewCell>
     </objects>
     <resources>

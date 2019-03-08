@@ -217,11 +217,10 @@ class FIRFirestoreService {
     //MARK - removeMyBusiness
     func removeData(business:Business){
         db.collection(FIRCollectionReference.business).document("\(business.id!)").delete()
-        removeStore(business: business)
     }
     
     //MARK - removeMyBusinessStorage
-    func removeStore(business:Business) {
+    func removeStorage(business:Business) {
         
         //remove each image from store
         for (index,_) in (business.photosURL?.enumerated())!{
@@ -360,14 +359,6 @@ class FIRFirestoreService {
     
     //MARK: - createUser
     func createUser(completionHandler: @escaping (Error?) -> Void) {
-        
-        //Remove user from Firebase Account
-        Auth.auth().currentUser?.delete(completion: { (error) in
-            if error == nil {
-                print("usuário deletado com sucesso")
-            }
-        })
-        
         
         Auth.auth().createUser(withEmail: appDelegate.userObj.email, password: appDelegate.userObj.password) { (userResult, error) in
             

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 import Firebase
 import FBSDKCoreKit
 import IQKeyboardManagerSwift
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var userObj = User()
+    var currentCountry:Countries?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,14 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set default value as a initial value
         LocationManagerService.shared.getDefaultCLLocationValue()
+        LocationManagerService.shared.getCurrenctCountry()
         
         //get current user if it exists on coredata
         CoreDataService.shared.readCurrentUserFromCoreData()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        //Login anonymously when user starts app
-        Auth.auth().signInAnonymously(completion: nil)
         
         return true
     }

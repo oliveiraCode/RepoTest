@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import MapKit
+import Alamofire
 
 class LocationManagerService: NSObject, CLLocationManagerDelegate {
     
@@ -67,6 +68,69 @@ class LocationManagerService: NSObject, CLLocationManagerDelegate {
             }
         }
     }
-
+    
+    func getCurrenctCountry() {
+        
+        if let location = locationManager.location{
+            self.currentLocation = location
+        }
+        
+        var currentCountry:Countries?
+        
+        let url_api = "\(API_GeoNames.url_searchJSON_countryCode)lat=\(currentLocation.coordinate.latitude)&lng=\(currentLocation.coordinate.longitude)"
+        
+        let sessionManager = Alamofire.SessionManager.default
+        
+        sessionManager.request(url_api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).validate().responseJSON { response in
+            switch(response.result) {
+            case .success:
+                guard let dataFromJson = response.data else {return}
+                
+                do {
+                    currentCountry = try JSONDecoder().decode(Countries.self, from: dataFromJson)
+                
+                    (UIApplication.shared.delegate as! AppDelegate).currentCountry = currentCountry
+                    self.getAllStatesFromCountry()
+                }catch {}
+                break
+            case .failure:
+                print(response.result.error!)
+                break
+            }
+        }
+    }
+    
+    func getAllStatesFromCountry(){
+        
+        let countryCode = (UIApplication.shared.delegate as! AppDelegate).currentCountry?.countryCode ?? "CA"
+       
+        let url_api = "\(API_GeoNames.url_searchJSON_states+countryCode)"
+        
+        let sessionManager = Alamofire.SessionManager.default
+        
+        sessionManager.request(url_api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).validate().responseJSON { response in
+            switch(response.result) {
+            case .success:
+                guard let dataFromJson = response.data else {return}
+                
+                do {
+                    let allStatesFromCountry = try JSONDecoder().decode(States.self, from: dataFromJson)
+                    
+                    (UIApplication.shared.delegate as! AppDelegate).currentCountry?.allStates = allStatesFromCountry
+                    
+                    let newArraySorted = allStatesFromCountry.geonames.sorted(by: { ($0.name!) < ($1.name!) })
+                    
+                    (UIApplication.shared.delegate as! AppDelegate).currentCountry?.allStates?.geonames = newArraySorted
+                    
+                }catch {}
+                break
+            case .failure:
+                print(response.result.error!)
+                break
+            }
+        }
+        
+    }
+    
     
 }
