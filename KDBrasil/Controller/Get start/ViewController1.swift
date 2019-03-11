@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController1: UIViewController {
+class ViewController1: BaseViewController {
 
     @IBOutlet weak var imagePage: UIImageView!
     

@@ -75,6 +75,7 @@ class FIRFirestoreService {
                 "city": business.address!.city!,
                 "postalCode": business.address!.postalCode!,
                 "province": business.address!.province!,
+                "country": business.address!.country!,
                 "number": business.address!.number!,
                 "street": business.address!.street!,
                 "complement": business.address!.complement!,
@@ -175,6 +176,7 @@ class FIRFirestoreService {
                 "category": business.category!,
                 "user_id": business.user_id!,
                 "rating": business.rating!,
+                "country": business.country!,
                 "address":addressData,
                 "hours":hoursData,
                 "contact":contactData,
@@ -288,10 +290,14 @@ class FIRFirestoreService {
     //MARK: - readAllBusiness
     func readAllBusiness(completionHandler: @escaping ([Business?], Error?) -> Void) {
         
+        let country = appDelegate.currentCountry?.countryName ?? "Canada"
+        
         let businessRef = self.db.collection(FIRCollectionReference.business)
+        let query = businessRef.whereField("country", isEqualTo: country)
+ 
         var businesses = [Business]()
         
-        businessRef.order(by: "name", descending: true).getDocuments(source: .default) { (querySnapshot, err) in
+        query.order(by: "name", descending: true).getDocuments(source: .default) { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 completionHandler([nil],err)

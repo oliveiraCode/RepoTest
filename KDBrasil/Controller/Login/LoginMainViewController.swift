@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import FirebaseAuth
 
-class LoginMainViewController: UIViewController {
+class LoginMainViewController: BaseViewController {
     
     
     @IBOutlet weak var btnLogin: UIButton!

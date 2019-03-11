@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 import KRProgressHUD
 
-class DetailsBusinessViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,MKMapViewDelegate {
+class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource,MKMapViewDelegate {
     
     //IBOutlets
     

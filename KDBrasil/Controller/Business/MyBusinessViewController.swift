@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Kingfisher
 
-class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITextViewDelegate, UITextFieldDelegate  {
+class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITextViewDelegate, UITextFieldDelegate  {
     
     //IBOutlets
     @IBOutlet weak var tfName: UITextField!
@@ -231,6 +231,7 @@ class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICol
             guard let whatsapp = tfWhatsapp.text else {return}
             guard let web = tfWeb.text else {return}
             guard let category = btnCategory.title(for: .normal) else {return}
+            guard let country = appDelegate.currentCountry?.countryName else {return}
             
             self.activityIndicator.startAnimating()
             let creationDate:String
@@ -245,9 +246,9 @@ class MyBusinessViewController: UIViewController,UICollectionViewDelegate, UICol
                 if error == nil {
                     let contact:Contact = Contact(email: email, phone: phone,whatsapp: whatsapp, web: web)
                     
-                    let address:Address = Address(number: number, street: street, complement: complement, city: city, province: province, postalCode: postalCode, latitude: coordinate!.coordinate.latitude, longitude: coordinate!.coordinate.longitude)
+                    let address:Address = Address(number: number, street: street, complement: complement, city: city, province: province,country: country, postalCode: postalCode, latitude: coordinate!.coordinate.latitude, longitude: coordinate!.coordinate.longitude)
                     
-                    let business = Business(id:"", description: description, name: name,rating: 0.0, address: address, contact: contact, creationDate: creationDate, category: category, user_id: (UIApplication.shared.delegate as! AppDelegate).userObj.id, hours:self.dailyHoursArray, photosURL:["","",""])
+                    let business = Business(id:"", description: description, name: name,rating: 0.0, address: address, contact: contact, creationDate: creationDate, category: category, user_id: (UIApplication.shared.delegate as! AppDelegate).userObj.id, hours:self.dailyHoursArray, photosURL:["","",""],country:country)
                     
                     if !(self.isNewBusiness!) {
                         FIRFirestoreService.shared.removeData(business: self.businessDetails)

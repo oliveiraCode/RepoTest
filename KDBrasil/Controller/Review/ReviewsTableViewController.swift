@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Cosmos
 
-class ReviewsTableViewController: UITableViewController {
+class ReviewsTableViewController: BaseTableViewController {
     
     
     @IBOutlet weak var lbRatingValueString: UILabel!

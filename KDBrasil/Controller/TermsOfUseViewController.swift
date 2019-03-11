@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TermsOfUseViewController: UIViewController {
+class TermsOfUseViewController: BaseViewController {
 
     @IBOutlet weak var tvTermsOfUse: UITextView!
     

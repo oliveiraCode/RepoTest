@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 
-class ViewReviewViewController: UIViewController {
+class ViewReviewViewController: BaseViewController {
 
     @IBOutlet weak var imgBusiness: UIImageView!
     @IBOutlet weak var lbNameBusiness: UILabel!

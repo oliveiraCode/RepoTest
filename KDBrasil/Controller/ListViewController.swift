@@ -10,10 +10,9 @@ import UIKit
 import SWRevealViewController
 import Kingfisher
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
     
     //IBOoutlets
-    @IBOutlet weak var btnFlagCountry: UIBarButtonItem!
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -46,9 +45,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.delegate = self
         
-        btnFlagCountry.image = UIImage(named: "\(appDelegate.currentCountry?.countryCode ?? "CA")")
-
         //start once the page view controller
         if !(UserDefaults.standard.bool(forKey: "Welcome")) {
             let offset = 0.1
@@ -88,6 +86,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    // MARK: - TabBarController
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if viewController == tabBarController.viewControllers![1] {
+            let navController = tabBarController.viewControllers![1] as? UINavigationController
+            let secondVC = navController?.topViewController as! MapViewController
+            secondVC.businesses = businessesFiltered
+        }
+    }
     
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -153,7 +159,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+        changeTitleNavigatorBar()
+    }
+    
+    
+    func changeTitleNavigatorBar(){
+        let logo = UIImage(named: "logo_navbar")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
     }
     
     //MARK: - Methods Segmented Control

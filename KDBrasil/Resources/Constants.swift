@@ -75,8 +75,9 @@ enum periodOfDay {
 
 enum Coordinates {
     //set coordinates from Montreal - approximate
-    static let latitude = 45.5576996
-    static let longitude = -74.0104841
+    static let latitude = 45.50884
+    static let longitude = -73.58781
+
 }
 
 enum Placeholders {
@@ -101,11 +102,6 @@ enum General {
     static let featureUnavailable = "Recurso indisponível nessa versão."
     
 }
-
-enum CoreDataConstants{
-    static let CDUser = "CDUser"
-}
-
 
 enum FirebaseAuthErrors {
     static let invalidEmail = "E-mail inválido."

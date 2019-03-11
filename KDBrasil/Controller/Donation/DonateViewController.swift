@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class DonateViewController: UIViewController, WKNavigationDelegate{
+class DonateViewController: BaseViewController, WKNavigationDelegate{
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

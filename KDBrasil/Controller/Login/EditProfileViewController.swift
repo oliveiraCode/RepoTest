@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import KRProgressHUD
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: BaseViewController {
     
     
     //IBOutlets

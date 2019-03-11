@@ -11,33 +11,51 @@ import MessageUI
 import FirebaseAuth
 import SWRevealViewController
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: BaseTableViewController {
     
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     //to know more https://medium.com/@mimicatcodes/create-unwind-segues-in-swift-3-8793f7d23c6f
     @IBAction func unWindToSettings(segue:UIStoryboardSegue) {}
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let mailComposerVC = MFMailComposeViewController()
-    let sectionArray:[String] = ["Conta","Sobre","Feedback","Versão 1.0.1"]
+    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão 2.0.1"]
     
     let img0:[UIImage] = [UIImage(named: "account_color")!]
     let settings0:[String] = [NSLocalizedString(LocalizationKeys.settingsAccount, comment: "")]
     
-    let img1:[UIImage] = [UIImage(named: "terms_color")!,
+    let img2:[UIImage] = [UIImage(named: "terms_color")!,
                           UIImage(named: "privacy_color")!]
-    let settings1:[String] = [NSLocalizedString(LocalizationKeys.settingsTermsOfUse, comment: ""),
+    let settings2:[String] = [NSLocalizedString(LocalizationKeys.settingsTermsOfUse, comment: ""),
                               NSLocalizedString(LocalizationKeys.settingsPrivacy, comment: "")]
     
-    let img2:[UIImage] = [UIImage(named: "share_color")!,
+    let img3:[UIImage] = [UIImage(named: "share_color")!,
                           UIImage(named: "donate_color")!,
                           UIImage(named: "contact_us_color")!]
-    let settings2:[String] = [NSLocalizedString(LocalizationKeys.settingsShare, comment: ""),
+    let settings3:[String] = [NSLocalizedString(LocalizationKeys.settingsShare, comment: ""),
                               NSLocalizedString(LocalizationKeys.settingsDonate, comment: ""),
                               NSLocalizedString(LocalizationKeys.settingsContactUs, comment: "")]
+    
+    var imgCountry:[UIImage] = []
+    var country:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenus()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateUI()
+    }
+    
+    func updateUI(){
+        imgCountry.removeAll()
+        country.removeAll()
+        imgCountry.append(UIImage(named: (appDelegate.currentCountry?.countryCode)!+"32")!)
+        country.append((appDelegate.currentCountry?.countryName)!)
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -58,9 +76,11 @@ class SettingsTableViewController: UITableViewController {
         case 0:
             return self.settings0.count
         case 1:
-            return self.settings1.count
+            return self.country.count
         case 2:
             return self.settings2.count
+        case 3:
+            return self.settings3.count
         default:
             return 0
         }
@@ -76,13 +96,18 @@ class SettingsTableViewController: UITableViewController {
         }
         
         if indexPath.section == 1 {
-            cell.lbSettings.text = self.settings1[indexPath.row]
-            cell.imgSettings.image = self.img1[indexPath.row]
+            cell.lbSettings.text = self.country[indexPath.row]
+            cell.imgSettings.image = self.imgCountry[indexPath.row]
         }
         
         if indexPath.section == 2 {
             cell.lbSettings.text = self.settings2[indexPath.row]
             cell.imgSettings.image = self.img2[indexPath.row]
+        }
+        
+        if indexPath.section == 3 {
+            cell.lbSettings.text = self.settings3[indexPath.row]
+            cell.imgSettings.image = self.img3[indexPath.row]
         }
         
         return cell
@@ -106,7 +131,18 @@ class SettingsTableViewController: UITableViewController {
             }
         }
         
+        
         if indexPath.section == 1 {
+            switch indexPath.row {
+            case 0:
+                performSegue(withIdentifier: "showChangeCountryVC", sender: nil)
+                break
+            default:
+                print("done")
+            }
+        }
+        
+        if indexPath.section == 2 {
             switch indexPath.row {
             case 0:
                 performSegue(withIdentifier: "showTermsOfUseVC", sender: nil)
@@ -119,7 +155,7 @@ class SettingsTableViewController: UITableViewController {
             }
         }
         
-        if indexPath.section == 2 {
+        if indexPath.section == 3 {
             switch indexPath.row {
             case 0:
                 let activityViewController = UIActivityViewController(activityItems: [ LocalizationKeys.shareApp ], applicationActivities: nil)

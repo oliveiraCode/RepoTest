@@ -21,9 +21,10 @@ class Business:Codable {
     var hours:[DailyHours]?
     var photosURL:[String]?
     var reviews:[Review]?
+    var country:String?
     
     
-    init(id:String, description:String, name:String,  rating: Double,address:Address, contact:Contact, creationDate:String, category:String, user_id:String, hours:[DailyHours], photosURL:[String]) {
+    init(id:String, description:String, name:String,  rating: Double,address:Address, contact:Contact, creationDate:String, category:String, user_id:String, hours:[DailyHours], photosURL:[String],country:String) {
         self.id = id
         self.description = description
         self.name = name
@@ -35,6 +36,7 @@ class Business:Codable {
         self.user_id = user_id
         self.hours = hours
         self.photosURL = photosURL
+        self.country = country
     }
     
     init() {}
@@ -49,11 +51,12 @@ class Business:Codable {
             let user_id = data["user_id"] as? String,
             let creationDate = data["creationDate"] as? String,
             let photosURL = data["photosURL"] as? [String],
+            let country = data["country"] as? String,
             let rating = data["rating"] as? Double else {
                 return nil
         }
         
-        self.init(id: id, description: description, name: name, rating: rating, address: addressObj, contact: contactObj, creationDate: creationDate, category: category, user_id: user_id, hours: dailyHoursArray,photosURL: photosURL)
+        self.init(id: id, description: description, name: name, rating: rating, address: addressObj, contact: contactObj, creationDate: creationDate, category: category, user_id: user_id, hours: dailyHoursArray,photosURL: photosURL,country: country)
     }
     
 }

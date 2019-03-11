@@ -14,17 +14,19 @@ class Address:Codable {
     var complement:String?
     var city:String?
     var province:String?
+    var country:String?
     var postalCode:String?
     var latitude:Double?
     var longitude:Double?
     var distance:Double?
     
-    init(number:String,street:String, complement:String, city:String, province:String, postalCode:String, latitude:Double, longitude:Double) {
+    init(number:String,street:String, complement:String, city:String, province:String, country:String, postalCode:String, latitude:Double, longitude:Double) {
         self.number = number
         self.street = street
         self.complement = complement
         self.city = city
         self.province = province
+        self.country = country
         self.postalCode = postalCode
         self.latitude = latitude
         self.longitude = longitude
@@ -43,13 +45,14 @@ class Address:Codable {
             let complement = data["complement"] as? String,
             let city = data["city"] as? String,
             let province = data["province"] as? String,
+            let country = data["country"] as? String,
             let postalCode = data["postalCode"] as? String,
             let latitude = data["latitude"] as? Double,
             let longitude = data["longitude"] as? Double else {
                 return nil
         }
         
-        self.init(number: number, street: street, complement: complement, city: city, province: province, postalCode: postalCode, latitude: latitude, longitude: longitude)
+        self.init(number: number, street: street, complement: complement, city: city, province: province, country:country,postalCode: postalCode, latitude: latitude, longitude: longitude)
 
     }
     

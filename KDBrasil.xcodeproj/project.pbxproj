@@ -36,9 +36,14 @@
 		9C5C7F19221F516800109152 /* WeekHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F18221F516800109152 /* WeekHour.swift */; };
 		9C5C7F1B221F517800109152 /* WeekHour.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F1A221F517800109152 /* WeekHour.xib */; };
 		9C6F03F92232EEFB000B828F /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F03F82232EEFB000B828F /* Countries.swift */; };
+		9C6F03FF2234175C000B828F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F03FE2234175C000B828F /* MapViewController.swift */; };
+		9C6F0401223471FE000B828F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F0400223471FE000B828F /* MainViewController.swift */; };
+		9C6F040322349BDF000B828F /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F040222349BDF000B828F /* Connection.swift */; };
+		9C6F040522349C26000B828F /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F040422349C26000B828F /* OfflineViewController.swift */; };
+		9C6F04072234A152000B828F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F04062234A152000B828F /* BaseViewController.swift */; };
+		9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F04082234A68E000B828F /* BaseTableViewController.swift */; };
 		9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C71502A2204899F00DA86AA /* KDBrasil.xcdatamodeld */; };
 		9C8CA97921FF6A390081B96B /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CA97821FF6A390081B96B /* MenuTableViewCell.swift */; };
-		9C8CA97B21FFAF970081B96B /* LocationManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */; };
 		9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */; };
 		9C8DE2E02202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */; };
 		9C8DF5E7222D888300D8C976 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DF5E6222D888300D8C976 /* Review.swift */; };
@@ -64,6 +69,7 @@
 		9CCA9DBE21E015C900ADA845 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBD21E015C900ADA845 /* Category.swift */; };
 		9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */; };
 		9CCE638122178A9B005EF258 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */; };
+		9CD6B3682235A50C0081B446 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6B3672235A50C0081B446 /* CountriesViewController.swift */; };
 		9CDA3F4E222F5D250051180B /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA3F4D222F5D250051180B /* DonateViewController.swift */; };
 		9CEF890122023D9A0015258F /* BusinessAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF890022023D9A0015258F /* BusinessAnnotation.swift */; };
 		9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF8904220254F70015258F /* CreateAccountViewController.swift */; };
@@ -106,9 +112,14 @@
 		9C5C7F1A221F517800109152 /* WeekHour.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekHour.xib; sourceTree = "<group>"; };
 		9C6F03F82232EEFB000B828F /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		9C6F03FC223314F2000B828F /* Montreal.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Montreal.gpx; sourceTree = "<group>"; };
+		9C6F03FE2234175C000B828F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9C6F0400223471FE000B828F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9C6F040222349BDF000B828F /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		9C6F040422349C26000B828F /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
+		9C6F04062234A152000B828F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9C6F04082234A68E000B828F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		9C71502B2204899F00DA86AA /* BrasilNaMao.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrasilNaMao.xcdatamodel; sourceTree = "<group>"; };
 		9C8CA97821FF6A390081B96B /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerService.swift; sourceTree = "<group>"; };
 		9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessViewController.swift; sourceTree = "<group>"; };
 		9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C8DF5E6222D888300D8C976 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -137,6 +148,7 @@
 		9CCA9DBD21E015C900ADA845 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesTableViewController.swift; sourceTree = "<group>"; };
 		9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
+		9CD6B3672235A50C0081B446 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		9CDA3F4D222F5D250051180B /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		9CEF890022023D9A0015258F /* BusinessAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAnnotation.swift; sourceTree = "<group>"; };
 		9CEF8904220254F70015258F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -213,16 +225,6 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		9C5C7F13221F44E000109152 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				9CEF890022023D9A0015258F /* BusinessAnnotation.swift */,
-				9C8CA97A21FFAF970081B96B /* LocationManagerService.swift */,
-				9C6F03FC223314F2000B828F /* Montreal.gpx */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
 		9C5C7F14221F44F200109152 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +263,25 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		9C6F03FD22341746000B828F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9CEF890022023D9A0015258F /* BusinessAnnotation.swift */,
+				9C6F03FE2234175C000B828F /* MapViewController.swift */,
+				9C6F03FC223314F2000B828F /* Montreal.gpx */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9C6F040A2234A703000B828F /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F04062234A152000B828F /* BaseViewController.swift */,
+				9C6F04082234A68E000B828F /* BaseTableViewController.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
 		9CB72045220609AA001DE201 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +307,7 @@
 				9C933D2D2206639A00F54782 /* EditProfileViewController.swift */,
 				9C30CC7D222877E50021D03D /* LoginMainViewController.swift */,
 				9C30CC7F222880BF0021D03D /* LoginViewController.swift */,
+				9CD6B3672235A50C0081B446 /* CountriesViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -324,9 +346,10 @@
 				9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */,
 				9C5C7F17221F514C00109152 /* xib */,
 				9C5C7F15221F45AB00109152 /* Resources */,
+				9C6F040A2234A703000B828F /* BaseVC */,
+				9CD6B36B2236C52D0081B446 /* Network */,
 				9CB91C9A220DF28600DD4933 /* Objects */,
 				9C5C7F14221F44F200109152 /* Storyboard */,
-				9C5C7F13221F44E000109152 /* Map */,
 				9C5C7F12221F44B500109152 /* Firebase */,
 				9C5C7F11221F448E00109152 /* CoreData */,
 				9C25B73C21E944F700E332F8 /* Extensions */,
@@ -374,6 +397,9 @@
 		9CC72AE721D404860048C37B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C6F040422349C26000B828F /* OfflineViewController.swift */,
+				9C6F0400223471FE000B828F /* MainViewController.swift */,
+				9C6F03FD22341746000B828F /* Map */,
 				9CDA3F4C222F5D010051180B /* Donation */,
 				9C1E4CE8222D789400939C97 /* Review */,
 				9CD0BF06222720CE009FF480 /* Get start */,
@@ -406,6 +432,14 @@
 				9C30CC87222976CB0021D03D /* ViewController2.swift */,
 			);
 			path = "Get start";
+			sourceTree = "<group>";
+		};
+		9CD6B36B2236C52D0081B446 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F040222349BDF000B828F /* Connection.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9CDA3F4C222F5D010051180B /* Donation */ = {
@@ -519,6 +553,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KDBrasil/Pods-KDBrasil-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AnimatedTextInput/AnimatedTextInput.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
@@ -531,6 +566,7 @@
 				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -542,6 +578,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedTextInput.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
@@ -554,6 +591,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -601,15 +639,17 @@
 				9C25B73921E80A8E00E332F8 /* FIRFirestoreService.swift in Sources */,
 				9CC72AF721D440CD0048C37B /* MyBusinessViewController.swift in Sources */,
 				9C933D2C22061F7800F54782 /* ProfileTableViewCell.swift in Sources */,
+				9C6F0401223471FE000B828F /* MainViewController.swift in Sources */,
+				9CD6B3682235A50C0081B446 /* CountriesViewController.swift in Sources */,
 				9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */,
 				9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */,
 				9C30CC82222976430021D03D /* PageViewController.swift in Sources */,
 				9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */,
 				9C25B73B21E80CBB00E332F8 /* FIRCollectionReference.swift in Sources */,
-				9C8CA97B21FFAF970081B96B /* LocationManagerService.swift in Sources */,
 				9C933D2E2206639A00F54782 /* EditProfileViewController.swift in Sources */,
 				9C01410321E504380002345D /* CategoryTableViewController.swift in Sources */,
 				9CC72AE421D403910048C37B /* MenuViewController.swift in Sources */,
+				9C6F040522349C26000B828F /* OfflineViewController.swift in Sources */,
 				9CC72B0121D44EBA0048C37B /* SettingsTableViewController.swift in Sources */,
 				9CC72AF321D43E930048C37B /* Business.swift in Sources */,
 				9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */,
@@ -635,6 +675,8 @@
 				9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */,
 				9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */,
 				9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */,
+				9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */,
+				9C6F04072234A152000B828F /* BaseViewController.swift in Sources */,
 				9C1C85D221FA3FB100103655 /* PhotoCollectionViewCell.swift in Sources */,
 				9C5C7F08221F17F200109152 /* UIColor Extensions.swift in Sources */,
 				9C04E8F72204BACE00C46412 /* CoreDataService.swift in Sources */,
@@ -643,12 +685,14 @@
 				9C8CA97921FF6A390081B96B /* MenuTableViewCell.swift in Sources */,
 				9C04E8F52204B14E00C46412 /* User.swift in Sources */,
 				9C1C85D421FB8B0200103655 /* Constants.swift in Sources */,
+				9C6F040322349BDF000B828F /* Connection.swift in Sources */,
 				9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */,
 				9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */,
 				9C1E4CEA222D78AD00939C97 /* ReviewsTableViewController.swift in Sources */,
 				9C5C7F19221F516800109152 /* WeekHour.swift in Sources */,
 				9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */,
 				9C30CC80222880BF0021D03D /* LoginViewController.swift in Sources */,
+				9C6F03FF2234175C000B828F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import UIKit
 import Cosmos
 import Kingfisher
 
-class MyReviewViewController: UIViewController {
+class MyReviewViewController: BaseViewController {
     
     @IBOutlet weak var imgBusiness: UIImageView!
     @IBOutlet weak var lbNameBusiness: UILabel!

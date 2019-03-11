@@ -15,11 +15,10 @@ class CoreDataService {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    
-    //MARK - resetAllRecordsOnCoreData
+    //MARK: - Users
     func resetAllRecordsOnCoreData() {
         let context = self.appDelegate.persistentContainer.viewContext
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataConstants.CDUser)
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CDUser")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do{
             try context.execute(deleteRequest)
@@ -30,7 +29,6 @@ class CoreDataService {
         }
     }
     
-    //MARK - readCurrentUserFromCoreData
     func readCurrentUserFromCoreData(){
         
         var cdUser : [CDUser] = []
@@ -56,7 +54,6 @@ class CoreDataService {
         }
     }
     
-    //MARK - saveCurrentUserToCoreData
     func saveCurrentUserToCoreData(){
         resetAllRecordsOnCoreData() //to clear all user's data on coredata
         

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.1)
+  - AnimatedTextInput (0.5.5)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -124,10 +125,12 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.7.0)
+  - ReachabilitySwift (4.3.0)
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AnimatedTextInput
   - Cosmos
   - FBSDKLoginKit
   - Firebase/Auth
@@ -137,11 +140,13 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
   - KRProgressHUD
+  - ReachabilitySwift
   - SWRevealViewController (= 2.3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AnimatedTextInput
     - Bolts
     - BoringSSL-GRPC
     - Cosmos
@@ -167,10 +172,12 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - ReachabilitySwift
     - SWRevealViewController
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AnimatedTextInput: aadbdfa5a538a03cc9fbea700b43d2bb21a5d132
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
   Cosmos: 7dfaa3f52584ca5f94ab74b5c2e264019cc9f7f5
@@ -196,8 +203,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: 740b70786de2c3aeb997bb5e490cef885bd17324
+PODFILE CHECKSUM: 72f9a3d528860ce36ed45c3b68b0f1f3de9fcc79
 
 COCOAPODS: 1.5.3

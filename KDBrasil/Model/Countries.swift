@@ -7,26 +7,47 @@
 //
 
 import UIKit
-
+import CoreData
 
 //used in search results of country
-struct Countries:Codable {
-    let countryCode:String?
-    let countryName:String?
+class Countries:Codable {
+    var countryCode:String?
+    var countryName:String?
     var allStates:States?
+    
+//    required convenience init(coder aDecoder: NSCoder) {
+//        let countryCode = aDecoder.decodeObject(forKey: "countryCode") as! String
+//        let countryName = aDecoder.decodeObject(forKey: "countryName") as! String
+//        self.init(countryCode: countryCode, countryName: countryName)
+//    }
+//    
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(countryCode, forKey: "countryCode")
+//        aCoder.encode(countryName, forKey: "countryName")
+//    }
+//    
+//    init(countryCode: String, countryName: String) {
+//        self.countryCode = countryCode
+//        self.countryName = countryName
+//    }
+//    
+//    init(){}
+    
 }
 
 
-struct States:Codable {
+
+
+class States:Codable {
     var geonames:[Geonames]
 }
 
-struct Geonames:Codable{
+class Geonames:Codable{
     let name:String?
     let adminCodes1:AdminCodes?
 }
 
-struct AdminCodes:Codable{
+class AdminCodes:Codable{
     let ISO3166_2:String?
 }
 

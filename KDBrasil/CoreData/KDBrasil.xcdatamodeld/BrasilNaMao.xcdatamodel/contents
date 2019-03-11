@@ -14,6 +14,6 @@
         <attribute name="whatsapp" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDUser" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="CDUser" positionX="136.62109375" positionY="21.37890625" width="128" height="210"/>
     </elements>
 </model>

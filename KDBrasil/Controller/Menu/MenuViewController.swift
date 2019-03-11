@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class  MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class  MenuViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource{
     
     //IBOutlets
     @IBOutlet weak var btnSignInOut: UIButton!

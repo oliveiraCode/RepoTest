@@ -11,7 +11,7 @@ import SWRevealViewController
 import Kingfisher
 import FirebaseAuth
 
-class BusinessesTableViewController: UITableViewController {
+class BusinessesTableViewController: BaseTableViewController {
     
     //IBOutlets
     @IBOutlet weak var btnMenu: UIBarButtonItem!
@@ -72,7 +72,7 @@ class BusinessesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if (UIApplication.shared.delegate as! AppDelegate).userObj.id != nil{
+        if appDelegate.userObj.id != nil{
             self.tableView.refreshControl = refreshTableView
             self.updateTableViewWithDataFromFirebase()
         } else {
@@ -126,7 +126,7 @@ class BusinessesTableViewController: UITableViewController {
         headerLabel.textAlignment = .center
         headerLabel.backgroundColor = UIColor.clear
         
-        if Auth.auth().currentUser?.uid == nil {
+        if appDelegate.userObj.id == nil {
             topView.addSubview(headerLabel)
         }
         return topView
@@ -134,7 +134,7 @@ class BusinessesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        if Auth.auth().currentUser?.uid == nil {
+        if appDelegate.userObj.id == nil {
             return self.view.frame.height
         } else {
             return 0
@@ -274,7 +274,14 @@ class BusinessesTableViewController: UITableViewController {
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+        changeTitleNavigatorBar()
+    }
+    
+    
+    func changeTitleNavigatorBar(){
+        let logo = UIImage(named: "logo_navbar")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
     }
     
     //MARK: - Activity Indicator

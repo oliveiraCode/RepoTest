@@ -29,9 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         //set default value as a initial value
-        LocationManagerService.shared.getDefaultCLLocationValue()
-        LocationManagerService.shared.getCurrenctCountry()
-        
+        Service.shared.getDefaultCLLocationValue()
+  
         //get current user if it exists on coredata
         CoreDataService.shared.readCurrentUserFromCoreData()
         

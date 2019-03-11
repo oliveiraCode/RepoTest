@@ -13,7 +13,7 @@ protocol CategoryDelegate {
     func categoryValueSelected(categoryValue: String)  //value: string is an example of parameter
 }
 
-class CategoryTableViewController: UITableViewController {
+class CategoryTableViewController: BaseTableViewController {
     
     @IBOutlet weak var btnSave: UIBarButtonItem!
     

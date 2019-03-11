@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Photos
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: BaseViewController {
     
     //IBOutlets
     @IBOutlet weak var btnCreateAccount: UIButton!

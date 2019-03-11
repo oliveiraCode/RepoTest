@@ -22,7 +22,7 @@ class GradientView: UIView {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         
-        gradientLayer.colors = [UIColor.Brazil.green.cgColor, UIColor.Brazil.yellow.cgColor]
+        gradientLayer.colors = [UIColor.Brazil.yellow.cgColor, UIColor.Brazil.green.cgColor]
     }
     
 }
