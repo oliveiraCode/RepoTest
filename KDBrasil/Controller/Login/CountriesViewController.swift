@@ -22,7 +22,11 @@ class CountriesViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        imgCountrySelected.image =  UIImage(named: (appDelegate.currentCountry?.countryCode)!+"64")!
+        if let image = UIImage(named: (appDelegate.currentCountry?.countryCode)!+"64") {
+            imgCountrySelected.image = image
+        } else {
+            imgCountrySelected.image = UIImage(named: "placeholder_photo")!
+        }
     }
     
     //MARK: TableView methods
@@ -59,7 +63,6 @@ class CountriesViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Service.shared.saveCountryUserDefaults()
         Service.shared.getAllStatesFromCountry()
     }
     

@@ -41,6 +41,7 @@ class Service:NSObject,CLLocationManagerDelegate{
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatterGet.locale = Locale(identifier: "pt_BR")
         
         return dateFormatterGet.string(from: Date())
     }
@@ -156,28 +157,30 @@ class Service:NSObject,CLLocationManagerDelegate{
     
     func getCurrentCountry(completion: @escaping(_ done:Bool)->()) {
         
-        currentLocation = CLLocation(latitude: Coordinates.latitude, longitude: Coordinates.longitude)
-        
-        if let location = locationManager.location{
-            currentLocation = location
-        }
-        
         if let countryData = UserDefaults.standard.data(forKey: "country"),
             let country = try? JSONDecoder().decode(Countries.self, from: countryData) {
             appDelegate.currentCountry = country
-            getAllStatesFromCountry()
             completion(true)
         } else {
-            getAddressFromCoordinates(currentLocation: currentLocation) { (country, isoCountryCode, err) in
-                if err == nil {
-                    let currentCountry = Countries()
-                    currentCountry.countryCode = isoCountryCode
-                    currentCountry.countryName = country
-                    self.appDelegate.currentCountry = currentCountry
-                    self.getAllStatesFromCountry()
-                }
-                completion(true)
-            }
+            
+            // get the localized country name (in my case, it's PT Brazil)
+            let ptLocale = NSLocale.init(localeIdentifier: "pt_BR")
+            
+            // get the current locale
+            let currentLocale = Locale.current
+            let countryCode = currentLocale.regionCode
+         // let countryNameEN = currentLocale.localizedString(forRegionCode: countryCode!)
+            
+            let thePtCountryName = ptLocale.localizedString(forLocaleIdentifier: currentLocale.identifier)
+            let countryNamePT = thePtCountryName.slice(from: "(", to: ")")
+            
+            let currentCountry = Countries()
+            currentCountry.countryCode = countryCode
+            currentCountry.countryName = countryNamePT
+            appDelegate.currentCountry = currentCountry
+            getAllStatesFromCountry()
+            completion(true)
+            
         }
     }
     
@@ -203,10 +206,44 @@ class Service:NSObject,CLLocationManagerDelegate{
                     let newArraySorted = allStatesFromCountry.geonames.sorted(by: { ($0.name!) < ($1.name!) })
                     
                     self.appDelegate.currentCountry?.allStates?.geonames = newArraySorted
+                    self.saveCountryUserDefaults()
                     
                 }catch {}
                 break
             case .failure:
+                print(response.result.error!)
+                break
+            }
+        }
+        
+    }
+    
+    
+    func getAllCitiesFromState(countryCode:String,city:String, completion: @escaping(_ cities:Cities?) -> ()){
+        
+        let url_api = "\(API_GeoNames.url_searchJSON_cities+countryCode)&q=\(city)"
+        
+        print(url_api)
+        let sessionManager = Alamofire.SessionManager.default
+        
+        sessionManager.request(url_api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).validate().responseJSON { response in
+            switch(response.result) {
+            case .success:
+                guard let dataFromJson = response.data else {return}
+                
+                do {
+                    let allCitiesFromState = try JSONDecoder().decode(Cities.self, from: dataFromJson)
+                    
+                    let newArraySorted = allCitiesFromState.geonames!.sorted(by: { ($0.name!) < ($1.name!) })
+                    
+                    let cities = Cities()
+                    cities.geonames = newArraySorted
+                    completion(cities)
+                    
+                }catch {}
+                break
+            case .failure:
+                completion(nil)
                 print(response.result.error!)
                 break
             }
@@ -241,10 +278,9 @@ class Service:NSObject,CLLocationManagerDelegate{
         
     }
     
-    func getDefaultCLLocationValue(){
-        currentLocation = CLLocation(latitude: Coordinates.latitude, longitude: Coordinates.longitude)
+    func getCurrentLocation(){
+        currentLocation = locationManager.location
     }
     
 }
-
 

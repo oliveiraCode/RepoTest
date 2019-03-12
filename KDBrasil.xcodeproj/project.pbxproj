@@ -70,6 +70,9 @@
 		9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */; };
 		9CCE638122178A9B005EF258 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */; };
 		9CD6B3682235A50C0081B446 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6B3672235A50C0081B446 /* CountriesViewController.swift */; };
+		9CD6B36D2236E09F0081B446 /* testeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6B36C2236E09F0081B446 /* testeViewController.swift */; };
+		9CD6B3712236F9170081B446 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6B3702236F9170081B446 /* CitiesTableViewController.swift */; };
+		9CD6B373223811420081B446 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6B372223811420081B446 /* String.swift */; };
 		9CDA3F4E222F5D250051180B /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA3F4D222F5D250051180B /* DonateViewController.swift */; };
 		9CEF890122023D9A0015258F /* BusinessAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF890022023D9A0015258F /* BusinessAnnotation.swift */; };
 		9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF8904220254F70015258F /* CreateAccountViewController.swift */; };
@@ -149,6 +152,9 @@
 		9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesTableViewController.swift; sourceTree = "<group>"; };
 		9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		9CD6B3672235A50C0081B446 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		9CD6B36C2236E09F0081B446 /* testeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testeViewController.swift; sourceTree = "<group>"; };
+		9CD6B3702236F9170081B446 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
+		9CD6B372223811420081B446 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9CDA3F4D222F5D250051180B /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		9CEF890022023D9A0015258F /* BusinessAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAnnotation.swift; sourceTree = "<group>"; };
 		9CEF8904220254F70015258F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 				9C5C7F07221F17F200109152 /* UIColor Extensions.swift */,
 				9C5C7F0B221F3BB500109152 /* UIImage Extensions.swift */,
 				9C5C7F0D221F3CA200109152 /* UIToolBar Extensions.swift */,
+				9CD6B372223811420081B446 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +237,8 @@
 			children = (
 				9CC72ADA21D3FCA00048C37B /* LaunchScreen.storyboard */,
 				9CC72AD521D3FC9E0048C37B /* Main.storyboard */,
+				9CD6B36C2236E09F0081B446 /* testeViewController.swift */,
+				9CD6B3702236F9170081B446 /* CitiesTableViewController.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -553,7 +562,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KDBrasil/Pods-KDBrasil-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AnimatedTextInput/AnimatedTextInput.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
@@ -568,6 +576,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -578,7 +587,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedTextInput.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
@@ -593,6 +601,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -643,6 +652,7 @@
 				9CD6B3682235A50C0081B446 /* CountriesViewController.swift in Sources */,
 				9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */,
 				9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */,
+				9CD6B3712236F9170081B446 /* CitiesTableViewController.swift in Sources */,
 				9C30CC82222976430021D03D /* PageViewController.swift in Sources */,
 				9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */,
 				9C25B73B21E80CBB00E332F8 /* FIRCollectionReference.swift in Sources */,
@@ -661,6 +671,7 @@
 				9C8DF5EB222DA93700D8C976 /* ReviewsTableViewCell.swift in Sources */,
 				9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */,
 				9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */,
+				9CD6B373223811420081B446 /* String.swift in Sources */,
 				9CCA9DBE21E015C900ADA845 /* Category.swift in Sources */,
 				9C8DE2E02202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift in Sources */,
 				9C5C7F0E221F3CA200109152 /* UIToolBar Extensions.swift in Sources */,
@@ -670,6 +681,7 @@
 				9C6F03F92232EEFB000B828F /* Countries.swift in Sources */,
 				9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */,
 				9CC72AF521D43E930048C37B /* Contact.swift in Sources */,
+				9CD6B36D2236E09F0081B446 /* testeViewController.swift in Sources */,
 				9C5C7F0C221F3BB500109152 /* UIImage Extensions.swift in Sources */,
 				9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */,
 				9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */,
@@ -849,7 +861,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W37KBBDQBC;
 				INFOPLIST_FILE = "$(SRCROOT)/KDBrasil/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -870,7 +882,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W37KBBDQBC;
 				INFOPLIST_FILE = "$(SRCROOT)/KDBrasil/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

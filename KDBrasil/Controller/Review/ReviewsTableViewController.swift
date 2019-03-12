@@ -65,6 +65,7 @@ class ReviewsTableViewController: BaseTableViewController {
         self.cvRating.settings.fillMode = .half
         self.lbRating.text =   "\(Service.shared.calculateRating(reviews: reviews))"
         self.cvRating.rating = Service.shared.calculateRating(reviews: reviews)
+        self.lbRatingValueString.text = Service.shared.calculateRatingString(value: Service.shared.calculateRating(reviews: reviews))
         
         for (index, value) in reviews.enumerated() {
             if value.user_id == appDelegate.userObj.id {
@@ -75,8 +76,6 @@ class ReviewsTableViewController: BaseTableViewController {
         }
         self.business.reviews = reviews
         
-        tableView.reloadData()
-        
         //check if the business is the user's own login
         if business.user_id == appDelegate.userObj.id {
             btnReview.isEnabled = false
@@ -86,14 +85,13 @@ class ReviewsTableViewController: BaseTableViewController {
         if (myReview?.count)! > 0 {
             btnReview.isEnabled = false
         }
-        
-        self.lbRatingValueString.text = Service.shared.calculateRatingString(value: Service.shared.calculateRating(reviews: reviews))
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
-        
+        tableView.reloadData()
     }
     
     

@@ -18,7 +18,7 @@ target 'KDBrasil' do
   pod 'KRProgressHUD'
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
-  pod 'AnimatedTextInput'
+  pod 'SkyFloatingLabelTextField'
   pod 'ReachabilitySwift'
 
 end

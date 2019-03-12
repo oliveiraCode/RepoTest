@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double AnimatedTextInputVersionNumber;
-FOUNDATION_EXPORT const unsigned char AnimatedTextInputVersionString[];
+FOUNDATION_EXPORT double SkyFloatingLabelTextFieldVersionNumber;
+FOUNDATION_EXPORT const unsigned char SkyFloatingLabelTextFieldVersionString[];
 

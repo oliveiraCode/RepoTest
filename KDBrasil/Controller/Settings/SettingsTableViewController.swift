@@ -53,14 +53,19 @@ class SettingsTableViewController: BaseTableViewController {
     func updateUI(){
         imgCountry.removeAll()
         country.removeAll()
-        imgCountry.append(UIImage(named: (appDelegate.currentCountry?.countryCode)!+"32")!)
-        country.append((appDelegate.currentCountry?.countryName)!)
+        
+        if let image = UIImage(named: (appDelegate.currentCountry?.countryCode)!+"32") {
+            imgCountry.append(image)
+            country.append((appDelegate.currentCountry?.countryName)!)
+        } else {
+            imgCountry.append(UIImage(named: "placeholder_photo")!)
+            country.append("Indisponível")
+        }
+        
         tableView.reloadData()
     }
     
     // MARK: - Table view data source
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.sectionArray.count
     }

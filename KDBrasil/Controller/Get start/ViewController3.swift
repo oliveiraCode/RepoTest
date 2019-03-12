@@ -18,6 +18,7 @@ class ViewController3: BaseViewController {
         imagePage.layer.borderWidth = 0.2
         imagePage.layer.cornerRadius = 25
         imagePage.layer.masksToBounds = true
+        
     }
 
 }

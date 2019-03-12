@@ -40,12 +40,16 @@ class EditProfileViewController: BaseViewController {
     //MARK - SetupUI
     func setupUI(){
         
+
         self.tfFirstName.text = appDelegate.userObj.firstName
         self.tfLastName.text = appDelegate.userObj.lastName
         self.tfPhone.text = appDelegate.userObj.phone
         self.tfWhatsApp.text = appDelegate.userObj.whatsapp
         self.tfEmail.text = appDelegate.userObj.email
         self.imgProfile.image = appDelegate.userObj.image
+        
+        self.tfPhone.text = String((self.tfPhone.text?.dropFirst(3))!)
+        self.tfWhatsApp.text = String((self.tfWhatsApp.text?.dropFirst(3))!)
         
         self.imgProfile.layer.cornerRadius = imgProfile.bounds.height / 2
         self.imgProfile.clipsToBounds = true
@@ -63,8 +67,8 @@ class EditProfileViewController: BaseViewController {
             
             appDelegate.userObj.firstName = self.tfFirstName.text
             appDelegate.userObj.lastName = self.tfLastName.text
-            appDelegate.userObj.phone = self.tfPhone.text
-            appDelegate.userObj.whatsapp = self.tfWhatsApp.text
+            appDelegate.userObj.phone = "+1 \(self.tfPhone.text!)"
+            appDelegate.userObj.whatsapp = "+1 \(self.tfWhatsApp.text!)"
             appDelegate.userObj.email = self.tfEmail.text
             appDelegate.userObj.image = self.imgProfile.image
             
@@ -173,4 +177,46 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
         picker.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension EditProfileViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        //MARK:- If Delete button click
+        let  char = string.cString(using: String.Encoding.utf8)!
+        let isBackSpace = strcmp(char, "\\b")
+        
+        if (isBackSpace == -92) {
+            print("Backspace was pressed")
+            textField.text!.removeLast()
+            return false
+        }
+        
+        if textField == tfPhone {
+            if (textField.text?.count)! == 3 {
+                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
+            }
+            else if (textField.text?.count)! == 9{
+                textField.text = "\(textField.text!)-" //there we are ading - in textfield
+            }
+            else if (textField.text?.count)! > 13{
+                return false
+            }
+        }
+        
+        if textField == tfWhatsApp {
+            if (textField.text?.count)! == 3 {
+                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
+            }
+            else if (textField.text?.count)! == 9{
+                textField.text = "\(textField.text!)-" //there we are ading - in textfield
+            }
+            else if (textField.text?.count)! > 13{
+                return false
+            }
+        }
+        return true
+        
+    }
 }

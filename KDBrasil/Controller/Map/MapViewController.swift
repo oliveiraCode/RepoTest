@@ -15,6 +15,8 @@ class MapViewController: BaseViewController,CLLocationManagerDelegate,MKMapViewD
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var btnMenu: UIBarButtonItem!
+    @IBOutlet weak var viewLocationDenied: UIView!
+    @IBOutlet weak var btnOpeniOSSettings:UIButton!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var locationManager = CLLocationManager()
@@ -24,8 +26,12 @@ class MapViewController: BaseViewController,CLLocationManagerDelegate,MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenus()
-
-
+        
+        btnOpeniOSSettings.layer.borderColor = UIColor.black.cgColor
+        btnOpeniOSSettings.layer.borderWidth = 0.5
+        btnOpeniOSSettings.layer.cornerRadius = 20
+        btnOpeniOSSettings.layer.masksToBounds = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,9 +74,23 @@ class MapViewController: BaseViewController,CLLocationManagerDelegate,MKMapViewD
         //we want the best accurancy
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
+        if CLLocationManager.authorizationStatus() == .denied {
+            self.view.bringSubviewToFront(viewLocationDenied)
+        } else {
+            self.view.sendSubviewToBack(viewLocationDenied)
+        }
+        
         //getting the current location
         locationManager.startUpdatingLocation()
         
+    }
+    
+    @IBAction func btnOpeniOSSettings(_ sender: UIButton) {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {return}
+        
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: nil)
+        }
     }
     
     func displayAnnotations(){
@@ -79,12 +99,12 @@ class MapViewController: BaseViewController,CLLocationManagerDelegate,MKMapViewD
             let BusinessLocation = CLLocationCoordinate2D(latitude: (businessObj.address?.latitude)!, longitude: (businessObj.address?.longitude)!)
             let aTitle = "\(businessObj.name!)"
             let aSubtitle =  "\(businessObj.category!)"
-
+            
             let businessAnnotation = BusinessAnnotation(title: aTitle, subtitle: aSubtitle, coordinate: BusinessLocation)
-
+            
             mapView.addAnnotation(businessAnnotation)
             mapView.selectAnnotation(businessAnnotation, animated: true)
-
+            
         }
     }
     

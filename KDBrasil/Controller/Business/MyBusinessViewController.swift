@@ -148,6 +148,9 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         tfWhatsapp.text = businessDetails.contact?.whatsapp
         tfWeb.text = businessDetails.contact?.web
         
+        tfPhone.text = String((tfPhone.text?.dropFirst(3))!)
+        tfWhatsapp.text = String((tfWhatsapp.text?.dropFirst(3))!)
+        
         self.imageArrayForStorage.removeAll()
         
         for index in 0...2 {
@@ -227,11 +230,18 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             guard let postalCode = tfCEP.text else {return}
             
             guard let email = tfEmail.text else {return}
-            guard let phone = tfPhone.text else {return}
-            guard let whatsapp = tfWhatsapp.text else {return}
+            guard var phone = tfPhone.text else {return}
+            guard var whatsapp = tfWhatsapp.text else {return}
             guard let web = tfWeb.text else {return}
             guard let category = btnCategory.title(for: .normal) else {return}
             guard let country = appDelegate.currentCountry?.countryName else {return}
+      
+            if !phone.isEmpty {
+                phone = "+1 "+phone
+            }
+            if !whatsapp.isEmpty {
+                whatsapp = "+1 "+whatsapp
+            }
             
             self.activityIndicator.startAnimating()
             let creationDate:String
@@ -365,24 +375,17 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         
         if sender.isOn {
-            
             if appDelegate.userObj.email != nil && !appDelegate.userObj.email.isEmpty  {
-                tfEmail.isEnabled = false
                 tfEmail.text = appDelegate.userObj.email
             }
             if appDelegate.userObj.phone != nil && !appDelegate.userObj.phone!.isEmpty {
-                tfPhone.isEnabled = false
-                tfPhone.text = appDelegate.userObj.phone
+                tfPhone.text = String(appDelegate.userObj.phone!.dropFirst(3))
             }
             if appDelegate.userObj.whatsapp != nil && !appDelegate.userObj.whatsapp!.isEmpty  {
-                tfWhatsapp.isEnabled = false
-                tfWhatsapp.text = appDelegate.userObj.whatsapp
+                tfWhatsapp.text = String(appDelegate.userObj.whatsapp!.dropFirst(3))
             }
             
         } else {
-            tfEmail.isEnabled = true
-            tfPhone.isEnabled = true
-            tfWhatsapp.isEnabled = true
             tfEmail.text = ""
             tfPhone.text = ""
             tfWhatsapp.text = ""
@@ -445,6 +448,45 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     func dailyHoursValueSelected(dailyHoursValue: DailyHours) {
         self.dailyHoursArray.remove(at: indexWeek!)
         self.dailyHoursArray.insert(dailyHoursValue, at: indexWeek!)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        //MARK:- If Delete button click
+        let  char = string.cString(using: String.Encoding.utf8)!
+        let isBackSpace = strcmp(char, "\\b")
+        
+        if (isBackSpace == -92) {
+            print("Backspace was pressed")
+            textField.text!.removeLast()
+            return false
+        }
+        
+        if textField == tfPhone {
+            if (textField.text?.count)! == 3 {
+                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
+            }
+            else if (textField.text?.count)! == 9{
+                textField.text = "\(textField.text!)-" //there we are ading - in textfield
+            }
+            else if (textField.text?.count)! > 13{
+                return false
+            }
+        }
+        
+        if textField == tfWhatsapp {
+            if (textField.text?.count)! == 3 {
+                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
+            }
+            else if (textField.text?.count)! == 9{
+                textField.text = "\(textField.text!)-" //there we are ading - in textfield
+            }
+            else if (textField.text?.count)! > 13{
+                return false
+            }
+        }
+        return true
+        
     }
     
 }

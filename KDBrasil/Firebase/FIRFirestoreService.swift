@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseStorage
 import CoreData
 import KRProgressHUD
+import CoreLocation
 
 class FIRFirestoreService {
     
@@ -290,10 +291,10 @@ class FIRFirestoreService {
     //MARK: - readAllBusiness
     func readAllBusiness(completionHandler: @escaping ([Business?], Error?) -> Void) {
         
-        let country = appDelegate.currentCountry?.countryName ?? "Canada"
+        let country = appDelegate.currentCountry?.countryName
         
         let businessRef = self.db.collection(FIRCollectionReference.business)
-        let query = businessRef.whereField("country", isEqualTo: country)
+        let query = businessRef.whereField("country", isEqualTo: country!)
  
         var businesses = [Business]()
         
@@ -311,7 +312,11 @@ class FIRFirestoreService {
                     
                     let addressObj = Address(data: address)
                     
-                    addressObj?.distance = Service.shared.calculateDistanceKm(lat: (addressObj!.latitude)!, long: (addressObj!.longitude)!)
+                    if CLLocationManager.authorizationStatus() == .denied {
+                        addressObj?.distance = 0.0
+                    } else {
+                        addressObj?.distance = Service.shared.calculateDistanceKm(lat: (addressObj!.latitude)!, long: (addressObj!.longitude)!)
+                    }
                     
                     let contactObj = Contact(data: contact)
                     

@@ -114,8 +114,11 @@ class BusinessesTableViewController: BaseTableViewController {
         
     }
     
-    // MARK: - Table view data source
+    @objc func openLoginView(){
+        performSegue(withIdentifier: "showLoginVC", sender: nil)
+    }
     
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerLabel = UILabel()
         
@@ -126,7 +129,19 @@ class BusinessesTableViewController: BaseTableViewController {
         headerLabel.textAlignment = .center
         headerLabel.backgroundColor = UIColor.clear
         
+        let buttonLogin = UIButton()
+        buttonLogin.frame = CGRect(x:(view.frame.width/2)-(200/2), y: 150+headerLabel.frame.height, width: 200, height: 45)
+        buttonLogin.setTitle("Entrar", for: .normal)
+        buttonLogin.setTitleColor(UIColor.black, for: .normal)
+        buttonLogin.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        buttonLogin.layer.borderColor = UIColor.black.cgColor
+        buttonLogin.layer.borderWidth = 0.5
+        buttonLogin.layer.cornerRadius = 20
+        buttonLogin.layer.masksToBounds = true
+        buttonLogin.addTarget(self, action: #selector(openLoginView), for: .touchUpInside)
+        
         if appDelegate.userObj.id == nil {
+            topView.addSubview(buttonLogin)
             topView.addSubview(headerLabel)
         }
         return topView

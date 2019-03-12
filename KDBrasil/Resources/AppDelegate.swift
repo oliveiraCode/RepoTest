@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Fechar"
         
         FirebaseApp.configure()
-        
-        //set default value as a initial value
-        Service.shared.getDefaultCLLocationValue()
   
+        //set default value as a initial value
+        Service.shared.getCurrentLocation()
+        
         //get current user if it exists on coredata
         CoreDataService.shared.readCurrentUserFromCoreData()
         

@@ -73,13 +73,6 @@ enum periodOfDay {
     static let goodEvening = "Boa noite,"
 }
 
-enum Coordinates {
-    //set coordinates from Montreal - approximate
-    static let latitude = 45.50884
-    static let longitude = -73.58781
-
-}
-
 enum Placeholders {
     static let placeholder_photo = "placeholder_photo"
     static let placeholder_descricao = "Escreva aqui a descrição do seu anúncio."
@@ -139,5 +132,6 @@ enum API_GeoNames {
     
     static let url_searchJSON_states = "https://secure.geonames.org/searchJSON?username="+username+"&featureCode=ADM1&adminCode1&style=MEDIUM&country="
     
+    static let url_searchJSON_cities = "https://secure.geonames.org/searchJSON?username="+username+"&featureCode=PPL&style=short&country="
     
 }
