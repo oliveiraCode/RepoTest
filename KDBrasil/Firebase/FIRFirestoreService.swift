@@ -42,7 +42,6 @@ class FIRFirestoreService {
         }
     }
     
-    
     func uploading(business:Business,img:UIImage, index:Int, completion: @escaping ((String) -> Void)) {
         
         let storeImage = Storage.storage().reference().child(FIRCollectionReference.imageBusiness).child("\(business.id!)\(index)")

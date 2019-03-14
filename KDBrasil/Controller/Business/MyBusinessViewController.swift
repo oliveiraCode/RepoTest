@@ -235,7 +235,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             guard let web = tfWeb.text else {return}
             guard let category = btnCategory.title(for: .normal) else {return}
             guard let country = appDelegate.currentCountry?.countryName else {return}
-      
+            
             if !phone.isEmpty {
                 phone = "+1 "+phone
             }
@@ -265,18 +265,23 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
                     }
                     
                     FIRFirestoreService.shared.saveData(business: business, imageArray: self.imageArrayForStorage)
-                    
                     var messageBusiness:String
                     if self.isNewBusiness! {
                         messageBusiness = General.businessCreated
                     } else {
                         messageBusiness = General.businessEdited
                     }
-                     self.activityIndicator.stopAnimating()
+                    self.activityIndicator.stopAnimating()
                     let alert = UIAlertController(title: "", message: messageBusiness, preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: General.OK, style: .default, handler: { (nil) in
-                        self.dismiss(animated: true, completion: nil)
+                        
+                        if self.isNewBusiness! {
+                            self.dismiss(animated: true, completion: nil)
+                        } else {
+                            self.performSegue(withIdentifier: "unWindSegueToBusinessesTableVC", sender: nil)
+                        }
+                        
                     }))
                     self.present(alert, animated: true, completion: nil)
                     
@@ -353,7 +358,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         //to make a border on TextView
         tvDescription.layer.borderWidth = 0.3
         tvDescription.layer.borderColor = UIColor.lightGray.cgColor
-   
+        
     }
     
     
@@ -448,6 +453,30 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     func dailyHoursValueSelected(dailyHoursValue: DailyHours) {
         self.dailyHoursArray.remove(at: indexWeek!)
         self.dailyHoursArray.insert(dailyHoursValue, at: indexWeek!)
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == tfWeb {
+            
+            if (textField.text?.lowercased().contains("https://"))! {
+                textField.text = String((textField.text?.dropFirst(8))!)
+            } else if (textField.text?.lowercased().contains("http://"))! {
+                textField.text = String((textField.text?.dropFirst(7))!)
+            }
+            if !(textField.text?.lowercased().contains("www"))! {
+                textField.text = "www.\(textField.text!)"
+            }
+            
+            
+            if let last = textField.text?.last, last == "/" {
+                textField.text = String((textField.text?.dropLast())!)
+            }
+            textField.text = textField.text?.lowercased()
+            
+        }
+        
+        return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

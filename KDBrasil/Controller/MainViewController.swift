@@ -14,23 +14,29 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-        NetworkManager.isUnreachable { _ in
-            self.showOfflinePage()
-        }
-        
-        NetworkManager.isReachable { _ in
-            self.showMainPage()
-        }
-        
+        checkInternet()
     }
     
     
-    private func showOfflinePage() -> Void {
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "showNetworkUnavailableVC", sender: self)
+    func checkInternet(){
+        
+        Connection.shared.internetConnectionReachability { (internetAccess) in
+            if internetAccess {
+                self.showMainPage()
+            } else {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Acesso à Internet", message: "Não há nenhuma conexão com à Internet disponível. Por favor, verifique e tente novamente.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Repetir", style: .default, handler: { (_) in
+                        self.checkInternet()
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
+    
     
     private func showMainPage() -> Void {
         DispatchQueue.main.async {
@@ -43,7 +49,7 @@ class MainViewController: BaseViewController {
             }
         }
     }
-
+    
     
 }
 

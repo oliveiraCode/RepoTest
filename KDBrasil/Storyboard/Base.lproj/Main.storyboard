@@ -147,48 +147,63 @@
             </objects>
             <point key="canvasLocation" x="-494" y="1729"/>
         </scene>
-        <!--Teste View Controller-->
+        <!--Endereço-->
         <scene sceneID="jim-Sf-Bk9">
             <objects>
-                <viewController id="LG9-Xu-1Xb" customClass="testeViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LG9-Xu-1Xb" customClass="AddressViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9kJ-tz-6iy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-1g-0P6">
-                                <rect key="frame" x="62" y="415" width="251" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="LG9-Xu-1Xb" id="5my-dJ-MKJ"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rnc-YG-d1S">
-                                <rect key="frame" x="91" y="70" width="258" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CA64" translatesAutoresizingMaskIntoConstraints="NO" id="Hga-Ie-Uha">
-                                <rect key="frame" x="29" y="58" width="54" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CA64" translatesAutoresizingMaskIntoConstraints="NO" id="Hga-Ie-Uha">
+                                <rect key="frame" x="160.5" y="40" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="N0h-ne-0lp"/>
+                                    <constraint firstAttribute="height" constant="54" id="ynE-i0-qQG"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rua/Avenida" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qYZ-jp-Woz">
-                                <rect key="frame" x="111" y="273" width="255" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6j-yi-Nhc">
+                                <rect key="frame" x="20" y="104" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="yoY-g2-74U"/>
+                                </constraints>
+                                <state key="normal" title="country">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="HDn-uM-p6d" id="Bgc-wF-0Vj"/>
+                                    <action selector="btnCountry:" destination="LG9-Xu-1Xb" eventType="touchUpInside" id="AQU-Ks-Yau"/>
                                 </connections>
-                            </textField>
-                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Compl." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zmc-bS-djI">
-                                <rect key="frame" x="16" y="318" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2d-fZ-4Hu">
+                                <rect key="frame" x="20" y="209" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dHQ-nJ-uPw"/>
+                                </constraints>
+                                <state key="normal" title="Selecione o estado">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnState:" destination="LG9-Xu-1Xb" eventType="touchUpInside" id="c0K-bY-BcM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72j-W3-4T2">
+                                <rect key="frame" x="20" y="274" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2Mx-9Y-l4g"/>
+                                </constraints>
+                                <state key="normal" title="Selecione a cidade">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCity:" destination="LG9-Xu-1Xb" eventType="touchUpInside" id="wYm-1m-Tnk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Compl." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zmc-bS-djI">
+                                <rect key="frame" x="15" y="419" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6mW-Lh-d4u"/>
+                                    <constraint firstAttribute="width" constant="90" id="I2j-q0-sMd"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -196,19 +211,12 @@
                                     <outlet property="delegate" destination="HDn-uM-p6d" id="VY4-4p-00m"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V4Z-Ul-S94">
-                                <rect key="frame" x="29" y="143" width="320" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                                <connections>
-                                    <outlet property="delegate" destination="HDn-uM-p6d" id="a6w-Mv-oN5"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N°" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TYN-s0-s9I">
-                                <rect key="frame" x="16" y="273" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N°" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TYN-s0-s9I">
+                                <rect key="frame" x="15" y="369" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Xfx-XN-naJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="bSw-gV-moc"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -216,9 +224,12 @@
                                     <outlet property="delegate" destination="HDn-uM-p6d" id="iXi-cW-lzk"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CEP" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T8c-4g-P56">
-                                <rect key="frame" x="121" y="363" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CEP" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T8c-4g-P56">
+                                <rect key="frame" x="115" y="419" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GFc-aa-gvw"/>
+                                    <constraint firstAttribute="width" constant="100" id="SHd-3h-pTN"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="next"/>
@@ -226,41 +237,72 @@
                                     <outlet property="delegate" destination="HDn-uM-p6d" id="dAZ-lh-CFQ"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkf-xr-3oI">
-                                <rect key="frame" x="240" y="363" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="btn:" destination="LG9-Xu-1Xb" eventType="touchUpInside" id="wOw-pq-OXw"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VHx-FS-pAu">
-                                <rect key="frame" x="29" y="212" width="320" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rua/Avenida" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qYZ-jp-Woz">
+                                <rect key="frame" x="115" y="369" width="245" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JRe-Lv-tFW"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                 <connections>
-                                    <outlet property="delegate" destination="HDn-uM-p6d" id="inL-pG-eMQ"/>
+                                    <outlet property="delegate" destination="HDn-uM-p6d" id="Bgc-wF-0Vj"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="72j-W3-4T2" firstAttribute="leading" secondItem="k1a-rf-1Xm" secondAttribute="leading" constant="20" id="4gp-kM-SMW"/>
+                            <constraint firstItem="Y2d-fZ-4Hu" firstAttribute="top" secondItem="d6j-yi-Nhc" secondAttribute="bottom" constant="60" id="6K2-Ta-Gjo"/>
+                            <constraint firstItem="k1a-rf-1Xm" firstAttribute="trailing" secondItem="72j-W3-4T2" secondAttribute="trailing" constant="20" id="78D-ER-dvG"/>
+                            <constraint firstItem="zmc-bS-djI" firstAttribute="top" secondItem="TYN-s0-s9I" secondAttribute="bottom" constant="20" id="AUm-aY-uUo"/>
+                            <constraint firstItem="d6j-yi-Nhc" firstAttribute="top" secondItem="Hga-Ie-Uha" secondAttribute="bottom" constant="10" id="KuH-26-OA7"/>
+                            <constraint firstItem="Hga-Ie-Uha" firstAttribute="top" secondItem="k1a-rf-1Xm" secondAttribute="top" constant="40" id="Nnn-zy-851"/>
+                            <constraint firstItem="Hga-Ie-Uha" firstAttribute="centerX" secondItem="9kJ-tz-6iy" secondAttribute="centerX" id="Oak-Ef-2Gc"/>
+                            <constraint firstItem="qYZ-jp-Woz" firstAttribute="leading" secondItem="TYN-s0-s9I" secondAttribute="trailing" constant="10" id="P6c-5a-pds"/>
+                            <constraint firstItem="k1a-rf-1Xm" firstAttribute="trailing" secondItem="Y2d-fZ-4Hu" secondAttribute="trailing" constant="20" id="PYx-nM-qlG"/>
+                            <constraint firstItem="TYN-s0-s9I" firstAttribute="leading" secondItem="k1a-rf-1Xm" secondAttribute="leading" constant="15" id="PvO-q3-chb"/>
+                            <constraint firstItem="zmc-bS-djI" firstAttribute="leading" secondItem="k1a-rf-1Xm" secondAttribute="leading" constant="15" id="UVW-Y5-ZXw"/>
+                            <constraint firstItem="72j-W3-4T2" firstAttribute="top" secondItem="Y2d-fZ-4Hu" secondAttribute="bottom" constant="20" id="dBL-dX-GxK"/>
+                            <constraint firstItem="Y2d-fZ-4Hu" firstAttribute="leading" secondItem="k1a-rf-1Xm" secondAttribute="leading" constant="20" id="f1h-RH-0WC"/>
+                            <constraint firstItem="T8c-4g-P56" firstAttribute="leading" secondItem="zmc-bS-djI" secondAttribute="trailing" constant="10" id="haN-SM-heW"/>
+                            <constraint firstItem="T8c-4g-P56" firstAttribute="top" secondItem="qYZ-jp-Woz" secondAttribute="bottom" constant="20" id="pvh-Au-vDL"/>
+                            <constraint firstItem="qYZ-jp-Woz" firstAttribute="top" secondItem="72j-W3-4T2" secondAttribute="bottom" constant="50" id="qQp-ox-Nrm"/>
+                            <constraint firstItem="TYN-s0-s9I" firstAttribute="top" secondItem="72j-W3-4T2" secondAttribute="bottom" constant="50" id="uqp-xV-vy7"/>
+                            <constraint firstItem="d6j-yi-Nhc" firstAttribute="leading" secondItem="k1a-rf-1Xm" secondAttribute="leading" constant="20" id="vJS-6s-qWp"/>
+                            <constraint firstItem="k1a-rf-1Xm" firstAttribute="trailing" secondItem="d6j-yi-Nhc" secondAttribute="trailing" constant="20" id="xuL-h6-vDU"/>
+                            <constraint firstItem="k1a-rf-1Xm" firstAttribute="trailing" secondItem="qYZ-jp-Woz" secondAttribute="trailing" constant="15" id="ylk-4L-0LF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k1a-rf-1Xm"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Endereço" id="4ZE-fR-34h">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="ulA-TF-xya">
+                            <connections>
+                                <action selector="btnCancel:" destination="LG9-Xu-1Xb" id="KL1-Le-E4B"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="kOZ-Y2-Tuj">
+                            <connections>
+                                <action selector="btnSave:" destination="LG9-Xu-1Xb" id="vjB-Wg-GNK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="txtworkphone" destination="Jec-1g-0P6" id="mwp-sT-qkp"/>
+                        <outlet property="btnCity" destination="72j-W3-4T2" id="W9b-4S-JjZ"/>
+                        <outlet property="btnCountry" destination="d6j-yi-Nhc" id="bPL-qM-Hmy"/>
+                        <outlet property="btnState" destination="Y2d-fZ-4Hu" id="GSy-jI-7d2"/>
                         <outlet property="zipcode" destination="T8c-4g-P56" id="Xwf-Di-cs7"/>
+                        <segue destination="Pxl-r0-F6h" kind="presentation" identifier="showCountryStateCityVC" id="Md6-Du-dRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2P-RM-jef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-933.60000000000002" y="-1662.8185907046477"/>
+            <point key="canvasLocation" x="16370" y="2301"/>
         </scene>
-        <!--Cidades-->
+        <!--Country State City Table View Controller-->
         <scene sceneID="wcm-d7-yPu">
             <objects>
-                <tableViewController id="oMC-h7-hgc" customClass="CitiesTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="oMC-h7-hgc" customClass="CountryStateCityTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fhS-OQ-iza">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,11 +322,17 @@
                             <outlet property="delegate" destination="oMC-h7-hgc" id="nVc-bo-cDo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cidades" id="Tpz-MI-rP6"/>
+                    <navigationItem key="navigationItem" id="Tpz-MI-rP6">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="bs2-oN-twl">
+                            <connections>
+                                <action selector="btnCancel:" destination="oMC-h7-hgc" id="m7e-sZ-BEk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJc-Cx-1UT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="-1829.2353823088458"/>
+            <point key="canvasLocation" x="18455" y="1977"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="YBP-pJ-qNG">
@@ -325,7 +373,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="uia-89-ZAN" id="DvG-ky-d2D"/>
                         <segue destination="PhA-BR-Z4e" kind="presentation" identifier="showMainVC" modalTransitionStyle="crossDissolve" id="kkv-jL-17a"/>
-                        <segue destination="HEx-yv-92m" kind="presentation" identifier="showNetworkUnavailableVC" id="X0E-Lw-7P7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rn0-CG-jhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1150,6 +1197,14 @@
                                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARJ-gk-pgc">
+                                                        <rect key="frame" x="286" y="48" width="46" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <segue destination="hfv-Nq-4Hm" kind="presentation" id="Uk7-0r-vwy"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1712,11 +1767,13 @@
                         <outlet property="tfWhatsapp" destination="v72-tU-kfM" id="JxJ-7K-rnU"/>
                         <outlet property="tvDescription" destination="P4Z-rx-DFA" id="tmV-GR-KI9"/>
                         <segue destination="c4y-oW-csZ" kind="show" identifier="showCategoryVC" id="Cjm-r6-yC3"/>
+                        <segue destination="gTG-kR-dhJ" kind="unwind" identifier="unWindSegueToBusinessesTableVC" unwindAction="unWindToBusinessesTableVCWithSegue:" id="LrE-0U-Jpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8T1-0Z-E4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gTG-kR-dhJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="10744.202898550726" y="1802.4456521739132"/>
+            <point key="canvasLocation" x="13836" y="1900"/>
         </scene>
         <!--Categorias-->
         <scene sceneID="5jo-1f-FgJ">
@@ -1759,7 +1816,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7Z-vK-H4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12727" y="1256"/>
+            <point key="canvasLocation" x="15919" y="1343"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="baQ-gk-hWD">
@@ -1852,7 +1909,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVF-4e-F2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8701.6000000000004" y="-1057.4212893553224"/>
+            <point key="canvasLocation" x="9640.7999999999993" y="-1057.4212893553224"/>
         </scene>
         <!--Lista-->
         <scene sceneID="R8l-FQ-43X">
@@ -2085,7 +2142,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V72-vG-mDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7576.811594202899" y="3339.9456521739135"/>
+            <point key="canvasLocation" x="7719" y="3673"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="yfA-JB-2wz">
@@ -2159,7 +2216,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypg-2J-Kgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gl9-28-75v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="9198.5507246376819" y="3186.684782608696"/>
+            <point key="canvasLocation" x="9532" y="4630"/>
         </scene>
         <!--Termos de uso-->
         <scene sceneID="kea-vL-4Ov">
@@ -2205,12 +2262,12 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQs-dY-GYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7134" y="5068"/>
+            <point key="canvasLocation" x="7276" y="5401"/>
         </scene>
         <!--Doação-->
         <scene sceneID="iKM-wV-dWq">
             <objects>
-                <viewController id="qAs-er-9JM" customClass="DonateViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qAs-er-9JM" customClass="WebViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZJl-Fr-8ZQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2240,7 +2297,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <viewLayoutGuide key="safeArea" id="voE-Sm-W6f"/>
                     </view>
                     <navigationItem key="navigationItem" title="Doação" id="5R4-9n-hbu">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="Ue9-E3-QoF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Ue9-E3-QoF">
                             <connections>
                                 <action selector="btnCancel:" destination="qAs-er-9JM" id="upQ-dF-zAk"/>
                             </connections>
@@ -2253,7 +2310,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9q-CC-05B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8102" y="5068"/>
+            <point key="canvasLocation" x="10086" y="3672"/>
         </scene>
         <!--Editar Perfil-->
         <scene sceneID="eqC-ic-Udy">
@@ -2456,7 +2513,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uai-ac-aoh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11750.72463768116" y="3088.858695652174"/>
+            <point key="canvasLocation" x="10566" y="5400"/>
         </scene>
         <!--Nav Controller-->
         <scene sceneID="rIj-3a-mJy">
@@ -2474,7 +2531,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPB-u9-gAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6639.130434782609" y="3340.7608695652175"/>
+            <point key="canvasLocation" x="6780" y="3674"/>
         </scene>
         <!--Meus Anúncios-->
         <scene sceneID="KA9-Rl-T5R">
@@ -2511,7 +2568,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyW-sM-dIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11892" y="1257"/>
+            <point key="canvasLocation" x="15086" y="1343"/>
         </scene>
         <!--Nav Controller-->
         <scene sceneID="qWf-ZU-duD">
@@ -2529,7 +2586,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i03-On-l3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9823" y="1204"/>
+            <point key="canvasLocation" x="12652" y="1728"/>
         </scene>
         <!--Anúncio-->
         <scene sceneID="crQ-FH-zvi">
@@ -2623,7 +2680,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuJ-NL-Ia8">
                                                 <rect key="frame" x="0.0" y="454" width="375" height="202"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-od-Ijl">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-od-Ijl">
                                                         <rect key="frame" x="5" y="51.5" width="366" height="146.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">descricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricaodescricao</string>
@@ -3147,12 +3204,14 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <outlet property="userNameAndMember" destination="by1-Rf-rla" id="UhX-a0-U4d"/>
                         <segue destination="MNh-3i-qse" kind="unwind" identifier="unWindToListVC" unwindAction="unWindToListWithSegue:" id="bvC-cl-KgR"/>
                         <segue destination="pmy-8A-pXO" kind="show" identifier="showReviewsVC" id="UHu-Jg-ZQ0"/>
+                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showWebVC" id="IBZ-cb-T44"/>
+                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showEditBusinessVC" id="tMd-ni-SvK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xho-Q3-XUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MNh-3i-qse" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="11682.4" y="26.086956521739133"/>
+            <point key="canvasLocation" x="11513" y="-270"/>
         </scene>
         <!--Reviews Table View Controller-->
         <scene sceneID="h7A-x1-Avc">
@@ -3364,7 +3423,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="212" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3509,7 +3568,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3YP-Pt-fwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10811.594202898552" y="3088.858695652174"/>
+            <point key="canvasLocation" x="9532" y="5400"/>
         </scene>
         <!--País/Região-->
         <scene sceneID="YAG-Zj-5Xy">
@@ -3563,7 +3622,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeM-p5-9cD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9270" y="4299"/>
+            <point key="canvasLocation" x="8434" y="4631"/>
         </scene>
         <!--Nav Controller-->
         <scene sceneID="Bhb-hA-x5q">
@@ -3581,7 +3640,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgw-Zy-MaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7135" y="4299"/>
+            <point key="canvasLocation" x="7276" y="4632"/>
         </scene>
         <!--Lista-->
         <scene sceneID="5y8-OQ-3CI">
@@ -3671,7 +3730,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="202" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3754,7 +3813,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqS-Zn-T9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8102" y="4300"/>
+            <point key="canvasLocation" x="9006" y="3672"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="LRg-PI-afb">
@@ -3773,60 +3832,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ow6-Wx-i05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7762.3999999999996" y="-1057.4212893553224"/>
-        </scene>
-        <!--Offline View Controller-->
-        <scene sceneID="HQZ-B1-GpX">
-            <objects>
-                <viewController storyboardIdentifier="OfflineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HEx-yv-92m" customClass="OfflineViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fDc-ws-q8n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMC-3S-Qg8">
-                                <rect key="frame" x="62.5" y="170" width="250" height="160"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="offline" translatesAutoresizingMaskIntoConstraints="NO" id="wYf-LW-mlD">
-                                        <rect key="frame" x="50" y="5" width="150" height="150"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="N2h-8v-kqu"/>
-                                            <constraint firstAttribute="height" constant="150" id="lBp-KS-wm9"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="wYf-LW-mlD" firstAttribute="centerX" secondItem="jMC-3S-Qg8" secondAttribute="centerX" id="8o6-iN-6IT"/>
-                                    <constraint firstAttribute="width" constant="250" id="Jgn-4B-kOP"/>
-                                    <constraint firstItem="wYf-LW-mlD" firstAttribute="centerY" secondItem="jMC-3S-Qg8" secondAttribute="centerY" id="Yyf-Rl-sNV"/>
-                                    <constraint firstAttribute="height" constant="160" id="fcp-J7-QOm"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não há conexão com a Internet." textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C0n-ea-k8R">
-                                <rect key="frame" x="10" y="350" width="355" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.51433295759999997" green="0.54734961000000004" blue="0.56930343380000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jMC-3S-Qg8" firstAttribute="centerX" secondItem="fDc-ws-q8n" secondAttribute="centerX" id="Akb-aY-3EO"/>
-                            <constraint firstItem="C0n-ea-k8R" firstAttribute="leading" secondItem="qyQ-Gh-oGL" secondAttribute="leading" constant="10" id="Ege-Q4-Jnn"/>
-                            <constraint firstItem="C0n-ea-k8R" firstAttribute="top" secondItem="jMC-3S-Qg8" secondAttribute="bottom" constant="20" id="a10-2U-oCh"/>
-                            <constraint firstItem="C0n-ea-k8R" firstAttribute="centerX" secondItem="fDc-ws-q8n" secondAttribute="centerX" id="drd-A8-QXd"/>
-                            <constraint firstItem="jMC-3S-Qg8" firstAttribute="top" secondItem="qyQ-Gh-oGL" secondAttribute="top" constant="150" id="kX8-X7-pK3"/>
-                            <constraint firstItem="qyQ-Gh-oGL" firstAttribute="trailing" secondItem="C0n-ea-k8R" secondAttribute="trailing" constant="10" id="wNm-0O-Z4A"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="qyQ-Gh-oGL"/>
-                    </view>
-                    <connections>
-                        <segue destination="vEr-tp-QiF" kind="presentation" identifier="showStartVC" id="U78-lJ-AVP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="plN-CV-Uhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2012" y="-290"/>
+            <point key="canvasLocation" x="8701.6000000000004" y="-1057.4212893553224"/>
         </scene>
         <!--Nav Controller-->
         <scene sceneID="pq6-lk-2ko">
@@ -3844,7 +3850,25 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUe-yF-NoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376.80000000000001" y="-1829.2353823088458"/>
+            <point key="canvasLocation" x="17514" y="1977"/>
+        </scene>
+        <!--Nav Controller-->
+        <scene sceneID="J0O-0f-4KD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hfv-Nq-4Hm" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cr1-Gw-Wp6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LG9-Xu-1Xb" kind="relationship" relationship="rootViewController" id="qzT-UY-PhF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngz-we-eaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15431" y="2301"/>
         </scene>
     </scenes>
     <resources>
@@ -3866,16 +3890,16 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <image name="map" width="25" height="25"/>
         <image name="menu" width="24" height="24"/>
         <image name="off" width="24" height="24"/>
-        <image name="offline" width="150" height="145"/>
         <image name="phone_color" width="48" height="48"/>
         <image name="site_color" width="48" height="48"/>
         <image name="user" width="50" height="50"/>
         <image name="whatsapp_color" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="IBZ-cb-T44"/>
         <segue reference="b73-yD-mxL"/>
-        <segue reference="DfJ-5a-P3z"/>
+        <segue reference="tMd-ni-SvK"/>
         <segue reference="Yek-pC-iHe"/>
-        <segue reference="A0m-MP-Nvr"/>
+        <segue reference="iqm-8w-Zeu"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,7 @@
 import UIKit
 import Cosmos
 import MapKit
+import MessageUI
 import CoreLocation
 import KRProgressHUD
 
@@ -41,7 +42,9 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
     @IBOutlet weak var lbOpenedClosed2: UILabel!
     
     //Properties
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var businessDetails = Business()
+    var isFromMyBusiness:Bool = false
     var lbWeekArray:[UILabel?] = []
     
     override func viewDidLoad() {
@@ -54,9 +57,19 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
         lbWeekArray.append(lbSaturday)
         lbWeekArray.append(lbSunday)
     }
+    
+    @objc func editBusiness(){
+        self.performSegue(withIdentifier: "showEditBusinessVC", sender: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if businessDetails.user_id == appDelegate.userObj.id && isFromMyBusiness {
+            let button = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editBusiness))
+            self.navigationItem.rightBarButtonItem = button
+        }
+            
         self.setValuesToUI()
         self.setAnnotationsOnTheMap()
 
@@ -194,9 +207,9 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
             self.btnPhone.setTitle(businessDetails.contact?.phone, for: .normal)
         }
         
-        if  businessDetails.contact?.web != "" {
+        if businessDetails.contact?.web != "" {
             self.btnWeb.isEnabled = true
-            self.btnWeb.setTitle(businessDetails.contact?.web, for: .normal)
+            self.btnWeb.setTitle(Service.shared.checkIfContainSociaMediaOrWebsite(string: businessDetails.contact!.web!), for: .normal)
         }
         
         self.lbName.text = businessDetails.name
@@ -294,24 +307,25 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
     @IBAction func btnEmail(_ sender: UIButton) {
         guard let email = sender.titleLabel?.text else {return}
         
-        if let url = URL(string: "mailto:\(email)") {
-            UIApplication.shared.open(url)
-        }else{
-            self.showAlert(title: General.warning, message: CommonWarning.errorEmail)
+        let mailComposerVC = MFMailComposeViewController()
+        let subject = businessDetails.name!
+        let body = "Escreva aqui a sua mensagem."
+        
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([email])
+        mailComposerVC.setSubject(subject)
+        mailComposerVC.setMessageBody(body, isHTML: false)
+        
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposerVC, animated: true, completion: nil)
+        } else {
+            self.showAlert(title: "", message: "O serviço de e-mail não está disponível.")
         }
+        
     }
     
     @IBAction func btnFacebook(_ sender: UIButton) {
-        guard let website = sender.titleLabel?.text else {return}
-        
-        if let url = URL(string: "http://\(website)") {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                self.showAlert(title: General.warning, message: CommonWarning.errorWebSite)
-            }
-        }
-        
+        performSegue(withIdentifier: "showWebVC", sender: nil)
     }
     
     
@@ -331,7 +345,25 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
             let destController = segue.destination as! ReviewsTableViewController
             destController.business = businessDetails
         }
+        
+        if segue.identifier == "showEditBusinessVC" {
+            let navController = segue.destination as! UINavigationController
+            let destController = navController.topViewController as! MyBusinessViewController
+            destController.businessDetails = businessDetails
+            destController.isNewBusiness = false
+        }
+        
+        if segue.identifier == "showWebVC" {
+            let navController = segue.destination as! UINavigationController
+            let destController = navController.topViewController as! WebViewController
+            
+            if let url = businessDetails.contact?.web {
+                destController.title = Service.shared.checkIfContainSociaMediaOrWebsite(string: url)
+                destController.urlSelected = url
+            }
+        }
     }
+    
 }
 
 extension DetailsBusinessViewController: UICollectionViewDelegateFlowLayout{

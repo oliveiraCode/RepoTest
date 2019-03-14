@@ -15,6 +15,7 @@ class BusinessesTableViewController: BaseTableViewController {
     
     //IBOutlets
     @IBOutlet weak var btnMenu: UIBarButtonItem!
+    @IBAction func unWindToBusinessesTableVC(segue:UIStoryboardSegue) {}
     
     //Properties
     var activityIndicator = UIActivityIndicatorView()
@@ -263,6 +264,7 @@ class BusinessesTableViewController: BaseTableViewController {
         if segue.identifier == "showDetailsBusinessVC" {
             let destController = segue.destination as! DetailsBusinessViewController
             destController.businessDetails = businesses[businessIndexPathSelected]
+            destController.isFromMyBusiness = true
         }
         
         if segue.identifier == "showNewBusinessVC" {

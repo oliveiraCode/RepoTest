@@ -8,24 +8,14 @@
 import Foundation
 import Reachability
 
-class NetworkManager: NSObject {
+class Connection: NSObject {
+
+    let reachability = Reachability()!
     
-    var reachability: Reachability!
-    
-    static let sharedInstance: NetworkManager = { return NetworkManager() }()
-    
-    
+    static let shared = Connection()
+
     override init() {
         super.init()
-        
-        reachability = Reachability()!
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(networkStatusChanged(_:)),
-            name: .reachabilityChanged,
-            object: reachability
-        )
         
         do {
             try reachability.startNotifier()
@@ -34,40 +24,27 @@ class NetworkManager: NSObject {
         }
     }
     
-    @objc func networkStatusChanged(_ notification: Notification) {
-        // Do something globally here!
+    func internetConnectionReachability(completed: @escaping (Bool) -> Void){
+        //Check connection
+        switch(reachability.connection) {
+        case .cellular, .wifi :
+            completed(true)
+            break
+        case .none:
+            completed(false)
+            break
+        }
     }
     
-    static func stopNotifier() -> Void {
+   private func startNotifier() {
+        print("--- start notifier")
         do {
-            try (NetworkManager.sharedInstance.reachability).startNotifier()
+            try reachability.startNotifier()
         } catch {
-            print("Error stopping notifier")
+            print("Error starting notifier")
+            return
         }
     }
     
-    static func isReachable(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection != .none {
-            completed(NetworkManager.sharedInstance)
-        }
-    }
-    
-    static func isUnreachable(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection == .none {
-            completed(NetworkManager.sharedInstance)
-        }
-    }
-    
-    static func isReachableViaWWAN(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection == .cellular {
-            completed(NetworkManager.sharedInstance)
-        }
-    }
-    
-    static func isReachableViaWiFi(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection == .wifi {
-            completed(NetworkManager.sharedInstance)
-        }
-    }
 }
 

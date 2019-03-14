@@ -6,7 +6,7 @@
 //  Copyright © 2019 OliveiraCode Technologies. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum LocalizationKeys {
     //Menu
@@ -64,6 +64,7 @@ enum LocalizationKeys {
     //Share App
     static let shareApp = "Você já conhece o app KD Brasil? Não? 😱😱\nSe liga na novidade e encontre o serviço que você mais precisa.\nBaixe agora, é grátis! \nhttps://itunes.apple.com/ca/app/kd-brasil/id1454261196?mt=8"
     
+    static let urlDonation = "https://www.paypal.me/lfo"
 }
 
 enum periodOfDay {
@@ -125,13 +126,22 @@ enum CommonWarning {
 enum API_GeoNames {
     
     private static let username = "lfoliveira"
-    static let url_searchJSON_default = "http://api.geonames.org/searchJSON?username="+username
-    
-    
-    static let url_searchJSON_countryCode = "https://secure.geonames.org/countryCode?type=JSON&username="+username+"&"
-    
+//    static let url_searchJSON_default = "http://api.geonames.org/searchJSON?username="+username
+//
+//
+//    static let url_searchJSON_countryCode = "https://secure.geonames.org/countryCode?type=JSON&username="+username+"&"
+//
     static let url_searchJSON_states = "https://secure.geonames.org/searchJSON?username="+username+"&featureCode=ADM1&adminCode1&style=MEDIUM&country="
+//
+//    static let url_searchJSON_cities = "https://secure.geonames.org/searchJSON?username="+username+"&featureCode=PPL&style=short&country="
     
-    static let url_searchJSON_cities = "https://secure.geonames.org/searchJSON?username="+username+"&featureCode=PPL&style=short&country="
     
+    
+    
+    static let key = "a4ab8028073e5f917aa88a2c4d8e4e48"
+    
+//    static let url_searchJSON_states = "http://battuta.medunes.net/api/region/"+API_GeoNames.countryCode!+"/all/?key="+key
+    
+    static let url_searchJSON_cities = "http://battuta.medunes.net/api/city/"
+
 }

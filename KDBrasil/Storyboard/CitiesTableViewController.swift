@@ -1,5 +1,5 @@
 //
-//  CitiesTableViewController.swift
+//  CountryStateCityTableViewController.swift
 //  KDBrasil
 //
 //  Created by Leandro Oliveira on 2019-03-11.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CitiesTableViewController: UITableViewController {
+class CountryStateCityTableViewController: UITableViewController {
 
     var cities:[String] = []
     

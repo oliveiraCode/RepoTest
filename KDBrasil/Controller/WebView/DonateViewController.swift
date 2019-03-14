@@ -1,5 +1,5 @@
 //
-//  DonateViewController.swift
+//  WebViewController.swift
 //  KDBrasil
 //
 //  Created by Leandro Oliveira on 2019-03-05.
@@ -9,22 +9,28 @@
 import UIKit
 import WebKit
 
-class DonateViewController: BaseViewController, WKNavigationDelegate{
+class WebViewController: BaseViewController, WKNavigationDelegate{
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var urlSelected:String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "https://www.paypal.me/lfo")
-        let request = URLRequest(url: url!)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        activityIndicator.startAnimating()
-        webView.load(request)
-        webView.navigationDelegate = self
-
-
+        if let urlString = urlSelected {
+            let request = URLRequest(url: URL(string: urlString)!)
+            
+            activityIndicator.startAnimating()
+            webView.load(request)
+            webView.navigationDelegate = self
+        }
+    
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

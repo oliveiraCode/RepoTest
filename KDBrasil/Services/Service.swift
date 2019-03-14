@@ -189,7 +189,7 @@ class Service:NSObject,CLLocationManagerDelegate{
     func getAllStatesFromCountry(){
         guard let countryCode = self.appDelegate.currentCountry?.countryCode else {return}
         
-        let url_api = "\(API_GeoNames.url_searchJSON_states+countryCode)"
+        let url_api = "\(API_GeoNames.url_searchJSON_states)\(countryCode)"
         
         let sessionManager = Alamofire.SessionManager.default
         
@@ -219,26 +219,24 @@ class Service:NSObject,CLLocationManagerDelegate{
     }
     
     
-    func getAllCitiesFromState(countryCode:String,city:String, completion: @escaping(_ cities:Cities?) -> ()){
+    func getAllCitiesFromState(countryCode:String,city:String, completion: @escaping(_ cities:[Cities]?) -> ()){
         
-        let url_api = "\(API_GeoNames.url_searchJSON_cities+countryCode)&q=\(city)"
-        
-        print(url_api)
+        let url_api = "\(API_GeoNames.url_searchJSON_cities)\(countryCode)/search/?region=\(city)&key=\(API_GeoNames.key)"
+    
+     
         let sessionManager = Alamofire.SessionManager.default
         
         sessionManager.request(url_api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).validate().responseJSON { response in
             switch(response.result) {
             case .success:
                 guard let dataFromJson = response.data else {return}
-                
+      
                 do {
-                    let allCitiesFromState = try JSONDecoder().decode(Cities.self, from: dataFromJson)
+                    let allCitiesFromState = try JSONDecoder().decode([Cities].self, from: dataFromJson)
                     
-                    let newArraySorted = allCitiesFromState.geonames!.sorted(by: { ($0.name!) < ($1.name!) })
+                    let newArraySorted = allCitiesFromState.sorted(by: { ($0.city!) < ($1.city!) })
                     
-                    let cities = Cities()
-                    cities.geonames = newArraySorted
-                    completion(cities)
+                    completion(newArraySorted)
                     
                 }catch {}
                 break
@@ -282,5 +280,19 @@ class Service:NSObject,CLLocationManagerDelegate{
         currentLocation = locationManager.location
     }
     
+    
+    func checkIfContainSociaMediaOrWebsite(string:String) ->String{
+        switch string {
+        case let str where str.lowercased().contains("facebook"):
+            return "Facebook"
+        case let str where str.lowercased().contains("linkedin"):
+            return "LinkedIn"
+        case let str where str.lowercased().contains("instagram"):
+            return "Instagram"
+        default:
+            return "website"
+        }
+    }
+
 }
 

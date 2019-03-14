@@ -18,7 +18,7 @@ class MyReviewViewController: BaseViewController {
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var tvDescription: UITextView!
     @IBOutlet weak var lbRatingString: UILabel!
-    
+
     var business = Business()
     var myReview:[Review] = []
     

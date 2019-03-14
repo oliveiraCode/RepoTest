@@ -7,28 +7,47 @@
 //
 
 import UIKit
+import MessageUI
 
 class BaseViewController: UIViewController {
-
-    let network = NetworkManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        network.reachability.whenUnreachable = { reachability in
-            self.showOfflinePage()
-        }
+        
+        //        Connection.shared.internetConnectionReachability { (connection) in
+        //            if !connection {
+        //                let alert = UIAlertController(title: "Erro ao salvar", message: "\nSem conexão com à Internet.", preferredStyle: .alert)
+        //
+        //                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        //                self.present(alert, animated: true, completion: {
+        //                    return
+        //                })
+        //            }
+        //        }
+        
         
     }
     
-    private func showOfflinePage() -> Void {
-        DispatchQueue.main.async {
-            
-            let viewPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OfflineViewController")
-            
-            self.present(viewPageController, animated: true, completion: nil)
-            
-        }
-    }
-    
+}
 
+extension SettingsTableViewController:MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if error == nil {
+            controller.dismiss(animated: true, completion: nil)
+        }
+        
+    }
+}
+
+extension DetailsBusinessViewController:MFMailComposeViewControllerDelegate{
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if error == nil {
+            controller.dismiss(animated: true, completion: nil)
+        }
+        
+    }
 }

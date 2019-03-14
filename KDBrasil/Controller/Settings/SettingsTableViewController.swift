@@ -19,7 +19,7 @@ class SettingsTableViewController: BaseTableViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let mailComposerVC = MFMailComposeViewController()
-    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão 2.0.1"]
+    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão 2.0.4"]
     
     let img0:[UIImage] = [UIImage(named: "account_color")!]
     let settings0:[String] = [NSLocalizedString(LocalizationKeys.settingsAccount, comment: "")]
@@ -175,6 +175,7 @@ class SettingsTableViewController: BaseTableViewController {
                 performSegue(withIdentifier: "showDonateVC", sender: nil)
                 break
             case 2:
+                
                 let subject = "App KD Brasil"
                 let body = "Escreva aqui a sua mensagem."
                 let email = "leandro.oliveira@live.com"
@@ -183,13 +184,29 @@ class SettingsTableViewController: BaseTableViewController {
                 mailComposerVC.setToRecipients([email])
                 mailComposerVC.setSubject(subject)
                 mailComposerVC.setMessageBody(body, isHTML: false)
-                self.present(mailComposerVC, animated: true, completion: nil)
+                
+                if MFMailComposeViewController.canSendMail() {
+                    self.present(mailComposerVC, animated: true, completion: nil)
+                } else {
+                    self.showAlert(title: "", message: "O serviço de e-mail não está disponível.")
+                }
+                
                 
             default:
                 print("done")
             }
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showDonateVC" {
+            let navController = segue.destination as! UINavigationController
+            let destController = navController.topViewController as! WebViewController
+            destController.urlSelected = LocalizationKeys.urlDonation
+        }
+    
     }
     
     //MARK - SideMenu Method
@@ -203,15 +220,6 @@ class SettingsTableViewController: BaseTableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-    }
-    
-}
-
-extension SettingsTableViewController:MFMailComposeViewControllerDelegate{
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        if error == nil {
-            mailComposerVC.dismiss(animated: true, completion: nil)
-        }
     }
     
 }

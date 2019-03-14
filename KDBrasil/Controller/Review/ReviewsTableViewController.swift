@@ -218,8 +218,6 @@ class ReviewsTableViewController: BaseTableViewController {
             if isEditingReview! {
                 destController.myReview = myReview!
             }
-            
-            
         }
         if segue.identifier == "showViewReviewVC" {
             let destController = segue.destination as! ViewReviewViewController

@@ -28,8 +28,23 @@ class AdminCodes:Codable{
     let ISO3166_2:String?
 }
 
+
+//class Cities:Codable{
+//    var array:[Values]
+//}
+
 class Cities:Codable {
-    var geonames:[Geonames]?
-    
+    var city:String?
+    var region:String?
+    var country:String?
+    var latitude:String?
+    var longitude:String?
 }
+
+
+
+//class Cities:Codable {
+//    var geonames:[Geonames]?
+//
+//}
 

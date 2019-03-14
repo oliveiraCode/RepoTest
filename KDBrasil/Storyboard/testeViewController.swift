@@ -1,5 +1,5 @@
 //
-//  testeViewController.swift
+//  AddressViewController.swift
 //  KDBrasil
 //
 //  Created by Leandro Oliveira on 2019-03-11.
@@ -11,7 +11,7 @@ import CoreLocation
 import Contacts
 
 
-class testeViewController: UIViewController, UITextFieldDelegate {
+class AddressViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var txtworkphone: UITextField!
     
