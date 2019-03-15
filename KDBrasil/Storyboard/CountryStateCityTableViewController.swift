@@ -1,5 +1,5 @@
 //
-//  CountryStateCityTableViewController.swift
+//  StatesTableViewController.swift
 //  KDBrasil
 //
 //  Created by Leandro Oliveira on 2019-03-11.
@@ -12,7 +12,7 @@ protocol AddressDelegate {
     func getValueSelected(typeEntry:String, value:String)
 }
 
-class CountryStateCityTableViewController: UITableViewController {
+class StatesTableViewController: UITableViewController {
     
     var cities:[Cities] = []
     var states:[Geonames] = []

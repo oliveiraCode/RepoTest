@@ -479,7 +479,10 @@ class FIRFirestoreService {
                         let objCategory = Category(name: value.element)
                         arrayCategory.append(objCategory)
                     }
-                    completionHandler(arrayCategory, nil)
+                    
+                    let newCategory = arrayCategory.sorted{ $0.name < $1.name }
+                    
+                    completionHandler(newCategory, nil)
                 }
             } else {
                 completionHandler([nil], error)

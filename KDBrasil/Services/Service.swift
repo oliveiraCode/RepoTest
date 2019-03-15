@@ -218,37 +218,6 @@ class Service:NSObject,CLLocationManagerDelegate{
         
     }
     
-    
-    func getAllCitiesFromState(countryCode:String,city:String, completion: @escaping(_ cities:[Cities]?) -> ()){
-        
-        let url_api = "\(API_GeoNames.url_searchJSON_cities)\(countryCode)/search/?region=\(city)&key=\(API_GeoNames.key)"
-    
-     
-        let sessionManager = Alamofire.SessionManager.default
-        
-        sessionManager.request(url_api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil ).validate().responseJSON { response in
-            switch(response.result) {
-            case .success:
-                guard let dataFromJson = response.data else {return}
-      
-                do {
-                    let allCitiesFromState = try JSONDecoder().decode([Cities].self, from: dataFromJson)
-                    
-                    let newArraySorted = allCitiesFromState.sorted(by: { ($0.city!) < ($1.city!) })
-                    
-                    completion(newArraySorted)
-                    
-                }catch {}
-                break
-            case .failure:
-                completion(nil)
-                print(response.result.error!)
-                break
-            }
-        }
-        
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations[0] as CLLocation
         

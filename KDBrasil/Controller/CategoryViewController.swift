@@ -13,18 +13,15 @@ protocol CategoryDelegate {
     func categoryValueSelected(categoryValue: String)  //value: string is an example of parameter
 }
 
-class CategoryViewController: BaseViewController {
+class CategoryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var btnSave: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView:UITableView!
     
     var delegate: CategoryDelegate?
     var categories:[Category]?
     var categoriesFiltered: [Category]?
     
-    var sectionExpandable:Int!
-    var indexPathRowSelected:Int!
-    var indexPathSectionSelected:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +37,17 @@ class CategoryViewController: BaseViewController {
     
     
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.categories?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Categorias (\(self.categories?.count ?? 0))"
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath)
-        
         
         if (self.categories?.count)! > 0 {
             cell.textLabel?.text = self.categories![indexPath.row].name
@@ -56,13 +56,10 @@ class CategoryViewController: BaseViewController {
         return cell
     }
     
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.categoryValueSelected(categoryValue: self.categories![indexPath.row].name)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
     
     @IBAction func btnCancelPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

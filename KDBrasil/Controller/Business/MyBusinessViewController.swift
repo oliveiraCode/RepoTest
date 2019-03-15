@@ -208,7 +208,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         
         if segue.identifier == "showCategoryVC" {
             let navController = segue.destination as! UINavigationController
-            let destController = navController.topViewController as! CategoryTableViewController
+            let destController = navController.topViewController as! CategoryViewController
             destController.delegate = self
         }
         

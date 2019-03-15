@@ -14,6 +14,7 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicator.startAnimating()
         checkInternet()
     }
     
@@ -40,7 +41,6 @@ class MainViewController: BaseViewController {
     
     private func showMainPage() -> Void {
         DispatchQueue.main.async {
-            self.activityIndicator.startAnimating()
             Service.shared.getCurrentCountry { (done) in
                 if done {
                     self.performSegue(withIdentifier: "showMainVC", sender: nil)
