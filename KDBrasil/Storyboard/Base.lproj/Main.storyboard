@@ -3672,7 +3672,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <rect key="frame" x="0.0" y="56" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="50" id="P1r-53-9vk" customClass="CountryTableViewCell" customModule="PhoneNumberFlag" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="50" id="P1r-53-9vk" customClass="CountryTableViewCell" customModule="KDBrasil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P1r-53-9vk" id="Kc9-cC-4Tg">
@@ -3813,7 +3813,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <image name="whatsapp_color" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wfb-dy-bFe"/>
+        <segue reference="eTG-5Z-qd2"/>
         <segue reference="XmA-hZ-wvP"/>
         <segue reference="b73-yD-mxL"/>
         <segue reference="tMd-ni-SvK"/>

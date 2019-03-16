@@ -27,6 +27,7 @@ class CountriesViewController:BaseViewController,UITableViewDelegate, UITableVie
         super.viewWillAppear(animated)
         list = Service.shared.getAllCountries()
         results = list
+        searchBar.becomeFirstResponder()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

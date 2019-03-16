@@ -55,9 +55,6 @@
 		9CA051DB223C6092009E693B /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CA051DA223C6091009E693B /* countryCodes.json */; };
 		9CA051DD223C619E009E693B /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DC223C619E009E693B /* CountryTableViewCell.swift */; };
 		9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DE223C61BB009E693B /* CountriesViewController.swift */; };
-		9CA051E3223D9806009E693B /* FPNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051E2223D9806009E693B /* FPNTextField.swift */; };
-		9CA051E5223D9835009E693B /* CountryPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051E4223D9835009E693B /* CountryPickerDelegate.swift */; };
-		9CA051E7223D98A8009E693B /* FPNDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051E6223D98A8009E693B /* FPNDelegate.swift */; };
 		9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */; };
 		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
 		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
@@ -136,9 +133,6 @@
 		9CA051DA223C6091009E693B /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
 		9CA051DC223C619E009E693B /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		9CA051DE223C61BB009E693B /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
-		9CA051E2223D9806009E693B /* FPNTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNTextField.swift; sourceTree = "<group>"; };
-		9CA051E4223D9835009E693B /* CountryPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerDelegate.swift; sourceTree = "<group>"; };
-		9CA051E6223D98A8009E693B /* FPNDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNDelegate.swift; sourceTree = "<group>"; };
 		9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
@@ -251,9 +245,6 @@
 				9CA051DA223C6091009E693B /* countryCodes.json */,
 				9CC72AD121D3FC9E0048C37B /* AppDelegate.swift */,
 				9C1C85D321FB8B0200103655 /* Constants.swift */,
-				9CA051E6223D98A8009E693B /* FPNDelegate.swift */,
-				9CA051E4223D9835009E693B /* CountryPickerDelegate.swift */,
-				9CA051E2223D9806009E693B /* FPNTextField.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -580,6 +571,7 @@
 				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
@@ -605,6 +597,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
@@ -683,11 +676,9 @@
 				9C160BEE21F909B6009232DD /* UIVC Extensions.swift in Sources */,
 				9C30CC7E222877E50021D03D /* LoginMainViewController.swift in Sources */,
 				9C2CD85F21D92679005F688E /* BusinessCell.swift in Sources */,
-				9CA051E5223D9835009E693B /* CountryPickerDelegate.swift in Sources */,
 				9C6F03F92232EEFB000B828F /* Countries.swift in Sources */,
 				9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */,
 				9CC72AF521D43E930048C37B /* Contact.swift in Sources */,
-				9CA051E3223D9806009E693B /* FPNTextField.swift in Sources */,
 				9C5C7F0C221F3BB500109152 /* UIImage Extensions.swift in Sources */,
 				9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */,
 				9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */,
@@ -705,7 +696,6 @@
 				9C04E8F52204B14E00C46412 /* User.swift in Sources */,
 				9C1C85D421FB8B0200103655 /* Constants.swift in Sources */,
 				9C6F040322349BDF000B828F /* Connection.swift in Sources */,
-				9CA051E7223D98A8009E693B /* FPNDelegate.swift in Sources */,
 				9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */,
 				9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */,
 				9C1E4CEA222D78AD00939C97 /* ReviewsTableViewController.swift in Sources */,

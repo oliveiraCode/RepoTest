@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Kingfisher
+import PhoneNumberKit
 
 class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITextViewDelegate, UITextFieldDelegate  {
     
@@ -36,6 +37,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     @IBOutlet weak var btnSaturday: UIButton!
     @IBOutlet weak var btnSunday: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     
     //Properties
     var customView:WeekHour!
@@ -75,6 +77,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setStates()
         self.dateFormatter.dateFormat = "HH:mm"
         
@@ -481,10 +484,15 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        let pnTextField = PhoneNumberTextField()
+        pnTextField.defaultRegion = (appDelegate.currentCountry?.code)!
+        pnTextField.text = textField.text
+        
+        
         //MARK:- If Delete button click
         let  char = string.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
-        
+    
         if (isBackSpace == -92) {
             print("Backspace was pressed")
             textField.text!.removeLast()
@@ -492,25 +500,17 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         }
         
         if textField == tfPhone {
-            if (textField.text?.count)! == 3 {
-                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
-            }
-            else if (textField.text?.count)! == 9{
-                textField.text = "\(textField.text!)-" //there we are ading - in textfield
-            }
-            else if (textField.text?.count)! > 13{
+            if (textField.text?.count)! < 13 {
+                textField.text =  pnTextField.text
+            } else {
                 return false
             }
         }
         
         if textField == tfWhatsapp {
-            if (textField.text?.count)! == 3 {
-                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
-            }
-            else if (textField.text?.count)! == 9{
-                textField.text = "\(textField.text!)-" //there we are ading - in textfield
-            }
-            else if (textField.text?.count)! > 13{
+            if (textField.text?.count)! < 13 {
+                textField.text =  pnTextField.text
+            } else {
                 return false
             }
         }
