@@ -10,9 +10,22 @@ import UIKit
 
 //used in search results of country
 class Countries:Codable {
-    var countryCode:String?
-    var countryName:String?
+    var code:String?
+    var name:String?
+    var dial_code: String?
     var allStates:States?
+    var flag: String?
+    
+    init() {
+    }
+    
+    init(name: String, dial_code: String, code: String) {
+        self.name = name
+        self.code = code
+        self.dial_code = dial_code
+        self.flag = code
+    }
+    
 }
 
 class States:Codable {
@@ -28,11 +41,6 @@ class AdminCodes:Codable{
     let ISO3166_2:String?
 }
 
-
-//class Cities:Codable{
-//    var array:[Values]
-//}
-
 class Cities:Codable {
     var city:String?
     var region:String?
@@ -40,11 +48,3 @@ class Cities:Codable {
     var latitude:String?
     var longitude:String?
 }
-
-
-
-//class Cities:Codable {
-//    var geonames:[Geonames]?
-//
-//}
-

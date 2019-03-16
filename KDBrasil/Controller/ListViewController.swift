@@ -199,6 +199,8 @@ extension ListViewController: UISearchBarDelegate {
         self.searchBar.showsCancelButton = false
         self.searchBar.text = ""
         self.searchBar.resignFirstResponder()
+        self.businesses = self.businessesFiltered
+        self.tableView.reloadData()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

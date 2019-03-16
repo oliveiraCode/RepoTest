@@ -52,6 +52,12 @@
 		9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D31220A2DC500F54782 /* DailyHours.swift */; };
 		9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5A220B3BB200F54782 /* GradientButton.swift */; };
 		9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5C220B3DB000F54782 /* GradientView.swift */; };
+		9CA051DB223C6092009E693B /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CA051DA223C6091009E693B /* countryCodes.json */; };
+		9CA051DD223C619E009E693B /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DC223C619E009E693B /* CountryTableViewCell.swift */; };
+		9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DE223C61BB009E693B /* CountriesViewController.swift */; };
+		9CA051E3223D9806009E693B /* FPNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051E2223D9806009E693B /* FPNTextField.swift */; };
+		9CA051E5223D9835009E693B /* CountryPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051E4223D9835009E693B /* CountryPickerDelegate.swift */; };
+		9CA051E7223D98A8009E693B /* FPNDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051E6223D98A8009E693B /* FPNDelegate.swift */; };
 		9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */; };
 		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
 		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
@@ -68,7 +74,6 @@
 		9CCA9DBE21E015C900ADA845 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBD21E015C900ADA845 /* Category.swift */; };
 		9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */; };
 		9CCE638122178A9B005EF258 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */; };
-		9CD6B3682235A50C0081B446 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6B3672235A50C0081B446 /* CountriesViewController.swift */; };
 		9CD6B373223811420081B446 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6B372223811420081B446 /* String.swift */; };
 		9CDA3F4E222F5D250051180B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA3F4D222F5D250051180B /* WebViewController.swift */; };
 		9CEF890122023D9A0015258F /* BusinessAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF890022023D9A0015258F /* BusinessAnnotation.swift */; };
@@ -128,6 +133,12 @@
 		9C933D31220A2DC500F54782 /* DailyHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHours.swift; sourceTree = "<group>"; };
 		9C933D5A220B3BB200F54782 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		9C933D5C220B3DB000F54782 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		9CA051DA223C6091009E693B /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
+		9CA051DC223C619E009E693B /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		9CA051DE223C61BB009E693B /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		9CA051E2223D9806009E693B /* FPNTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNTextField.swift; sourceTree = "<group>"; };
+		9CA051E4223D9835009E693B /* CountryPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerDelegate.swift; sourceTree = "<group>"; };
+		9CA051E6223D98A8009E693B /* FPNDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPNDelegate.swift; sourceTree = "<group>"; };
 		9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +158,6 @@
 		9CCA9DBD21E015C900ADA845 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9CCA9DBF21E016B800ADA845 /* BusinessesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesTableViewController.swift; sourceTree = "<group>"; };
 		9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
-		9CD6B3672235A50C0081B446 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		9CD6B372223811420081B446 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9CDA3F4D222F5D250051180B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9CEF890022023D9A0015258F /* BusinessAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAnnotation.swift; sourceTree = "<group>"; };
@@ -238,8 +248,12 @@
 		9C5C7F15221F45AB00109152 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9CA051DA223C6091009E693B /* countryCodes.json */,
 				9CC72AD121D3FC9E0048C37B /* AppDelegate.swift */,
 				9C1C85D321FB8B0200103655 /* Constants.swift */,
+				9CA051E6223D98A8009E693B /* FPNDelegate.swift */,
+				9CA051E4223D9835009E693B /* CountryPickerDelegate.swift */,
+				9CA051E2223D9806009E693B /* FPNTextField.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -308,7 +322,6 @@
 				9C933D2D2206639A00F54782 /* EditProfileViewController.swift */,
 				9C30CC7D222877E50021D03D /* LoginMainViewController.swift */,
 				9C30CC7F222880BF0021D03D /* LoginViewController.swift */,
-				9CD6B3672235A50C0081B446 /* CountriesViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -368,6 +381,7 @@
 		9CC72AE521D404740048C37B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9CA051DC223C619E009E693B /* CountryTableViewCell.swift */,
 				9C2CD85D21D92679005F688E /* BusinessCell.swift */,
 				9C2CD85E21D92679005F688E /* BusinessCell.xib */,
 				9C1C85D121FA3FB100103655 /* PhotoCollectionViewCell.swift */,
@@ -411,6 +425,7 @@
 				9C01410221E504380002345D /* CategoryViewController.swift */,
 				9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */,
 				9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */,
+				9CA051DE223C61BB009E693B /* CountriesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,6 +548,7 @@
 				9C2CD86021D92679005F688E /* BusinessCell.xib in Resources */,
 				9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */,
 				9CC72ADC21D3FCA00048C37B /* LaunchScreen.storyboard in Resources */,
+				9CA051DB223C6092009E693B /* countryCodes.json in Resources */,
 				9CC72AD921D3FCA00048C37B /* Assets.xcassets in Resources */,
 				9CC72AD721D3FC9E0048C37B /* Main.storyboard in Resources */,
 				9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */,
@@ -638,9 +654,9 @@
 				9CC72AF421D43E930048C37B /* Address.swift in Sources */,
 				9C25B73921E80A8E00E332F8 /* FIRFirestoreService.swift in Sources */,
 				9CC72AF721D440CD0048C37B /* MyBusinessViewController.swift in Sources */,
+				9CA051DD223C619E009E693B /* CountryTableViewCell.swift in Sources */,
 				9C933D2C22061F7800F54782 /* ProfileTableViewCell.swift in Sources */,
 				9C6F0401223471FE000B828F /* MainViewController.swift in Sources */,
-				9CD6B3682235A50C0081B446 /* CountriesViewController.swift in Sources */,
 				9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */,
 				9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */,
 				9C30CC82222976430021D03D /* PageViewController.swift in Sources */,
@@ -667,14 +683,17 @@
 				9C160BEE21F909B6009232DD /* UIVC Extensions.swift in Sources */,
 				9C30CC7E222877E50021D03D /* LoginMainViewController.swift in Sources */,
 				9C2CD85F21D92679005F688E /* BusinessCell.swift in Sources */,
+				9CA051E5223D9835009E693B /* CountryPickerDelegate.swift in Sources */,
 				9C6F03F92232EEFB000B828F /* Countries.swift in Sources */,
 				9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */,
 				9CC72AF521D43E930048C37B /* Contact.swift in Sources */,
+				9CA051E3223D9806009E693B /* FPNTextField.swift in Sources */,
 				9C5C7F0C221F3BB500109152 /* UIImage Extensions.swift in Sources */,
 				9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */,
 				9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */,
 				9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */,
 				9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */,
+				9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */,
 				9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */,
 				9C6F04072234A152000B828F /* BaseViewController.swift in Sources */,
 				9C1C85D221FA3FB100103655 /* PhotoCollectionViewCell.swift in Sources */,
@@ -686,6 +705,7 @@
 				9C04E8F52204B14E00C46412 /* User.swift in Sources */,
 				9C1C85D421FB8B0200103655 /* Constants.swift in Sources */,
 				9C6F040322349BDF000B828F /* Connection.swift in Sources */,
+				9CA051E7223D98A8009E693B /* FPNDelegate.swift in Sources */,
 				9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */,
 				9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */,
 				9C1E4CEA222D78AD00939C97 /* ReviewsTableViewController.swift in Sources */,

@@ -54,11 +54,11 @@ class SettingsTableViewController: BaseTableViewController {
         imgCountry.removeAll()
         country.removeAll()
         
-        if let image = UIImage(named: (appDelegate.currentCountry?.countryCode)!+"32") {
+        if let image = UIImage(named: (appDelegate.currentCountry?.code)!) {
             imgCountry.append(image)
-            country.append((appDelegate.currentCountry?.countryName)!)
+            country.append((appDelegate.currentCountry?.name)!)
         } else {
-            imgCountry.append(UIImage(named: "placeholder_photo")!)
+            imgCountry.append(UIImage(named: "unknown")!)
             country.append("Indisponível")
         }
         
@@ -140,7 +140,7 @@ class SettingsTableViewController: BaseTableViewController {
         if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                performSegue(withIdentifier: "showChangeCountryVC", sender: nil)
+                performSegue(withIdentifier: "showCountryVC", sender: nil)
                 break
             default:
                 print("done")

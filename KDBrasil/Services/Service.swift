@@ -18,6 +18,7 @@ class Service:NSObject,CLLocationManagerDelegate{
     
     static let shared = Service()
     
+    let locale = Locale.init(identifier: "pt_BR")
     private var locationManager = CLLocationManager()
     var currentLocation:CLLocation!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -41,7 +42,7 @@ class Service:NSObject,CLLocationManagerDelegate{
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        dateFormatterGet.locale = Locale(identifier: "pt_BR")
+        dateFormatterGet.locale = locale
         
         return dateFormatterGet.string(from: Date())
     }
@@ -129,10 +130,8 @@ class Service:NSObject,CLLocationManagerDelegate{
     func getAddressFromCoordinates(currentLocation:CLLocation, completion: @escaping (_ country: String?,_ isoCountryCode: String?,_ error: Error?) -> ()) {
         
         let geoCoder = CLGeocoder()
-        
-        let locale = Locale(identifier: "pt_BR")
-        
-        geoCoder.reverseGeocodeLocation(currentLocation, preferredLocale: locale) { (placemarks, error) in
+    
+        geoCoder.reverseGeocodeLocation(currentLocation, preferredLocale: self.locale) { (placemarks, error) in
             
             if let e = error {
                 completion(nil,nil,e)
@@ -163,31 +162,58 @@ class Service:NSObject,CLLocationManagerDelegate{
             completion(true)
         } else {
             
-            // get the localized country name (in my case, it's PT Brazil)
-            let ptLocale = NSLocale.init(localeIdentifier: "pt_BR")
-            
             // get the current locale
             let currentLocale = Locale.current
-            let countryCode = currentLocale.regionCode
-         // let countryNameEN = currentLocale.localizedString(forRegionCode: countryCode!)
-            
-            let thePtCountryName = ptLocale.localizedString(forLocaleIdentifier: currentLocale.identifier)
-            let countryNamePT = thePtCountryName.slice(from: "(", to: ")")
-            
-            let currentCountry = Countries()
-            currentCountry.countryCode = countryCode
-            currentCountry.countryName = countryNamePT
-            appDelegate.currentCountry = currentCountry
-            getAllStatesFromCountry()
-            completion(true)
-            
+            let code = currentLocale.regionCode
+
+            for (_,value) in getAllCountries().enumerated(){
+                if value.code == code {
+                    let currentCountry = Countries()
+                    currentCountry.code = value.code
+                    currentCountry.name = value.name
+                    currentCountry.dial_code = value.dial_code
+                    currentCountry.flag = value.flag
+                    appDelegate.currentCountry = currentCountry
+                    getAllStatesFromCountry()
+                    completion(true)
+                }
+            }
         }
     }
     
     
+    func getAllCountries() -> [Countries] {
+        
+        var countries = [Countries]()
+        
+        if let jsonPath = Bundle.main.path(forResource: "countryCodes", ofType: "json") {
+            
+            let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath))
+            
+            do {
+                if let jsonObjects = try JSONSerialization.jsonObject(with: jsonData!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSArray {
+                    
+                    for jsonObject in jsonObjects {
+                        guard let countryObj = jsonObject as? NSDictionary else { return countries }
+                        guard let code = countryObj["code"] as? String, let phoneCode = countryObj["dial_code"] as? String, let name = countryObj["name"] as? String else { return countries }
+                        
+                        let country = Countries(name: self.locale.localizedString(forRegionCode: code) ?? name, dial_code: phoneCode, code: code)
+                        
+                        countries.append(country)
+                    }
+                    
+                }
+            } catch let error {
+                assertionFailure(error.localizedDescription)
+            }
+            
+        }
+        return countries.sorted(by: { $0.name! < $1.name! })
+    }
+
     
     func getAllStatesFromCountry(){
-        guard let countryCode = self.appDelegate.currentCountry?.countryCode else {return}
+        guard let countryCode = self.appDelegate.currentCountry?.code else {return}
         
         let url_api = "\(API_GeoNames.url_searchJSON_states)\(countryCode)"
         

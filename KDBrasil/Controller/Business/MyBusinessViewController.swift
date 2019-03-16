@@ -234,7 +234,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             guard var whatsapp = tfWhatsapp.text else {return}
             guard let web = tfWeb.text else {return}
             guard let category = btnCategory.title(for: .normal) else {return}
-            guard let country = appDelegate.currentCountry?.countryName else {return}
+            guard let country = appDelegate.currentCountry?.name else {return}
             
             if !phone.isEmpty {
                 phone = "+1 "+phone

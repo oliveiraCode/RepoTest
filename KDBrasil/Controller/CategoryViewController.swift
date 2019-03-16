@@ -16,7 +16,7 @@ protocol CategoryDelegate {
 class CategoryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var delegate: CategoryDelegate?
     var categories:[Category]?
@@ -74,6 +74,9 @@ extension CategoryViewController: UISearchBarDelegate {
         self.searchBar.showsCancelButton = false
         self.searchBar.text = ""
         self.searchBar.resignFirstResponder()
+        
+        self.categories = self.categoriesFiltered
+        self.tableView.reloadData()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
