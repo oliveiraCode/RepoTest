@@ -47,17 +47,6 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tabBarController?.delegate = self
         
-        //start once the page view controller
-        if !(UserDefaults.standard.bool(forKey: "Welcome")) {
-            let offset = 0.1
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(offset * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-                
-               let viewPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController")
-                
-                self.present(viewPageController, animated: true, completion: nil)
-            })
-        }
-        
         self.tableView.refreshControl = refreshTableView
         
         let nibName = UINib(nibName: "BusinessCell", bundle: nil)

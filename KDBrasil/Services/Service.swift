@@ -130,7 +130,7 @@ class Service:NSObject,CLLocationManagerDelegate{
     func getAddressFromCoordinates(currentLocation:CLLocation, completion: @escaping (_ country: String?,_ isoCountryCode: String?,_ error: Error?) -> ()) {
         
         let geoCoder = CLGeocoder()
-    
+        
         geoCoder.reverseGeocodeLocation(currentLocation, preferredLocale: self.locale) { (placemarks, error) in
             
             if let e = error {
@@ -159,13 +159,15 @@ class Service:NSObject,CLLocationManagerDelegate{
         if let countryData = UserDefaults.standard.data(forKey: "country"),
             let country = try? JSONDecoder().decode(Countries.self, from: countryData) {
             appDelegate.currentCountry = country
+            getAllStatesFromCountry()
             completion(true)
-        } else {
-            
+        }
+        
+        if appDelegate.currentCountry == nil {
             // get the current locale
             let currentLocale = Locale.current
             let code = currentLocale.regionCode
-
+            
             for (_,value) in getAllCountries().enumerated(){
                 if value.code == code {
                     let currentCountry = Countries()
@@ -174,11 +176,15 @@ class Service:NSObject,CLLocationManagerDelegate{
                     currentCountry.dial_code = value.dial_code
                     currentCountry.flag = value.flag
                     appDelegate.currentCountry = currentCountry
+                    saveCountryUserDefaults()
                     getAllStatesFromCountry()
                     completion(true)
                 }
             }
+            
         }
+        
+        
     }
     
     
@@ -210,7 +216,7 @@ class Service:NSObject,CLLocationManagerDelegate{
         }
         return countries.sorted(by: { $0.name! < $1.name! })
     }
-
+    
     
     func getAllStatesFromCountry(){
         guard let countryCode = self.appDelegate.currentCountry?.code else {return}
@@ -232,7 +238,6 @@ class Service:NSObject,CLLocationManagerDelegate{
                     let newArraySorted = allStatesFromCountry.geonames.sorted(by: { ($0.name!) < ($1.name!) })
                     
                     self.appDelegate.currentCountry?.allStates?.geonames = newArraySorted
-                    self.saveCountryUserDefaults()
                     
                 }catch {}
                 break
@@ -288,6 +293,6 @@ class Service:NSObject,CLLocationManagerDelegate{
             return "website"
         }
     }
-
+    
 }
 

@@ -19,7 +19,7 @@ class SettingsTableViewController: BaseTableViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let mailComposerVC = MFMailComposeViewController()
-    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão 2.0.4"]
+    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão 2.0.5"]
     
     let img0:[UIImage] = [UIImage(named: "account_color")!]
     let settings0:[String] = [NSLocalizedString(LocalizationKeys.settingsAccount, comment: "")]

@@ -9,11 +9,14 @@
 import UIKit
 import FirebaseAuth
 import KRProgressHUD
+import PhoneNumberKit
 
 class EditProfileViewController: BaseViewController {
     
     
     //IBOutlets
+    @IBOutlet weak var lbCountryCodePhone: UILabel!
+    @IBOutlet weak var lbCountryCodeWhatsApp: UILabel!
     @IBOutlet weak var tfFirstName: UITextField!
     @IBOutlet weak var tfLastName: UITextField!
     @IBOutlet weak var tfPhone: UITextField!
@@ -40,7 +43,8 @@ class EditProfileViewController: BaseViewController {
     //MARK - SetupUI
     func setupUI(){
         
-
+        self.lbCountryCodePhone.text = appDelegate.currentCountry?.dial_code
+        self.lbCountryCodeWhatsApp.text = appDelegate.currentCountry?.dial_code
         self.tfFirstName.text = appDelegate.userObj.firstName
         self.tfLastName.text = appDelegate.userObj.lastName
         self.tfPhone.text = appDelegate.userObj.phone
@@ -67,12 +71,12 @@ class EditProfileViewController: BaseViewController {
             
             appDelegate.userObj.firstName = self.tfFirstName.text
             appDelegate.userObj.lastName = self.tfLastName.text
-            appDelegate.userObj.phone = "+1 \(self.tfPhone.text!)"
-            appDelegate.userObj.whatsapp = "+1 \(self.tfWhatsApp.text!)"
+            appDelegate.userObj.phone = "\(lbCountryCodePhone.text!) \(self.tfPhone.text!)"
+            appDelegate.userObj.whatsapp = "\(lbCountryCodeWhatsApp.text!) \(self.tfWhatsApp.text!)"
             appDelegate.userObj.email = self.tfEmail.text
             appDelegate.userObj.image = self.imgProfile.image
             
-            
+
             KRProgressHUD.show(withMessage: NSLocalizedString(LocalizationKeys.pleaseWait, comment: "")) {
                 //atualizar a image
                 FIRFirestoreService.shared.saveImageToStorage()
@@ -183,6 +187,12 @@ extension EditProfileViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+
+        let pnTextField = PhoneNumberTextField()
+        pnTextField.defaultRegion = (appDelegate.currentCountry?.code)!
+        pnTextField.text = textField.text
+        
+        
         //MARK:- If Delete button click
         let  char = string.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
@@ -194,28 +204,21 @@ extension EditProfileViewController: UITextFieldDelegate {
         }
         
         if textField == tfPhone {
-            if (textField.text?.count)! == 3 {
-                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
-            }
-            else if (textField.text?.count)! == 9{
-                textField.text = "\(textField.text!)-" //there we are ading - in textfield
-            }
-            else if (textField.text?.count)! > 13{
+            if (textField.text?.count)! <= 13 {
+                textField.text =  pnTextField.text
+            } else {
                 return false
             }
         }
         
         if textField == tfWhatsApp {
-            if (textField.text?.count)! == 3 {
-                textField.text = "(\(textField.text!)) "  //There we are ading () and space two things
-            }
-            else if (textField.text?.count)! == 9{
-                textField.text = "\(textField.text!)-" //there we are ading - in textfield
-            }
-            else if (textField.text?.count)! > 13{
+            if (textField.text?.count)! <= 13 {
+                textField.text =  pnTextField.text
+            } else {
                 return false
             }
         }
+        
         return true
         
     }

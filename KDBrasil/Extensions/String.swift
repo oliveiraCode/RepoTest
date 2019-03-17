@@ -9,5 +9,7 @@
 import Foundation
 
 extension String {
-    
+    var isNumeric : Bool {
+        return Double(self) != nil
+    }
 }

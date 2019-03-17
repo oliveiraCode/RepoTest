@@ -14,7 +14,6 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activityIndicator.startAnimating()
         checkInternet()
     }
     
@@ -41,12 +40,21 @@ class MainViewController: BaseViewController {
     
     private func showMainPage() -> Void {
         DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
             Service.shared.getCurrentCountry { (done) in
                 if done {
-                    self.performSegue(withIdentifier: "showMainVC", sender: nil)
-                    self.activityIndicator.stopAnimating()
+                    //start once the page view controller
+                    if UserDefaults.standard.bool(forKey: "Welcome") {
+                        self.performSegue(withIdentifier: "showMainVC", sender: nil)
+                    } else {
+                        UserDefaults.standard.set(true, forKey: "Welcome")
+                        
+                        let viewPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController")
+                        self.present(viewPageController, animated: true, completion: nil)
+                    }
                 }
             }
+            self.activityIndicator.stopAnimating()
         }
     }
     

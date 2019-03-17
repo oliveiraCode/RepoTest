@@ -39,7 +39,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.dataSource = self
         self.delegate = self
         
-
+        
         // Set up the first view that will show up on page control
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
@@ -75,9 +75,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
                                 completion: nil)
         
         if button.titleLabel?.text == "Bem-vindo!" {
-            self.dismiss(animated: true, completion: nil)
-            UserDefaults.standard.set(true, forKey: "Welcome")
+            
+            let viewPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController")
+            self.present(viewPageController, animated: true, completion: nil)
+ 
         }
+        
         self.changeButtonValue()
     }
     

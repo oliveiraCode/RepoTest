@@ -14,6 +14,8 @@ import PhoneNumberKit
 class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITextViewDelegate, UITextFieldDelegate  {
     
     //IBOutlets
+    @IBOutlet weak var lbCountryCodePhone: UILabel!
+    @IBOutlet weak var lbCountryCodeWhatsApp: UILabel!
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tvDescription: UITextView!
     @IBOutlet weak var tfNumber: UITextField!
@@ -113,6 +115,9 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             self.startActivityIndicator()
             self.updateUI()
         }
+        
+        lbCountryCodePhone.text = appDelegate.currentCountry?.dial_code
+        lbCountryCodeWhatsApp.text = appDelegate.currentCountry?.dial_code
         
     }
     
@@ -240,10 +245,10 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             guard let country = appDelegate.currentCountry?.name else {return}
             
             if !phone.isEmpty {
-                phone = "+1 "+phone
+                phone = "\(lbCountryCodePhone.text!) \(phone)"
             }
             if !whatsapp.isEmpty {
-                whatsapp = "+1 "+whatsapp
+                whatsapp = "\(lbCountryCodeWhatsApp.text!) \(whatsapp)"
             }
             
             self.activityIndicator.startAnimating()
@@ -500,7 +505,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         }
         
         if textField == tfPhone {
-            if (textField.text?.count)! < 13 {
+            if (textField.text?.count)! <= 13 {
                 textField.text =  pnTextField.text
             } else {
                 return false
@@ -508,7 +513,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         }
         
         if textField == tfWhatsapp {
-            if (textField.text?.count)! < 13 {
+            if (textField.text?.count)! <= 13 {
                 textField.text =  pnTextField.text
             } else {
                 return false
@@ -571,7 +576,11 @@ extension MyBusinessViewController: UIPickerViewDataSource, UIPickerViewDelegate
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.tfState.text = self.stateAlphaCode[row]
+        if self.stateAlphaCode[row].isNumeric {
+            self.tfState.text = self.stateFull[row]
+        } else {
+            self.tfState.text = self.stateAlphaCode[row]
+        }
     }
 }
 
@@ -580,7 +589,11 @@ extension MyBusinessViewController: ToolbarPickerViewDelegate {
     func didTapSave() {
         let row = self.pickerView.selectedRow(inComponent: 0)
         self.pickerView.selectRow(row, inComponent: 0, animated: false)
-        self.tfState.text = self.stateAlphaCode[row]
+        if self.stateAlphaCode[row].isNumeric {
+            self.tfState.text = self.stateFull[row]
+        } else {
+            self.tfState.text = self.stateAlphaCode[row]
+        }
         self.tfState.resignFirstResponder()
     }
     

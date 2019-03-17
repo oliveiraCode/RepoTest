@@ -60,6 +60,7 @@ class CountriesViewController:BaseViewController,UITableViewDelegate, UITableVie
     
     @IBAction func btnSave(_ sender: UIBarButtonItem) {
         appDelegate.currentCountry = countrySelected
+        Service.shared.saveCountryUserDefaults()
         Service.shared.getAllStatesFromCountry()
         dismiss(animated: true, completion: nil)
     }

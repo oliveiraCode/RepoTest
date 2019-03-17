@@ -263,7 +263,11 @@ class FIRFirestoreService {
                     
                     let addressObj = Address(data: address)
                     
-                    addressObj?.distance = Service.shared.calculateDistanceKm(lat: (addressObj!.latitude)!, long: (addressObj!.longitude)!)
+                    if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined{
+                        addressObj?.distance = 0.0
+                    } else {
+                        addressObj?.distance = Service.shared.calculateDistanceKm(lat: (addressObj!.latitude)!, long: (addressObj!.longitude)!)
+                    }
                     
                     let contactObj = Contact(data: contact)
                     
@@ -311,7 +315,7 @@ class FIRFirestoreService {
                     
                     let addressObj = Address(data: address)
                     
-                    if CLLocationManager.authorizationStatus() == .denied {
+                    if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined{
                         addressObj?.distance = 0.0
                     } else {
                         addressObj?.distance = Service.shared.calculateDistanceKm(lat: (addressObj!.latitude)!, long: (addressObj!.longitude)!)
