@@ -74,7 +74,7 @@ class CreateAccountViewController: BaseViewController {
         self.appDelegate.userObj.email = self.tfEmail.text
         self.appDelegate.userObj.password = self.tfPassword.text
         self.appDelegate.userObj.image = self.profileImageView.image
-        self.appDelegate.userObj.creationDate = Service.shared.getTodaysDate()
+        self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: Date().description, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
         self.appDelegate.userObj.isFacebook = false
         
         FIRFirestoreService.shared.createUser { (error) in

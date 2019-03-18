@@ -75,7 +75,7 @@ class MyReviewViewController: BaseViewController {
         let description = tvDescription.text!
         let user_id = appDelegate.userObj.id!
         let user_name = appDelegate.userObj.firstName!
-        let date_review = Service.shared.getTodaysDate()
+        let date_review = Date.getFormattedDate(date: Date().description, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
         let rating = ratingBusiness.rating
         
         let reviewObj = Review(title: title, description: description, user_id: user_id, user_name: user_name, date_review: date_review, rating:rating)

@@ -35,6 +35,7 @@ enum LocalizationKeys {
     //ButtonsDefault
     static let buttonCancel = "Cancelar"
     static let buttonSave = "Salvar"
+    static let buttonDelete = "Deletar"
     static let buttonDone = "Finalizar"
     static let buttonContinue = "Continuar"
     static let buttonOK = "OK"

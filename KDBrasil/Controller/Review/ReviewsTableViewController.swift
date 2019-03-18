@@ -136,7 +136,7 @@ class ReviewsTableViewController: BaseTableViewController {
             cell.cvRating.rating = myReview![indexPath.row].rating!
             cell.lbRating.text = "\(myReview![indexPath.row].rating!)"
             cell.lbDescription.text = myReview![indexPath.row].description
-            cell.lbDate_review.text = "\(myReview![indexPath.row].user_name!) \(myReview![indexPath.row].date_review!)"
+            cell.lbDate_review.text = "\(myReview![indexPath.row].user_name!) \(Date.getFormattedDate(date: myReview![indexPath.row].date_review!, formatter: "dd/MM/yyyy HH:mm:ss"))"
             
         }
         
@@ -146,7 +146,7 @@ class ReviewsTableViewController: BaseTableViewController {
             cell.cvRating.rating = self.business.reviews![indexPath.row].rating!
             cell.lbRating.text = "\(self.business.reviews![indexPath.row].rating!)"
             cell.lbDescription.text = self.business.reviews![indexPath.row].description
-            cell.lbDate_review.text = "\(self.business.reviews![indexPath.row].user_name!) \(self.business.reviews![indexPath.row].date_review!)"
+            cell.lbDate_review.text = "\(self.business.reviews![indexPath.row].user_name!) \(Date.getFormattedDate(date: self.business.reviews![indexPath.row].date_review!, formatter: "dd/MM/yyyy HH:mm:ss"))"
             
         }
         

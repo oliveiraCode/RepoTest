@@ -105,16 +105,8 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
         
         FIRFirestoreService.shared.getDataFromUserBusiness(idUser: businessDetails.user_id!) { (user, error) in
             if error == nil {
-                
-                let dateFormatterGet = DateFormatter()
-                dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                
-                let dateFormatterPrint = DateFormatter()
-                dateFormatterPrint.dateFormat = "dd/MM/yyyy"
-                
-                let creationDate = dateFormatterGet.date(from: "\(user!.creationDate!)")
-             
-                self.userNameAndMember.text = "\(user!.firstName!) é membro desde \(dateFormatterPrint.string(from: creationDate!))"
+
+                self.userNameAndMember.text = "\(user!.firstName!) é membro desde \(Date.getFormattedDate(date: (user?.creationDate)!, formatter: "dd/MM/yyyy"))"
                 self.userImage.image = user?.image
                 
             }
@@ -217,7 +209,7 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
         self.lbCategory.text = businessDetails.category
         self.lbAddress.text = getAddressFormatted()
         self.tvDescription.text = businessDetails.description
-        self.pageControl.numberOfPages = 3
+        self.pageControl.numberOfPages = self.businessDetails.photosURL?.count ?? 0
     
         
     }
@@ -256,7 +248,7 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
     
     //MARK - CollectionView methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.businessDetails.photosURL?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -17,7 +17,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         //image corner with some radius
-        imageCellBusiness.layer.cornerRadius = 10
+        imageCellBusiness.layer.cornerRadius = 5
         imageCellBusiness.clipsToBounds = true
         
     }

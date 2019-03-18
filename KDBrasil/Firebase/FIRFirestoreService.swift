@@ -25,7 +25,7 @@ class FIRFirestoreService {
     //MARK: - saveData
     func saveData(business:Business, imageArray:[UIImage]){
         var photoUrls:[String] = []
-        
+        let countImage = imageArray.count
         let businessRef = Firestore.firestore().collection(FIRCollectionReference.business)
         business.id = businessRef.document().collection(businessRef.collectionID).document().documentID
         
@@ -34,7 +34,7 @@ class FIRFirestoreService {
             uploading(business: business, img: image, index: index) { (url) in
                 photoUrls.append(url)
                 
-                if photoUrls.count == 3 {
+                if photoUrls.count == countImage {
                     business.photosURL = photoUrls.sorted{ $0 < $1 }
                     self.saveBusinessToFirestore(businessRef: businessRef, business: business)
                 }

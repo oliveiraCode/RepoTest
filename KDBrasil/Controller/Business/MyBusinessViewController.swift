@@ -29,7 +29,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     @IBOutlet weak var tfWhatsapp: UITextField!
     @IBOutlet weak var tfWeb: UITextField!
     @IBOutlet weak var btnCategory: UIButton!
-    @IBOutlet weak var pageControlPhoto: UIPageControl!
     @IBOutlet weak var collectionViewPhoto: UICollectionView!
     @IBOutlet weak var btnMonday: UIButton!
     @IBOutlet weak var btnTuesday: UIButton!
@@ -51,12 +50,10 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     var activityIndicator = UIActivityIndicatorView()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var categoryValue:String?
+    var photosValue:[UIImage]?
     var indexPathItemForImage:Int?
-    var countThreePhotos = 0 //default value
     let dateFormatter = DateFormatter()
-    var imageArrayForStorage:[UIImage] = [UIImage(named: "placeholder_photo_new_ad")!,
-                                          UIImage(named: "placeholder_photo_new_ad")!,
-                                          UIImage(named: "placeholder_photo_new_ad")!]
+    var imageArrayForStorage:[UIImage] = [UIImage(named: "placeholder_photo_new_ad")!]
     let weekArray:[String] = [ NSLocalizedString(LocalizationKeys.monday, comment: ""),
                                NSLocalizedString(LocalizationKeys.tuesday, comment: ""),
                                NSLocalizedString(LocalizationKeys.wednesday, comment: ""),
@@ -111,7 +108,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             self.title = "Novo Anúncio"
         } else {
             self.title = "Editar Anúncio"
-            self.countThreePhotos = 3
             self.startActivityIndicator()
             self.updateUI()
         }
@@ -126,6 +122,15 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         if categoryValue != nil {
             btnCategory.setTitle(self.categoryValue, for: .normal)
         }
+        
+        if photosValue != nil{
+            self.imageArrayForStorage = photosValue!
+            self.collectionViewPhoto.reloadData()
+        }
+        
+
+
+        
     }
     
     
@@ -159,23 +164,25 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         tfPhone.text = String((tfPhone.text?.dropFirst(3))!)
         tfWhatsapp.text = String((tfWhatsapp.text?.dropFirst(3))!)
         
-        self.imageArrayForStorage.removeAll()
-        
-        for index in 0...2 {
+
+        if let countImage = self.businessDetails.photosURL?.count {
             
-            let image = UIImageView()
-            image.kf.setImage(with: URL(string: self.businessDetails.photosURL![index])){
-                result in
-                switch result {
-                case .success(let value):
-                    self.imageArrayForStorage.append(value.image)
-                    self.collectionViewPhoto.reloadData()
-                case .failure(let error):
-                    print("Job failed: \(error.localizedDescription)")
+            for index in 0...countImage-1 {
+                
+                let image = UIImageView()
+                image.kf.setImage(with: URL(string: self.businessDetails.photosURL![index])){
+                    result in
+                    switch result {
+                    case .success(let value):
+                        self.imageArrayForStorage.insert(value.image, at: index)
+                        self.collectionViewPhoto.reloadData()
+                    case .failure(let error):
+                        print("Job failed: \(error.localizedDescription)")
+                    }
                 }
             }
-            
         }
+        
         
         //put all week days in correct order
         businessDetails.hours = businessDetails.hours?.sorted(by: { $0.day! < $1.day! })
@@ -220,6 +227,13 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             destController.delegate = self
         }
         
+        
+        if segue.identifier == "showPhotosVC" {
+            let destController = segue.destination as! PhotosViewController
+            destController.arrayPhotos = imageArrayForStorage
+            destController.delegate = self
+        }
+        
     }
     
     
@@ -254,9 +268,10 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             self.activityIndicator.startAnimating()
             let creationDate:String
             if isNewBusiness! {
-                creationDate = Service.shared.getTodaysDate()
+                creationDate = Date.getFormattedDate(date: Date().description, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
             } else {
-                creationDate = self.businessDetails.creationDate!
+                creationDate = Date.getFormattedDate(date: self.businessDetails.creationDate!, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
+                
             }
             
             Service.shared.getCoordinateFromGeoCoder(address: "\(number) \(street), \(city), \(province) \(postalCode)") { (coordinate, error) in
@@ -272,7 +287,9 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
                         FIRFirestoreService.shared.removeData(business: self.businessDetails)
                     }
                     
+                    self.imageArrayForStorage.removeLast()
                     FIRFirestoreService.shared.saveData(business: business, imageArray: self.imageArrayForStorage)
+     
                     var messageBusiness:String
                     if self.isNewBusiness! {
                         messageBusiness = General.businessCreated
@@ -308,30 +325,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     
     //MARK -> PickImage's method
     @objc func pickImage(_ sender:AnyObject) {
-        
-        indexPathItemForImage = sender.view.tag //to know witch item was selected.
-        
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: LocalizationKeys.buttonCamera, style: .default, handler: { action in
-            let cameraPicker = UIImagePickerController()
-            cameraPicker.delegate = self
-            cameraPicker.sourceType = .camera
-            cameraPicker.allowsEditing = true
-            self.present(cameraPicker, animated: true)
-        }))
-        
-        alert.addAction(UIAlertAction(title: LocalizationKeys.buttonPhotoLibrary, style: .default, handler: { action in
-            let imagePicker = UIImagePickerController()
-            imagePicker.allowsEditing = true
-            imagePicker.delegate = self
-            self.present(imagePicker, animated: true)
-        }))
-        
-        alert.addAction(UIAlertAction(title: LocalizationKeys.buttonCancel, style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-        
+        performSegue(withIdentifier: "showPhotosVC", sender: nil)
     }
     
     //MARK -> CollectionView's methods
@@ -351,10 +345,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         
         return cellPhoto
         
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageControlPhoto.currentPage = indexPath.item
     }
     
     //MARK - UITextView setup
@@ -437,9 +427,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     }
     
     func isFieldsWithValues() -> Bool{
-        
-        guard self.countThreePhotos >= 3 else { self.showAlert(title: General.warning, message: "São necessárias 3 imagens por anúncio"); return false}
-        
         
         guard self.tfName.text != "" else {self.showAlert(title: General.warning, message: "O nome do título deve ser preenchido");return false}
         
@@ -533,31 +520,11 @@ extension MyBusinessViewController: CategoryDelegate {
     }
 }
 
-//MARK: PickerImage
-extension MyBusinessViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+//MARK: Photos Delegate
+extension MyBusinessViewController: PhotosDelegate {
+    func photosValueSelected(photosValue: [UIImage]) {
+        self.photosValue = photosValue
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            
-            if isNewBusiness! {
-                if self.countThreePhotos == 0 {
-                    self.countThreePhotos = 1
-                } else {
-                    self.countThreePhotos = self.countThreePhotos + 1
-                }
-            }
-            
-            imageArrayForStorage.remove(at: indexPathItemForImage!)
-            imageArrayForStorage.insert(pickedImage, at: indexPathItemForImage!)
-        }
-        picker.dismiss(animated: true, completion: {self.collectionViewPhoto.reloadData()})
-    }
-    
 }
 
 //MARK: PickerView
@@ -704,15 +671,20 @@ extension MyBusinessViewController: WeekHourDelegate {
     
 }
 
+
 extension MyBusinessViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
         
-        return UIEdgeInsets(top: 0.0, left: (UIScreen.main.bounds.width - 330.0)/2, bottom: 0.0, right: (UIScreen.main.bounds.width - 330.0)/2)
+        if imageArrayForStorage.count == 1 {
+            return UIEdgeInsets(top: 0.0, left: (UIScreen.main.bounds.width - 120.0)/2, bottom: 0.0, right: (UIScreen.main.bounds.width - 120.0)/2)
+        }
+        
+        return UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat{
-        return ((UIScreen.main.bounds.width - 330.0)/2)*2
+        return 10.0
     }
     
 }

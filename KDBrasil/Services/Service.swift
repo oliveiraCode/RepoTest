@@ -38,16 +38,6 @@ class Service:NSObject,CLLocationManagerDelegate{
         }
     }
     
-    func getTodaysDate() -> String{
-        
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        dateFormatterGet.locale = locale
-        
-        return dateFormatterGet.string(from: Date())
-    }
-    
-    
     func getPeriodOfDay() -> String{
         let hour = Calendar.current.component(.hour, from: Date())
         let minute = Calendar.current.component(.minute, from: Date())

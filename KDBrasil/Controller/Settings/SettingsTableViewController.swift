@@ -19,7 +19,7 @@ class SettingsTableViewController: BaseTableViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let mailComposerVC = MFMailComposeViewController()
-    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão 2.0.5"]
+    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão \(Bundle.main.releaseVersionNumber!)"]
     
     let img0:[UIImage] = [UIImage(named: "account_color")!]
     let settings0:[String] = [NSLocalizedString(LocalizationKeys.settingsAccount, comment: "")]
@@ -177,7 +177,7 @@ class SettingsTableViewController: BaseTableViewController {
             case 2:
                 
                 let subject = "App KD Brasil"
-                let body = "Escreva aqui a sua mensagem."
+                let body = "Escreva aqui a sua mensagem. \n\n\n\n\(Bundle.main.displayDetailsApp!)"
                 let email = "leandro.oliveira@live.com"
                 
                 mailComposerVC.mailComposeDelegate = self
