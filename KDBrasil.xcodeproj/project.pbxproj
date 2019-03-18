@@ -29,12 +29,9 @@
 		9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC87222976CB0021D03D /* ViewController2.swift */; };
 		9C329D8C220BA69700A74EFA /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C329D8B220BA69700A74EFA /* NavController.swift */; };
 		9C5C7F08221F17F200109152 /* UIColor Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F07221F17F200109152 /* UIColor Extensions.swift */; };
-		9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */; };
 		9C5C7F0C221F3BB500109152 /* UIImage Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0B221F3BB500109152 /* UIImage Extensions.swift */; };
 		9C5C7F0E221F3CA200109152 /* UIToolBar Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0D221F3CA200109152 /* UIToolBar Extensions.swift */; };
 		9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0F221F3D2400109152 /* GradientToolBar.swift */; };
-		9C5C7F19221F516800109152 /* WeekHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F18221F516800109152 /* WeekHour.swift */; };
-		9C5C7F1B221F517800109152 /* WeekHour.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F1A221F517800109152 /* WeekHour.xib */; };
 		9C6F03F92232EEFB000B828F /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F03F82232EEFB000B828F /* Countries.swift */; };
 		9C6F03FF2234175C000B828F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F03FE2234175C000B828F /* MapViewController.swift */; };
 		9C6F0401223471FE000B828F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F0400223471FE000B828F /* MainViewController.swift */; };
@@ -58,6 +55,7 @@
 		9CA051ED223EB232009E693B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051EC223EB232009E693B /* Date.swift */; };
 		9CA051EF223ED677009E693B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051EE223ED677009E693B /* Bundle.swift */; };
 		9CA051F1223F042C009E693B /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051F0223F042C009E693B /* PhotosViewController.swift */; };
+		9CA051F522401647009E693B /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051F422401647009E693B /* ToolBarPickerView.swift */; };
 		9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */; };
 		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
 		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
@@ -109,12 +107,9 @@
 		9C30CC87222976CB0021D03D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		9C329D8B220BA69700A74EFA /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		9C5C7F07221F17F200109152 /* UIColor Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extensions.swift"; sourceTree = "<group>"; };
-		9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
 		9C5C7F0B221F3BB500109152 /* UIImage Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage Extensions.swift"; sourceTree = "<group>"; };
 		9C5C7F0D221F3CA200109152 /* UIToolBar Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar Extensions.swift"; sourceTree = "<group>"; };
 		9C5C7F0F221F3D2400109152 /* GradientToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientToolBar.swift; sourceTree = "<group>"; };
-		9C5C7F18221F516800109152 /* WeekHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHour.swift; sourceTree = "<group>"; };
-		9C5C7F1A221F517800109152 /* WeekHour.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekHour.xib; sourceTree = "<group>"; };
 		9C6F03F82232EEFB000B828F /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		9C6F03FC223314F2000B828F /* Montreal.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Montreal.gpx; sourceTree = "<group>"; };
 		9C6F03FE2234175C000B828F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +134,7 @@
 		9CA051EC223EB232009E693B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9CA051EE223ED677009E693B /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		9CA051F0223F042C009E693B /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		9CA051F422401647009E693B /* ToolBarPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
 		9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
@@ -243,7 +239,6 @@
 			children = (
 				9CC72ADA21D3FCA00048C37B /* LaunchScreen.storyboard */,
 				9CC72AD521D3FC9E0048C37B /* Main.storyboard */,
-				9CA051F0223F042C009E693B /* PhotosViewController.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -267,15 +262,6 @@
 				9C933D5A220B3BB200F54782 /* GradientButton.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		9C5C7F17221F514C00109152 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				9C5C7F18221F516800109152 /* WeekHour.swift */,
-				9C5C7F1A221F517800109152 /* WeekHour.xib */,
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 		9C6F03FD22341746000B828F /* Map */ = {
@@ -329,8 +315,8 @@
 		9CB91C9A220DF28600DD4933 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				9CA051F422401647009E693B /* ToolBarPickerView.swift */,
 				9C5C7F16221F460400109152 /* UI */,
-				9C5C7F09221F330F00109152 /* ToolBarPickerView.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -358,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */,
-				9C5C7F17221F514C00109152 /* xib */,
 				9C5C7F15221F45AB00109152 /* Resources */,
 				9C6F040A2234A703000B828F /* BaseVC */,
 				9CD6B36B2236C52D0081B446 /* Network */,
@@ -425,6 +410,7 @@
 				9C01410221E504380002345D /* CategoryViewController.swift */,
 				9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */,
 				9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */,
+				9CA051F0223F042C009E693B /* PhotosViewController.swift */,
 				9CA051DE223C61BB009E693B /* CountriesViewController.swift */,
 			);
 			path = Controller;
@@ -552,7 +538,6 @@
 				9CC72AD921D3FCA00048C37B /* Assets.xcassets in Resources */,
 				9CC72AD721D3FC9E0048C37B /* Main.storyboard in Resources */,
 				9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */,
-				9C5C7F1B221F517800109152 /* WeekHour.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +665,7 @@
 				9C8DF5E7222D888300D8C976 /* Review.swift in Sources */,
 				9C8DF5EB222DA93700D8C976 /* ReviewsTableViewCell.swift in Sources */,
 				9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */,
+				9CA051F522401647009E693B /* ToolBarPickerView.swift in Sources */,
 				9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */,
 				9CD6B373223811420081B446 /* String.swift in Sources */,
 				9CCA9DBE21E015C900ADA845 /* Category.swift in Sources */,
@@ -695,7 +681,6 @@
 				9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */,
 				9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */,
 				9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */,
-				9C5C7F0A221F330F00109152 /* ToolBarPickerView.swift in Sources */,
 				9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */,
 				9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */,
 				9C6F04072234A152000B828F /* BaseViewController.swift in Sources */,
@@ -711,7 +696,6 @@
 				9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */,
 				9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */,
 				9C1E4CEA222D78AD00939C97 /* ReviewsTableViewController.swift in Sources */,
-				9C5C7F19221F516800109152 /* WeekHour.swift in Sources */,
 				9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */,
 				9C30CC80222880BF0021D03D /* LoginViewController.swift in Sources */,
 				9C6F03FF2234175C000B828F /* MapViewController.swift in Sources */,

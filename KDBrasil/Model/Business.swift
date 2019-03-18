@@ -18,13 +18,12 @@ class Business:Codable {
     var creationDate:String?
     var category:String?
     var user_id:String?
-    var hours:[DailyHours]?
     var photosURL:[String]?
     var reviews:[Review]?
     var country:String?
     
     
-    init(id:String, description:String, name:String,  rating: Double,address:Address, contact:Contact, creationDate:String, category:String, user_id:String, hours:[DailyHours], photosURL:[String],country:String) {
+    init(id:String, description:String, name:String,  rating: Double,address:Address, contact:Contact, creationDate:String, category:String, user_id:String, photosURL:[String],country:String) {
         self.id = id
         self.description = description
         self.name = name
@@ -34,7 +33,6 @@ class Business:Codable {
         self.creationDate = creationDate
         self.category = category
         self.user_id = user_id
-        self.hours = hours
         self.photosURL = photosURL
         self.country = country
     }
@@ -42,7 +40,7 @@ class Business:Codable {
     init() {}
     
     
-    convenience init?(data: [String: Any], addressObj:Address, contactObj:Contact,dailyHoursArray:[DailyHours] ) {
+    convenience init?(data: [String: Any], addressObj:Address, contactObj:Contact) {
         
         guard let id = data["id"] as? String,
             let description = data["description"] as? String,
@@ -56,7 +54,7 @@ class Business:Codable {
                 return nil
         }
         
-        self.init(id: id, description: description, name: name, rating: rating, address: addressObj, contact: contactObj, creationDate: creationDate, category: category, user_id: user_id, hours: dailyHoursArray,photosURL: photosURL,country: country)
+        self.init(id: id, description: description, name: name, rating: rating, address: addressObj, contact: contactObj, creationDate: creationDate, category: category, user_id: user_id,photosURL: photosURL,country: country)
     }
     
 }

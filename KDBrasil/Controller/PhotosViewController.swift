@@ -14,13 +14,11 @@ protocol PhotosDelegate {
 
 class PhotosViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var collectionViewPhotos: UICollectionView!
+    
     var arrayPhotos:[UIImage] = []
     var indexPathItemForImage:Int?
     var delegate: PhotosDelegate?
-    var isNewBusiness:Bool?
-    
-    @IBOutlet weak var collectionViewPhotos: UICollectionView!
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -28,8 +26,9 @@ class PhotosViewController: BaseViewController, UICollectionViewDelegate, UIColl
     }
     
     
+    //MARK: CollectionView Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayPhotos.count
+        return arrayPhotos.count <= 3 ? arrayPhotos.count : 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,7 +40,7 @@ class PhotosViewController: BaseViewController, UICollectionViewDelegate, UIColl
         cell.imageCellBusiness.isUserInteractionEnabled = true
         cell.imageCellBusiness.tag = indexPath.item
         cell.imageCellBusiness.addGestureRecognizer(tapGestureRecognizer)
- 
+        
         return cell
     }
     
@@ -50,7 +49,7 @@ class PhotosViewController: BaseViewController, UICollectionViewDelegate, UIColl
     @objc func pickImage(_ sender:AnyObject) {
         
         indexPathItemForImage = sender.view.tag //to know witch item was selected.
-
+        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: LocalizationKeys.buttonCamera, style: .default, handler: { action in
@@ -68,9 +67,13 @@ class PhotosViewController: BaseViewController, UICollectionViewDelegate, UIColl
             self.present(imagePicker, animated: true)
         }))
         
-        if self.indexPathItemForImage! != self.arrayPhotos.count-1 {
+        if self.indexPathItemForImage! < self.arrayPhotos.count-1 {
             alert.addAction(UIAlertAction(title: LocalizationKeys.buttonDelete, style: .destructive, handler: { action in
                 self.arrayPhotos.remove(at: self.indexPathItemForImage!)
+                
+                if self.indexPathItemForImage! == self.arrayPhotos.count {
+                    self.arrayPhotos.append(UIImage(named: "placeholder_photo_new_ad")!)
+                }
                 self.collectionViewPhotos.reloadData()
             }))
         }
@@ -80,28 +83,11 @@ class PhotosViewController: BaseViewController, UICollectionViewDelegate, UIColl
         self.present(alert, animated: true, completion: nil)
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        indexPathItemForImage = 0
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
 
-//MARK: PickerImage
+//MARK: PickerImage Delegate
 extension PhotosViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -118,13 +104,10 @@ extension PhotosViewController: UIImagePickerControllerDelegate, UINavigationCon
                 arrayPhotos.remove(at: indexPathItemForImage!)
                 arrayPhotos.insert(pickedImage, at: indexPathItemForImage!)
             }
-            
-            self.indexPathItemForImage = indexPathItemForImage! + 1
-            
         }
-        
         
         picker.dismiss(animated: true, completion: {self.collectionViewPhotos.reloadData()})
     }
     
 }
+

@@ -30,23 +30,11 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     @IBOutlet weak var tfWeb: UITextField!
     @IBOutlet weak var btnCategory: UIButton!
     @IBOutlet weak var collectionViewPhoto: UICollectionView!
-    @IBOutlet weak var btnMonday: UIButton!
-    @IBOutlet weak var btnTuesday: UIButton!
-    @IBOutlet weak var btnWednesday: UIButton!
-    @IBOutlet weak var btnThursday: UIButton!
-    @IBOutlet weak var btnFriday: UIButton!
-    @IBOutlet weak var btnSaturday: UIButton!
-    @IBOutlet weak var btnSunday: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
     //Properties
-    var customView:WeekHour!
     var businessDetails = Business()
     var isNewBusiness:Bool?
-    var dailyHoursArray = [DailyHours]()
-    var btnWeekArray:[UIButton?] = []
-    var indexWeek:Int?
     var activityIndicator = UIActivityIndicatorView()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var categoryValue:String?
@@ -54,14 +42,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     var indexPathItemForImage:Int?
     let dateFormatter = DateFormatter()
     var imageArrayForStorage:[UIImage] = [UIImage(named: "placeholder_photo_new_ad")!]
-    let weekArray:[String] = [ NSLocalizedString(LocalizationKeys.monday, comment: ""),
-                               NSLocalizedString(LocalizationKeys.tuesday, comment: ""),
-                               NSLocalizedString(LocalizationKeys.wednesday, comment: ""),
-                               NSLocalizedString(LocalizationKeys.thursday, comment: ""),
-                               NSLocalizedString(LocalizationKeys.friday, comment: ""),
-                               NSLocalizedString(LocalizationKeys.saturday, comment: ""),
-                               NSLocalizedString(LocalizationKeys.sunday, comment: "")
-    ]
     
     let pickerView = ToolbarPickerView()
     var stateFull:[String] = []
@@ -88,18 +68,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         self.pickerView.toolbarDelegate = self
         self.pickerView.reloadAllComponents()
         
-        
-        btnWeekArray.append(btnMonday)
-        btnWeekArray.append(btnTuesday)
-        btnWeekArray.append(btnWednesday)
-        btnWeekArray.append(btnThursday)
-        btnWeekArray.append(btnFriday)
-        btnWeekArray.append(btnSaturday)
-        btnWeekArray.append(btnSunday)
-        
-        for index in 0...6 {
-            dailyHoursArray.append(DailyHours(is_overnight: false, is_closed: false, start: "-", end: "-", day: index))
-        }
         self.hideKeyboardWhenTappedAround()
         
         self.setLayoutUITextView()
@@ -127,10 +95,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             self.imageArrayForStorage = photosValue!
             self.collectionViewPhoto.reloadData()
         }
-        
 
-
-        
     }
     
     
@@ -183,29 +148,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             }
         }
         
-        
-        //put all week days in correct order
-        businessDetails.hours = businessDetails.hours?.sorted(by: { $0.day! < $1.day! })
-        dailyHoursArray = businessDetails.hours!
-        
-        for (indexWeek, _) in btnWeekArray.enumerated() {
-            if businessDetails.hours![indexWeek].is_closed! {
-                let title = "Fechado"
-                btnWeekArray[indexWeek]?.setTitle(title, for: .normal)
-                btnWeekArray[indexWeek]?.setTitleColor(UIColor.red, for: .normal)
-            } else
-                
-                if businessDetails.hours![indexWeek].is_overnight! {
-                    let title = "24 horas"
-                    btnWeekArray[indexWeek]?.setTitle(title, for: .normal)
-                    btnWeekArray[indexWeek]?.setTitleColor(UIColor.black, for: .normal)
-                } else {
-                    let title = "\(businessDetails.hours![indexWeek].start!) - \(businessDetails.hours![indexWeek].end!)"
-                    btnWeekArray[indexWeek]?.setTitle(title, for: .normal)
-                    btnWeekArray[indexWeek]?.setTitleColor(UIColor.black, for: .normal)
-            }
-            
-        }
         
         self.activityIndicator.stopAnimating()
     }
@@ -281,7 +223,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
                     
                     let address:Address = Address(number: number, street: street, complement: complement, city: city, province: province,country: country, postalCode: postalCode, latitude: coordinate!.coordinate.latitude, longitude: coordinate!.coordinate.longitude)
                     
-                    let business = Business(id:"", description: description, name: name,rating: 0.0, address: address, contact: contact, creationDate: creationDate, category: category, user_id: (UIApplication.shared.delegate as! AppDelegate).userObj.id, hours:self.dailyHoursArray, photosURL:["","",""],country:country)
+                    let business = Business(id:"", description: description, name: name,rating: 0.0, address: address, contact: contact, creationDate: creationDate, category: category, user_id: (UIApplication.shared.delegate as! AppDelegate).userObj.id, photosURL:[""],country:country)
                     
                     if !(self.isNewBusiness!) {
                         FIRFirestoreService.shared.removeData(business: self.businessDetails)
@@ -396,37 +338,9 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         
     }
     
-    @IBAction func btnWeekHourPressed(_ sender: UIButton) {
-        indexWeek = sender.tag
-        self.tfState.resignFirstResponder()
-        
-        if customView != nil {
-            customView.removeFromSuperview()
-        }
-        
-        let height = 290
-        customView = WeekHour(frame: CGRect.init(x: 0, y: Int(self.view.frame.height)-height, width:Int(self.view.bounds.width), height: height))
-        
-        self.view.addSubview(self.customView)
-        self.customView.weekHourDelegate = self
-        
-        
-        customView.lbWeek.text = self.weekArray[indexWeek!]
-        
-        if self.dailyHoursArray[indexWeek!].start != "-" && self.dailyHoursArray[indexWeek!].end != "-"{
-            let dateStart = dateFormatter.date(from:self.dailyHoursArray[indexWeek!].start!)
-            let dateEnd = dateFormatter.date(from:self.dailyHoursArray[indexWeek!].end!)
-            
-            customView.datePickerOpen.setDate(dateStart!, animated: false)
-            customView.datePickerClose.setDate(dateEnd!, animated: false)
-        }
-        
-        customView.switchClosed.isOn = self.dailyHoursArray[indexWeek!].is_closed!
-        customView.switch24Hours.isOn = self.dailyHoursArray[indexWeek!].is_overnight!
-        
-    }
-    
     func isFieldsWithValues() -> Bool{
+        
+        guard self.imageArrayForStorage.count > 1 else {self.showAlert(title: General.warning, message: "É necessário escolher pelo menos 1 imagem.");return false}
         
         guard self.tfName.text != "" else {self.showAlert(title: General.warning, message: "O nome do título deve ser preenchido");return false}
         
@@ -445,10 +359,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         return true
     }
     
-    func dailyHoursValueSelected(dailyHoursValue: DailyHours) {
-        self.dailyHoursArray.remove(at: indexWeek!)
-        self.dailyHoursArray.insert(dailyHoursValue, at: indexWeek!)
-    }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
@@ -568,107 +478,6 @@ extension MyBusinessViewController: ToolbarPickerViewDelegate {
         self.tfState.text = nil
         self.tfState.resignFirstResponder()
     }
-}
-
-//MARK: WeekHourDelegate
-extension MyBusinessViewController: WeekHourDelegate {
-    func btnSave(sender: UIBarButtonItem) {
-        
-        if self.dailyHoursArray[indexWeek!].is_closed! {
-            self.dailyHoursArray[indexWeek!].start = "00:00"
-            self.dailyHoursArray[indexWeek!].end = "00:00"
-        }
-        
-        self.dailyHoursValueSelected(dailyHoursValue: self.dailyHoursArray[indexWeek!])
-        
-        if self.dailyHoursArray[indexWeek!].is_closed! {
-            let title = "Fechado"
-            btnWeekArray[indexWeek!]?.setTitle(title, for: .normal)
-            btnWeekArray[indexWeek!]?.setTitleColor(UIColor.red, for: .normal)
-        } else
-            
-            if self.dailyHoursArray[indexWeek!].is_overnight! {
-                let title = "24 horas"
-                btnWeekArray[indexWeek!]?.setTitle(title, for: .normal)
-                btnWeekArray[indexWeek!]?.setTitleColor(UIColor.black, for: .normal)
-            } else {
-                let title = "\(self.dailyHoursArray[indexWeek!].start!) - \(self.dailyHoursArray[indexWeek!].end!)"
-                btnWeekArray[indexWeek!]?.setTitle(title, for: .normal)
-                btnWeekArray[indexWeek!]?.setTitleColor(UIColor.black, for: .normal)
-        }
-        
-        dismissCustomView()
-        
-    }
-    
-    private func getHourFormatted(_ picker: UIDatePicker) -> String{
-        picker.datePickerMode = .time
-        
-        return dateFormatter.string(from: picker.date)
-    }
-    
-    func switch24HoursChanged(sender: UISwitch) {
-        if customView.switchClosed.isOn {
-            customView.switchClosed.isOn = !(sender.isOn)
-        }
-        
-        customView.btnSave.isEnabled = sender.isOn
-        self.dailyHoursArray[indexWeek!].is_overnight = customView.switch24Hours.isOn
-        self.dailyHoursArray[indexWeek!].is_closed = customView.switchClosed.isOn
-    }
-    
-    func switchClosedChanged(sender: UISwitch) {
-        
-        if customView.switch24Hours.isOn {
-            customView.switch24Hours.isOn = !(sender.isOn)
-        }
-        customView.btnSave.isEnabled = sender.isOn
-        self.dailyHoursArray[indexWeek!].is_overnight = customView.switch24Hours.isOn
-        self.dailyHoursArray[indexWeek!].is_closed = customView.switchClosed.isOn
-    }
-    
-    func datePickerOpen(sender: UIDatePicker) {
-        customView.switch24Hours.isOn = false
-        customView.switchClosed.isOn = false
-        self.dailyHoursArray[indexWeek!].is_overnight = customView.switch24Hours.isOn
-        self.dailyHoursArray[indexWeek!].is_closed = customView.switchClosed.isOn
-        
-        
-        self.dailyHoursArray[indexWeek!].start = getHourFormatted(sender)
-        
-        if self.dailyHoursArray[indexWeek!].start != "00:00" && self.dailyHoursArray[indexWeek!].end != "00:00"{
-            customView.btnSave.isEnabled = true
-        }
-    }
-    
-    func datePickerClose(sender: UIDatePicker) {
-        customView.switch24Hours.isOn = false
-        customView.switchClosed.isOn = false
-        self.dailyHoursArray[indexWeek!].is_overnight = customView.switch24Hours.isOn
-        self.dailyHoursArray[indexWeek!].is_closed = customView.switchClosed.isOn
-        
-        self.dailyHoursArray[indexWeek!].end = getHourFormatted(sender)
-        
-        if self.dailyHoursArray[indexWeek!].start != "00:00" && self.dailyHoursArray[indexWeek!].end != "00:00"{
-            customView.btnSave.isEnabled = true
-        }
-    }
-    
-    func dismissCustomView(){
-        
-        if customView.isKind(of: WeekHour.self){
-            UIView.animate(withDuration: 0.40, delay: 0, options: .curveEaseOut, animations: {
-                self.customView.alpha = 0
-            }) { _ in
-                self.customView.removeFromSuperview()
-            }
-        }
-    }
-    
-    func btnCancel(sender: UIBarButtonItem) {
-        dismissCustomView()
-    }
-    
 }
 
 

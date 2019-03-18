@@ -31,31 +31,14 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var userNameAndMember: UILabel!
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var lbMonday: UILabel!
-    @IBOutlet weak var lbTuesday: UILabel!
-    @IBOutlet weak var lbWednesday: UILabel!
-    @IBOutlet weak var lbThursday: UILabel!
-    @IBOutlet weak var lbFriday: UILabel!
-    @IBOutlet weak var lbSaturday: UILabel!
-    @IBOutlet weak var lbSunday: UILabel!
-    @IBOutlet weak var lbOpenedClosed1: UILabel!
-    @IBOutlet weak var lbOpenedClosed2: UILabel!
     
     //Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var businessDetails = Business()
     var isFromMyBusiness:Bool = false
-    var lbWeekArray:[UILabel?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbWeekArray.append(lbMonday)
-        lbWeekArray.append(lbTuesday)
-        lbWeekArray.append(lbWednesday)
-        lbWeekArray.append(lbThursday)
-        lbWeekArray.append(lbFriday)
-        lbWeekArray.append(lbSaturday)
-        lbWeekArray.append(lbSunday)
     }
     
     @objc func editBusiness(){
@@ -94,12 +77,9 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
                 }
             }
         }
-        
-        
     }
     
 
-    
     //MARK - Set values to UI
     func setValuesToUI(){
         
@@ -111,78 +91,7 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
                 
             }
         }
-        
-        for (_, dayOfWeek) in (businessDetails.hours?.enumerated())!{
-            
-            if dayOfWeek.is_closed! {
-                lbWeekArray[dayOfWeek.day!]?.text = "Fechado"
-                lbWeekArray[dayOfWeek.day!]?.textColor = UIColor.red
-            } else if dayOfWeek.is_overnight! {
-                lbWeekArray[dayOfWeek.day!]?.text = "24 horas"
-                lbWeekArray[dayOfWeek.day!]?.textColor = UIColor.black
-            } else {
-                lbWeekArray[dayOfWeek.day!]?.text = dayOfWeek.start! + " - " + dayOfWeek.end!
-                lbWeekArray[dayOfWeek.day!]?.textColor = UIColor.black
-            }
-            
-        }
-        
-        let dateFormatter = DateFormatter()
-        let weekFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        weekFormatter.dateFormat = "EEEE"
-        weekFormatter.locale = Locale(identifier: "pt_BR")
-        
-        let currentHour = dateFormatter.string(from: Date())
-        let currentDayOfWeek = weekFormatter.string(from: Date())
-        
-        let dayCode:Int?
-        switch currentDayOfWeek {
-        case "segunda-feira":
-            dayCode = 0
-        case "terça-feira":
-            dayCode = 1
-        case "quarta-feira":
-            dayCode = 2
-        case "quinta-feira":
-            dayCode = 3
-        case "sexta-feira":
-            dayCode = 4
-        case "sábado":
-            dayCode = 5
-        default:
-            dayCode = 6
-        }
-        
-        for (_, dayOfWeek) in (businessDetails.hours?.enumerated())!{
-            if dayOfWeek.day == dayCode {
-                
-                
-                if dayOfWeek.is_overnight! || (currentHour >= dayOfWeek.start! && currentHour <= dayOfWeek.end!) {
-                    lbOpenedClosed1.text = "Aberto"
-                    lbOpenedClosed1.textColor = UIColor.green
-                    lbOpenedClosed2.text = "Aberto"
-                    lbOpenedClosed2.textColor = UIColor.green
-                } else if dayOfWeek.is_closed! {
-                    lbOpenedClosed1.text = "Fechado"
-                    lbOpenedClosed1.textColor = UIColor.red
-                    lbOpenedClosed2.text = "Fechado"
-                    lbOpenedClosed2.textColor = UIColor.red
-                } else if dayOfWeek.start! == "-" && dayOfWeek.end! == "-" {
-                    lbOpenedClosed1.text = "Indisponível"
-                    lbOpenedClosed1.textColor = UIColor.black
-                    lbOpenedClosed2.text = "Indisponível"
-                    lbOpenedClosed2.textColor = UIColor.black
-                } else {
-                    lbOpenedClosed1.text = "Fechado"
-                    lbOpenedClosed1.textColor = UIColor.red
-                    lbOpenedClosed2.text = "Fechado"
-                    lbOpenedClosed2.textColor = UIColor.red
-                }
-            }
-        }
-        
-        
+
         
         if  businessDetails.contact?.whatsapp != "" {
             self.btnWhatsApp.isEnabled = true
@@ -211,7 +120,6 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
         self.tvDescription.text = businessDetails.description
         self.pageControl.numberOfPages = self.businessDetails.photosURL?.count ?? 0
     
-        
     }
     
     

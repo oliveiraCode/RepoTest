@@ -77,7 +77,7 @@ class LoginMainViewController: BaseViewController {
                 self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
                 self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
                 self.appDelegate.userObj.isFacebook = true
-                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
+                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
                 
                 var imageFacebook = UIImageView()
                 imageFacebook.kf.setImage(with: (result?.user.photoURL)!){

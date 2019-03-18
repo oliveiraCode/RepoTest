@@ -84,87 +84,8 @@ class FIRFirestoreService {
             ]
         }
         
-        
-        var day0: [String:Any]{
-            return [
-                "day": business.hours![0].day!,
-                "start": business.hours![0].start!,
-                "end": business.hours![0].end!,
-                "is_closed": business.hours![0].is_closed!,
-                "is_overnight": business.hours![0].is_overnight!
-            ]
-        }
-        
-        var day1: [String:Any]{
-            return [
-                "day": business.hours![1].day!,
-                "start": business.hours![1].start!,
-                "end": business.hours![1].end!,
-                "is_closed": business.hours![1].is_closed!,
-                "is_overnight": business.hours![1].is_overnight!
-            ]
-        }
-        
-        var day2: [String:Any]{
-            return [
-                "day": business.hours![2].day!,
-                "start": business.hours![2].start!,
-                "end": business.hours![2].end!,
-                "is_closed": business.hours![2].is_closed!,
-                "is_overnight": business.hours![2].is_overnight!
-            ]
-        }
-        
-        var day3: [String:Any]{
-            return [
-                "day": business.hours![3].day!,
-                "start": business.hours![3].start!,
-                "end": business.hours![3].end!,
-                "is_closed": business.hours![3].is_closed!,
-                "is_overnight": business.hours![3].is_overnight!
-            ]
-        }
-        
-        var day4: [String:Any]{
-            return [
-                "day": business.hours![4].day!,
-                "start": business.hours![4].start!,
-                "end": business.hours![4].end!,
-                "is_closed": business.hours![4].is_closed!,
-                "is_overnight": business.hours![4].is_overnight!
-            ]
-        }
-        
-        var day5: [String:Any]{
-            return [
-                "day": business.hours![5].day!,
-                "start": business.hours![5].start!,
-                "end": business.hours![5].end!,
-                "is_closed": business.hours![5].is_closed!,
-                "is_overnight": business.hours![5].is_overnight!
-            ]
-        }
-        
-        var day6: [String:Any]{
-            return [
-                "day": business.hours![6].day!,
-                "start": business.hours![6].start!,
-                "end": business.hours![6].end!,
-                "is_closed": business.hours![6].is_closed!,
-                "is_overnight": business.hours![6].is_overnight!
-            ]
-        }
-        
         var hoursData: [String: Any] {
-            return [
-                "0" : day0,
-                "1" : day1,
-                "2" : day2,
-                "3" : day3,
-                "4" : day4,
-                "5" : day5,
-                "6" : day6
-            ]
+            return [:]
         }
         
         var businessData: [String: Any] {
@@ -178,7 +99,7 @@ class FIRFirestoreService {
                 "rating": business.rating!,
                 "country": business.country!,
                 "address":addressData,
-                "hours":hoursData,
+                "hours":[:], //fixed bug when using v 2.0.5
                 "contact":contactData,
                 "photosURL":business.photosURL!
             ]
@@ -259,7 +180,6 @@ class FIRFirestoreService {
                     
                     let address = document.data()["address"] as! [String:Any]
                     let contact = document.data()["contact"] as! [String:Any]
-                    let hours = document.data()["hours"] as! [String:Any]
                     
                     let addressObj = Address(data: address)
                     
@@ -271,14 +191,7 @@ class FIRFirestoreService {
                     
                     let contactObj = Contact(data: contact)
                     
-                    var dailyHoursArray:[DailyHours] = []
-                    for (_, value) in hours.values.enumerated(){
-                        
-                        let dailyHoursObj = value as! [String:Any]
-                        dailyHoursArray.append(DailyHours(data: dailyHoursObj)!)
-                    }
-                    
-                    let businessObj = Business(data: document.data(), addressObj: addressObj!, contactObj: contactObj!, dailyHoursArray: dailyHoursArray)
+                    let businessObj = Business(data: document.data(), addressObj: addressObj!, contactObj: contactObj!)
                     
                     
                     businesses.append(businessObj!)
@@ -294,10 +207,10 @@ class FIRFirestoreService {
     //MARK: - readAllBusiness
     func readAllBusiness(completionHandler: @escaping ([Business?], Error?) -> Void) {
         
-        let country = appDelegate.currentCountry?.name
+        guard let country = appDelegate.currentCountry?.name else {return}
         
         let businessRef = self.db.collection(FIRCollectionReference.business)
-        let query = businessRef.whereField("country", isEqualTo: country!)
+        let query = businessRef.whereField("country", isEqualTo: country)
  
         var businesses = [Business]()
         
@@ -311,7 +224,6 @@ class FIRFirestoreService {
                     
                     let address = document.data()["address"] as! [String:Any]
                     let contact = document.data()["contact"] as! [String:Any]
-                    let hours = document.data()["hours"] as! [String:Any]
                     
                     let addressObj = Address(data: address)
                     
@@ -323,12 +235,7 @@ class FIRFirestoreService {
                     
                     let contactObj = Contact(data: contact)
                     
-                    var dailyHoursArray:[DailyHours] = []
-                    for (_, value) in hours.values.enumerated(){
-                        let dailyHoursObj = value as! [String:Any]
-                        dailyHoursArray.append(DailyHours(data: dailyHoursObj)!)
-                    }
-                    let businessObj = Business(data: document.data(), addressObj: addressObj!, contactObj: contactObj!, dailyHoursArray: dailyHoursArray)
+                    let businessObj = Business(data: document.data(), addressObj: addressObj!, contactObj: contactObj!)
                     
                     businesses.append(businessObj!)
                 }

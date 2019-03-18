@@ -50,15 +50,7 @@ enum LocalizationKeys {
     //Activity Indicator
     static let pleaseWait = "Por favor, aguarde um momento..."
     
-    //Week
-    static let monday = "segunda-feira"
-    static let tuesday = "terça-feira"
-    static let wednesday = "quarta-feira"
-    static let thursday = "quinta-feira"
-    static let friday = "sexta-feira"
-    static let saturday = "sábado"
-    static let sunday = "domingo"
-    
+
     //Term of use
     static let termOfUse = "O aplicativo KD Brasil tem como objetivo a divulgação, informação e aproximação de clientes e prestadores de serviços. O KD Brasil é uma plataforma criada com o intuito de otimizar o contato inicial entre prestadores de serviços, previamente cadastrados no aplicativo, e consumidor final. \n\nA utilização deste aplicativo é gratuita para o usuário. Ao instalar o app e concordar com o presente Termo de Uso, o usuário entende que poderá receber notificações e ter sua localização determinada pelo KD Brasil. \n\nO usuário não pode utilizar o aplicativo para qualquer finalidade ilegal ou não autorizada. Você concorda em cumprir todas as leis, regras e regulamentações (por exemplo, federal estadual e municipal) aplicáveis ao seu uso do KD Brasil e seu conteúdo, incluindo, mas não limitado a leis de direitos autorais."
     

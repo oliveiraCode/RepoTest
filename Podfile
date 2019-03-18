@@ -20,6 +20,6 @@ target 'KDBrasil' do
   pod 'Alamofire'
   pod 'SkyFloatingLabelTextField'
   pod 'ReachabilitySwift'
-pod 'PhoneNumberKit'
+  pod 'PhoneNumberKit'
 
 end
