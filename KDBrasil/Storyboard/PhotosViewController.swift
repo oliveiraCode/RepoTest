@@ -68,10 +68,12 @@ class PhotosViewController: BaseViewController, UICollectionViewDelegate, UIColl
             self.present(imagePicker, animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: LocalizationKeys.buttonDelete, style: .destructive, handler: { action in
-            self.arrayPhotos.remove(at: self.indexPathItemForImage!)
-            self.collectionViewPhotos.reloadData()
-        }))
+        if self.indexPathItemForImage! != self.arrayPhotos.count-1 {
+            alert.addAction(UIAlertAction(title: LocalizationKeys.buttonDelete, style: .destructive, handler: { action in
+                self.arrayPhotos.remove(at: self.indexPathItemForImage!)
+                self.collectionViewPhotos.reloadData()
+            }))
+        }
         
         alert.addAction(UIAlertAction(title: LocalizationKeys.buttonCancel, style: .cancel, handler: nil))
         
