@@ -1195,7 +1195,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Website ou página do Facebook"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Rede sociais ou website"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="HDn-uM-p6d" id="vT1-Zr-GGN"/>
@@ -1249,6 +1249,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mWN-Bi-PsR">
+                                                        <rect key="frame" x="333" y="310" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="0Zm-Nx-sxk"/>
+                                                            <constraint firstAttribute="width" constant="25" id="Alr-3M-eda"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1256,6 +1263,8 @@
                                                     <constraint firstItem="dwe-h0-iOq" firstAttribute="top" secondItem="9hH-sh-0e0" secondAttribute="bottom" constant="20" id="AqM-FD-x2o"/>
                                                     <constraint firstAttribute="bottom" secondItem="Fzr-qD-UG0" secondAttribute="bottom" constant="103" id="BZx-g5-HVj"/>
                                                     <constraint firstItem="cH9-CJ-p7L" firstAttribute="top" secondItem="Cwl-W7-7wa" secondAttribute="bottom" constant="8" id="Do1-ue-YiE"/>
+                                                    <constraint firstItem="mWN-Bi-PsR" firstAttribute="top" secondItem="Gb2-Sg-0hR" secondAttribute="bottom" constant="212" id="Edw-FB-Is5"/>
+                                                    <constraint firstItem="mWN-Bi-PsR" firstAttribute="leading" secondItem="4VQ-Kf-KUs" secondAttribute="trailing" constant="8" id="Hds-TZ-u3Q"/>
                                                     <constraint firstAttribute="trailing" secondItem="4VQ-Kf-KUs" secondAttribute="trailing" constant="50" id="JPL-om-tf8"/>
                                                     <constraint firstItem="Fzr-qD-UG0" firstAttribute="top" secondItem="dwe-h0-iOq" secondAttribute="bottom" constant="22" id="O8Y-Ia-bJJ"/>
                                                     <constraint firstItem="Cwl-W7-7wa" firstAttribute="leading" secondItem="Q5a-TB-OE4" secondAttribute="leading" constant="10" id="VA8-86-fYT"/>
@@ -1337,6 +1346,7 @@
                     <connections>
                         <outlet property="btnCategory" destination="NGZ-Bc-wu1" id="vpj-ei-2vd"/>
                         <outlet property="collectionViewPhoto" destination="bJO-9v-9iR" id="fK8-KY-p39"/>
+                        <outlet property="img_url" destination="mWN-Bi-PsR" id="nWH-vp-FUi"/>
                         <outlet property="lbCountryCodePhone" destination="dwe-h0-iOq" id="gGV-28-Cf9"/>
                         <outlet property="lbCountryCodeWhatsApp" destination="Fzr-qD-UG0" id="7ec-1C-Ozz"/>
                         <outlet property="scrollView" destination="pWP-YH-iob" id="eWm-TB-w5j"/>
@@ -1361,7 +1371,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8T1-0Z-E4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gTG-kR-dhJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="14001" y="1728"/>
+            <point key="canvasLocation" x="14000.799999999999" y="1727.5862068965519"/>
         </scene>
         <!--Categorias-->
         <scene sceneID="zjY-iO-XnH">
@@ -2468,7 +2478,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                                     <constraint firstAttribute="height" constant="30" id="yCz-U0-RDF"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="site_color" translatesAutoresizingMaskIntoConstraints="NO" id="Xb6-8C-4xT">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="website_url" translatesAutoresizingMaskIntoConstraints="NO" id="Xb6-8C-4xT">
                                                                 <rect key="frame" x="0.0" y="105" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="Hgf-48-nZ7"/>
@@ -3503,12 +3513,12 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <image name="off" width="24" height="24"/>
         <image name="phone_color" width="48" height="48"/>
         <image name="placeholder_photo_new_ad" width="200" height="200"/>
-        <image name="site_color" width="48" height="48"/>
         <image name="user" width="50" height="50"/>
+        <image name="website_url" width="48" height="48"/>
         <image name="whatsapp_color" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z41-Fe-56n"/>
+        <segue reference="eTG-5Z-qd2"/>
         <segue reference="IBZ-cb-T44"/>
         <segue reference="b73-yD-mxL"/>
         <segue reference="tMd-ni-SvK"/>

@@ -19,7 +19,7 @@ class NavController: UINavigationController {
         bounds.size.height += UIApplication.shared.statusBarFrame.size.height
         gradient.frame = bounds
         
-        gradient.colors = [UIColor.Brazil.green.cgColor, UIColor.Brazil.yellow.cgColor]
+        gradient.colors = [UIColor.greenBrazil.cgColor, UIColor.yellowBrazil.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 0)
 

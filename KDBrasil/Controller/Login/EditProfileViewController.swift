@@ -90,7 +90,7 @@ class EditProfileViewController: BaseViewController {
                 
                 //atualizar o banco
                 FIRFirestoreService.shared.saveProfileToFireStore()
-                CoreDataService.shared.saveCurrentUserToCoreData()
+                UserHandler.shared.saveCurrentUserToCoreData()
                 
                 let alert = UIAlertController(title: "", message: LocalizationKeys.updateProfile, preferredStyle: .alert)
                 

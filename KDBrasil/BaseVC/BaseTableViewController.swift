@@ -8,16 +8,12 @@
 
 import UIKit
 
-class BaseTableViewController: UITableViewController {
-    
+class BaseTableViewController : UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-
-  
 }
-
 

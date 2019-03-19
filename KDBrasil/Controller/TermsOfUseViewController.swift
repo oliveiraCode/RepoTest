@@ -22,4 +22,5 @@ class TermsOfUseViewController: BaseViewController {
     @IBAction func btnCancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
 }

@@ -136,23 +136,16 @@ class Service:NSObject,CLLocationManagerDelegate{
         }
     }
     
-    func saveCountryUserDefaults(){
-        
-        if let encoded = try? JSONEncoder().encode(appDelegate.currentCountry) {
-            UserDefaults.standard.set(encoded, forKey: "country")
-        }
-        
-    }
     
     func getCurrentCountry(completion: @escaping(_ done:Bool)->()) {
         
-        if let countryData = UserDefaults.standard.data(forKey: "country"),
-            let country = try? JSONDecoder().decode(Countries.self, from: countryData) {
-            appDelegate.currentCountry = country
-            getAllStatesFromCountry()
-            completion(true)
+        CountryHandler.shared.readCurrentCountryFromCoreData { (done) in
+            if done {
+                self.getAllStatesFromCountry()
+                completion(true)
+            }
         }
-        
+    
         if appDelegate.currentCountry == nil {
             // get the current locale
             let currentLocale = Locale.current
@@ -166,12 +159,11 @@ class Service:NSObject,CLLocationManagerDelegate{
                     currentCountry.dial_code = value.dial_code
                     currentCountry.flag = value.flag
                     appDelegate.currentCountry = currentCountry
-                    saveCountryUserDefaults()
+                    CountryHandler.shared.saveCurrentCountryToCoreData()
                     getAllStatesFromCountry()
                     completion(true)
                 }
             }
-            
         }
         
         

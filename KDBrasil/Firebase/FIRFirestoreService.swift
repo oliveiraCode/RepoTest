@@ -298,7 +298,7 @@ class FIRFirestoreService {
                         print("User display name changed!")
                         self.saveImageToStorage()
                         self.saveProfileToFireStore()
-                        CoreDataService.shared.saveCurrentUserToCoreData()
+                        UserHandler.shared.saveCurrentUserToCoreData()
                         completionHandler(nil)
                     } else {
                         completionHandler(error)
@@ -426,8 +426,8 @@ class FIRFirestoreService {
                             
                             //set the global variable with current user
                             self.appDelegate.userObj = user
-                            CoreDataService.shared.saveCurrentUserToCoreData()
-                            CoreDataService.shared.readCurrentUserFromCoreData()
+                            UserHandler.shared.saveCurrentUserToCoreData()
+                            UserHandler.shared.readCurrentUserFromCoreData()
                             completionHandler(nil)
                         } catch {
                             completionHandler(error)
@@ -525,7 +525,7 @@ class FIRFirestoreService {
         }
         
         //Remove user from CoreData
-        CoreDataService.shared.resetAllRecordsOnCoreData()
+        UserHandler.shared.resetAllRecordsOnCoreData()
         
         //Remove user from AppDelegate
         appDelegate.userObj.resetValuesOfUserAccount()

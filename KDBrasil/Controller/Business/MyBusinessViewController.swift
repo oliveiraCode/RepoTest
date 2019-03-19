@@ -14,6 +14,7 @@ import PhoneNumberKit
 class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITextViewDelegate, UITextFieldDelegate  {
     
     //IBOutlets
+    @IBOutlet weak var img_url: UIImageView!
     @IBOutlet weak var lbCountryCodePhone: UILabel!
     @IBOutlet weak var lbCountryCodeWhatsApp: UILabel!
     @IBOutlet weak var tfName: UITextField!
@@ -40,7 +41,6 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     var categoryValue:String?
     var photosValue:[UIImage]?
     var indexPathItemForImage:Int?
-    let dateFormatter = DateFormatter()
     var imageArrayForStorage:[UIImage] = [UIImage(named: "placeholder_photo_new_ad")!]
     
     let pickerView = ToolbarPickerView()
@@ -58,7 +58,9 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         super.viewDidLoad()
         
         setStates()
-        self.dateFormatter.dateFormat = "HH:mm"
+        
+        img_url.layer.cornerRadius = 5
+        img_url.layer.masksToBounds = true
         
         self.tfState.inputView = self.pickerView
         self.tfState.inputAccessoryView = self.pickerView.toolbar
@@ -95,7 +97,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             self.imageArrayForStorage = photosValue!
             self.collectionViewPhoto.reloadData()
         }
-
+        
     }
     
     
@@ -129,7 +131,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         tfPhone.text = String((tfPhone.text?.dropFirst(3))!)
         tfWhatsapp.text = String((tfWhatsapp.text?.dropFirst(3))!)
         
-
+        
         if let countImage = self.businessDetails.photosURL?.count {
             
             for index in 0...countImage-1 {
@@ -231,7 +233,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
                     
                     self.imageArrayForStorage.removeLast()
                     FIRFirestoreService.shared.saveData(business: business, imageArray: self.imageArrayForStorage)
-     
+                    
                     var messageBusiness:String
                     if self.isNewBusiness! {
                         messageBusiness = General.businessCreated
@@ -369,7 +371,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             } else if (textField.text?.lowercased().contains("http://"))! {
                 textField.text = String((textField.text?.dropFirst(7))!)
             }
-            if !(textField.text?.lowercased().contains("www"))! {
+            if !(textField.text?.lowercased().contains("www"))! && !(textField.text?.isEmpty)! {
                 textField.text = "www.\(textField.text!)"
             }
             
@@ -384,6 +386,11 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         return true
     }
     
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        self.img_url.image = nil
+        return true
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let pnTextField = PhoneNumberTextField()
@@ -394,10 +401,11 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
         //MARK:- If Delete button click
         let  char = string.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
-    
+        
         if (isBackSpace == -92) {
             print("Backspace was pressed")
             textField.text!.removeLast()
+            changeImgURL(text: textField.text!)
             return false
         }
         
@@ -416,8 +424,33 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
                 return false
             }
         }
+        
+        if textField == tfWeb {
+            changeImgURL(text: textField.text!)
+        }
+        
         return true
         
+    }
+    
+    private func changeImgURL(text:String){
+        
+        switch text {
+        case let str where str.lowercased().contains("facebook"):
+            self.img_url.image = UIImage(named: "facebook_url")
+            break
+        case let str where str.lowercased().contains("linkedin"):
+            self.img_url.image = UIImage(named: "linkedin_url")
+            break
+        case let str where str.lowercased().contains("instagram"):
+            self.img_url.image = UIImage(named: "instagram_url")
+            break
+        case let str where str.lowercased().contains("w"):
+            self.img_url.image = UIImage(named: "website_url")
+            break
+        default:
+            self.img_url.image = nil
+        }
     }
     
 }

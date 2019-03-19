@@ -13,7 +13,7 @@ extension UIToolbar {
     func setGradientBackground() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = frame
-        gradientLayer.colors = [UIColor.Brazil.green.cgColor, UIColor.Brazil.yellow.cgColor]
+        gradientLayer.colors = [UIColor.greenBrazil.cgColor, UIColor.yellowBrazil.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         

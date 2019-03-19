@@ -87,7 +87,7 @@ class LoginMainViewController: BaseViewController {
                         self.appDelegate.userObj.image = value.image
                         FIRFirestoreService.shared.saveImageToStorage()
                         FIRFirestoreService.shared.saveProfileToFireStore()
-                        CoreDataService.shared.saveCurrentUserToCoreData()
+                        UserHandler.shared.saveCurrentUserToCoreData()
                         
                         self.activityIndicator.stopAnimating()
                         self.dismiss(animated: true, completion: nil)

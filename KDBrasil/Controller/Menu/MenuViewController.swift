@@ -104,7 +104,7 @@ class  MenuViewController: BaseViewController, UITableViewDelegate, UITableViewD
             self.lbName.text = "\(Service.shared.getPeriodOfDay()) \(LocalizationKeys.accountName)!"
             self.imgProfile.image = UIImage(named: LocalizationKeys.imageUserDefault)
             self.appDelegate.userObj.resetValuesOfUserAccount()
-            CoreDataService.shared.resetAllRecordsOnCoreData()
+            UserHandler.shared.resetAllRecordsOnCoreData()
             do {
                 try Auth.auth().signOut()
             } catch{}

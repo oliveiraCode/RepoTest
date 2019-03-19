@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //used in search results of country
 class Countries:Codable {
