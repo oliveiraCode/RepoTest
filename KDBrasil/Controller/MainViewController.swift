@@ -14,16 +14,24 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         checkInternet()
     }
     
-    
     func checkInternet(){
-        
+    
         Connection.shared.internetConnectionReachability { (internetAccess) in
             if internetAccess {
-                self.showMainPage()
+                
+                UpdateHandler.shared.isUpdateAvailable(completion: { (isUpdateAvailable, appID, version) in
+                    if let isUpdate = isUpdateAvailable {
+                        if isUpdate {
+                            self.showAlertIsUpdateAvailable(appID: appID!,version: version!)
+                        } else {
+                            self.showMainPage()
+                        }
+                    }
+                })
+                
             } else {
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Acesso à Internet", message: "Não há nenhuma conexão com à Internet disponível. Por favor, verifique e tente novamente.", preferredStyle: .alert)
@@ -60,5 +68,16 @@ class MainViewController: BaseViewController {
     }
     
     
+    private func showAlertIsUpdateAvailable(appID:Int,version:String){
+        
+        let alert = UIAlertController(title: "Atualização disponível", message: "Uma nova versão do KD Brasil está disponível. Por favor, atualize para a versão \(version)", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Atualizar", style: .default, handler: { (_) in
+            UpdateHandler.shared.launchAppStore(appID: appID)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
 

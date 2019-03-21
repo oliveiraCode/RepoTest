@@ -9,12 +9,16 @@
 import UIKit
 import CoreData
 import FirebaseAuth
-import Firebase
+import FirebaseCore
 import FBSDKCoreKit
 import IQKeyboardManagerSwift
+import UserNotifications
+import FirebaseMessaging
+import FirebaseInstanceID
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     var userObj = User()
@@ -26,8 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Fechar"
         
+        registerPushNotification(application: application)
         FirebaseApp.configure()
-  
+        
         //set default value as a initial value
         Service.shared.getCurrentLocation()
         
@@ -39,16 +44,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         let handle = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         return handle
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         CoreDataHandler.shared.saveContext()
     }
-    
-    
 
+    func registerPushNotification(application: UIApplication) -> () {
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (isGranted, err) in
+            if err != nil {
+                //Something bad happend
+                print("Failed to get authorization for notifications: \(err?.localizedDescription ?? "default value")")
+            } else {
+                UNUserNotificationCenter.current().delegate = self
+                Messaging.messaging().delegate = self
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
+            }
+        }
+    }
+    
+    
+    func ConnectToFCM() {
+        Messaging.messaging().shouldEstablishDirectChannel = true
+        
+        //UIApplication.shared.applicationIconBadgeNumber += 1
+
+        InstanceID.instanceID().instanceID { (result, error) in
+            if let error = error {
+                print("Error fetching remote instange ID: \(error)")
+            } else if let result = result {
+                print("Remote instance ID token: \(result.token)")
+            }
+        }
+        
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        Messaging.messaging().shouldEstablishDirectChannel = false
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        ConnectToFCM()
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        ConnectToFCM()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().setAPNSToken(deviceToken, type: MessagingAPNSTokenType.unknown)
+        print("Successfully registered for notifications!")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+        print("Failed to register for notifications: \(error.localizedDescription)")
+    }
+    
+    
 }
-

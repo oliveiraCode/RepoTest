@@ -58,6 +58,7 @@
 		9CA051F522401647009E693B /* ToolBarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051F422401647009E693B /* ToolBarPickerView.swift */; };
 		9CA0520522415693009E693B /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0520422415693009E693B /* UserHandler.swift */; };
 		9CA05207224156A1009E693B /* CountryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA05206224156A1009E693B /* CountryHandler.swift */; };
+		9CA0530422440FCE009E693B /* UpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530322440FCE009E693B /* UpdateHandler.swift */; };
 		9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */; };
 		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
 		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
@@ -139,6 +140,8 @@
 		9CA051F422401647009E693B /* ToolBarPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBarPickerView.swift; sourceTree = "<group>"; };
 		9CA0520422415693009E693B /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		9CA05206224156A1009E693B /* CountryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryHandler.swift; sourceTree = "<group>"; };
+		9CA052082241A862009E693B /* KDBrasil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KDBrasil.entitlements; sourceTree = "<group>"; };
+		9CA0530322440FCE009E693B /* UpdateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHandler.swift; sourceTree = "<group>"; };
 		9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +292,14 @@
 			path = BaseVC;
 			sourceTree = "<group>";
 		};
+		9CA0530222440FAF009E693B /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				9CA0530322440FCE009E693B /* UpdateHandler.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
 		9CB72045220609AA001DE201 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +360,7 @@
 		9CC72AD021D3FC9E0048C37B /* KDBrasil */ = {
 			isa = PBXGroup;
 			children = (
+				9CA052082241A862009E693B /* KDBrasil.entitlements */,
 				9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */,
 				9C5C7F15221F45AB00109152 /* Resources */,
 				9C6F040A2234A703000B828F /* BaseVC */,
@@ -358,6 +370,7 @@
 				9C5C7F12221F44B500109152 /* Firebase */,
 				9C5C7F11221F448E00109152 /* CoreData */,
 				9C25B73C21E944F700E332F8 /* Extensions */,
+				9CA0530222440FAF009E693B /* Update */,
 				9C25B73721E80A6C00E332F8 /* Services */,
 				9CC72AE721D404860048C37B /* Controller */,
 				9CC72AE621D404800048C37B /* Model */,
@@ -505,7 +518,7 @@
 								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
@@ -658,6 +671,7 @@
 				9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */,
 				9CA051F1223F042C009E693B /* PhotosViewController.swift in Sources */,
 				9C25B73B21E80CBB00E332F8 /* FIRCollectionReference.swift in Sources */,
+				9CA0530422440FCE009E693B /* UpdateHandler.swift in Sources */,
 				9C933D2E2206639A00F54782 /* EditProfileViewController.swift in Sources */,
 				9C01410321E504380002345D /* CategoryViewController.swift in Sources */,
 				9CA051ED223EB232009E693B /* Date.swift in Sources */,
@@ -860,6 +874,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = KDBrasil/KDBrasil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W37KBBDQBC;
 				INFOPLIST_FILE = "$(SRCROOT)/KDBrasil/Info.plist";
@@ -881,6 +896,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = KDBrasil/KDBrasil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W37KBBDQBC;
 				INFOPLIST_FILE = "$(SRCROOT)/KDBrasil/Info.plist";

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 extension Bundle {
-    var releaseVersionNumber: String? {
+    var currentVersion: String? {
         return infoDictionary?["CFBundleShortVersionString"] as? String
     }
     var buildVersionNumber: String? {
@@ -20,7 +21,12 @@ extension Bundle {
         return infoDictionary?["CFBundleDisplayName"] as? String
     }
     
+    var identifier: String? {
+        return infoDictionary?["CFBundleIdentifier"] as? String
+    }
+    
     var displayDetailsApp:String?{
-        return "Name: \(displayName!) \nRelease: \(releaseVersionNumber!) \nBuild: \(buildVersionNumber!)"
+        return "iOS version: \(UIDevice.current.systemVersion) \nApp version: \(currentVersion!) (\(buildVersionNumber!))"
     }
 }
+
