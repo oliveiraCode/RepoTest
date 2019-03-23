@@ -9,6 +9,19 @@
 import UIKit
 import CoreData
 
+enum authenticationType:String {
+    case facebook = "facebook"
+    case google = "google"
+    case email = "email"
+}
+
+
+enum userType:String {
+    case client = "client"
+    case professional = "professional"
+}
+
+
 class User  {
     var id:String!
     var firstName:String!
@@ -17,24 +30,26 @@ class User  {
     var password:String!
     var phone:String?
     var whatsapp:String?
-    var image:UIImage!
     var creationDate:String?
     var favoritesIds:[String]?
-    var isFacebook:Bool?
+    var photoURL:String?
+    var image:UIImage!
+    var authenticationType:authenticationType?
+    var userType:userType?
     
     
-    init(id:String,firstName:String, lastName:String, email:String, password:String, phone:String, whatsapp:String, creationDate:String, favoritesIds: [String], isFacebook:Bool) {
-        
+    init(id:String,firstName:String, lastName:String, email:String, phone:String, whatsapp:String, creationDate:String, favoritesIds: [String], photoURL:String,authenticationType:authenticationType, userType:userType) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        self.password = password
         self.phone = phone
         self.whatsapp = whatsapp
         self.creationDate = creationDate
         self.favoritesIds = favoritesIds
-        self.isFacebook = isFacebook
+        self.photoURL = photoURL
+        self.authenticationType = authenticationType
+        self.userType = userType
         
     }
     
@@ -45,15 +60,17 @@ class User  {
         self.firstName = nil
         self.lastName = nil
         self.email = nil
-        self.password = nil
         self.phone = nil
         self.whatsapp = nil
-        self.image = nil
+        self.password = nil
         self.creationDate = nil
+        self.photoURL = nil
+        self.image = nil
+        self.authenticationType = nil
+        self.userType = nil
     }
     
-    convenience init(data: [String: Any],password:String) {
-        
+    convenience init(data: [String: Any]) {
         
         let creationDate = data["creationDate"] as! String
         let id = data["id"] as! String
@@ -63,9 +80,11 @@ class User  {
         let phone = data["phone"] as? String ?? "Indisponível"
         let whatsapp = data["whatsapp"] as? String ?? "Indisponível"
         let favoritesIds = data["favoritesIds"] as? [String] ?? [""]
+        let photoURL = data["photoURL"] as? String ?? ""
+        let authenticationType = data["authenticationType"] as? authenticationType ?? .email
+        let userType = data["userType"] as? userType ?? .client
         
-        
-        self.init(id: id, firstName: firstName, lastName: lastName, email: email, password: password, phone: phone, whatsapp: whatsapp, creationDate: creationDate, favoritesIds: favoritesIds,isFacebook:false)
+        self.init(id: id, firstName: firstName, lastName: lastName, email: email, phone: phone, whatsapp: whatsapp, creationDate: creationDate, favoritesIds: favoritesIds,photoURL: photoURL, authenticationType:authenticationType, userType:userType)
     }
     
     

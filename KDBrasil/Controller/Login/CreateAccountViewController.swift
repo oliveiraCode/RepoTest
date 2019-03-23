@@ -13,6 +13,7 @@ import Photos
 class CreateAccountViewController: BaseViewController {
     
     //IBOutlets
+    @IBOutlet weak var segmentedControlUserType: UISegmentedControl!
     @IBOutlet weak var btnCreateAccount: UIButton!
     @IBOutlet weak var tfFirstName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -60,8 +61,16 @@ class CreateAccountViewController: BaseViewController {
         //check what the provider is
         Auth.auth().fetchProviders(forEmail: tfEmail.text!) { (value, err) in
             if err == nil {
-                guard let accountFacebook = value?[0] else {return}
-                if accountFacebook == "facebook.com" {
+                guard let accountType = value?[0] else {return}
+                
+                
+                if accountType == "facebook.com" {
+                    self.activityIndicator.stopAnimating()
+                    self.showAlert(title: "Conta Facebook", message: "A conta \(self.tfEmail.text!) já existe e é uma conta facebook. \n\nUse a opção facebook para se conectar.")
+                    return
+                }
+                
+                if accountType == "facebook.com" {
                     self.activityIndicator.stopAnimating()
                     self.showAlert(title: "Conta Facebook", message: "A conta \(self.tfEmail.text!) já existe e é uma conta facebook. \n\nUse a opção facebook para se conectar.")
                     return
@@ -74,8 +83,14 @@ class CreateAccountViewController: BaseViewController {
         self.appDelegate.userObj.email = self.tfEmail.text
         self.appDelegate.userObj.password = self.tfPassword.text
         self.appDelegate.userObj.image = self.profileImageView.image
-        self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: Date().description, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
-        self.appDelegate.userObj.isFacebook = false
+        self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: Date().description, formatter: "dd/MM/yyyy HH:mm:ss")
+        self.appDelegate.userObj.authenticationType = authenticationType.email
+       
+        if segmentedControlUserType.selectedSegmentIndex == 0 {
+            self.appDelegate.userObj.userType = userType.client
+        } else {
+            self.appDelegate.userObj.userType = userType.professional
+        }
         
         FIRFirestoreService.shared.createUser { (error) in
             if error != nil {

@@ -54,11 +54,11 @@ class ProfileTableViewController: BaseTableViewController {
             
             switch indexPath.row {
             case 0:
-                if (UIApplication.shared.delegate as! AppDelegate).userObj.isFacebook! {
-                    self.showAlert(title: "Conta Facebook", message: "Não é possível editar perfil de conta de Facebook.")
-                } else {
+//                if (UIApplication.shared.delegate as! AppDelegate).userObj.isFacebook! {
+//                    self.showAlert(title: "Conta Facebook", message: "Não é possível editar perfil de conta de Facebook.")
+//                } else {
                     performSegue(withIdentifier: "showEditProfileVC", sender: nil)
-                }
+             //   }
                 
                 break
             case 1:

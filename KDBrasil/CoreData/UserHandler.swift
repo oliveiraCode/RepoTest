@@ -34,7 +34,7 @@ class UserHandler {
         
         var cdUser : [CDUser] = []
         let context = CoreDataHandler.shared.getManagedObjectContext()
-        
+
         do {
             cdUser = try context.fetch(CDUser.fetchRequest())
             for valueUser in cdUser {
@@ -43,12 +43,24 @@ class UserHandler {
                 self.appDelegate.userObj.firstName = valueUser.firstName
                 self.appDelegate.userObj.lastName = valueUser.lastName
                 self.appDelegate.userObj.phone = valueUser.phone
-                self.appDelegate.userObj.password = valueUser.password
                 self.appDelegate.userObj.creationDate = valueUser.creationDate
                 self.appDelegate.userObj.whatsapp = valueUser.whatsapp
+                self.appDelegate.userObj.photoURL = valueUser.photoURL
                 self.appDelegate.userObj.favoritesIds = valueUser.favoritesIds
-                self.appDelegate.userObj.isFacebook = valueUser.isFacebook
                 self.appDelegate.userObj.image = UIImage(data: valueUser.image!)
+                self.appDelegate.userObj.userType = valueUser.userType == "client" ? userType.client : userType.professional
+                
+                switch valueUser.authenticationType?.description {
+                case "facebook" :
+                    self.appDelegate.userObj.authenticationType = authenticationType.facebook
+                    break
+                case "google" :
+                    self.appDelegate.userObj.authenticationType = authenticationType.google
+                    break
+                default:
+                    self.appDelegate.userObj.authenticationType = authenticationType.email
+                }
+     
             }
         } catch {
             print("Fetching User Failed")
@@ -67,13 +79,16 @@ class UserHandler {
         cdUser.firstName = self.appDelegate.userObj.firstName
         cdUser.lastName = self.appDelegate.userObj.lastName
         cdUser.phone = self.appDelegate.userObj.phone
-        cdUser.password = self.appDelegate.userObj.password
-        cdUser.isFacebook = self.appDelegate.userObj.isFacebook!
+        cdUser.creationDate = self.appDelegate.userObj.creationDate
+        cdUser.whatsapp = self.appDelegate.userObj.whatsapp
+        cdUser.photoURL = self.appDelegate.userObj.photoURL
+        cdUser.favoritesIds = self.appDelegate.userObj.favoritesIds
         
+        cdUser.userType = self.appDelegate.userObj.userType?.rawValue ?? "client"
+        cdUser.authenticationType = self.appDelegate.userObj.authenticationType?.rawValue ?? "email"
+    
         let imageData = self.appDelegate.userObj.image.jpegData(compressionQuality: 1)
         cdUser.image = imageData
-        
-        cdUser.favoritesIds = self.appDelegate.userObj.favoritesIds
         
         do{
             try context.save()

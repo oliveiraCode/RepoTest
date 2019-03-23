@@ -78,28 +78,34 @@ class EditProfileViewController: BaseViewController {
             
 
             KRProgressHUD.show(withMessage: NSLocalizedString(LocalizationKeys.pleaseWait, comment: "")) {
-                //atualizar a image
-                FIRFirestoreService.shared.saveImageToStorage()
-                
+
                 //atualizar o email
                 if self.checkFieldPassword() {
                     Auth.auth().currentUser?.updatePassword(to: self.tfPassword.text!, completion: nil)
                 }
                 Auth.auth().currentUser?.updateEmail(to: self.tfEmail.text!, completion: nil)
                 
-                
                 //atualizar o banco
-                FIRFirestoreService.shared.saveProfileToFireStore()
-                UserHandler.shared.saveCurrentUserToCoreData()
-                
-                let alert = UIAlertController(title: "", message: LocalizationKeys.updateProfile, preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: LocalizationKeys.buttonOK, style: .default, handler: { action in
-                    self.dismiss(animated: true, completion: nil)
-                }))
-                
-                self.present(alert, animated: true, completion: nil)
-                KRProgressHUD.dismiss()
+                FIRFirestoreService.shared.saveData(completion: { (error) in
+                   
+                    let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+                    
+                    if error == nil {
+                        alert.title = "Sucesso"
+                        alert.message = LocalizationKeys.updateProfile
+                    } else {
+                        alert.title = "Erro"
+                        alert.message = LocalizationKeys.errorProfile
+                    }
+                    
+                    alert.addAction(UIAlertAction(title: LocalizationKeys.buttonOK, style: .default, handler: { action in
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    KRProgressHUD.dismiss()
+                })
+   
             }
             
         }

@@ -32,17 +32,7 @@ class LoginViewController: BaseViewController {
     @IBAction func btnCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     @IBAction func btnLogin(_ sender: Any) {
         
         guard let email = tfEmail.text else {return}
@@ -50,11 +40,11 @@ class LoginViewController: BaseViewController {
         
         //check if they have value
         guard email != "" else {
-            self.showAlert(title: FirebaseAuthErrors.warning, message: CommonWarning.emailEmpty);
+            Alert.showBasic(title: FirebaseAuthErrors.warning, msg: CommonWarning.emailEmpty, vc: self)
             return
         }
         guard password != ""  else {
-            self.showAlert(title: FirebaseAuthErrors.warning, message: CommonWarning.passwordEmpty);
+            Alert.showBasic(title: FirebaseAuthErrors.warning, msg: CommonWarning.passwordEmpty, vc: self)
             return
         }
         
@@ -67,7 +57,7 @@ class LoginViewController: BaseViewController {
                     self.showAlert(errorCode: errCode)
                 }
             } else {
-                FIRFirestoreService.shared.getDataFromCurrentUser(password:password,completionHandler: { (error) in
+                FIRFirestoreService.shared.getDataFromCurrentUser(completionHandler: { (error) in
                     if error == nil {
                         self.activityIndicator.stopAnimating()
                         self.dismiss(animated: true, completion: nil)
@@ -104,6 +94,7 @@ class LoginViewController: BaseViewController {
             }
             
             if accountFacebook == "password" || accountFacebook == nil{
+                Auth.auth().languageCode = "pt"
                 Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
                     if error == nil {
                         self.activityIndicator.stopAnimating()

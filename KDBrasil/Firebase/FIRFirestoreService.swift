@@ -31,7 +31,7 @@ class FIRFirestoreService {
         
         for (index,image) in imageArray.enumerated() {
             
-            uploading(business: business, img: image, index: index) { (url) in
+            uploadingPhotoBusiness(business: business, img: image, index: index) { (url) in
                 photoUrls.append(url)
                 
                 if photoUrls.count == countImage {
@@ -42,7 +42,7 @@ class FIRFirestoreService {
         }
     }
     
-    func uploading(business:Business,img:UIImage, index:Int, completion: @escaping ((String) -> Void)) {
+    func uploadingPhotoBusiness(business:Business,img:UIImage, index:Int, completion: @escaping ((String) -> Void)) {
         
         let storeImage = Storage.storage().reference().child(FIRCollectionReference.imageBusiness).child("\(business.id!)\(index)")
         
@@ -278,6 +278,33 @@ class FIRFirestoreService {
     
     
     
+    //MARK: - saveDataUser
+    func saveData(completion: @escaping (Error?) -> Void ){
+        uploadingPhotoUser { (photoURL) in
+            if let url = photoURL {
+                self.appDelegate.userObj.photoURL = url
+                self.saveUserToFireStore()
+                UserHandler.shared.saveCurrentUserToCoreData()
+                completion(nil)
+            }
+        }
+    }
+
+    
+    private func uploadingPhotoUser(completion: @escaping ((String?) -> Void)) {
+        let storageRef = Storage.storage().reference().child(FIRCollectionReference.imageUsers).child(appDelegate.userObj.id!)
+        
+        if let uploadImageData = (appDelegate.userObj.image).jpegData(compressionQuality: 0.75){
+            storageRef.putData(uploadImageData, metadata: nil, completion: { (metaData, error) in
+                storageRef.downloadURL(completion: { (url, error) in
+                    if let urlText = url?.absoluteString {
+                        completion(urlText)
+                    }
+                })
+            })
+        }
+    }
+    
     //MARK: - createUser
     func createUser(completionHandler: @escaping (Error?) -> Void) {
         
@@ -288,17 +315,15 @@ class FIRFirestoreService {
             }
             
             if error == nil && userResult != nil {
-                print("User created!")
                 self.appDelegate.userObj.id = Auth.auth().currentUser?.uid //get id from current user
                 
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = "\(self.appDelegate.userObj.firstName!)"
                 changeRequest?.commitChanges(completion: { (error) in
                     if error == nil {
-                        print("User display name changed!")
-                        self.saveImageToStorage()
-                        self.saveProfileToFireStore()
-                        UserHandler.shared.saveCurrentUserToCoreData()
+                        self.saveData(completion: { (error) in
+                            
+                        })
                         completionHandler(nil)
                     } else {
                         completionHandler(error)
@@ -308,20 +333,9 @@ class FIRFirestoreService {
         }
     }
     
-    //MARK: - saveImageToStorage
-    func saveImageToStorage(){
-        
-        guard let imageData = appDelegate.userObj.image.jpegData(compressionQuality: 0.75) else {return}
-        
-        let storageRef = Storage.storage().reference().child(FIRCollectionReference.imageUsers).child(appDelegate.userObj.id!)
-        
-        storageRef.putData(imageData, metadata: nil)
-        print("Image Uploaded successfully")
-        
-    }
     
-    //MARK: - saveProfileToFireStore
-    func saveProfileToFireStore() {
+    //MARK: - saveUserToFireStore
+    func saveUserToFireStore() {
         
         let userRef = db.collection(FIRCollectionReference.users)
         
@@ -335,6 +349,9 @@ class FIRFirestoreService {
                 "whatsapp": appDelegate.userObj.whatsapp ?? "",
                 "favoritesIds": appDelegate.userObj.favoritesIds ?? "",
                 "creationDate": appDelegate.userObj.creationDate!,
+                "authenticationType": appDelegate.userObj.authenticationType?.rawValue ?? "",
+                "userType": appDelegate.userObj.userType?.rawValue ?? "",
+                "photoURL": appDelegate.userObj.photoURL ?? ""
             ]
         }
         
@@ -402,8 +419,21 @@ class FIRFirestoreService {
         
     }
     
+    func checkIfUserExists(email:String,completionHandler: @escaping (Bool) -> Void){
+        let userRef = db.collection(FIRCollectionReference.users).whereField("email", isEqualTo:email)
+        
+        userRef.getDocuments { (querySnapshot, err) in
+            if querySnapshot?.count == 0 {
+                completionHandler(false)
+            } else {
+                completionHandler(true)
+            }
+        }
+        
+    }
+    
     //MARK - getDataFromCurrentUser
-    func getDataFromCurrentUser(password:String,completionHandler: @escaping (Error?) -> Void) {
+    func getDataFromCurrentUser(completionHandler: @escaping (Error?) -> Void) {
         
         let userRef = db.collection(FIRCollectionReference.users).whereField("id", isEqualTo: (Auth.auth().currentUser?.uid)!)
         
@@ -415,24 +445,22 @@ class FIRFirestoreService {
             } else {
                 for document in querySnapshot!.documents {
                     
-                    let user = User(data: document.data(), password: password)
+                    let user = User(data: document.data())
                     
-                    let imageRef = Storage.storage().reference().child(FIRCollectionReference.imageUsers).child(user.id!)
-                    imageRef.downloadURL { (url, error) in
-                        
-                        do {
-                            let data = try Data(contentsOf: url!)
-                            user.image = UIImage(data: data as Data)
-                            
-                            //set the global variable with current user
-                            self.appDelegate.userObj = user
-                            UserHandler.shared.saveCurrentUserToCoreData()
-                            UserHandler.shared.readCurrentUserFromCoreData()
-                            completionHandler(nil)
-                        } catch {
-                            completionHandler(error)
-                        }
+                    if let url = user.photoURL{
+                        let image = UIImageView()
+                        image.kf.setImage(with: URL(string: url))
+                        user.image = image.image
+                    } else {
+                        user.image = UIImage(named: "user")
                     }
+                    
+                    //set the global variable with current user
+                    self.appDelegate.userObj = user
+                    UserHandler.shared.saveCurrentUserToCoreData()
+                    UserHandler.shared.readCurrentUserFromCoreData()
+                    completionHandler(nil)
+                    
                 }
             }
         }

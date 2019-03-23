@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FirebaseAuth
+import LocalAuthentication
 
 class LoginMainViewController: BaseViewController {
     
@@ -40,13 +41,55 @@ class LoginMainViewController: BaseViewController {
         
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self){(result,error) in
-            if error != nil{
-                
-            }else if result!.isCancelled{
-                print("User cancelled login")
-            }else{
-                self.useFirebaseLogin()
+            
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
             }
+            
+            guard let result = result else { return }
+            if result.isCancelled { return }
+            
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "email"]).start() {
+                (connection, result, error) in
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                if let fields = result as? [String:Any] {
+                    
+                    guard let email = fields["email"] as? String else {return}
+                    
+                    FIRFirestoreService.shared.checkIfUserExists(email: email, completionHandler: { (userExists) in
+                        
+                        if userExists {
+                            self.useFirebaseLogin()
+                            
+                        } else {
+                            let alert = UIAlertController(title: "Perfil de usuário", message: LocalizationKeys.typeOfUser, preferredStyle: .alert)
+                            
+                            alert.addAction(UIAlertAction(title: "Cliente", style: .default, handler: { (action) in
+                                self.appDelegate.userObj.userType = userType.client
+                                self.useFirebaseLogin()
+                            }))
+                            
+                            alert.addAction(UIAlertAction(title: "Profissional", style: .default, handler: { (action) in
+                                self.appDelegate.userObj.userType = userType.professional
+                                self.useFirebaseLogin()
+                            }))
+                            
+                            self.present(alert, animated: true, completion: nil)
+
+                        }
+                    })
+                    
+                }
+                
+            }
+            
         }
         
     }
@@ -63,7 +106,9 @@ class LoginMainViewController: BaseViewController {
         //Show Activity Indicator
         self.activityIndicator.startAnimating()
         
+        
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        
         Auth.auth().signInAndRetrieveData(with: credential){(result,error) in
             
             if error == nil{
@@ -76,19 +121,20 @@ class LoginMainViewController: BaseViewController {
                 self.appDelegate.userObj.id = result?.user.uid
                 self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
                 self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
-                self.appDelegate.userObj.isFacebook = true
-                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
+                self.appDelegate.userObj.authenticationType = authenticationType.facebook
                 
+                
+                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
                 var imageFacebook = UIImageView()
                 imageFacebook.kf.setImage(with: (result?.user.photoURL)!){
                     result in
                     switch result {
                     case .success(let value):
                         self.appDelegate.userObj.image = value.image
-                        FIRFirestoreService.shared.saveImageToStorage()
-                        FIRFirestoreService.shared.saveProfileToFireStore()
-                        UserHandler.shared.saveCurrentUserToCoreData()
                         
+                        FIRFirestoreService.shared.saveData(completion: { (error) in
+                            //
+                        })
                         self.activityIndicator.stopAnimating()
                         self.dismiss(animated: true, completion: nil)
                         
@@ -104,11 +150,53 @@ class LoginMainViewController: BaseViewController {
                 print("Could not Login user \(String(describing: error?.localizedDescription))")
             }
         }
-
+        
     }
     
     @IBAction func btnLoginNotNow(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func btnLogin(_ sender: UIButton) {
+        
+        if UserDefaults.standard.bool(forKey: "isTouchID") {
+            
+            TouchIDHandler.shared.authenticateUser { (result) in
+                if result == "success" {
+                    self.loginWithTouchID()
+                }
+                if result == "password" {
+                    self.performSegue(withIdentifier: "showLoginVC", sender: nil)
+                }
+            }
+        } else {
+            performSegue(withIdentifier: "showLoginVC", sender: nil)
+        }
+        
+    }
+    
+    private func loginWithTouchID(){
+        let email = "fernandes.oliveira@outlook.com"
+        let password = "123456"
+        
+        self.activityIndicator.startAnimating()
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            
+            if error != nil {
+                if let errCode = AuthErrorCode(rawValue: (error?._code)!) {
+                    self.activityIndicator.stopAnimating()
+                    self.showAlert(errorCode: errCode)
+                }
+            } else {
+                FIRFirestoreService.shared.getDataFromCurrentUser(completionHandler: { (error) in
+                    if error == nil {
+                        self.activityIndicator.stopAnimating()
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+        }
     }
     
 }

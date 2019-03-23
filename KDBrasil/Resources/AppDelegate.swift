@@ -36,9 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         //set default value as a initial value
         Service.shared.getCurrentLocation()
         
-        //get current user if it exists on coredata
-        UserHandler.shared.readCurrentUserFromCoreData()
-        
+        //get current user if it is logging
+        if Auth.auth().currentUser == nil {
+            UserHandler.shared.resetAllRecordsOnCoreData()
+        } else {
+            UserHandler.shared.readCurrentUserFromCoreData()
+        }
+
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true

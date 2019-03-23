@@ -234,7 +234,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WQU-3s-C8c" kind="presentation" modalTransitionStyle="coverVertical" id="NqD-rF-9we"/>
+                                    <action selector="btnLogin:" destination="Qwy-g5-a0s" eventType="touchUpInside" id="Cmd-ZU-MCy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_______________    OU    _______________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcx-pj-z1O">
@@ -328,6 +328,7 @@
                         <outlet property="activityIndicator" destination="arD-2s-01J" id="8rX-iY-s5A"/>
                         <outlet property="btnFacebook" destination="EEm-O6-msI" id="AVU-wr-A7Q"/>
                         <outlet property="btnLogin" destination="Tzw-pT-lbJ" id="JVM-mf-zD0"/>
+                        <segue destination="WQU-3s-C8c" kind="presentation" identifier="showLoginVC" id="vWJ-mK-rFk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ls-Yp-aXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -466,7 +467,7 @@
                                 </constraints>
                             </imageView>
                             <stackView contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XZ5-Rv-SJ8">
-                                <rect key="frame" x="32.5" y="215" width="310" height="160"/>
+                                <rect key="frame" x="32.5" y="238" width="310" height="160"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ALA-8D-i7B" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
@@ -511,7 +512,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAI-X9-Ifu">
-                                <rect key="frame" x="30.5" y="415" width="314" height="45"/>
+                                <rect key="frame" x="30.5" y="438" width="314" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="FKa-23-wJU"/>
                                     <constraint firstAttribute="height" constant="45" id="bwb-p3-h3v"/>
@@ -537,11 +538,24 @@
                                     <action selector="btnChangeImage:" destination="vtX-Ij-hho" eventType="touchUpInside" id="i6D-Kx-vlW"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BPL-gp-9du">
+                                <rect key="frame" x="32.5" y="180" width="310" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="aXB-ZS-tHf"/>
+                                    <constraint firstAttribute="width" constant="310" id="tKE-G0-2wN"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Cliente"/>
+                                    <segment title="Profissional"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VHZ-Tw-LDw" firstAttribute="centerX" secondItem="S6n-2y-SRx" secondAttribute="centerX" id="20X-Gg-52m"/>
+                            <constraint firstItem="BPL-gp-9du" firstAttribute="centerX" secondItem="S6n-2y-SRx" secondAttribute="centerX" id="3HN-fF-98N"/>
                             <constraint firstItem="AAI-X9-Ifu" firstAttribute="centerX" secondItem="S6n-2y-SRx" secondAttribute="centerX" id="3Xb-UQ-5OX"/>
+                            <constraint firstItem="BPL-gp-9du" firstAttribute="top" secondItem="VHZ-Tw-LDw" secondAttribute="bottom" constant="10" id="5oA-JG-bpW"/>
                             <constraint firstItem="AAI-X9-Ifu" firstAttribute="top" secondItem="XZ5-Rv-SJ8" secondAttribute="bottom" constant="40" id="8l9-R5-XNK"/>
                             <constraint firstItem="0c4-MD-INr" firstAttribute="centerX" secondItem="S6n-2y-SRx" secondAttribute="centerX" id="HHm-gj-Eeb"/>
                             <constraint firstItem="AAI-X9-Ifu" firstAttribute="centerX" secondItem="S6n-2y-SRx" secondAttribute="centerX" id="Ife-Sa-IZy"/>
@@ -550,7 +564,7 @@
                             <constraint firstItem="VHZ-Tw-LDw" firstAttribute="top" secondItem="knf-rU-GOc" secondAttribute="top" constant="50" id="SWL-Bg-uWg"/>
                             <constraint firstItem="XZ5-Rv-SJ8" firstAttribute="centerX" secondItem="S6n-2y-SRx" secondAttribute="centerX" id="YCB-BC-GIn"/>
                             <constraint firstItem="v8k-N0-Azi" firstAttribute="leading" secondItem="VHZ-Tw-LDw" secondAttribute="trailing" constant="-30" id="Z5s-uW-6oG"/>
-                            <constraint firstItem="XZ5-Rv-SJ8" firstAttribute="top" secondItem="VHZ-Tw-LDw" secondAttribute="bottom" constant="45" id="ZTg-Ws-IZr"/>
+                            <constraint firstItem="XZ5-Rv-SJ8" firstAttribute="top" secondItem="BPL-gp-9du" secondAttribute="bottom" constant="30" id="mB4-0F-WvY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="knf-rU-GOc"/>
                     </view>
@@ -565,6 +579,7 @@
                         <outlet property="activityIndicator" destination="0c4-MD-INr" id="Jxd-ts-x2N"/>
                         <outlet property="btnCreateAccount" destination="AAI-X9-Ifu" id="CsO-mp-oa1"/>
                         <outlet property="profileImageView" destination="VHZ-Tw-LDw" id="jdS-tz-2hl"/>
+                        <outlet property="segmentedControlUserType" destination="BPL-gp-9du" id="r8s-iq-WaM"/>
                         <outlet property="tfEmail" destination="L2P-jz-GEg" id="Ccv-JC-mWi"/>
                         <outlet property="tfFirstName" destination="ALA-8D-i7B" id="U8J-jh-JKc"/>
                         <outlet property="tfPassword" destination="osZ-sE-hni" id="6wY-r6-Juk"/>
@@ -1154,7 +1169,7 @@
                                                         <rect key="frame" x="50" y="139" width="275" height="200"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hIg-w5-vBT" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="41.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="39"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -1166,7 +1181,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7qn-xX-mtX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="52.5" width="275" height="41"/>
+                                                                <rect key="frame" x="0.0" y="50" width="275" height="39.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
@@ -1178,7 +1193,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WhatsApp" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v72-tU-kfM" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="104.5" width="275" height="41.5"/>
+                                                                <rect key="frame" x="0.0" y="100.5" width="275" height="39"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
@@ -1190,7 +1205,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website ou página do Facebook" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T0T-PF-t0U" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="157" width="275" height="43"/>
+                                                                <rect key="frame" x="0.0" y="150.5" width="275" height="49.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>

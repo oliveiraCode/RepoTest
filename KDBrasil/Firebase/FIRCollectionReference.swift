@@ -11,6 +11,7 @@ import Foundation
 enum FIRCollectionReference {
     static let category = "category"
     static let business = "business"
+    static let businessDev = "businessDev"
     static let address = "address"
     static let contact = "contact"
     static let users = "users"
