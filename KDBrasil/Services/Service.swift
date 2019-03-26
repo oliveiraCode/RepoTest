@@ -201,7 +201,7 @@ class Service:NSObject,CLLocationManagerDelegate{
     
     
     func getAllStatesFromCountry(){
-        guard let countryCode = self.appDelegate.currentCountry?.code else {return}
+        guard let countryCode = self.appDelegate.currentCountry.code else {return}
         
         let url_api = "\(API_GeoNames.url_searchJSON_states)\(countryCode)"
         
@@ -215,11 +215,11 @@ class Service:NSObject,CLLocationManagerDelegate{
                 do {
                     let allStatesFromCountry = try JSONDecoder().decode(States.self, from: dataFromJson)
                     
-                    self.appDelegate.currentCountry?.allStates = allStatesFromCountry
+                    self.appDelegate.currentCountry.allStates = allStatesFromCountry
                     
                     let newArraySorted = allStatesFromCountry.geonames.sorted(by: { ($0.name!) < ($1.name!) })
                     
-                    self.appDelegate.currentCountry?.allStates?.geonames = newArraySorted
+                    self.appDelegate.currentCountry.allStates?.geonames = newArraySorted
                     
                 }catch {}
                 break

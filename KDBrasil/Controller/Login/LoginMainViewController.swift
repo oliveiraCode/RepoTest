@@ -17,6 +17,7 @@ class LoginMainViewController: BaseViewController {
     
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnFacebook: UIButton!
+    @IBOutlet weak var btnGoogle: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //Properties
@@ -25,13 +26,13 @@ class LoginMainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnLogin.layer.borderColor = UIColor.black.cgColor
-        btnLogin.layer.borderWidth = 0.5
-        btnLogin.layer.cornerRadius = 20
+  
+        btnLogin.layer.cornerRadius = 5
         btnLogin.layer.masksToBounds = true
-        
-        btnFacebook.layer.cornerRadius = 20
+        btnFacebook.layer.cornerRadius = 5
         btnFacebook.layer.masksToBounds = true
+        btnGoogle.layer.cornerRadius = 5
+        btnGoogle.layer.masksToBounds = true
         
         // Do any additional setup after loading the view.
     }
@@ -50,7 +51,7 @@ class LoginMainViewController: BaseViewController {
             
             guard let result = result else { return }
             if result.isCancelled { return }
-            
+        
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "email"]).start() {
                 (connection, result, error) in
                 

@@ -54,9 +54,9 @@ class SettingsTableViewController: BaseTableViewController {
         imgCountry.removeAll()
         country.removeAll()
         
-        if let image = UIImage(named: ((appDelegate.currentCountry?.code)!)) {
+        if let image = UIImage(named: ((appDelegate.currentCountry.code)!)) {
             imgCountry.append(image)
-            country.append((appDelegate.currentCountry?.name)!)
+            country.append((appDelegate.currentCountry.name)!)
         } else {
             imgCountry.append(UIImage(named: "unknown")!)
             country.append("Indisponível")

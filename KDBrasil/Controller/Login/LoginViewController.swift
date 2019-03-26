@@ -20,15 +20,17 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
-        btnLogin.layer.borderColor = UIColor.black.cgColor
-        btnLogin.layer.borderWidth = 0.5
-        btnLogin.layer.cornerRadius = 20
+        btnLogin.layer.cornerRadius = 5
         btnLogin.layer.masksToBounds = true
         
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tfEmail.becomeFirstResponder()
+    }
+    
     @IBAction func btnCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

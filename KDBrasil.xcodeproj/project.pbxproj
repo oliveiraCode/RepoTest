@@ -91,7 +91,6 @@
 /* Begin PBXFileReference section */
 		33963E89EE0C915AF7BB4F09 /* Pods_KDBrasil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KDBrasil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C376189CB7808055D4CCC86 /* Pods-KDBrasil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KDBrasil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KDBrasil/Pods-KDBrasil.debug.xcconfig"; sourceTree = "<group>"; };
-		85AADC22B426E88D5C07BF21 /* Pods_BrasilNaMao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrasilNaMao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C01410221E504380002345D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		9C04E8F42204B14E00C46412 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C04E8F62204BACE00C46412 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
@@ -494,7 +493,6 @@
 			isa = PBXGroup;
 			children = (
 				9CA0530722443B41009E693B /* LocalAuthentication.framework */,
-				85AADC22B426E88D5C07BF21 /* Pods_BrasilNaMao.framework */,
 				33963E89EE0C915AF7BB4F09 /* Pods_KDBrasil.framework */,
 			);
 			name = Frameworks;

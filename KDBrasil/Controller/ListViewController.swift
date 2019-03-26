@@ -208,21 +208,22 @@ extension ListViewController: UISearchBarDelegate {
         case 0:
             self.businesses = self.businessesFiltered.filter({ Business -> Bool in
                 if searchText.isEmpty { return true }
-                return (Business.name!.lowercased().contains(searchText.lowercased()))
+                return ((Business.name!.lowercased().range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil))
             })
             break
         case 1:
             self.businesses = self.businessesFiltered.filter({ Business -> Bool in
                 if searchText.isEmpty { return true }
-                return (Business.category!.lowercased().contains(searchText.lowercased()))
+                 return ((Business.category!.lowercased().range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil))
             })
             break
         case 2:
             
             self.businesses = self.businessesFiltered.filter({ Business -> Bool in
                 if searchText.isEmpty { return true }
-                return (Business.address!.city!.lowercased().contains(searchText.lowercased()))
+                return ((Business.address!.city!.lowercased().range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil))
             })
+            
             break
         default:
             break

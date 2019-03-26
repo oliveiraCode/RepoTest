@@ -44,10 +44,10 @@ class CountryHandler {
         let context = CoreDataHandler.shared.getManagedObjectContext()
         
         let cdCountry = CDCountries(context: context)
-        cdCountry.code = self.appDelegate.currentCountry?.code
-        cdCountry.dial_code = self.appDelegate.currentCountry?.dial_code
-        cdCountry.flag = self.appDelegate.currentCountry?.flag
-        cdCountry.name = self.appDelegate.currentCountry?.name
+        cdCountry.code = self.appDelegate.currentCountry.code
+        cdCountry.dial_code = self.appDelegate.currentCountry.dial_code
+        cdCountry.flag = self.appDelegate.currentCountry.flag
+        cdCountry.name = self.appDelegate.currentCountry.name
         
         do{
             try context.save()

@@ -48,7 +48,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     var stateAlphaCode:[String] = []
     
     func setStates(){
-        for (_,value) in (appDelegate.currentCountry?.allStates?.geonames.enumerated())!{
+        for (_,value) in (appDelegate.currentCountry.allStates?.geonames.enumerated())!{
             stateFull.append(value.name!)
             stateAlphaCode.append((value.adminCodes1?.ISO3166_2)!)
         }
@@ -82,8 +82,8 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             self.updateUI()
         }
         
-        lbCountryCodePhone.text = appDelegate.currentCountry?.dial_code
-        lbCountryCodeWhatsApp.text = appDelegate.currentCountry?.dial_code
+        lbCountryCodePhone.text = appDelegate.currentCountry.dial_code
+        lbCountryCodeWhatsApp.text = appDelegate.currentCountry.dial_code
         
     }
     
@@ -200,7 +200,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             guard var whatsapp = tfWhatsapp.text else {return}
             guard let web = tfWeb.text else {return}
             guard let category = btnCategory.title(for: .normal) else {return}
-            guard let country = appDelegate.currentCountry?.name else {return}
+            guard let country = appDelegate.currentCountry.name else {return}
             
             if !phone.isEmpty {
                 phone = "\(lbCountryCodePhone.text!) \(phone)"
@@ -394,7 +394,7 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let pnTextField = PhoneNumberTextField()
-        pnTextField.defaultRegion = (appDelegate.currentCountry?.code)!
+        pnTextField.defaultRegion = (appDelegate.currentCountry.code)!
         pnTextField.text = textField.text
         
         

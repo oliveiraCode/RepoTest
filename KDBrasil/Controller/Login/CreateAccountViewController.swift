@@ -36,10 +36,9 @@ class CreateAccountViewController: BaseViewController {
     
     //MARK - SetupUI
     func setupUI(){
+        tfFirstName.becomeFirstResponder()
         
-        btnCreateAccount.layer.borderColor = UIColor.black.cgColor
-        btnCreateAccount.layer.borderWidth = 0.5
-        btnCreateAccount.layer.cornerRadius = 20
+        btnCreateAccount.layer.cornerRadius = 5
         btnCreateAccount.layer.masksToBounds = true
         
         profileImageView.layer.cornerRadius = profileImageView.bounds.height / 2

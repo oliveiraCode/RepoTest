@@ -15,9 +15,10 @@ class WebViewController: BaseViewController, WKNavigationDelegate{
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var urlSelected:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +27,7 @@ class WebViewController: BaseViewController, WKNavigationDelegate{
         if let urlString = urlSelected {
             let request = URLRequest(url: URL(string: "http://\(urlString)")!)
             activityIndicator.startAnimating()
+            webView.allowsBackForwardNavigationGestures = true
             webView.navigationDelegate = self
             webView.load(request)
         }
