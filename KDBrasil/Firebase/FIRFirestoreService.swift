@@ -211,7 +211,7 @@ class FIRFirestoreService {
         
         let businessRef = self.db.collection(FIRCollectionReference.business)
         let query = businessRef.whereField("country", isEqualTo: country)
- 
+        
         var businesses = [Business]()
         
         query.order(by: "name", descending: true).getDocuments(source: .default) { (querySnapshot, err) in
@@ -289,7 +289,7 @@ class FIRFirestoreService {
             }
         }
     }
-
+    
     
     private func uploadingPhotoUser(completion: @escaping ((String?) -> Void)) {
         let storageRef = Storage.storage().reference().child(FIRCollectionReference.imageUsers).child(appDelegate.userObj.id!)
@@ -448,24 +448,34 @@ class FIRFirestoreService {
                     let user = User(data: document.data())
                     
                     if let url = user.photoURL{
-                        let image = UIImageView()
-                        image.kf.setImage(with: URL(string: url))
-                        user.image = image.image
-                    } else {
-                        user.image = UIImage(named: "user")
+                        self.getPhotoURL(url: url, completion: { (image) in
+                            user.image = image
+                            
+                            //set the global variable with current user
+                            self.appDelegate.userObj = user
+                            UserHandler.shared.saveCurrentUserToCoreData()
+                            UserHandler.shared.readCurrentUserFromCoreData()
+                            completionHandler(nil)
+                        })
                     }
-                    
-                    //set the global variable with current user
-                    self.appDelegate.userObj = user
-                    UserHandler.shared.saveCurrentUserToCoreData()
-                    UserHandler.shared.readCurrentUserFromCoreData()
-                    completionHandler(nil)
-                    
                 }
             }
         }
     }
     
+    
+    private func getPhotoURL(url:String, completion: @escaping (_ image:UIImage?)-> Void){
+        
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            completion(UIImage(data: data))
+        }
+        catch {
+            completion(UIImage(named: "user"))
+        }
+        
+    }
     
     //MARK - getDataFromUserBusiness
     func getDataFromUserBusiness(idUser:String,completionHandler: @escaping (User?,Error?) -> Void) {

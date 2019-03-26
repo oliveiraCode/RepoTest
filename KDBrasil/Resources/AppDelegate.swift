@@ -36,15 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         //set default value as a initial value
         Service.shared.getCurrentLocation()
         
-//        if UserDefaults.standard.bool(forKey: "FirstTimeAfterUpdate"){
-//            UserDefaults.standard.set(true, forKey: "FirstTimeAfterUpdate")
-//            //try? Auth.auth().signOut()
-//           // UserHandler.shared.resetAllRecordsOnCoreData()
-//          //  CountryHandler.shared.resetCountryRecordsOnCoreData()
-//        } else {
-//            CountryHandler.shared.resetCountryRecordsOnCoreData()
-//        }
-        
         //get current user if it is logging
         if Auth.auth().currentUser == nil {
             UserHandler.shared.resetAllRecordsOnCoreData()

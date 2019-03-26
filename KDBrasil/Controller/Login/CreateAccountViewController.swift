@@ -34,9 +34,13 @@ class CreateAccountViewController: BaseViewController {
         setupUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tfFirstName.becomeFirstResponder()
+    }
+    
     //MARK - SetupUI
     func setupUI(){
-        tfFirstName.becomeFirstResponder()
         
         btnCreateAccount.layer.cornerRadius = 5
         btnCreateAccount.layer.masksToBounds = true

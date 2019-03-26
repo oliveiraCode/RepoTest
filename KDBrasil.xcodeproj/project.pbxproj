@@ -38,7 +38,6 @@
 		9C6F040322349BDF000B828F /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F040222349BDF000B828F /* Connection.swift */; };
 		9C6F04072234A152000B828F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F04062234A152000B828F /* BaseViewController.swift */; };
 		9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F04082234A68E000B828F /* BaseTableViewController.swift */; };
-		9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C71502A2204899F00DA86AA /* KDBrasil.xcdatamodeld */; };
 		9C8CA97921FF6A390081B96B /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CA97821FF6A390081B96B /* MenuTableViewCell.swift */; };
 		9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */; };
 		9C8DE2E02202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */; };
@@ -49,6 +48,7 @@
 		9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D31220A2DC500F54782 /* DailyHours.swift */; };
 		9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5A220B3BB200F54782 /* GradientButton.swift */; };
 		9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5C220B3DB000F54782 /* GradientView.swift */; };
+		9C9A5CE5224AD3CC00F1611E /* KDBrasil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A5CE3224AD3CC00F1611E /* KDBrasil.xcdatamodeld */; };
 		9CA051DB223C6092009E693B /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CA051DA223C6091009E693B /* countryCodes.json */; };
 		9CA051DD223C619E009E693B /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DC223C619E009E693B /* CountryTableViewCell.swift */; };
 		9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DE223C61BB009E693B /* CountriesViewController.swift */; };
@@ -123,7 +123,6 @@
 		9C6F040222349BDF000B828F /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		9C6F04062234A152000B828F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9C6F04082234A68E000B828F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
-		9C71502B2204899F00DA86AA /* BrasilNaMao.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrasilNaMao.xcdatamodel; sourceTree = "<group>"; };
 		9C8CA97821FF6A390081B96B /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessViewController.swift; sourceTree = "<group>"; };
 		9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		9C933D31220A2DC500F54782 /* DailyHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHours.swift; sourceTree = "<group>"; };
 		9C933D5A220B3BB200F54782 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		9C933D5C220B3DB000F54782 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		9C9A5CE4224AD3CC00F1611E /* KDBrasil.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KDBrasil.xcdatamodel; sourceTree = "<group>"; };
 		9CA051DA223C6091009E693B /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
 		9CA051DC223C619E009E693B /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		9CA051DE223C61BB009E693B /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 				9C04E8F62204BACE00C46412 /* CoreDataHandler.swift */,
 				9CA0520422415693009E693B /* UserHandler.swift */,
 				9CA05206224156A1009E693B /* CountryHandler.swift */,
-				9C71502A2204899F00DA86AA /* KDBrasil.xcdatamodeld */,
+				9C9A5CE3224AD3CC00F1611E /* KDBrasil.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -721,7 +721,6 @@
 				9CA0530F22443E84009E693B /* KeychainPasswordItem.swift in Sources */,
 				9C5C7F0C221F3BB500109152 /* UIImage.swift in Sources */,
 				9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */,
-				9C71502C2204899F00DA86AA /* KDBrasil.xcdatamodeld in Sources */,
 				9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */,
 				9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */,
 				9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */,
@@ -729,6 +728,7 @@
 				9C1C85D221FA3FB100103655 /* PhotoCollectionViewCell.swift in Sources */,
 				9C5C7F08221F17F200109152 /* UIColor.swift in Sources */,
 				9C04E8F72204BACE00C46412 /* CoreDataHandler.swift in Sources */,
+				9C9A5CE5224AD3CC00F1611E /* KDBrasil.xcdatamodeld in Sources */,
 				9CA0530622441FA0009E693B /* Alert.swift in Sources */,
 				9CF10FF022245C080007B6EA /* ProfileTableViewController.swift in Sources */,
 				9CEF890122023D9A0015258F /* BusinessAnnotation.swift in Sources */,
@@ -958,12 +958,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9C71502A2204899F00DA86AA /* KDBrasil.xcdatamodeld */ = {
+		9C9A5CE3224AD3CC00F1611E /* KDBrasil.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9C71502B2204899F00DA86AA /* BrasilNaMao.xcdatamodel */,
+				9C9A5CE4224AD3CC00F1611E /* KDBrasil.xcdatamodel */,
 			);
-			currentVersion = 9C71502B2204899F00DA86AA /* BrasilNaMao.xcdatamodel */;
+			currentVersion = 9C9A5CE4224AD3CC00F1611E /* KDBrasil.xcdatamodel */;
 			path = KDBrasil.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

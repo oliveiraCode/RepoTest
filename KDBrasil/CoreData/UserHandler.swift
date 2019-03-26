@@ -19,7 +19,7 @@ class UserHandler {
     func resetAllRecordsOnCoreData() {
         
         let context = CoreDataHandler.shared.getManagedObjectContext()
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CDUser")
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CDUsers")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do{
             try context.execute(deleteRequest)
@@ -32,11 +32,11 @@ class UserHandler {
     
     func readCurrentUserFromCoreData(){
         
-        var cdUser : [CDUser] = []
+        var cdUser : [CDUsers] = []
         let context = CoreDataHandler.shared.getManagedObjectContext()
 
         do {
-            cdUser = try context.fetch(CDUser.fetchRequest())
+            cdUser = try context.fetch(CDUsers.fetchRequest())
             for valueUser in cdUser {
                 self.appDelegate.userObj.id = valueUser.id
                 self.appDelegate.userObj.email = valueUser.email
@@ -67,12 +67,13 @@ class UserHandler {
         }
     }
     
+    
     func saveCurrentUserToCoreData(){
         resetAllRecordsOnCoreData() //to clear all user's data on coredata
         
         let context = CoreDataHandler.shared.getManagedObjectContext()
         
-        let cdUser = CDUser(context: context)
+        let cdUser = CDUsers(context: context)
         cdUser.creationDate = self.appDelegate.userObj.creationDate
         cdUser.id = self.appDelegate.userObj.id
         cdUser.email = self.appDelegate.userObj.email
