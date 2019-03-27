@@ -287,6 +287,9 @@
                                 <state key="normal" title="   Fazer login com Google" image="google">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnGooglePressed:" destination="Qwy-g5-a0s" eventType="touchUpInside" id="IOx-PF-fdk"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="arD-2s-01J">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>

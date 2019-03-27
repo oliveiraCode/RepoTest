@@ -11,6 +11,7 @@ target 'KDBrasil' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Messaging'
+  pod 'GoogleSignIn'
 
   pod 'Cosmos'
   pod 'Kingfisher'

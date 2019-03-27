@@ -15,10 +15,11 @@ import IQKeyboardManagerSwift
 import UserNotifications
 import FirebaseMessaging
 import FirebaseInstanceID
-
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
+    
     
     var window: UIWindow?
     var userObj = User()
@@ -113,5 +114,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         print("Failed to register for notifications: \(error.localizedDescription)")
     }
     
+    //MARK: GoogleSignIn
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,annotation:[:])
+    }
     
+
 }
+
+

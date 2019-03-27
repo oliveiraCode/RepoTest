@@ -51,6 +51,10 @@ class CreateAccountViewController: BaseViewController {
     
     @IBAction func btnCreateAccount(_ sender: Any) {
         
+        if segmentedControlUserType.selectedSegmentIndex != 0 && segmentedControlUserType.selectedSegmentIndex != 1 {
+            self.showAlert(title: "Atenção!", message: "É necessário escolher o tipo de usuário: Cliente ou Profissional")
+            return
+        }
         //Checks if the required fields are empty.
         guard tfFirstName.text != "" else {self.showAlert(errorCode: .invalidSender)
             return}
@@ -59,27 +63,6 @@ class CreateAccountViewController: BaseViewController {
         guard tfPassword.text != "" else {self.showAlert(errorCode: .invalidSender)
             return}
 
-        
-        self.activityIndicator.startAnimating()
-        //check what the provider is
-        Auth.auth().fetchProviders(forEmail: tfEmail.text!) { (value, err) in
-            if err == nil {
-                guard let accountType = value?[0] else {return}
-                
-                
-                if accountType == "facebook.com" {
-                    self.activityIndicator.stopAnimating()
-                    self.showAlert(title: "Conta Facebook", message: "A conta \(self.tfEmail.text!) já existe e é uma conta facebook. \n\nUse a opção facebook para se conectar.")
-                    return
-                }
-                
-                if accountType == "facebook.com" {
-                    self.activityIndicator.stopAnimating()
-                    self.showAlert(title: "Conta Facebook", message: "A conta \(self.tfEmail.text!) já existe e é uma conta facebook. \n\nUse a opção facebook para se conectar.")
-                    return
-                }
-            }
-        }
         
         //set all information to user object
         self.appDelegate.userObj.firstName = self.tfFirstName.text
