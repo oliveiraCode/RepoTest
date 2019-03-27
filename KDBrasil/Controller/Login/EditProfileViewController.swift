@@ -43,8 +43,8 @@ class EditProfileViewController: BaseViewController {
     //MARK - SetupUI
     func setupUI(){
         
-        self.lbCountryCodePhone.text = appDelegate.currentCountry.dial_code
-        self.lbCountryCodeWhatsApp.text = appDelegate.currentCountry.dial_code
+        self.lbCountryCodePhone.text = appDelegate.currentCountry?.dial_code
+        self.lbCountryCodeWhatsApp.text = appDelegate.currentCountry?.dial_code
         self.tfFirstName.text = appDelegate.userObj.firstName
         self.tfLastName.text = appDelegate.userObj.lastName
         self.tfPhone.text = appDelegate.userObj.phone
@@ -195,7 +195,7 @@ extension EditProfileViewController: UITextFieldDelegate {
         
 
         let pnTextField = PhoneNumberTextField()
-        pnTextField.defaultRegion = (appDelegate.currentCountry.code)!
+        pnTextField.defaultRegion = (appDelegate.currentCountry?.code)!
         pnTextField.text = textField.text
         
         

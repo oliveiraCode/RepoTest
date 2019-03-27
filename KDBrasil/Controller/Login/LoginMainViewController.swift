@@ -126,45 +126,9 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
     
     
     @IBAction func btnLogin(_ sender: UIButton) {
-        
-        if UserDefaults.standard.bool(forKey: "isTouchID") {
-            
-            TouchIDHandler.shared.authenticateUser { (result) in
-                if result == "success" {
-                    self.loginWithTouchID()
-                }
-                if result == "password" {
-                    self.performSegue(withIdentifier: "showLoginVC", sender: nil)
-                }
-            }
-        } else {
-            performSegue(withIdentifier: "showLoginVC", sender: nil)
-        }
-        
+        performSegue(withIdentifier: "showLoginVC", sender: nil)
     }
-    
-    private func loginWithTouchID(){
-        let email = "fernandes.oliveira@outlook.com"
-        let password = "123456"
-        
-        self.activityIndicator.startAnimating()
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            
-            if error != nil {
-                if let errCode = AuthErrorCode(rawValue: (error?._code)!) {
-                    self.activityIndicator.stopAnimating()
-                    self.showAlert(errorCode: errCode)
-                }
-            } else {
-                FIRFirestoreService.shared.getDataFromCurrentUser(completionHandler: { (error) in
-                    if error == nil {
-                        self.activityIndicator.stopAnimating()
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                })
-            }
-        }
-    }
+
     
     @IBAction func btnGooglePressed(_ sender: UIButton) {
         //Show Activity Indicator

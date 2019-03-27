@@ -49,6 +49,8 @@
 		9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5A220B3BB200F54782 /* GradientButton.swift */; };
 		9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5C220B3DB000F54782 /* GradientView.swift */; };
 		9C9A5CE5224AD3CC00F1611E /* KDBrasil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A5CE3224AD3CC00F1611E /* KDBrasil.xcdatamodeld */; };
+		9C9A5CE7224BBF1100F1611E /* MainV2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9A5CE6224BBF1100F1611E /* MainV2.storyboard */; };
+		9C9A5CE9224BC71400F1611E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A5CE8224BC71400F1611E /* FilterViewController.swift */; };
 		9CA051DB223C6092009E693B /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CA051DA223C6091009E693B /* countryCodes.json */; };
 		9CA051DD223C619E009E693B /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DC223C619E009E693B /* CountryTableViewCell.swift */; };
 		9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA051DE223C61BB009E693B /* CountriesViewController.swift */; };
@@ -61,8 +63,6 @@
 		9CA0530422440FCE009E693B /* UpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530322440FCE009E693B /* UpdateHandler.swift */; };
 		9CA0530622441FA0009E693B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530522441FA0009E693B /* Alert.swift */; };
 		9CA0530822443B41009E693B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA0530722443B41009E693B /* LocalAuthentication.framework */; };
-		9CA0530B22443BF4009E693B /* TouchIDHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530A22443BF4009E693B /* TouchIDHandler.swift */; };
-		9CA0530F22443E84009E693B /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530E22443E84009E693B /* KeychainPasswordItem.swift */; };
 		9CB7204922060BF7001DE201 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */; };
 		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
 		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
@@ -134,6 +134,8 @@
 		9C933D5A220B3BB200F54782 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		9C933D5C220B3DB000F54782 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		9C9A5CE4224AD3CC00F1611E /* KDBrasil.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KDBrasil.xcdatamodel; sourceTree = "<group>"; };
+		9C9A5CE6224BBF1100F1611E /* MainV2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainV2.storyboard; sourceTree = "<group>"; };
+		9C9A5CE8224BC71400F1611E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9CA051DA223C6091009E693B /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
 		9CA051DC223C619E009E693B /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		9CA051DE223C61BB009E693B /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
@@ -147,8 +149,6 @@
 		9CA0530322440FCE009E693B /* UpdateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHandler.swift; sourceTree = "<group>"; };
 		9CA0530522441FA0009E693B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		9CA0530722443B41009E693B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
-		9CA0530A22443BF4009E693B /* TouchIDHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDHandler.swift; sourceTree = "<group>"; };
-		9CA0530E22443E84009E693B /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		9CB7204822060BF7001DE201 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +257,7 @@
 			children = (
 				9CC72ADA21D3FCA00048C37B /* LaunchScreen.storyboard */,
 				9CC72AD521D3FC9E0048C37B /* Main.storyboard */,
+				9C9A5CE6224BBF1100F1611E /* MainV2.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -307,15 +308,6 @@
 				9CA0530322440FCE009E693B /* UpdateHandler.swift */,
 			);
 			path = Update;
-			sourceTree = "<group>";
-		};
-		9CA0530922443BDC009E693B /* TouchID */ = {
-			isa = PBXGroup;
-			children = (
-				9CA0530A22443BF4009E693B /* TouchIDHandler.swift */,
-				9CA0530E22443E84009E693B /* KeychainPasswordItem.swift */,
-			);
-			path = TouchID;
 			sourceTree = "<group>";
 		};
 		9CB72045220609AA001DE201 /* Settings */ = {
@@ -388,7 +380,6 @@
 				9C5C7F12221F44B500109152 /* Firebase */,
 				9C5C7F11221F448E00109152 /* CoreData */,
 				9C25B73C21E944F700E332F8 /* Extensions */,
-				9CA0530922443BDC009E693B /* TouchID */,
 				9CA0530222440FAF009E693B /* Update */,
 				9C25B73721E80A6C00E332F8 /* Services */,
 				9CC72AE721D404860048C37B /* Controller */,
@@ -450,6 +441,7 @@
 				9CCE638022178A9B005EF258 /* TermsOfUseViewController.swift */,
 				9CA051F0223F042C009E693B /* PhotosViewController.swift */,
 				9CA051DE223C61BB009E693B /* CountriesViewController.swift */,
+				9C9A5CE8224BC71400F1611E /* FilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -575,6 +567,7 @@
 				9CC72ADC21D3FCA00048C37B /* LaunchScreen.storyboard in Resources */,
 				9CA051DB223C6092009E693B /* countryCodes.json in Resources */,
 				9CC72AD921D3FCA00048C37B /* Assets.xcassets in Resources */,
+				9C9A5CE7224BBF1100F1611E /* MainV2.storyboard in Resources */,
 				9CC72AD721D3FC9E0048C37B /* Main.storyboard in Resources */,
 				9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */,
 			);
@@ -714,7 +707,6 @@
 				9C30CC82222976430021D03D /* PageViewController.swift in Sources */,
 				9C2CD86221D96F96005F688E /* ListViewController.swift in Sources */,
 				9CA051F1223F042C009E693B /* PhotosViewController.swift in Sources */,
-				9CA0530B22443BF4009E693B /* TouchIDHandler.swift in Sources */,
 				9C25B73B21E80CBB00E332F8 /* FIRCollectionReference.swift in Sources */,
 				9CA0530422440FCE009E693B /* UpdateHandler.swift in Sources */,
 				9C933D2E2206639A00F54782 /* EditProfileViewController.swift in Sources */,
@@ -729,6 +721,7 @@
 				9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */,
 				9C160BEB21F8DEBE009232DD /* Service.swift in Sources */,
 				9C8DF5E7222D888300D8C976 /* Review.swift in Sources */,
+				9C9A5CE9224BC71400F1611E /* FilterViewController.swift in Sources */,
 				9C8DF5EB222DA93700D8C976 /* ReviewsTableViewCell.swift in Sources */,
 				9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */,
 				9CA051F522401647009E693B /* ToolBarPickerView.swift in Sources */,
@@ -743,7 +736,6 @@
 				9C6F03F92232EEFB000B828F /* Countries.swift in Sources */,
 				9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */,
 				9CC72AF521D43E930048C37B /* Contact.swift in Sources */,
-				9CA0530F22443E84009E693B /* KeychainPasswordItem.swift in Sources */,
 				9C5C7F0C221F3BB500109152 /* UIImage.swift in Sources */,
 				9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */,
 				9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */,

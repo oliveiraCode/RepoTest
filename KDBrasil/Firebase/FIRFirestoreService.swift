@@ -207,7 +207,7 @@ class FIRFirestoreService {
     //MARK: - readAllBusiness
     func readAllBusiness(completionHandler: @escaping ([Business?], Error?) -> Void) {
         
-        guard let country = appDelegate.currentCountry.name else {return}
+        guard let country = appDelegate.currentCountry?.name else {return}
         
         let businessRef = self.db.collection(FIRCollectionReference.business)
         let query = businessRef.whereField("country", isEqualTo: country)

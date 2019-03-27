@@ -1384,7 +1384,7 @@
                                                         <rect key="frame" x="50" y="139" width="275" height="200"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hIg-w5-vBT" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="39"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="41.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -1396,7 +1396,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7qn-xX-mtX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="50" width="275" height="39.5"/>
+                                                                <rect key="frame" x="0.0" y="52.5" width="275" height="41"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
@@ -1408,7 +1408,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WhatsApp" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v72-tU-kfM" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="100.5" width="275" height="39"/>
+                                                                <rect key="frame" x="0.0" y="104.5" width="275" height="41.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
@@ -1420,7 +1420,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website ou página do Facebook" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T0T-PF-t0U" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="150.5" width="275" height="49.5"/>
+                                                                <rect key="frame" x="0.0" y="157" width="275" height="43"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
@@ -1756,7 +1756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVF-4e-F2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10580" y="-1057.4212893553224"/>
+            <point key="canvasLocation" x="11519.200000000001" y="-1057.4212893553224"/>
         </scene>
         <!--Lista-->
         <scene sceneID="R8l-FQ-43X">
@@ -1838,6 +1838,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Lista" id="Xob-9r-MC0">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="WuB-qy-YaN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="uro-Rr-fsH">
+                            <connections>
+                                <segue destination="PQN-ZR-5Vf" kind="presentation" id="g2d-G1-Rf2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="kFS-69-6MK" id="DJm-4n-HTg"/>
@@ -2868,7 +2873,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xho-Q3-XUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MNh-3i-qse" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="12452" y="-270.76461769115446"/>
+            <point key="canvasLocation" x="13391.200000000001" y="-271.21439280359823"/>
         </scene>
         <!--Reviews Table View Controller-->
         <scene sceneID="h7A-x1-Avc">
@@ -2917,7 +2922,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                 <constraint firstAttribute="bottom" secondItem="rlV-U0-V1u" secondAttribute="bottom" constant="10" id="zIW-UB-mzD"/>
                                             </constraints>
                                         </view>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILs-yn-hwB" customClass="CosmosView" customModule="Cosmos">
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILs-yn-hwB" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="135.5" y="115" width="100" height="16"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -2938,6 +2943,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                         <constraint firstItem="ILs-yn-hwB" firstAttribute="centerX" secondItem="Ys8-NX-UqW" secondAttribute="centerX" id="194-lZ-s8d"/>
                                         <constraint firstItem="Zpq-A8-vjV" firstAttribute="centerX" secondItem="Ys8-NX-UqW" secondAttribute="centerX" id="PU6-2g-HKA"/>
                                         <constraint firstItem="ILs-yn-hwB" firstAttribute="top" secondItem="Zpq-A8-vjV" secondAttribute="bottom" constant="15" id="a4j-PD-SLj"/>
+                                        <constraint firstItem="ILs-yn-hwB" firstAttribute="centerX" secondItem="Ys8-NX-UqW" secondAttribute="centerX" id="bh0-pz-Sic"/>
                                         <constraint firstItem="Zpq-A8-vjV" firstAttribute="top" secondItem="Ys8-NX-UqW" secondAttribute="top" constant="20" id="hd4-yd-w02"/>
                                     </constraints>
                                 </view>
@@ -3054,7 +3060,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9P-OI-Lcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13664.799999999999" y="-603.14842578710648"/>
+            <point key="canvasLocation" x="14604" y="-603.14842578710648"/>
         </scene>
         <!--My Review View Controller-->
         <scene sceneID="8cg-wh-asr">
@@ -3080,7 +3086,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="212" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3189,7 +3195,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDM-13-v8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15711.200000000001" y="-452.02398800599701"/>
+            <point key="canvasLocation" x="16489" y="-855"/>
         </scene>
         <!--Nav Controller-->
         <scene sceneID="Ag6-dt-idC">
@@ -3281,6 +3287,14 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="7276" y="4632"/>
         </scene>
+        <!--showFilterVC-->
+        <scene sceneID="cwG-Ys-TUW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainV2" referencedIdentifier="showFilterVC" id="PQN-ZR-5Vf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhG-2p-IW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9380" y="-361"/>
+        </scene>
         <!--Lista-->
         <scene sceneID="5y8-OQ-3CI">
             <objects>
@@ -3316,7 +3330,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GB-I0-028" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14604" y="-603.14842578710648"/>
+            <point key="canvasLocation" x="15543.200000000001" y="-603.14842578710648"/>
         </scene>
         <!--View Review View Controller-->
         <scene sceneID="i8S-Sv-l8B">
@@ -3351,7 +3365,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="202" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3453,7 +3467,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ow6-Wx-i05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9640.7999999999993" y="-1057.4212893553224"/>
+            <point key="canvasLocation" x="10580" y="-1057.4212893553224"/>
         </scene>
         <!--Fotos-->
         <scene sceneID="bZU-Yi-jI4">
@@ -3715,7 +3729,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
     <inferredMetricsTieBreakers>
         <segue reference="eTG-5Z-qd2"/>
         <segue reference="IBZ-cb-T44"/>
-        <segue reference="b73-yD-mxL"/>
+        <segue reference="t1Q-h9-O1j"/>
         <segue reference="tMd-ni-SvK"/>
         <segue reference="Yek-pC-iHe"/>
         <segue reference="iqm-8w-Zeu"/>
