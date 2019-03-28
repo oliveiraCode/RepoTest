@@ -32,7 +32,6 @@ enum LocalizationKeys {
     static let accessProfile = "É necessário estar conectado para ter acesso ao Perfil."
     static let updateProfile = "Os dados foram atualizados com sucesso."
     static let errorProfile = "Houve um erro ao atualizar o perfil e os dados não foram salvos."
-    static let typeOfUser = "Escolha o tipo de perfil \n\n\nPerfil Cliente permite ter acesso aos anúncios, comentários e mapas. \n\nPerfil Profissional contém todos os acessos de cliente e também registrar anúncios. \n"
     
     //ButtonsDefault
     static let buttonCancel = "Cancelar"

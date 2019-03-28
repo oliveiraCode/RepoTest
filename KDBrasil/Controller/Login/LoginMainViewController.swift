@@ -24,6 +24,8 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
     
     //Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var credential:AuthCredential?
+    var authenticationType:authenticationType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +49,9 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
         
         //Show Activity Indicator
         self.activityIndicator.startAnimating()
+        self.authenticationType = .facebook
         
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self){(result,error) in
@@ -60,7 +63,10 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
             }
             
             guard let result = result else { return }
-            if result.isCancelled { return }
+            if result.isCancelled {
+                self.activityIndicator.stopAnimating()
+                return
+            }
             
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "email"]).start() {
                 (connection, result, error) in
@@ -73,44 +79,26 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
                 if let fields = result as? [String:Any] {
                     
                     guard let email = fields["email"] as? String else {return}
-                    
-                    self.checkUser(email: email, credential: credential, authenticationType: .facebook)
+                    self.checkUser(email: email)
                     
                 }
-                
             }
-            
         }
-        
     }
     
-    private func checkUser(email:String,credential: AuthCredential,authenticationType:authenticationType){
+    private func checkUser(email:String){
         
         FIRFirestoreService.shared.checkIfUserExists(email: email, completionHandler: { (userExists) in
             
             if userExists {
-                self.signInAndRetrieveData(credential: credential, authenticationType: authenticationType)
-                
+                self.signInAndRetrieveData()
             } else {
-                let alert = UIAlertController(title: "Perfil de usuário", message: LocalizationKeys.typeOfUser, preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "Cliente", style: .default, handler: { (action) in
-                    self.appDelegate.userObj.userType = userType.client
-                    self.signInAndRetrieveData(credential: credential, authenticationType: authenticationType)
-                }))
-                
-                alert.addAction(UIAlertAction(title: "Profissional", style: .default, handler: { (action) in
-                    self.appDelegate.userObj.userType = userType.professional
-                    self.signInAndRetrieveData(credential: credential, authenticationType: authenticationType)
-                }))
-                
-                self.present(alert, animated: true, completion: nil)
-                
+                self.performSegue(withIdentifier: "showCustomAlertUserTypeVC", sender: nil)
             }
         })
     }
     
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -128,7 +116,7 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
     @IBAction func btnLogin(_ sender: UIButton) {
         performSegue(withIdentifier: "showLoginVC", sender: nil)
     }
-
+    
     
     @IBAction func btnGooglePressed(_ sender: UIButton) {
         //Show Activity Indicator
@@ -143,14 +131,14 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
             print(error.localizedDescription)
             return
         }
-        
+        self.authenticationType = .google
         guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-    
+        credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                   accessToken: authentication.accessToken)
+        
         guard let email = user.profile.email else {return}
         
-        checkUser(email: email, credential: credential, authenticationType: .google)
+        checkUser(email: email)
         
     }
     
@@ -158,9 +146,9 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
         //TODO: do something
     }
     
-    private func signInAndRetrieveData(credential: AuthCredential, authenticationType:authenticationType){
+    private func signInAndRetrieveData(){
         
-        Auth.auth().signInAndRetrieveData(with: credential){(result,error) in
+        Auth.auth().signInAndRetrieveData(with: credential!){(result,error) in
             
             if error == nil{
                 self.appDelegate.userObj.email = result?.user.email!
@@ -172,8 +160,7 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
                 self.appDelegate.userObj.id = result?.user.uid
                 self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
                 self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
-                self.appDelegate.userObj.authenticationType = authenticationType
-                
+                self.appDelegate.userObj.authenticationType = self.authenticationType
                 
                 self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
                 let imageFacebook = UIImageView()
@@ -202,5 +189,25 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showCustomAlertUserTypeVC" {
+            let destController = segue.destination as! CustomAlertViewUserType
+            destController.delegate = self
+        }
+    }
+    
 }
 
+extension LoginMainViewController:CustomAlertViewUserTypeDelegate{
+    func btnCancelTapped() {
+        self.activityIndicator.stopAnimating()
+    }
+    
+    func btnOKTapped(selectedOption: userType) {
+        self.appDelegate.userObj.userType = selectedOption
+        self.signInAndRetrieveData()
+    }
+    
+}
