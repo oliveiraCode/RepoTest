@@ -14,13 +14,13 @@ enum LocalizationKeys {
     static let menuSettings = "Configuração"
     
     //Settings
-    static let settingsAccount = "Perfil"
-    static let settingsShare = "Contar para um amigo"
-    static let settingsContactUs = "Fale conosco"
-    static let settingsDonate = "Apoie esse projeto"
-    static let settingsTermsOfUse = "Termos de uso"
-    static let settingsPrivacy = "Política de privacidade"
-    static let settingsAbout = "Sobre"
+    static let account = "Perfil"
+    static let share = "Contar para um amigo"
+    static let contactUs = "Fale conosco"
+    static let donate = "Apoie esse projeto"
+    static let termsOfUse = "Termos de uso"
+    static let privacy = "Política de privacidade"
+    static let about = "Sobre"
     
     //Account
     static let buttonLogin = "  Entrar"
@@ -58,7 +58,7 @@ enum LocalizationKeys {
     //Share App
     static let shareApp = "Você já conhece o app KD Brasil? Não? 😱😱\nSe liga na novidade e encontre o serviço que você mais precisa.\nBaixe agora, é grátis! \nhttps://itunes.apple.com/ca/app/kd-brasil/id1454261196?mt=8"
     
-    static let urlDonation = "https://www.paypal.me/lfo"
+    static let urlDonation = "www.paypal.me/lfo"
 }
 
 enum periodOfDay {

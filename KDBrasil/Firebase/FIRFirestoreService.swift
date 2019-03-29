@@ -446,7 +446,7 @@ class FIRFirestoreService {
                 for document in querySnapshot!.documents {
                     
                     let user = User(data: document.data())
-                    
+  
                     if let url = user.photoURL{
                         self.getPhotoURL(url: url, completion: { (image) in
                             user.image = image
@@ -466,9 +466,12 @@ class FIRFirestoreService {
     
     private func getPhotoURL(url:String, completion: @escaping (_ image:UIImage?)-> Void){
         
-        let url = URL(string: url)
+        guard let url = URL(string: url) else {
+            completion(UIImage(named: "user"))
+            return
+        }
         do {
-            let data = try Data(contentsOf: url!)
+            let data = try Data(contentsOf: url)
             completion(UIImage(data: data))
         }
         catch {
@@ -511,8 +514,7 @@ class FIRFirestoreService {
         }
         
     }
-    
-    
+
     
     func deleteAccount() {
         

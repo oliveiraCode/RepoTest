@@ -19,15 +19,7 @@ class BaseViewController: UIViewController {
 }
 
 
-extension SettingsTableViewController:MFMailComposeViewControllerDelegate{
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
-        if error == nil {
-            controller.dismiss(animated: true, completion: nil)
-        }
-        
-    }
-}
+
 
 extension DetailsBusinessViewController:MFMailComposeViewControllerDelegate{
     

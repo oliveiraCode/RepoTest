@@ -15,6 +15,7 @@ class EditProfileViewController: BaseViewController {
     
     
     //IBOutlets
+    @IBOutlet weak var segmentedControlUserType: UISegmentedControl!
     @IBOutlet weak var lbCountryCodePhone: UILabel!
     @IBOutlet weak var lbCountryCodeWhatsApp: UILabel!
     @IBOutlet weak var tfFirstName: UITextField!
@@ -43,6 +44,11 @@ class EditProfileViewController: BaseViewController {
     //MARK - SetupUI
     func setupUI(){
         
+        if appDelegate.userObj.userType == userType.client {
+            self.segmentedControlUserType.selectedSegmentIndex = 0
+        } else {
+            self.segmentedControlUserType.selectedSegmentIndex = 1
+        }
         self.lbCountryCodePhone.text = appDelegate.currentCountry?.dial_code
         self.lbCountryCodeWhatsApp.text = appDelegate.currentCountry?.dial_code
         self.tfFirstName.text = appDelegate.userObj.firstName
@@ -76,7 +82,12 @@ class EditProfileViewController: BaseViewController {
             appDelegate.userObj.email = self.tfEmail.text
             appDelegate.userObj.image = self.imgProfile.image
             
-
+            if segmentedControlUserType.selectedSegmentIndex == 0 {
+                appDelegate.userObj.userType = userType.client
+            } else {
+                appDelegate.userObj.userType = userType.professional
+            }
+            
             KRProgressHUD.show(withMessage: NSLocalizedString(LocalizationKeys.pleaseWait, comment: "")) {
 
                 //atualizar o email

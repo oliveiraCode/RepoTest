@@ -151,36 +151,45 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
         Auth.auth().signInAndRetrieveData(with: credential!){(result,error) in
             
             if error == nil{
-                self.appDelegate.userObj.email = result?.user.email!
                 
-                let fullName = result?.user.displayName
-                let fullNameArr = fullName!.components(separatedBy: " ")
-                self.appDelegate.userObj.firstName = fullNameArr[0]
-                self.appDelegate.userObj.lastName = fullNameArr[1]
-                self.appDelegate.userObj.id = result?.user.uid
-                self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
-                self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
-                self.appDelegate.userObj.authenticationType = self.authenticationType
-                
-                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
-                let imageFacebook = UIImageView()
-                imageFacebook.kf.setImage(with: (result?.user.photoURL)!){
-                    result in
-                    switch result {
-                    case .success(let value):
-                        self.appDelegate.userObj.image = value.image
-                        
-                        FIRFirestoreService.shared.saveData(completion: { (error) in
-                            //
-                        })
+                FIRFirestoreService.shared.getDataFromCurrentUser(completionHandler: { (error) in
+                    if error == nil {
                         self.activityIndicator.stopAnimating()
+                        print(self.appDelegate.userObj.userType)
                         self.dismiss(animated: true, completion: nil)
-                        
-                    case .failure(let error):
-                        self.activityIndicator.stopAnimating()
-                        print("Job failed: \(error.localizedDescription)")
                     }
-                }
+                })
+                
+//                self.appDelegate.userObj.email = result?.user.email!
+//
+//                let fullName = result?.user.displayName
+//                let fullNameArr = fullName!.components(separatedBy: " ")
+//                self.appDelegate.userObj.firstName = fullNameArr[0]
+//                self.appDelegate.userObj.lastName = fullNameArr[1]
+//                self.appDelegate.userObj.id = result?.user.uid
+//                self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
+//                self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
+//                self.appDelegate.userObj.authenticationType = self.authenticationType
+//
+//                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
+//                let imageFacebook = UIImageView()
+//                imageFacebook.kf.setImage(with: (result?.user.photoURL)!){
+//                    result in
+//                    switch result {
+//                    case .success(let value):
+//                        self.appDelegate.userObj.image = value.image
+//
+//                        FIRFirestoreService.shared.saveData(completion: { (error) in
+//                            //
+//                        })
+//                        self.activityIndicator.stopAnimating()
+//                        self.dismiss(animated: true, completion: nil)
+//
+//                    case .failure(let error):
+//                        self.activityIndicator.stopAnimating()
+//                        print("Job failed: \(error.localizedDescription)")
+//                    }
+//                }
                 
             }else{
                 self.activityIndicator.stopAnimating()

@@ -14,11 +14,14 @@ class ProfileTableViewController: BaseTableViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let sections:[String] = ["Perfil"]
-    let imgProfile:[UIImage] = [UIImage(named: "account_color")!,
-                                UIImage(named: "remove_color")!,]
     let profile:[String] = [NSLocalizedString(LocalizationKeys.accountEditProfile, comment: ""),
                             NSLocalizedString(LocalizationKeys.accountDeleteProfile, comment: "")]
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,13 +40,14 @@ class ProfileTableViewController: BaseTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath)
         
-        if indexPath.section == 0 {
-            cell.lbSettings.text = self.profile[indexPath.row]
-            cell.imgSettings.image = self.imgProfile[indexPath.row]
+        cell.textLabel?.text = self.profile[indexPath.row]
+        
+        if indexPath.row == 1 {
+            cell.textLabel?.textColor = UIColor.red
+            cell.accessoryType = .none
         }
-        
         return cell
     }
     
@@ -54,12 +58,7 @@ class ProfileTableViewController: BaseTableViewController {
             
             switch indexPath.row {
             case 0:
-//                if (UIApplication.shared.delegate as! AppDelegate).userObj.isFacebook! {
-//                    self.showAlert(title: "Conta Facebook", message: "Não é possível editar perfil de conta de Facebook.")
-//                } else {
-                    performSegue(withIdentifier: "showEditProfileVC", sender: nil)
-             //   }
-                
+                performSegue(withIdentifier: "showEditProfileVC", sender: nil)
                 break
             case 1:
                 
@@ -72,7 +71,7 @@ class ProfileTableViewController: BaseTableViewController {
                     let alert = UIAlertController(title: "", message: "Conta deletada com sucesso.", preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: General.OK, style: .default, handler: {(nil) in
-                        self.performSegue(withIdentifier: "unwindSegueToSettingsVC", sender: nil)
+                        self.performSegue(withIdentifier: "unwindToAccountVC", sender: nil)
                     }))
                     
                     self.present(alert, animated: true, completion: nil)

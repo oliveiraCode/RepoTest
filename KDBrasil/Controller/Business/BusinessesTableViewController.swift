@@ -63,8 +63,7 @@ class BusinessesTableViewController: BaseTableViewController {
         
         let nibName = UINib(nibName: "BusinessCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "BusinessCell")
-        
-        sideMenus()
+    
         startActivityIndicator()
         updateTableViewWithDataFromFirebase()
         
@@ -72,6 +71,7 @@ class BusinessesTableViewController: BaseTableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         if appDelegate.userObj.id != nil{
             self.tableView.refreshControl = refreshTableView
@@ -279,19 +279,6 @@ class BusinessesTableViewController: BaseTableViewController {
             destController.businessDetails = businesses[businessIndexPathSelected]
             destController.isNewBusiness = false
         }
-    }
-    
-    //MARK - SideMenu Method
-    func sideMenus() {
-        if revealViewController() != nil {
-            
-            self.btnMenu.target = revealViewController()
-            self.btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 200
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        changeTitleNavigatorBar()
     }
     
     

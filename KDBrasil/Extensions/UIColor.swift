@@ -11,10 +11,10 @@ import UIKit
 extension UIColor {
 
     public class var greenBrazil: UIColor {
-        return UIColor(red: 101/255, green: 173/255, blue: 128/255, alpha: 0.7)
+        return UIColor(red: 84/255, green: 152/255, blue: 183/255, alpha: 1)
     }
 
     public class var yellowBrazil: UIColor {
-        return UIColor(red: 248/255, green: 234/255, blue: 12/255, alpha: 0.7)
+        return UIColor(red: 62/255, green: 140/255, blue: 67/255, alpha: 1)
     }
 }

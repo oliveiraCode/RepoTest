@@ -13,7 +13,6 @@ import Kingfisher
 class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
     
     //IBOoutlets
-    @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -52,7 +51,6 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         let nibName = UINib(nibName: "BusinessCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "BusinessCell")
         
-        sideMenus()
         activityIndicator.startAnimating()
         updateTableViewWithDataFromFirebase()
         
@@ -137,26 +135,6 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    
-    //MARK: - SideMenu Method
-    func sideMenus() {
-        if revealViewController() != nil {
-            
-            self.btnMenu.target = revealViewController()
-            self.btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 200
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        changeTitleNavigatorBar()
-    }
-    
-    
-    func changeTitleNavigatorBar(){
-        let logo = UIImage(named: "logo_navbar")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
-    }
     
     //MARK: - Methods Segmented Control
     @IBAction func categoryChanged(_ sender: UISegmentedControl) {

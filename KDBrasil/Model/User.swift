@@ -81,9 +81,23 @@ class User  {
         let whatsapp = data["whatsapp"] as? String ?? "Indisponível"
         let favoritesIds = data["favoritesIds"] as? [String] ?? [""]
         let photoURL = data["photoURL"] as? String ?? ""
-        let authenticationType = data["authenticationType"] as? authenticationType ?? .email
-        let userType = data["userType"] as? userType ?? .client
+
+        var authenticationType:authenticationType
+        if let valueType = data["authenticationType"] as? String, valueType == "email" {
+            authenticationType = .email
+        } else if let valueType = data["authenticationType"] as? String, valueType == "facebook" {
+            authenticationType = .facebook
+        } else {
+            authenticationType = .google
+        }
         
+        var userType:userType
+        if let valueType = data["userType"] as? String, valueType == "client" {
+            userType = .client
+        } else {
+            userType = .professional
+        }
+
         self.init(id: id, firstName: firstName, lastName: lastName, email: email, phone: phone, whatsapp: whatsapp, creationDate: creationDate, favoritesIds: favoritesIds,photoURL: photoURL, authenticationType:authenticationType, userType:userType)
     }
     

@@ -9,56 +9,38 @@
 import UIKit
 import MessageUI
 import FirebaseAuth
-import SWRevealViewController
 
 class SettingsTableViewController: BaseTableViewController {
     
-    @IBOutlet weak var btnMenu: UIBarButtonItem!
-    //to know more https://medium.com/@mimicatcodes/create-unwind-segues-in-swift-3-8793f7d23c6f
-    @IBAction func unWindToSettings(segue:UIStoryboardSegue) {}
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let mailComposerVC = MFMailComposeViewController()
-    let sectionArray:[String] = ["Conta","País/Região","Sobre","Feedback","Versão \(Bundle.main.currentVersion!)"]
+    let sectionArray:[String] = ["País/Região","Sobre","Feedback"]
     
-    let img0:[UIImage] = [UIImage(named: "account_color")!]
-    let settings0:[String] = [NSLocalizedString(LocalizationKeys.settingsAccount, comment: "")]
+    let about:[String] = [NSLocalizedString(LocalizationKeys.termsOfUse, comment: ""),
+                              NSLocalizedString(LocalizationKeys.privacy, comment: "")]
     
-    let img2:[UIImage] = [UIImage(named: "terms_color")!,
-                          UIImage(named: "privacy_color")!]
-    let settings2:[String] = [NSLocalizedString(LocalizationKeys.settingsTermsOfUse, comment: ""),
-                              NSLocalizedString(LocalizationKeys.settingsPrivacy, comment: "")]
+    let feedback:[String] = [NSLocalizedString(LocalizationKeys.share, comment: ""),
+                              NSLocalizedString(LocalizationKeys.donate, comment: ""),
+                              NSLocalizedString(LocalizationKeys.contactUs, comment: "")]
     
-    let img3:[UIImage] = [UIImage(named: "share_color")!,
-                          UIImage(named: "donate_color")!,
-                          UIImage(named: "contact_us_color")!]
-    let settings3:[String] = [NSLocalizedString(LocalizationKeys.settingsShare, comment: ""),
-                              NSLocalizedString(LocalizationKeys.settingsDonate, comment: ""),
-                              NSLocalizedString(LocalizationKeys.settingsContactUs, comment: "")]
-    
-    var imgCountry:[UIImage] = []
     var country:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideMenus()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         updateUI()
     }
     
     func updateUI(){
-        imgCountry.removeAll()
         country.removeAll()
         
-        if let image = UIImage(named: ((appDelegate.currentCountry?.code)!)) {
-            imgCountry.append(image)
-            country.append((appDelegate.currentCountry?.name)!)
+        if let name = appDelegate.currentCountry?.name {
+            country.append(name)
         } else {
-            imgCountry.append(UIImage(named: "unknown")!)
             country.append("Indisponível")
         }
         
@@ -79,13 +61,11 @@ class SettingsTableViewController: BaseTableViewController {
         
         switch section {
         case 0:
-            return self.settings0.count
-        case 1:
             return self.country.count
+        case 1:
+            return self.about.count
         case 2:
-            return self.settings2.count
-        case 3:
-            return self.settings3.count
+            return self.feedback.count
         default:
             return 0
         }
@@ -93,26 +73,18 @@ class SettingsTableViewController: BaseTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
         
         if indexPath.section == 0 {
-            cell.lbSettings.text = self.settings0[indexPath.row]
-            cell.imgSettings.image = self.img0[indexPath.row]
+            cell.textLabel?.text = self.country[indexPath.row]
         }
         
         if indexPath.section == 1 {
-            cell.lbSettings.text = self.country[indexPath.row]
-            cell.imgSettings.image = self.imgCountry[indexPath.row]
+            cell.textLabel?.text = self.about[indexPath.row]
         }
         
         if indexPath.section == 2 {
-            cell.lbSettings.text = self.settings2[indexPath.row]
-            cell.imgSettings.image = self.img2[indexPath.row]
-        }
-        
-        if indexPath.section == 3 {
-            cell.lbSettings.text = self.settings3[indexPath.row]
-            cell.imgSettings.image = self.img3[indexPath.row]
+            cell.textLabel?.text = self.feedback[indexPath.row]
         }
         
         return cell
@@ -120,24 +92,8 @@ class SettingsTableViewController: BaseTableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+  
         if indexPath.section == 0 {
-            switch indexPath.row {
-            case 0:
-                
-                if (UIApplication.shared.delegate as! AppDelegate).userObj.id != nil {
-                    performSegue(withIdentifier: "showProfileVC", sender: nil)
-                } else {
-                    self.showAlert(title: "", message: LocalizationKeys.accessProfile)
-                }
-                break
-            default:
-                print("done")
-            }
-        }
-        
-        
-        if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
                 performSegue(withIdentifier: "showCountryVC", sender: nil)
@@ -147,7 +103,7 @@ class SettingsTableViewController: BaseTableViewController {
             }
         }
         
-        if indexPath.section == 2 {
+        if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
                 performSegue(withIdentifier: "showTermsOfUseVC", sender: nil)
@@ -160,7 +116,7 @@ class SettingsTableViewController: BaseTableViewController {
             }
         }
         
-        if indexPath.section == 3 {
+        if indexPath.section == 2 {
             switch indexPath.row {
             case 0:
                 let activityViewController = UIActivityViewController(activityItems: [ LocalizationKeys.shareApp ], applicationActivities: nil)
@@ -209,17 +165,15 @@ class SettingsTableViewController: BaseTableViewController {
     
     }
     
-    //MARK - SideMenu Method
-    func sideMenus() {
-        if revealViewController() != nil {
-            
-            self.btnMenu.target = revealViewController()
-            self.btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 200
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    
+}
+
+extension SettingsTableViewController:MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if error == nil {
+            controller.dismiss(animated: true, completion: nil)
         }
         
     }
-    
 }

@@ -14,7 +14,6 @@ import SWRevealViewController
 class MapViewController: BaseViewController,CLLocationManagerDelegate,MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var viewLocationDenied: UIView!
     @IBOutlet weak var btnOpeniOSSettings:UIButton!
     
@@ -25,7 +24,6 @@ class MapViewController: BaseViewController,CLLocationManagerDelegate,MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideMenus()
         
         btnOpeniOSSettings.layer.borderColor = UIColor.black.cgColor
         btnOpeniOSSettings.layer.borderWidth = 0.5
@@ -106,36 +104,6 @@ class MapViewController: BaseViewController,CLLocationManagerDelegate,MKMapViewD
             mapView.selectAnnotation(businessAnnotation, animated: true)
             
         }
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    //MARK: - SideMenu Method
-    func sideMenus() {
-        if revealViewController() != nil {
-            
-            self.btnMenu.target = revealViewController()
-            self.btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 200
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        changeTitleNavigatorBar()
-    }
-    
-    
-    func changeTitleNavigatorBar(){
-        let logo = UIImage(named: "logo_navbar")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
     }
     
 }
