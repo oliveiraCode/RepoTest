@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SWRevealViewController
 import Kingfisher
 import FirebaseAuth
 

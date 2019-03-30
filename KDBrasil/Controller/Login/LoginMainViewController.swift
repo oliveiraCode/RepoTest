@@ -51,11 +51,12 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
         self.activityIndicator.startAnimating()
         self.authenticationType = .facebook
         
-        credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self){(result,error) in
             
+            let accessToken = FBSDKAccessToken.current()
+            guard let accessTokenString = accessToken?.tokenString else { return }
+            self.credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
             
             if let error = error {
                 print(error.localizedDescription)
@@ -155,41 +156,9 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
                 FIRFirestoreService.shared.getDataFromCurrentUser(completionHandler: { (error) in
                     if error == nil {
                         self.activityIndicator.stopAnimating()
-                        print(self.appDelegate.userObj.userType)
                         self.dismiss(animated: true, completion: nil)
                     }
                 })
-                
-//                self.appDelegate.userObj.email = result?.user.email!
-//
-//                let fullName = result?.user.displayName
-//                let fullNameArr = fullName!.components(separatedBy: " ")
-//                self.appDelegate.userObj.firstName = fullNameArr[0]
-//                self.appDelegate.userObj.lastName = fullNameArr[1]
-//                self.appDelegate.userObj.id = result?.user.uid
-//                self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
-//                self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
-//                self.appDelegate.userObj.authenticationType = self.authenticationType
-//
-//                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
-//                let imageFacebook = UIImageView()
-//                imageFacebook.kf.setImage(with: (result?.user.photoURL)!){
-//                    result in
-//                    switch result {
-//                    case .success(let value):
-//                        self.appDelegate.userObj.image = value.image
-//
-//                        FIRFirestoreService.shared.saveData(completion: { (error) in
-//                            //
-//                        })
-//                        self.activityIndicator.stopAnimating()
-//                        self.dismiss(animated: true, completion: nil)
-//
-//                    case .failure(let error):
-//                        self.activityIndicator.stopAnimating()
-//                        print("Job failed: \(error.localizedDescription)")
-//                    }
-//                }
                 
             }else{
                 self.activityIndicator.stopAnimating()
@@ -199,6 +168,51 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
         }
     }
     
+    private func signInFirstTime(){
+        
+        Auth.auth().signInAndRetrieveData(with: credential!){(result,error) in
+            
+            if error == nil{
+                
+                self.appDelegate.userObj.email = result?.user.email!
+                
+                let fullName = result?.user.displayName
+                let fullNameArr = fullName!.components(separatedBy: " ")
+                self.appDelegate.userObj.firstName = fullNameArr[0]
+                self.appDelegate.userObj.lastName = fullNameArr[1]
+                self.appDelegate.userObj.id = result?.user.uid
+                self.appDelegate.userObj.phone = result?.user.phoneNumber ?? ""
+                self.appDelegate.userObj.image = UIImage(named: "placeholder_photo")
+                self.appDelegate.userObj.authenticationType = self.authenticationType
+                
+                self.appDelegate.userObj.creationDate = Date.getFormattedDate(date: (result?.user.metadata.creationDate?.description)!, formatter: "dd/MM/yyyy HH:mm:ss")
+                let imageFacebook = UIImageView()
+                imageFacebook.kf.setImage(with: (result?.user.photoURL)!){
+                    result in
+                    switch result {
+                    case .success(let value):
+                        self.appDelegate.userObj.image = value.image
+                        
+                        FIRFirestoreService.shared.saveData(completion: { (error) in
+                            //
+                        })
+                        self.activityIndicator.stopAnimating()
+                        self.dismiss(animated: true, completion: nil)
+                        
+                    case .failure(let error):
+                        self.activityIndicator.stopAnimating()
+                        print("Job failed: \(error.localizedDescription)")
+                    }
+                }
+                
+            }else{
+                self.activityIndicator.stopAnimating()
+                self.showAlert(title: "Erro", message: "Não foi possível conectar usando os dados dessa conta, verifique o e-mail e tente novamente.")
+                print("Could not Login user \(String(describing: error?.localizedDescription))")
+            }
+        }
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showCustomAlertUserTypeVC" {
@@ -216,7 +230,7 @@ extension LoginMainViewController:CustomAlertViewUserTypeDelegate{
     
     func btnOKTapped(selectedOption: userType) {
         self.appDelegate.userObj.userType = selectedOption
-        self.signInAndRetrieveData()
+        self.signInFirstTime()
     }
     
 }

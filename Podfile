@@ -15,13 +15,13 @@ target 'KDBrasil' do
 
   pod 'Cosmos'
   pod 'Kingfisher'
-  pod 'FBSDKLoginKit'
-  pod 'SWRevealViewController', '2.3.0'
+  pod 'FBSDKCoreKit', '<= 4.40.0'
+  pod 'FBSDKLoginKit', '<= 4.40.0'
   pod 'KRProgressHUD'
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'SkyFloatingLabelTextField'
-  pod 'ReachabilitySwift'
+  pod 'ReachabilitySwift', '<= 4.3.0'
   pod 'PhoneNumberKit'
 
 end

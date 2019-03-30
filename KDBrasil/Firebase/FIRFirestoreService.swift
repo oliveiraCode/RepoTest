@@ -568,9 +568,9 @@ class FIRFirestoreService {
         UserHandler.shared.resetAllRecordsOnCoreData()
         
         //Remove user from AppDelegate
-        appDelegate.userObj.resetValuesOfUserAccount()
-        
+        UserHandler.shared.resetValuesOfUserAccount()
     }
+
     
 }
 

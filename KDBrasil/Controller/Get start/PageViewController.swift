@@ -76,7 +76,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         
         if button.titleLabel?.text == "Bem-vindo!" {
             
-            let viewPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SWRevealViewController")
+            let viewPageController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainVC")
             self.present(viewPageController, animated: true, completion: nil)
  
         }

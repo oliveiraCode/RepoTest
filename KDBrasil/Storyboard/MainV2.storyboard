@@ -103,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="8572" y="-1248.1259370314845"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="XWk-Ej-8Xc">
             <objects>
-                <navigationController storyboardIdentifier="showFilterVC" automaticallyAdjustsScrollViewInsets="NO" id="aHQ-qc-a1e" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="showFilterVC" automaticallyAdjustsScrollViewInsets="NO" id="aHQ-qc-a1e" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="LvV-dV-9JL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

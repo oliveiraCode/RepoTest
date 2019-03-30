@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 import Photos
-import SWRevealViewController
 import Firebase
 import MapKit
 import Alamofire

@@ -55,21 +55,6 @@ class User  {
     
     init() {}
     
-    func resetValuesOfUserAccount() {
-        self.id = nil
-        self.firstName = nil
-        self.lastName = nil
-        self.email = nil
-        self.phone = nil
-        self.whatsapp = nil
-        self.password = nil
-        self.creationDate = nil
-        self.photoURL = nil
-        self.image = nil
-        self.authenticationType = nil
-        self.userType = nil
-    }
-    
     convenience init(data: [String: Any]) {
         
         let creationDate = data["creationDate"] as! String

@@ -124,10 +124,17 @@ static void fb_dispatch_on_default_thread(dispatch_block_t block) {
   }
   isStarted = YES;
 
+  void (^blockToSuperview)(id view) = ^(id view) {
+    [self matchView:view delegate:nil];
+  };
+
   void (^blockToWindow)(id view) = ^(id view) {
     [self matchView:view delegate:nil];
   };
 
+  [FBSDKSwizzler swizzleSelector:@selector(didMoveToSuperview)
+                         onClass:[UIControl class]
+                       withBlock:blockToSuperview named:@"map_control"];
   [FBSDKSwizzler swizzleSelector:@selector(didMoveToWindow)
                          onClass:[UIControl class]
                        withBlock:blockToWindow named:@"map_control"];
@@ -140,17 +147,17 @@ static void fb_dispatch_on_default_thread(dispatch_block_t block) {
     Class classRCTTouchHandler = objc_lookUpClass(ReactNativeClassRCTTouchHandler);
 
     //  All react-native views would be added tp RCTRootView, so no need to check didMoveToWindow
-    [FBSDKSwizzler swizzleSelector:@selector(didMoveToWindow)
+    [FBSDKSwizzler swizzleSelector:@selector(didMoveToSuperview)
                            onClass:classRCTView
-                         withBlock:blockToWindow
+                         withBlock:blockToSuperview
                              named:@"match_react_native"];
-    [FBSDKSwizzler swizzleSelector:@selector(didMoveToWindow)
+    [FBSDKSwizzler swizzleSelector:@selector(didMoveToSuperview)
                            onClass:classRCTTextView
-                         withBlock:blockToWindow
+                         withBlock:blockToSuperview
                              named:@"match_react_native"];
-    [FBSDKSwizzler swizzleSelector:@selector(didMoveToWindow)
+    [FBSDKSwizzler swizzleSelector:@selector(didMoveToSuperview)
                            onClass:classRCTImageView
-                         withBlock:blockToWindow
+                         withBlock:blockToSuperview
                              named:@"match_react_native"];
 
     // RCTTouchHandler handles with touch events, like touchEnd and uses RCTEventDispather to dispatch events, so we can check _updateAndDispatchTouches to fire events
@@ -271,10 +278,6 @@ static void fb_dispatch_on_default_thread(dispatch_block_t block) {
   }
 
   fb_dispatch_on_main_thread(^{
-    if (![view window]) {
-      return;
-    }
-
     NSArray *path = [FBSDKViewHierarchy getPath:view];
 
     fb_dispatch_on_default_thread(^{

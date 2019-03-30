@@ -17,7 +17,6 @@ class CountriesViewController:BaseViewController,UITableViewDelegate, UITableVie
     var list: [Countries]?
     var results: [Countries]?
     var isWithDialCode:Bool = false
-    var countrySelected:Countries?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +37,6 @@ class CountriesViewController:BaseViewController,UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
         
-        if countrySelected?.name == self.list![indexPath.row].name {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
-        
         if isWithDialCode {
             cell.lbDialCode.text = self.list![indexPath.row].dial_code
         }
@@ -54,12 +47,7 @@ class CountriesViewController:BaseViewController,UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        countrySelected = list![indexPath.row]
-        tableView.reloadData()
-    }
-    
-    @IBAction func btnSave(_ sender: UIBarButtonItem) {
-        appDelegate.currentCountry = countrySelected!
+        appDelegate.currentCountry = list![indexPath.row]
         CountryHandler.shared.saveCurrentCountryToCoreData()
         Service.shared.getAllStatesFromCountry()
         dismiss(animated: true, completion: nil)
@@ -75,25 +63,6 @@ class CountriesViewController:BaseViewController,UITableViewDelegate, UITableVie
 extension CountriesViewController: UISearchBarDelegate {
     
     //MARK: - Methods SearchBar
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.showsCancelButton = false
-        self.searchBar.text = ""
-        self.searchBar.resignFirstResponder()
-        
-        self.list = self.results
-        self.tableView.reloadData()
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.searchBar.showsCancelButton = true
-    }
-    
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.resignFirstResponder()
-        self.searchBar.showsCancelButton = false
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         self.list = self.results?.filter({ (Country) -> Bool in

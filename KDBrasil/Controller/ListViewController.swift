@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SWRevealViewController
 import Kingfisher
 
 class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
@@ -75,8 +74,8 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: - TabBarController
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if viewController == tabBarController.viewControllers![1] {
-            let navController = tabBarController.viewControllers![1] as? UINavigationController
+        if viewController == tabBarController.viewControllers![2] {
+            let navController = tabBarController.viewControllers![2] as? UINavigationController
             let secondVC = navController?.topViewController as! MapViewController
             secondVC.businesses = businessesFiltered
         }

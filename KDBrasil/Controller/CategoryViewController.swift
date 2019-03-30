@@ -35,6 +35,10 @@ class CategoryViewController: BaseViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.searchBar.becomeFirstResponder()
+    }
     
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,25 +74,6 @@ class CategoryViewController: BaseViewController, UITableViewDelegate, UITableVi
 extension CategoryViewController: UISearchBarDelegate {
     
     //MARK: - Methods SearchBar
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.showsCancelButton = false
-        self.searchBar.text = ""
-        self.searchBar.resignFirstResponder()
-        
-        self.categories = self.categoriesFiltered
-        self.tableView.reloadData()
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.searchBar.showsCancelButton = true
-    }
-    
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.resignFirstResponder()
-        self.searchBar.showsCancelButton = false
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         self.categories = self.categoriesFiltered?.filter({ (Category) -> Bool in

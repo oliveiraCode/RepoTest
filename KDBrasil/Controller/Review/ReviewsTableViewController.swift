@@ -16,7 +16,7 @@ class ReviewsTableViewController: BaseTableViewController {
     @IBOutlet weak var lbRatingValueString: UILabel!
     @IBOutlet weak var lbRating: UILabel!
     @IBOutlet weak var cvRating: CosmosView!
-    @IBOutlet weak var ratingView: GradientView!
+    @IBOutlet weak var ratingView: UIView!
     
     var business = Business()
     var myReview:[Review]? = []

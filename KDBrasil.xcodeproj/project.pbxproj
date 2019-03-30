@@ -30,7 +30,6 @@
 		9C5C7F08221F17F200109152 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F07221F17F200109152 /* UIColor.swift */; };
 		9C5C7F0C221F3BB500109152 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0B221F3BB500109152 /* UIImage.swift */; };
 		9C5C7F0E221F3CA200109152 /* UIToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0D221F3CA200109152 /* UIToolBar.swift */; };
-		9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0F221F3D2400109152 /* GradientToolBar.swift */; };
 		9C6F03F92232EEFB000B828F /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F03F82232EEFB000B828F /* Countries.swift */; };
 		9C6F03FF2234175C000B828F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F03FE2234175C000B828F /* MapViewController.swift */; };
 		9C6F0401223471FE000B828F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F0400223471FE000B828F /* MainViewController.swift */; };
@@ -39,7 +38,6 @@
 		9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6F04082234A68E000B828F /* BaseTableViewController.swift */; };
 		9C88AF03224D03A800640F88 /* CustomAlertViewUserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88AF02224D03A800640F88 /* CustomAlertViewUserType.swift */; };
 		9C88AF05224D126500640F88 /* UIButton+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88AF04224D126500640F88 /* UIButton+Border.swift */; };
-		9C88AF07224D1EB400640F88 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88AF06224D1EB400640F88 /* NavController.swift */; };
 		9C88AF09224D227100640F88 /* MyKDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88AF08224D227100640F88 /* MyKDViewController.swift */; };
 		9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */; };
 		9C8DE2E02202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */; };
@@ -48,8 +46,6 @@
 		9C933D2C22061F7800F54782 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D2B22061F7800F54782 /* ProfileTableViewCell.swift */; };
 		9C933D2E2206639A00F54782 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D2D2206639A00F54782 /* EditProfileViewController.swift */; };
 		9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D31220A2DC500F54782 /* DailyHours.swift */; };
-		9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5A220B3BB200F54782 /* GradientButton.swift */; };
-		9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C933D5C220B3DB000F54782 /* GradientView.swift */; };
 		9C9A5CE5224AD3CC00F1611E /* KDBrasil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A5CE3224AD3CC00F1611E /* KDBrasil.xcdatamodeld */; };
 		9C9A5CE7224BBF1100F1611E /* MainV2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9A5CE6224BBF1100F1611E /* MainV2.storyboard */; };
 		9C9A5CE9224BC71400F1611E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A5CE8224BC71400F1611E /* FilterViewController.swift */; };
@@ -65,6 +61,7 @@
 		9CA0530422440FCE009E693B /* UpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530322440FCE009E693B /* UpdateHandler.swift */; };
 		9CA0530622441FA0009E693B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530522441FA0009E693B /* Alert.swift */; };
 		9CA0530822443B41009E693B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA0530722443B41009E693B /* LocalAuthentication.framework */; };
+		9CA4AA25224EBEE1003609BC /* HighlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4AA24224EBEE1003609BC /* HighlightViewController.swift */; };
 		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
 		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
 		9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC72AD121D3FC9E0048C37B /* AppDelegate.swift */; };
@@ -114,7 +111,6 @@
 		9C5C7F07221F17F200109152 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9C5C7F0B221F3BB500109152 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9C5C7F0D221F3CA200109152 /* UIToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBar.swift; sourceTree = "<group>"; };
-		9C5C7F0F221F3D2400109152 /* GradientToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientToolBar.swift; sourceTree = "<group>"; };
 		9C6F03F82232EEFB000B828F /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		9C6F03FC223314F2000B828F /* Montreal.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Montreal.gpx; sourceTree = "<group>"; };
 		9C6F03FE2234175C000B828F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +120,6 @@
 		9C6F04082234A68E000B828F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		9C88AF02224D03A800640F88 /* CustomAlertViewUserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomAlertViewUserType.swift; path = KDBrasil/Objects/CustomAlertView/CustomAlertViewUserType.swift; sourceTree = SOURCE_ROOT; };
 		9C88AF04224D126500640F88 /* UIButton+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIButton+Border.swift"; path = "KDBrasil/Objects/CustomAlertView/UIButton+Border.swift"; sourceTree = SOURCE_ROOT; };
-		9C88AF06224D1EB400640F88 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		9C88AF08224D227100640F88 /* MyKDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKDViewController.swift; sourceTree = "<group>"; };
 		9C8DE2DD2202015200BB79C1 /* DetailsBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessViewController.swift; sourceTree = "<group>"; };
 		9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBusinessCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,8 +128,6 @@
 		9C933D2B22061F7800F54782 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9C933D2D2206639A00F54782 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9C933D31220A2DC500F54782 /* DailyHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHours.swift; sourceTree = "<group>"; };
-		9C933D5A220B3BB200F54782 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
-		9C933D5C220B3DB000F54782 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		9C9A5CE4224AD3CC00F1611E /* KDBrasil.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KDBrasil.xcdatamodel; sourceTree = "<group>"; };
 		9C9A5CE6224BBF1100F1611E /* MainV2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainV2.storyboard; sourceTree = "<group>"; };
 		9C9A5CE8224BC71400F1611E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +144,7 @@
 		9CA0530322440FCE009E693B /* UpdateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHandler.swift; sourceTree = "<group>"; };
 		9CA0530522441FA0009E693B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		9CA0530722443B41009E693B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		9CA4AA24224EBEE1003609BC /* HighlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightViewController.swift; sourceTree = "<group>"; };
 		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
 		9CC72ACE21D3FC9E0048C37B /* KDBrasil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDBrasil.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +153,6 @@
 		9CC72AD821D3FCA00048C37B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CC72ADB21D3FCA00048C37B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CC72ADD21D3FCA00048C37B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CC72AE921D406F20048C37B /* KDBrasil-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KDBrasil-Bridging-Header.h"; sourceTree = "<group>"; };
 		9CC72AF021D43E930048C37B /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		9CC72AF121D43E930048C37B /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		9CC72AF221D43E930048C37B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -272,17 +265,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9C5C7F16221F460400109152 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				9C933D5C220B3DB000F54782 /* GradientView.swift */,
-				9C5C7F0F221F3D2400109152 /* GradientToolBar.swift */,
-				9C933D5A220B3BB200F54782 /* GradientButton.swift */,
-				9C88AF06224D1EB400640F88 /* NavController.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		9C6F03FD22341746000B828F /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,7 +336,6 @@
 			children = (
 				9C9A5CEA224D032B00F1611E /* CustomAlertView */,
 				9CA051F422401647009E693B /* ToolBarPickerView.swift */,
-				9C5C7F16221F460400109152 /* UI */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -397,7 +378,6 @@
 				9CC72AE621D404800048C37B /* Model */,
 				9CC72AE521D404740048C37B /* Cells */,
 				9CC72AD821D3FCA00048C37B /* Assets.xcassets */,
-				9CC72AE921D406F20048C37B /* KDBrasil-Bridging-Header.h */,
 				9CC72ADD21D3FCA00048C37B /* Info.plist */,
 			);
 			path = KDBrasil;
@@ -451,6 +431,7 @@
 				9CA051DE223C61BB009E693B /* CountriesViewController.swift */,
 				9C9A5CE8224BC71400F1611E /* FilterViewController.swift */,
 				9C88AF08224D227100640F88 /* MyKDViewController.swift */,
+				9CA4AA24224EBEE1003609BC /* HighlightViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -624,7 +605,6 @@
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -651,7 +631,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -717,6 +696,7 @@
 				9CC72AF321D43E930048C37B /* Business.swift in Sources */,
 				9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */,
 				9C30CC842229769E0021D03D /* ViewController3.swift in Sources */,
+				9CA4AA25224EBEE1003609BC /* HighlightViewController.swift in Sources */,
 				9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */,
 				9C160BEB21F8DEBE009232DD /* Service.swift in Sources */,
 				9C8DF5E7222D888300D8C976 /* Review.swift in Sources */,
@@ -733,13 +713,11 @@
 				9C30CC7E222877E50021D03D /* LoginMainViewController.swift in Sources */,
 				9C2CD85F21D92679005F688E /* BusinessCell.swift in Sources */,
 				9C6F03F92232EEFB000B828F /* Countries.swift in Sources */,
-				9C933D5D220B3DB000F54782 /* GradientView.swift in Sources */,
 				9CC72AF521D43E930048C37B /* Contact.swift in Sources */,
 				9C88AF09224D227100640F88 /* MyKDViewController.swift in Sources */,
 				9C5C7F0C221F3BB500109152 /* UIImage.swift in Sources */,
 				9C933D32220A2DC500F54782 /* DailyHours.swift in Sources */,
 				9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */,
-				9C88AF07224D1EB400640F88 /* NavController.swift in Sources */,
 				9CA051DF223C61BB009E693B /* CountriesViewController.swift in Sources */,
 				9C6F04092234A68E000B828F /* BaseTableViewController.swift in Sources */,
 				9C6F04072234A152000B828F /* BaseViewController.swift in Sources */,
@@ -755,10 +733,8 @@
 				9C1C85D421FB8B0200103655 /* Constants.swift in Sources */,
 				9C6F040322349BDF000B828F /* Connection.swift in Sources */,
 				9CA05207224156A1009E693B /* CountryHandler.swift in Sources */,
-				9C5C7F10221F3D2400109152 /* GradientToolBar.swift in Sources */,
 				9C8DE2DE2202015200BB79C1 /* DetailsBusinessViewController.swift in Sources */,
 				9C1E4CEA222D78AD00939C97 /* ReviewsTableViewController.swift in Sources */,
-				9C933D5B220B3BB200F54782 /* GradientButton.swift in Sources */,
 				9C30CC80222880BF0021D03D /* LoginViewController.swift in Sources */,
 				9C6F03FF2234175C000B828F /* MapViewController.swift in Sources */,
 			);

@@ -909,7 +909,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWP-YH-iob">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1225"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e59-Es-xzB">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e59-Es-xzB" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1225"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NH-lC-c6h">
@@ -1452,6 +1452,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="4VQ-Kf-KUs" secondAttribute="trailing" constant="50" id="JPL-om-tf8"/>
                                                     <constraint firstItem="Fzr-qD-UG0" firstAttribute="top" secondItem="dwe-h0-iOq" secondAttribute="bottom" constant="22" id="O8Y-Ia-bJJ"/>
                                                     <constraint firstItem="Cwl-W7-7wa" firstAttribute="leading" secondItem="Q5a-TB-OE4" secondAttribute="leading" constant="10" id="VA8-86-fYT"/>
+                                                    <constraint firstAttribute="height" constant="389" id="VuW-DF-4Kz"/>
                                                     <constraint firstItem="Fzr-qD-UG0" firstAttribute="leading" secondItem="Q5a-TB-OE4" secondAttribute="leading" constant="5" id="YkV-Li-2DE"/>
                                                     <constraint firstItem="bw4-hC-3ru" firstAttribute="top" secondItem="cH9-CJ-p7L" secondAttribute="bottom" constant="20.329999999999998" id="bk8-N2-LWF"/>
                                                     <constraint firstItem="4VQ-Kf-KUs" firstAttribute="leading" secondItem="9hH-sh-0e0" secondAttribute="trailing" constant="8" id="bmk-zj-Heh"/>
@@ -1478,7 +1479,6 @@
                                             <constraint firstAttribute="trailing" secondItem="4NH-lC-c6h" secondAttribute="trailing" id="Aed-TE-8ZJ"/>
                                             <constraint firstItem="Q5a-TB-OE4" firstAttribute="top" secondItem="2EG-YQ-8A8" secondAttribute="bottom" constant="8" id="Ayf-vi-2uP"/>
                                             <constraint firstItem="zGS-Dm-Vcr" firstAttribute="leading" secondItem="e59-Es-xzB" secondAttribute="leading" id="Gfg-M5-K4g"/>
-                                            <constraint firstAttribute="height" constant="1225" id="KR0-Tk-heW"/>
                                             <constraint firstItem="y7d-kz-eUx" firstAttribute="top" secondItem="4NH-lC-c6h" secondAttribute="bottom" constant="3" id="LBG-kN-pyO"/>
                                             <constraint firstItem="2EG-YQ-8A8" firstAttribute="top" secondItem="zGS-Dm-Vcr" secondAttribute="bottom" constant="8" id="NS2-mn-qwe"/>
                                             <constraint firstItem="Q5a-TB-OE4" firstAttribute="leading" secondItem="e59-Es-xzB" secondAttribute="leading" id="NdG-AG-zEu"/>
@@ -1500,6 +1500,7 @@
                                     <constraint firstAttribute="bottom" secondItem="e59-Es-xzB" secondAttribute="bottom" id="7qO-j0-S5K"/>
                                     <constraint firstAttribute="trailing" secondItem="e59-Es-xzB" secondAttribute="trailing" id="b9K-Cu-iGz"/>
                                     <constraint firstItem="e59-Es-xzB" firstAttribute="top" secondItem="pWP-YH-iob" secondAttribute="top" id="mkf-0E-qW6"/>
+                                    <constraint firstItem="e59-Es-xzB" firstAttribute="height" secondItem="pWP-YH-iob" secondAttribute="height" priority="250" id="rKR-Uc-dbu"/>
                                     <constraint firstItem="e59-Es-xzB" firstAttribute="leading" secondItem="pWP-YH-iob" secondAttribute="leading" id="x4K-ic-kRz"/>
                                 </constraints>
                             </scrollView>
@@ -1617,7 +1618,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9i-cH-DZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17153" y="1948"/>
+            <point key="canvasLocation" x="17834" y="1579"/>
+        </scene>
+        <!--Em destaque-->
+        <scene sceneID="Wy6-ZU-pwF">
+            <objects>
+                <viewController id="SQd-D4-d1Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C7Q-Qk-7rR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="951"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDh-WV-aCI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="951"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-RY-MKq" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vx-1m-Ulo">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="q6s-jA-MKl"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C88-zr-QVe">
+                                                <rect key="frame" x="0.0" y="200" width="375" height="250"/>
+                                                <color key="backgroundColor" red="0.21838855739999999" green="0.48419857030000002" blue="0.96569675210000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="8D9-qH-AAL"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAE-Vb-xwi">
+                                                <rect key="frame" x="0.0" y="450" width="375" height="250"/>
+                                                <color key="backgroundColor" red="0.0" green="0.98198264837265015" blue="0.057226337492465973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="1pV-Qi-PHt"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liZ-WI-94A">
+                                                <rect key="frame" x="0.0" y="700" width="375" height="250"/>
+                                                <color key="backgroundColor" red="0.24481117729999999" green="0.55044734480000002" blue="0.26128691430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="APn-cp-AEw"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="liZ-WI-94A" secondAttribute="trailing" id="0JA-zT-uac"/>
+                                            <constraint firstItem="liZ-WI-94A" firstAttribute="leading" secondItem="KcC-RY-MKq" secondAttribute="leading" id="2aX-gj-auy"/>
+                                            <constraint firstItem="2Vx-1m-Ulo" firstAttribute="top" secondItem="KcC-RY-MKq" secondAttribute="top" id="73L-yA-kiB"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Vx-1m-Ulo" secondAttribute="trailing" id="Hlm-7c-h6V"/>
+                                            <constraint firstItem="C88-zr-QVe" firstAttribute="top" secondItem="2Vx-1m-Ulo" secondAttribute="bottom" id="OXz-Og-I5m"/>
+                                            <constraint firstItem="liZ-WI-94A" firstAttribute="top" secondItem="BAE-Vb-xwi" secondAttribute="bottom" id="ZEZ-lS-lXX"/>
+                                            <constraint firstAttribute="trailing" secondItem="C88-zr-QVe" secondAttribute="trailing" id="kaw-ho-UjT"/>
+                                            <constraint firstAttribute="trailing" secondItem="BAE-Vb-xwi" secondAttribute="trailing" id="m5d-hJ-S88"/>
+                                            <constraint firstItem="BAE-Vb-xwi" firstAttribute="top" secondItem="C88-zr-QVe" secondAttribute="bottom" id="ncG-9h-k37"/>
+                                            <constraint firstAttribute="bottom" secondItem="liZ-WI-94A" secondAttribute="bottom" id="pak-xB-iJq"/>
+                                            <constraint firstItem="BAE-Vb-xwi" firstAttribute="leading" secondItem="KcC-RY-MKq" secondAttribute="leading" id="yi4-P7-Bme"/>
+                                            <constraint firstItem="2Vx-1m-Ulo" firstAttribute="leading" secondItem="KcC-RY-MKq" secondAttribute="leading" id="z0X-Jc-pkE"/>
+                                            <constraint firstItem="C88-zr-QVe" firstAttribute="leading" secondItem="KcC-RY-MKq" secondAttribute="leading" id="z5d-3v-nxk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KcC-RY-MKq" firstAttribute="width" secondItem="QDh-WV-aCI" secondAttribute="width" id="3C5-ml-w9b"/>
+                                    <constraint firstItem="KcC-RY-MKq" firstAttribute="height" secondItem="QDh-WV-aCI" secondAttribute="height" priority="250" id="9wh-J7-P4B"/>
+                                    <constraint firstItem="KcC-RY-MKq" firstAttribute="leading" secondItem="QDh-WV-aCI" secondAttribute="leading" id="BTE-fc-Uam"/>
+                                    <constraint firstAttribute="bottom" secondItem="KcC-RY-MKq" secondAttribute="bottom" id="eHg-4G-U4z"/>
+                                    <constraint firstItem="KcC-RY-MKq" firstAttribute="top" secondItem="QDh-WV-aCI" secondAttribute="top" id="hUT-4U-ra1"/>
+                                    <constraint firstAttribute="trailing" secondItem="KcC-RY-MKq" secondAttribute="trailing" id="nSp-1Y-JoM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QDh-WV-aCI" firstAttribute="top" secondItem="C7Q-Qk-7rR" secondAttribute="top" id="DO4-qC-bXa"/>
+                            <constraint firstItem="uMP-hz-5Mg" firstAttribute="bottom" secondItem="QDh-WV-aCI" secondAttribute="bottom" id="JUd-5A-rhD"/>
+                            <constraint firstItem="QDh-WV-aCI" firstAttribute="leading" secondItem="uMP-hz-5Mg" secondAttribute="leading" id="eh3-wU-vfa"/>
+                            <constraint firstItem="uMP-hz-5Mg" firstAttribute="trailing" secondItem="QDh-WV-aCI" secondAttribute="trailing" id="u20-Ji-1AF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uMP-hz-5Mg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Em destaque" image="highlight" id="UXe-s6-FZd"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lh-j1-MNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3440.8000000000002" y="262.21889055472263"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="baQ-gk-hWD">
@@ -1810,7 +1898,7 @@
             <objects>
                 <tableViewController id="hL3-Nu-xiI" customClass="BusinessesTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LHr-FS-lVq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1851,7 +1939,7 @@
             <objects>
                 <viewController id="aom-8U-VlI" customClass="MyKDViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cOD-xi-ykb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRv-z5-hMt">
@@ -1892,7 +1980,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-Ou-pdH">
-                                <rect key="frame" x="0.0" y="200" width="375" height="354"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="302"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreCell" rowHeight="50" id="0WY-eW-iEF">
@@ -1941,13 +2029,14 @@
         <!--Tab Bar Controller-->
         <scene sceneID="OpR-QC-Yh0">
             <objects>
-                <tabBarController id="XXj-RY-4rM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XXj-RY-4rM" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zRj-3S-VOd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="SQd-D4-d1Y" kind="relationship" relationship="viewControllers" id="CIN-4p-4f9"/>
                         <segue destination="IM8-Na-RN9" kind="relationship" relationship="viewControllers" id="WtX-rg-wR1"/>
                         <segue destination="vHx-mt-9s8" kind="relationship" relationship="viewControllers" id="Rsp-kS-FhD"/>
                         <segue destination="sXR-XE-Un7" kind="relationship" relationship="viewControllers" id="6Oh-Km-JDs"/>
@@ -1955,14 +2044,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTO-a7-WKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5097" y="214"/>
+            <point key="canvasLocation" x="4906" y="148"/>
         </scene>
         <!--Configurações-->
         <scene sceneID="bea-wF-tT5">
             <objects>
                 <tableViewController id="s79-eb-nnd" customClass="SettingsTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="U6M-I9-Uwt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -2199,7 +2288,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6s-dL-TyO">
-                                <rect key="frame" x="5" y="327" width="47" height="30"/>
+                                <rect key="frame" x="5" y="385" width="47" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hRq-Ba-6r1"/>
                                 </constraints>
@@ -2208,7 +2297,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXD-tO-I5H">
-                                <rect key="frame" x="5" y="377" width="47" height="30"/>
+                                <rect key="frame" x="5" y="435" width="47" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LqB-lv-UdX"/>
                                 </constraints>
@@ -2228,12 +2317,13 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-tO-qr9">
-                                <rect key="frame" x="158.5" y="52" width="58" height="43"/>
+                                <rect key="frame" x="105" y="130" width="165" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="58" id="4tm-4z-Z5a"/>
-                                    <constraint firstAttribute="height" constant="43" id="qJJ-3m-sVE"/>
+                                    <constraint firstAttribute="height" constant="30" id="LEX-MU-sSc"/>
+                                    <constraint firstAttribute="width" constant="165" id="VE1-cN-efH"/>
                                 </constraints>
-                                <state key="normal" title="foto">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="selecionar imagem">
                                     <color key="titleColor" red="0.21838855743408203" green="0.48419857025146484" blue="0.96569675207138062" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -2247,12 +2337,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="NR9-cK-ZYQ" firstAttribute="trailing" secondItem="Im9-Wj-lFT" secondAttribute="trailing" constant="60" id="4xe-Cf-wnt"/>
                             <constraint firstItem="u6I-fq-s4R" firstAttribute="top" secondItem="Im9-Wj-lFT" secondAttribute="bottom" constant="15" id="8N6-KT-dVR"/>
                             <constraint firstItem="u6I-fq-s4R" firstAttribute="leading" secondItem="NR9-cK-ZYQ" secondAttribute="leading" constant="60" id="9H5-Sx-Uc7"/>
-                            <constraint firstItem="OSc-tO-qr9" firstAttribute="top" secondItem="NR9-cK-ZYQ" secondAttribute="top" constant="52" id="9qr-fQ-uLx"/>
                             <constraint firstItem="Cxx-gd-d64" firstAttribute="top" secondItem="wWe-mB-Ttf" secondAttribute="bottom" constant="15" id="A1I-ae-ZFA"/>
                             <constraint firstItem="Cxx-gd-d64" firstAttribute="leading" secondItem="NR9-cK-ZYQ" secondAttribute="leading" constant="60" id="AK5-Z6-nuS"/>
                             <constraint firstItem="u6I-fq-s4R" firstAttribute="leading" secondItem="WXD-tO-I5H" secondAttribute="trailing" constant="8" id="BYa-fc-dxU"/>
                             <constraint firstItem="Im9-Wj-lFT" firstAttribute="leading" secondItem="r6s-dL-TyO" secondAttribute="trailing" constant="8" id="GkI-21-PaO"/>
-                            <constraint firstItem="OSc-tO-qr9" firstAttribute="centerX" secondItem="n9D-A4-EcB" secondAttribute="centerX" id="L4C-cD-yz9"/>
+                            <constraint firstItem="OSc-tO-qr9" firstAttribute="centerX" secondItem="n9D-A4-EcB" secondAttribute="centerX" id="Gkd-zx-dc1"/>
                             <constraint firstItem="wWe-mB-Ttf" firstAttribute="leading" secondItem="NR9-cK-ZYQ" secondAttribute="leading" constant="60" id="M5X-67-mZL"/>
                             <constraint firstItem="JaC-fs-gee" firstAttribute="top" secondItem="4Rt-YJ-Opu" secondAttribute="bottom" constant="25" id="O0z-K0-yGv"/>
                             <constraint firstItem="r6s-dL-TyO" firstAttribute="leading" secondItem="NR9-cK-ZYQ" secondAttribute="leading" constant="5" id="OHW-ck-840"/>
@@ -2260,11 +2349,12 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="WXD-tO-I5H" firstAttribute="leading" secondItem="NR9-cK-ZYQ" secondAttribute="leading" constant="5" id="SaW-18-BF7"/>
                             <constraint firstItem="wWe-mB-Ttf" firstAttribute="top" secondItem="JaC-fs-gee" secondAttribute="bottom" constant="15" id="XFP-7R-CYP"/>
                             <constraint firstItem="4Rt-YJ-Opu" firstAttribute="centerX" secondItem="n9D-A4-EcB" secondAttribute="centerX" id="XlU-8G-RHA"/>
+                            <constraint firstItem="4Rt-YJ-Opu" firstAttribute="top" secondItem="OSc-tO-qr9" secondAttribute="bottom" constant="8" id="XoQ-Dg-GC3"/>
                             <constraint firstItem="NR9-cK-ZYQ" firstAttribute="trailing" secondItem="ttn-K8-vxS" secondAttribute="trailing" constant="60" id="Z7E-LB-oli"/>
                             <constraint firstItem="4Rt-YJ-Opu" firstAttribute="top" secondItem="2PD-r9-JTV" secondAttribute="bottom" constant="35" id="axD-aW-Tzk"/>
                             <constraint firstItem="2PD-r9-JTV" firstAttribute="top" secondItem="NR9-cK-ZYQ" secondAttribute="top" constant="13" id="c0K-aI-dn0"/>
                             <constraint firstItem="Im9-Wj-lFT" firstAttribute="top" secondItem="Cxx-gd-d64" secondAttribute="bottom" constant="15" id="fQo-P2-hZv"/>
-                            <constraint firstItem="r6s-dL-TyO" firstAttribute="top" secondItem="NR9-cK-ZYQ" secondAttribute="top" constant="327" id="hoA-CR-8bf"/>
+                            <constraint firstItem="r6s-dL-TyO" firstAttribute="top" secondItem="NR9-cK-ZYQ" secondAttribute="top" constant="385" id="hoA-CR-8bf"/>
                             <constraint firstItem="NR9-cK-ZYQ" firstAttribute="trailing" secondItem="u6I-fq-s4R" secondAttribute="trailing" constant="60" id="iF6-1l-2km"/>
                             <constraint firstItem="NR9-cK-ZYQ" firstAttribute="trailing" secondItem="wWe-mB-Ttf" secondAttribute="trailing" constant="60" id="iIs-0o-e2f"/>
                             <constraint firstItem="2PD-r9-JTV" firstAttribute="centerX" secondItem="n9D-A4-EcB" secondAttribute="centerX" id="iNS-mN-Xkh"/>
@@ -2309,10 +2399,10 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="10970.4" y="895.50224887556226"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="qWf-ZU-duD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8E-jF-BRB" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8E-jF-BRB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="eNy-oH-Tab">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -2338,7 +2428,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vA1-oz-b6z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oni-p0-GW4">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oni-p0-GW4" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxY-jI-df2">
@@ -2703,6 +2793,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                     <constraint firstItem="lWl-RW-RJ0" firstAttribute="leading" secondItem="1sH-qw-zf7" secondAttribute="leading" id="MX0-Oy-5ov"/>
                                                     <constraint firstAttribute="trailing" secondItem="lWl-RW-RJ0" secondAttribute="trailing" id="QCe-Ta-J6d"/>
                                                     <constraint firstAttribute="bottom" secondItem="OGI-ks-1Xi" secondAttribute="bottom" constant="15" id="WUq-b8-rOi"/>
+                                                    <constraint firstAttribute="height" constant="326" id="e54-eh-Nxr"/>
                                                     <constraint firstItem="OGI-ks-1Xi" firstAttribute="top" secondItem="fyQ-3V-oxC" secondAttribute="bottom" constant="8" id="fgD-CN-Zdu"/>
                                                     <constraint firstItem="fyQ-3V-oxC" firstAttribute="leading" secondItem="1sH-qw-zf7" secondAttribute="leading" id="kAW-WU-Hon"/>
                                                     <constraint firstAttribute="trailing" secondItem="fyQ-3V-oxC" secondAttribute="trailing" id="uYU-hw-iYf"/>
@@ -2717,7 +2808,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                             <constraint firstItem="mEc-md-JmI" firstAttribute="top" secondItem="KxY-jI-df2" secondAttribute="bottom" constant="5" id="GVo-Ol-E3l"/>
                                             <constraint firstItem="1sH-qw-zf7" firstAttribute="leading" secondItem="oni-p0-GW4" secondAttribute="leading" id="HqV-o8-B7H"/>
                                             <constraint firstAttribute="trailing" secondItem="KxY-jI-df2" secondAttribute="trailing" id="KZI-wB-E8X"/>
-                                            <constraint firstAttribute="height" constant="1280" id="Kj6-XI-Lw9"/>
                                             <constraint firstItem="PuJ-NL-Ia8" firstAttribute="leading" secondItem="oni-p0-GW4" secondAttribute="leading" id="NWJ-fS-j0s"/>
                                             <constraint firstAttribute="trailing" secondItem="mEc-md-JmI" secondAttribute="trailing" id="Pby-aM-tQI"/>
                                             <constraint firstAttribute="bottom" secondItem="1sH-qw-zf7" secondAttribute="bottom" id="UiE-Im-aPx"/>
@@ -2735,6 +2825,8 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                     <constraint firstAttribute="trailing" secondItem="oni-p0-GW4" secondAttribute="trailing" id="1hL-2u-l3a"/>
                                     <constraint firstAttribute="bottom" secondItem="oni-p0-GW4" secondAttribute="bottom" id="8m9-n8-2je"/>
                                     <constraint firstItem="oni-p0-GW4" firstAttribute="leading" secondItem="vA1-oz-b6z" secondAttribute="leading" id="90d-ke-YHX"/>
+                                    <constraint firstItem="oni-p0-GW4" firstAttribute="width" secondItem="vA1-oz-b6z" secondAttribute="width" id="QkT-Os-XlB"/>
+                                    <constraint firstItem="oni-p0-GW4" firstAttribute="height" secondItem="vA1-oz-b6z" secondAttribute="height" priority="250" id="Vo2-6A-iqt"/>
                                     <constraint firstItem="oni-p0-GW4" firstAttribute="top" secondItem="vA1-oz-b6z" secondAttribute="top" id="yxO-R3-b3p"/>
                                 </constraints>
                             </scrollView>
@@ -2742,8 +2834,9 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vA1-oz-b6z" firstAttribute="top" secondItem="sU9-hZ-1wd" secondAttribute="top" id="5Yg-bn-cOl"/>
+                            <constraint firstItem="vA1-oz-b6z" firstAttribute="width" secondItem="bgf-jR-ZQJ" secondAttribute="width" id="ECe-ik-rR5"/>
                             <constraint firstItem="vA1-oz-b6z" firstAttribute="bottom" secondItem="sU9-hZ-1wd" secondAttribute="bottom" id="P1N-Mq-B6L"/>
-                            <constraint firstItem="oni-p0-GW4" firstAttribute="width" secondItem="bgf-jR-ZQJ" secondAttribute="width" id="Q0J-Lr-aHx"/>
+                            <constraint firstItem="vA1-oz-b6z" firstAttribute="height" secondItem="bgf-jR-ZQJ" secondAttribute="height" id="XbC-h4-KiL"/>
                             <constraint firstItem="vA1-oz-b6z" firstAttribute="leading" secondItem="sU9-hZ-1wd" secondAttribute="leading" id="htO-9g-GsE"/>
                             <constraint firstItem="vA1-oz-b6z" firstAttribute="trailing" secondItem="sU9-hZ-1wd" secondAttribute="trailing" id="kU4-OB-oQY"/>
                         </constraints>
@@ -2785,12 +2878,12 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="M9l-e9-J5Q">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="M9l-e9-J5Q">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys8-NX-UqW">
-                                    <rect key="frame" x="2" y="2" width="371" height="31"/>
+                                    <rect key="frame" x="2" y="2" width="371" height="144"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpq-A8-vjV">
                                             <rect key="frame" x="135.5" y="20" width="100" height="80"/>
@@ -2824,7 +2917,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                 <constraint firstAttribute="bottom" secondItem="rlV-U0-V1u" secondAttribute="bottom" constant="10" id="zIW-UB-mzD"/>
                                             </constraints>
                                         </view>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILs-yn-hwB" customClass="CosmosView" customModule="Cosmos">
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILs-yn-hwB" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="135.5" y="115" width="100" height="16"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -2988,7 +3081,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="212" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3104,7 +3197,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <tableViewController id="ZGz-Yy-i4X" customClass="ProfileTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="CmH-jg-4Wd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -3133,10 +3226,10 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="9300" y="529.38530734632684"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="Ag6-dt-idC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rs4-wM-V5Q" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rs4-wM-V5Q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zgu-Ur-Svc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3151,10 +3244,10 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="10100" y="646.32683658170924"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="Bhb-hA-x5q">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M8M-jF-9Ea" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M8M-jF-9Ea" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NkB-nU-rrS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3180,7 +3273,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <!--Lista-->
         <scene sceneID="5y8-OQ-3CI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IM8-Na-RN9" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IM8-Na-RN9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lista" image="list" id="Zi6-Xb-63W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WZf-cI-6AU">
@@ -3196,10 +3289,10 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="7798" y="-1332"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="BsE-Tw-FQE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jSg-MG-XPu" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jSg-MG-XPu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="He5-45-wYt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3247,7 +3340,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="202" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3314,10 +3407,10 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="16316" y="287.40629685157421"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="gZS-eW-FsF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nka-3g-b05" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nka-3g-b05" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Vck-po-YZy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3335,7 +3428,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <!--Mapa-->
         <scene sceneID="LRg-PI-afb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vHx-mt-9s8" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vHx-mt-9s8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mapa" image="map" id="8bM-DJ-Fqv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="2Gg-95-kyu">
@@ -3437,10 +3530,10 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="15932" y="2958"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="phV-nf-hcn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68a-YY-Ty2" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68a-YY-Ty2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Wqb-V1-6k4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3549,11 +3642,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <action selector="btnCancel:" destination="HHf-Di-yTi" id="F1j-Oo-PcW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="taD-ho-Y0a">
-                            <connections>
-                                <action selector="btnSave:" destination="HHf-Di-yTi" id="Voz-SA-6uI"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="jGY-Ua-Fs6" id="XRq-Xb-Xio"/>
@@ -3564,10 +3652,10 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             </objects>
             <point key="canvasLocation" x="14330.4" y="3189.3553223388308"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="8nd-v5-cml">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E3Y-zc-cCe" customClass="NavController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E3Y-zc-cCe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="clP-zz-W1g">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3588,8 +3676,8 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sXR-XE-Un7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meu KD" image="mykd" id="85n-nP-qsi"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3Vf-ff-FCQ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="3Vf-ff-FCQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3612,12 +3700,13 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <image name="getStart2" width="296" height="400"/>
         <image name="getStart3" width="296" height="400"/>
         <image name="google" width="30" height="30"/>
+        <image name="highlight" width="30" height="30"/>
         <image name="launch_screen" width="750" height="1334"/>
-        <image name="list" width="25" height="25"/>
+        <image name="list" width="30" height="30"/>
         <image name="login_screen" width="750" height="1334"/>
         <image name="logo" width="400" height="400"/>
-        <image name="map" width="25" height="25"/>
-        <image name="mykd" width="25" height="25"/>
+        <image name="map" width="30" height="30"/>
+        <image name="mykd" width="30" height="30"/>
         <image name="phone_color" width="48" height="48"/>
         <image name="placeholder_photo_new_ad" width="200" height="200"/>
         <image name="user" width="625" height="626"/>
@@ -3625,11 +3714,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <image name="whatsapp_color" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wfb-dy-bFe"/>
-        <segue reference="XmA-hZ-wvP"/>
+        <segue reference="eTG-5Z-qd2"/>
+        <segue reference="IBZ-cb-T44"/>
         <segue reference="LiO-zd-KxX"/>
         <segue reference="t1Q-h9-O1j"/>
-        <segue reference="DfJ-5a-P3z"/>
-        <segue reference="A0m-MP-Nvr"/>
+        <segue reference="tMd-ni-SvK"/>
+        <segue reference="iqm-8w-Zeu"/>
     </inferredMetricsTieBreakers>
 </document>

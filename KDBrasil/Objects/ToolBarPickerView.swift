@@ -32,10 +32,8 @@ class ToolbarPickerView: UIPickerView {
     private func commonInit() {
         let toolBar = UIToolbar()
         toolBar.isTranslucent = false
-        toolBar.tintColor = .blue
+        toolBar.tintColor = self.tintColor
         toolBar.sizeToFit()
-     
-        toolBar.setGradientBackground()
         
         let saveButton = UIBarButtonItem(title: "Salvar", style: .plain, target: self, action: #selector(self.saveTapped))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)

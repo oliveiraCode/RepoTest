@@ -18,8 +18,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface FBSDKUserDataStore : NSObject
 
 + (void)initStore;
@@ -40,5 +38,3 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *) getHashedUserData;
 
 @end
-
-NS_ASSUME_NONNULL_END

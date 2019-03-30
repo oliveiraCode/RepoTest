@@ -99,4 +99,19 @@ class UserHandler {
         }
     }
     
+    func resetValuesOfUserAccount() {
+        self.appDelegate.userObj.id = nil
+        self.appDelegate.userObj.firstName = nil
+        self.appDelegate.userObj.lastName = nil
+        self.appDelegate.userObj.email = nil
+        self.appDelegate.userObj.phone = nil
+        self.appDelegate.userObj.whatsapp = nil
+        self.appDelegate.userObj.password = nil
+        self.appDelegate.userObj.creationDate = nil
+        self.appDelegate.userObj.photoURL = nil
+        self.appDelegate.userObj.image = nil
+        self.appDelegate.userObj.authenticationType = nil
+        self.appDelegate.userObj.userType = nil
+    }
+    
 }

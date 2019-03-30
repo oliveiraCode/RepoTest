@@ -34,11 +34,18 @@ class MyKDViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         updateUI()
     }
     
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Setup ViewController
     private func updateUI(){
         
-        if appDelegate.userObj.userType == userType.professional && settings.count < 3 {
+        if settings.count == 3 {
+            if appDelegate.userObj.userType == nil || appDelegate.userObj.userType == userType.client {
+                self.settings.removeLast()
+            }
+        } else if appDelegate.userObj.userType == userType.professional && settings.count < 3 {
             self.settings.insert("Meus Anúncios", at: self.settings.count)
         }
         
@@ -140,13 +147,13 @@ class MyKDViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             //set account name if it exists
             if appDelegate.userObj.id != nil {
                 //set constants' name
-                if self.appDelegate.userObj.userType == userType.professional{
+                if self.settings.count == 3{
                     self.settings.removeLast()
                 }
                 self.statusAccount = LocalizationKeys.buttonLogin
                 self.lbName.text = "\(Service.shared.getPeriodOfDay()) \(LocalizationKeys.accountName)!"
                 self.imgProfile.image = UIImage(named: LocalizationKeys.imageUserDefault)
-                self.appDelegate.userObj.resetValuesOfUserAccount()
+                UserHandler.shared.resetValuesOfUserAccount()
                 UserHandler.shared.resetAllRecordsOnCoreData()
                 self.tableView.reloadData()
                 do {
