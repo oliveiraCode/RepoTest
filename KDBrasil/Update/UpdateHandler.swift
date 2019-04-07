@@ -23,7 +23,7 @@ class UpdateHandler {
             
             if let JSON = response.result.value, let json = JSON as? [String: Any]  {
                 if let result = (json["results"] as? [Any])?.first as? [String: Any], let version = result["version"] as? String, let trackId = result["trackId"] as? Int {
-                    completion(version != currentVersion, trackId, version)
+                    completion(version > currentVersion, trackId, version)
                 }
             }else {
                 completion(nil,nil,nil)

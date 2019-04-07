@@ -24,7 +24,7 @@ class MainViewController: BaseViewController {
                 
                 UpdateHandler.shared.isUpdateAvailable(completion: { (isUpdateAvailable, appID, version) in
                     if let isUpdate = isUpdateAvailable {
-                        if isUpdate {
+                        if isUpdate && !UserDefaults.standard.bool(forKey: "NotUpdate") {
                             self.showAlertIsUpdateAvailable(appID: appID!,version: version!)
                         } else {
                             self.showMainPage()
@@ -70,9 +70,16 @@ class MainViewController: BaseViewController {
     
     private func showAlertIsUpdateAvailable(appID:Int,version:String){
         
-        let alert = UIAlertController(title: "Atualização disponível", message: "Uma nova versão do KD Brasil está disponível. Por favor, atualize para a versão \(version)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Atualização disponível", message: "Uma nova versão do KD Brasil está disponível. \n\nDeseja atualizar agora ?", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Atualizar", style: .default, handler: { (_) in
+        
+
+        alert.addAction(UIAlertAction(title: "Não", style: .cancel, handler: { (_) in
+            UserDefaults.standard.set(true, forKey: "NotUpdate")
+            self.showMainPage()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: { (_) in
             UpdateHandler.shared.launchAppStore(appID: appID)
         }))
         

@@ -27,34 +27,20 @@ class BusinessesTableViewController: BaseTableViewController {
             #selector(handleRefresh(_:)),
                                  for: .valueChanged)
         refreshControl.tintColor = UIColor.blue
-        
         refreshControl.attributedTitle = NSAttributedString(string: "Atualizando")
-        
         return refreshControl
     }()
     
-    let topView: UIView = {
-        let tv = UIView()
-        tv.backgroundColor = UIColor.white
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.layer.masksToBounds = true
-        return tv
-    }()
-    
-    // Constraints (call in viewDidLoad)
-    func setupTopView() {
-        //x, y, width, height constraints
-        topView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        topView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        topView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        topView.heightAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        
-    }
-    
+    let topView = UIView()
+
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        updateTableViewWithDataFromFirebase { (success) in
+            if success {
+                self.tableView.reloadData()
+                self.refreshTableView.endRefreshing()
+            }
+        }
         
-        updateTableViewWithDataFromFirebase()
-        refreshTableView.endRefreshing()
     }
     
     override func viewDidLoad() {
@@ -62,9 +48,8 @@ class BusinessesTableViewController: BaseTableViewController {
         
         let nibName = UINib(nibName: "BusinessCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "BusinessCell")
-    
+        
         startActivityIndicator()
-        updateTableViewWithDataFromFirebase()
         
     }
     
@@ -74,24 +59,34 @@ class BusinessesTableViewController: BaseTableViewController {
         
         if appDelegate.userObj.id != nil{
             self.tableView.refreshControl = refreshTableView
-            self.updateTableViewWithDataFromFirebase()
+            updateTableViewWithDataFromFirebase { (success) in
+                if success {
+                    self.tableView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                }
+            }
         } else {
             self.tableView.refreshControl = nil
-        }
-        
-    }
-    func updateTableViewWithDataFromFirebase(){
-        
-        FIRFirestoreService.shared.readMyBusinesses { (business, error) in
-            if business as? [Business] == nil {
-                self.businesses.removeAll()
-            }else{
-                self.businesses = business as! [Business]
-            }
-            self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
         }
         
+    }
+    
+    func updateTableViewWithDataFromFirebase(completionHandler: @escaping (Bool) -> Void){
+        
+        FIRFirestoreService.shared.readMyBusinesses { (business, error) in
+            if error != nil {
+                completionHandler(false)
+            }
+            
+            if business as? [Business] == nil {
+                self.businesses.removeAll()
+                completionHandler(true)
+            }else{
+                self.businesses = business as! [Business]
+                completionHandler(true)
+            }
+        }
     }
     
     
@@ -123,7 +118,7 @@ class BusinessesTableViewController: BaseTableViewController {
         let headerLabel = UILabel()
         
         headerLabel.frame = CGRect(x: (view.frame.width/2)-(200/2), y: 100, width: 200, height: 21*3)
-        headerLabel.text = "É necessário estar logado para visualizar os seus anúncios"
+        headerLabel.text = "É necessário estar logado para registrar anúncios"
         headerLabel.textColor = UIColor.black
         headerLabel.numberOfLines = 3
         headerLabel.textAlignment = .center

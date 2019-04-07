@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Business:Codable {
+class Business {
     var id:String?
     var description:String?
     var name:String?

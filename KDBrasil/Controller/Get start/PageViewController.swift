@@ -24,15 +24,19 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     lazy var button: UIButton = {
         var btn: UIButton!
         btn = UIButton(frame: CGRect(x: UIScreen.main.bounds.maxX - 150,y: UIScreen.main.bounds.maxY - 90,width: 130,height: 50))
-        btn.setTitleColor(UIColor.black, for: .normal)
-        btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor.white.cgColor
         btn.layer.masksToBounds = true
         btn.layer.cornerRadius = 10
         btn.setTitle("Próximo", for: .normal)
         btn.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return btn
     }()
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +64,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
         self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor.gray
-        self.pageControl.currentPageIndicatorTintColor = UIColor.black
+        self.pageControl.pageIndicatorTintColor = UIColor.white
+        self.pageControl.currentPageIndicatorTintColor = UIColor.darkGray
         self.view.addSubview(pageControl)
     }
     

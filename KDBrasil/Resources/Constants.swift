@@ -72,7 +72,6 @@ enum Placeholders {
     static let placeholder_photo = "placeholder_photo"
     static let placeholder_descricao = "Escreva aqui a descrição do seu anúncio."
     static let searchByName = "Pesquisar por nome"
-    static let searchByCategory = "Pesquisar por categoria"
     static let searchByCity = "Pesquisar por cidade"
 }
 

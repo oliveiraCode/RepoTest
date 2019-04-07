@@ -47,6 +47,7 @@ class DetailsBusinessViewController: BaseViewController, UICollectionViewDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         if businessDetails.user_id == appDelegate.userObj.id && isFromMyBusiness {
             let button = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editBusiness))

@@ -21,59 +21,83 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     var businesses = [Business]()
     var businessesFiltered = [Business]()
     var selectedSegmentIndex = 0 //value dafault is name
+    var categorySelected:String?
+    var ratingSelected:Double?
+    var orderBySelected:String?
     var businessIndexPathSelected : Int!
+    var isSearching = false
     var refreshTableView: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
             #selector(handleRefresh(_:)),
                                  for: .valueChanged)
         refreshControl.tintColor = UIColor.blue
-        
         refreshControl.attributedTitle = NSAttributedString(string: "Atualizando")
         
         return refreshControl
     }()
     
-    
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        updateTableViewWithDataFromFirebase()
-        refreshTableView.endRefreshing()
+        updateTableViewWithDataFromFirebase { (success) in
+            if success {
+                self.searchBar.showsCancelButton = false
+                self.searchBar.text = ""
+                self.searchBar.resignFirstResponder()
+                self.tableView.reloadData()
+                self.refreshTableView.endRefreshing()
+            }
+        }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.delegate = self
-        
+        self.tabBarController?.delegate = self
         self.tableView.refreshControl = refreshTableView
         
         let nibName = UINib(nibName: "BusinessCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "BusinessCell")
-        
+
         activityIndicator.startAnimating()
-        updateTableViewWithDataFromFirebase()
         
-    }
-    
-    func updateTableViewWithDataFromFirebase(){
-        
-        FIRFirestoreService.shared.readAllBusiness { (business, error) in
-            self.businesses = business as! [Business]
-            self.businessesFiltered = self.businesses
-            DispatchQueue.main.async {
+        updateTableViewWithDataFromFirebase { (success) in
+            if success {
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
             }
         }
+    }
+
+    func updateTableViewWithDataFromFirebase(completionHandler: @escaping (Bool) -> Void){
         
-        self.searchBar.showsCancelButton = false
-        self.searchBar.text = ""
-        self.searchBar.resignFirstResponder()
+        if isSearching {
+            FIRFirestoreService.shared.readBusiness(category: categorySelected, rating: ratingSelected, orderBy: orderBySelected) { (business, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                    completionHandler(false)
+                } else {
+                    self.businesses = business as! [Business]
+                    self.businessesFiltered = self.businesses
+                    completionHandler(true)
+                }
+            }
+        } else {
+            FIRFirestoreService.shared.readAllBusiness { (business, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                    completionHandler(false)
+                } else {
+                    self.businesses = business as! [Business]
+                    self.businessesFiltered = self.businesses
+                    completionHandler(true)
+                }
+            }
+        }
         
     }
     
     // MARK: - TabBarController
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
         if viewController == tabBarController.viewControllers![2] {
             let navController = tabBarController.viewControllers![2] as? UINavigationController
             let secondVC = navController?.topViewController as! MapViewController
@@ -81,11 +105,31 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    
     // MARK: - Table view data source
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let topView = UIView()
+        let headerLabel = UILabel()
+        
+        headerLabel.frame = CGRect(x: (view.frame.width/2)-(300/2), y: 100, width: 300, height: 84)
+        headerLabel.text = "Nenhum anúncio foi localizado. \n\nVerifique o critério de busca e tente novamente!"
+        headerLabel.textColor = UIColor.black
+        headerLabel.font = UIFont.systemFont(ofSize: 15)
+        headerLabel.numberOfLines = 0
+        headerLabel.textAlignment = .center
+        headerLabel.backgroundColor = UIColor.clear
+        
+        if self.businesses.count == 0 {
+            topView.addSubview(headerLabel)
+        }
+        return topView
     }
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.businesses.count == 0 ? self.view.frame.height : 0
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -132,6 +176,15 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             let destController = segue.destination as! DetailsBusinessViewController
             destController.businessDetails = businesses[businessIndexPathSelected]
         }
+        
+        if segue.identifier == "showFilterVC" {
+            let navController = segue.destination as! UINavigationController
+            let destController = navController.topViewController as! FilterViewController
+            destController.categorySelected = categorySelected
+            destController.ratingSelected = ratingSelected
+            destController.orderBySelected = orderBySelected
+            destController.delegate = self
+        }
     }
     
     
@@ -145,9 +198,6 @@ class ListViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             searchBar.placeholder = Placeholders.searchByName
             break
         case 1:
-            searchBar.placeholder = Placeholders.searchByCategory
-            break
-        case 2:
             searchBar.placeholder = Placeholders.searchByCity
             break
         default:
@@ -191,16 +241,8 @@ extension ListViewController: UISearchBarDelegate {
         case 1:
             self.businesses = self.businessesFiltered.filter({ Business -> Bool in
                 if searchText.isEmpty { return true }
-                 return ((Business.category!.lowercased().range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil))
-            })
-            break
-        case 2:
-            
-            self.businesses = self.businessesFiltered.filter({ Business -> Bool in
-                if searchText.isEmpty { return true }
                 return ((Business.address!.city!.lowercased().range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil))
             })
-            
             break
         default:
             break
@@ -208,6 +250,29 @@ extension ListViewController: UISearchBarDelegate {
         
         self.tableView.reloadData()
         self.activityIndicator.stopAnimating()
+    }
+    
+}
+
+//MARK: Filter Delegate
+extension ListViewController: FilterDelegate {
+
+    func isFiltering(search: Bool) {
+        isSearching = search
+    }
+    
+    func filtersSelected(category: String?, rating: Double?, orderBy: String?) {
+        categorySelected = category
+        ratingSelected = rating
+        orderBySelected = orderBy
+        
+        activityIndicator.startAnimating()
+        updateTableViewWithDataFromFirebase { (success) in
+            if success {
+                self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+            }
+        }
     }
     
 }

@@ -68,12 +68,12 @@ class User  {
         let photoURL = data["photoURL"] as? String ?? ""
 
         var authenticationType:authenticationType
-        if let valueType = data["authenticationType"] as? String, valueType == "email" {
-            authenticationType = .email
+        if let valueType = data["authenticationType"] as? String, valueType == "google" {
+            authenticationType = .google
         } else if let valueType = data["authenticationType"] as? String, valueType == "facebook" {
             authenticationType = .facebook
         } else {
-            authenticationType = .google
+            authenticationType = .email
         }
         
         var userType:userType

@@ -27,6 +27,8 @@
 		9C30CC842229769E0021D03D /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC832229769E0021D03D /* ViewController3.swift */; };
 		9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC85222976AF0021D03D /* ViewController1.swift */; };
 		9C30CC88222976CB0021D03D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C30CC87222976CB0021D03D /* ViewController2.swift */; };
+		9C5C09E9225276A50054DE85 /* HighlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C09E8225276A50054DE85 /* HighlightCollectionViewCell.swift */; };
+		9C5C09EB225540890054DE85 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C09EA225540890054DE85 /* CategoryCollectionViewCell.swift */; };
 		9C5C7F08221F17F200109152 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F07221F17F200109152 /* UIColor.swift */; };
 		9C5C7F0C221F3BB500109152 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0B221F3BB500109152 /* UIImage.swift */; };
 		9C5C7F0E221F3CA200109152 /* UIToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F0D221F3CA200109152 /* UIToolBar.swift */; };
@@ -62,6 +64,7 @@
 		9CA0530622441FA0009E693B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0530522441FA0009E693B /* Alert.swift */; };
 		9CA0530822443B41009E693B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA0530722443B41009E693B /* LocalAuthentication.framework */; };
 		9CA4AA25224EBEE1003609BC /* HighlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4AA24224EBEE1003609BC /* HighlightViewController.swift */; };
+		9CAA5AD42257C6A300965DAB /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA5AD32257C6A300965DAB /* ShadowView.swift */; };
 		9CC64358222EAF2B00BDEC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */; };
 		9CC6435A222F4A1300BDEC19 /* ViewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */; };
 		9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC72AD121D3FC9E0048C37B /* AppDelegate.swift */; };
@@ -82,6 +85,7 @@
 		9CEF8905220254F70015258F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEF8904220254F70015258F /* CreateAccountViewController.swift */; };
 		9CF10FEE222458D60007B6EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF10FED222458D60007B6EA /* Default-568h@2x.png */; };
 		9CF10FF022245C080007B6EA /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10FEF22245C080007B6EA /* ProfileTableViewController.swift */; };
+		9CF3E393225799B900E555C3 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF3E392225799B900E555C3 /* CustomView.swift */; };
 		D60EAE92B31DEAB8AC845799 /* Pods_KDBrasil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33963E89EE0C915AF7BB4F09 /* Pods_KDBrasil.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +112,8 @@
 		9C30CC832229769E0021D03D /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		9C30CC85222976AF0021D03D /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		9C30CC87222976CB0021D03D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		9C5C09E8225276A50054DE85 /* HighlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C5C09EA225540890054DE85 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C5C7F07221F17F200109152 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9C5C7F0B221F3BB500109152 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9C5C7F0D221F3CA200109152 /* UIToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBar.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		9CA0530522441FA0009E693B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		9CA0530722443B41009E693B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		9CA4AA24224EBEE1003609BC /* HighlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightViewController.swift; sourceTree = "<group>"; };
+		9CAA5AD32257C6A300965DAB /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		9CC64357222EAF2B00BDEC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9CC64359222F4A1300BDEC19 /* ViewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReviewViewController.swift; sourceTree = "<group>"; };
 		9CC72ACE21D3FC9E0048C37B /* KDBrasil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDBrasil.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +174,7 @@
 		9CEF8904220254F70015258F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9CF10FED222458D60007B6EA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9CF10FEF22245C080007B6EA /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		9CF3E392225799B900E555C3 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		E9E1A1C03E46D488B596B99A /* Pods-KDBrasil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KDBrasil.release.xcconfig"; path = "Pods/Target Support Files/Pods-KDBrasil/Pods-KDBrasil.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +344,8 @@
 			children = (
 				9C9A5CEA224D032B00F1611E /* CustomAlertView */,
 				9CA051F422401647009E693B /* ToolBarPickerView.swift */,
+				9CF3E392225799B900E555C3 /* CustomView.swift */,
+				9CAA5AD32257C6A300965DAB /* ShadowView.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -393,6 +403,8 @@
 				9C8DE2DF2202055C00BB79C1 /* DetailsBusinessCollectionViewCell.swift */,
 				9C933D2B22061F7800F54782 /* ProfileTableViewCell.swift */,
 				9C8DF5EA222DA93700D8C976 /* ReviewsTableViewCell.swift */,
+				9C5C09E8225276A50054DE85 /* HighlightCollectionViewCell.swift */,
+				9C5C09EA225540890054DE85 /* CategoryCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -680,6 +692,7 @@
 				9CC72AF721D440CD0048C37B /* MyBusinessViewController.swift in Sources */,
 				9CA051DD223C619E009E693B /* CountryTableViewCell.swift in Sources */,
 				9C933D2C22061F7800F54782 /* ProfileTableViewCell.swift in Sources */,
+				9C5C09E9225276A50054DE85 /* HighlightCollectionViewCell.swift in Sources */,
 				9C6F0401223471FE000B828F /* MainViewController.swift in Sources */,
 				9C30CC86222976AF0021D03D /* ViewController1.swift in Sources */,
 				9CA0520522415693009E693B /* UserHandler.swift in Sources */,
@@ -690,6 +703,7 @@
 				9CA0530422440FCE009E693B /* UpdateHandler.swift in Sources */,
 				9C933D2E2206639A00F54782 /* EditProfileViewController.swift in Sources */,
 				9C01410321E504380002345D /* CategoryViewController.swift in Sources */,
+				9C5C09EB225540890054DE85 /* CategoryCollectionViewCell.swift in Sources */,
 				9CA051ED223EB232009E693B /* Date.swift in Sources */,
 				9C88AF03224D03A800640F88 /* CustomAlertViewUserType.swift in Sources */,
 				9CC72B0121D44EBA0048C37B /* SettingsTableViewController.swift in Sources */,
@@ -703,6 +717,7 @@
 				9C9A5CE9224BC71400F1611E /* FilterViewController.swift in Sources */,
 				9C8DF5EB222DA93700D8C976 /* ReviewsTableViewCell.swift in Sources */,
 				9CCA9DC021E016B800ADA845 /* BusinessesTableViewController.swift in Sources */,
+				9CAA5AD42257C6A300965DAB /* ShadowView.swift in Sources */,
 				9CA051F522401647009E693B /* ToolBarPickerView.swift in Sources */,
 				9CC72AD221D3FC9E0048C37B /* AppDelegate.swift in Sources */,
 				9CD6B373223811420081B446 /* String.swift in Sources */,
@@ -723,6 +738,7 @@
 				9C6F04072234A152000B828F /* BaseViewController.swift in Sources */,
 				9C1C85D221FA3FB100103655 /* PhotoCollectionViewCell.swift in Sources */,
 				9C5C7F08221F17F200109152 /* UIColor.swift in Sources */,
+				9CF3E393225799B900E555C3 /* CustomView.swift in Sources */,
 				9C04E8F72204BACE00C46412 /* CoreDataHandler.swift in Sources */,
 				9C9A5CE5224AD3CC00F1611E /* KDBrasil.xcdatamodeld in Sources */,
 				9CA0530622441FA0009E693B /* Alert.swift in Sources */,

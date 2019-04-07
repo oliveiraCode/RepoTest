@@ -212,15 +212,15 @@ class MyBusinessViewController: BaseViewController,UICollectionViewDelegate, UIC
             self.activityIndicator.startAnimating()
             let creationDate:String
             if isNewBusiness! {
-                creationDate = Date.getFormattedDate(date: Date().description, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
+                creationDate = Date.getFormattedDate(date: Date().description, formatter: "dd/MM/yyyy HH:mm:ss")
             } else {
-                creationDate = Date.getFormattedDate(date: self.businessDetails.creationDate!, formatter: "dd/MM/yyyy HH:mm:ss +zzzz")
-                
+                creationDate = Date.getFormattedDate(date: self.businessDetails.creationDate!, formatter: "dd/MM/yyyy HH:mm:ss")
             }
             
             Service.shared.getCoordinateFromGeoCoder(address: "\(number) \(street), \(city), \(province) \(postalCode)") { (coordinate, error) in
                 
                 if error == nil {
+  
                     let contact:Contact = Contact(email: email, phone: phone,whatsapp: whatsapp, web: web)
                     
                     let address:Address = Address(number: number, street: street, complement: complement, city: city, province: province,country: country, postalCode: postalCode, latitude: coordinate!.coordinate.latitude, longitude: coordinate!.coordinate.longitude)

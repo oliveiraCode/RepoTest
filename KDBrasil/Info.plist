@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.6</string>
+	<string>2.0.7</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -36,7 +36,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>FacebookAppID</key>
 	<string>351262325598781</string>
 	<key>FacebookDisplayName</key>
@@ -59,7 +59,7 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>O aplicativo precisa de acesso à sua câmera para realização de cadastro.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>O aplicativo precisa do acesso à sua localização para mostrar resultados de busca próximos da sua região.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>O aplicativo precisa do acesso à sua localização para mostrar resultados de busca próximos da sua região.</string>

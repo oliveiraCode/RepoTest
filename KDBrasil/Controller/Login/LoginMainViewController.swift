@@ -44,6 +44,9 @@ class LoginMainViewController: BaseViewController,GIDSignInDelegate,GIDSignInUID
         // Do any additional setup after loading the view.
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBAction func btnFacebookPressed(_ sender: UIButton) {
         

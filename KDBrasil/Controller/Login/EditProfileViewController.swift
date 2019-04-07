@@ -44,6 +44,15 @@ class EditProfileViewController: BaseViewController {
     //MARK - SetupUI
     func setupUI(){
         
+        if appDelegate.userObj.authenticationType == authenticationType.facebook || appDelegate.userObj.authenticationType == authenticationType.google {
+            tfPassword.isHidden = true
+            tfPasswordConfirm.isHidden = true
+        } else {
+            tfPassword.isHidden = false
+            tfPasswordConfirm.isHidden = false
+        }
+        
+        
         if appDelegate.userObj.userType == userType.client {
             self.segmentedControlUserType.selectedSegmentIndex = 0
         } else {

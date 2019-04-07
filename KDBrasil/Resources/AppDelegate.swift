@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     func ConnectToFCM() {
         Messaging.messaging().shouldEstablishDirectChannel = true
         
-        //UIApplication.shared.applicationIconBadgeNumber += 1
+        UIApplication.shared.applicationIconBadgeNumber = 0
 
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {

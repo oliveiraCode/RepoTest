@@ -14,11 +14,6 @@ class ViewController3: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePage.layer.borderColor = UIColor.black.cgColor
-        imagePage.layer.borderWidth = 0.2
-        imagePage.layer.cornerRadius = 25
-        imagePage.layer.masksToBounds = true
-        
     }
-
+    
 }

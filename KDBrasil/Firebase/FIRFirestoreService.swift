@@ -105,8 +105,7 @@ class FIRFirestoreService {
             ]
         }
         
-        
-        
+    
         businessRef.document(business.id!).setData(businessData) { (error) in
             if error != nil {
                 print("error \(error!.localizedDescription)")
@@ -214,7 +213,7 @@ class FIRFirestoreService {
         
         var businesses = [Business]()
         
-        query.order(by: "name", descending: true).getDocuments(source: .default) { (querySnapshot, err) in
+        query.getDocuments(source: .default) { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 completionHandler([nil],err)
@@ -239,9 +238,149 @@ class FIRFirestoreService {
                     
                     businesses.append(businessObj!)
                 }
-                let newArrayOfBusiness =  businesses.sorted { $0.address!.distance! < $1.address!.distance! }
+
+                completionHandler(businesses,nil)
+            }
+        }
+    }
+    
+    
+    //MARK: - readBusiness
+    func readBusiness(category:String?,rating:Double?,orderBy:String?,completionHandler: @escaping ([Business?], Error?) -> Void) {
+        
+        guard let country = appDelegate.currentCountry?.name else {return}
+        
+        let businessRef = self.db.collection(FIRCollectionReference.business)
+        
+        var query:Query
+            
+        query = businessRef.whereField("country", isEqualTo: country)
+        
+        if category != nil {
+            query = businessRef.whereField("country", isEqualTo: country).whereField("category", isEqualTo: category!)
+        }
+        
+        if rating != nil {
+            query = businessRef.whereField("country", isEqualTo: country).whereField("rating", isGreaterThan: rating!)
+        }
+        
+        if category != nil && rating != nil {
+            query = businessRef.whereField("country", isEqualTo: country).whereField("category", isEqualTo: category!).whereField("rating", isGreaterThan: rating!)
+        }
+        
+        query.getDocuments{ (querySnapshot, err) in
+            
+        var businesses = [Business]()
+
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completionHandler([nil],err)
                 
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let address = document.data()["address"] as! [String:Any]
+                    let contact = document.data()["contact"] as! [String:Any]
+                    
+                    let addressObj = Address(data: address)
+                    
+                    if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined{
+                        addressObj?.distance = 0.0
+                    } else {
+                        addressObj?.distance = Service.shared.calculateDistanceKm(lat: (addressObj!.latitude)!, long: (addressObj!.longitude)!)
+                    }
+                    
+                    let contactObj = Contact(data: contact)
+                    
+                    let businessObj = Business(data: document.data(), addressObj: addressObj!, contactObj: contactObj!)
+                    
+                    businesses.append(businessObj!)
+                }
+                
+                let newArrayOfBusiness =  businesses.sorted { $0.address!.distance! < $1.address!.distance! }
                 completionHandler(newArrayOfBusiness,nil)
+                
+                if orderBy != nil {
+                    if orderBy == "A-Z" {
+                        let newArrayOfBusiness =  businesses.sorted { $0.name! < $1.name!}
+                        completionHandler(newArrayOfBusiness,nil)
+                    } else {
+                        let newArrayOfBusiness =  businesses.sorted { $0.address!.distance! < $1.address!.distance! }
+                        completionHandler(newArrayOfBusiness,nil)
+                    }
+                } else {
+                    completionHandler(businesses,nil)
+                }
+                
+
+            }
+        }
+    }
+    
+    
+    
+    //MARK: - readHighlightBusiness
+    func readHighlightBusiness(typeOfBusiness:String,limit:Int,completionHandler: @escaping ([Business?], Error?) -> Void) {
+        
+        guard let country = appDelegate.currentCountry?.name else {return}
+        
+        let businessRef = self.db.collection(FIRCollectionReference.business)
+        let query = businessRef.whereField("country", isEqualTo: country).whereField("typeOfBusiness", isEqualTo: typeOfBusiness).limit(to: limit).order(by: "creationDate", descending: true)
+        
+        var businesses = [Business]()
+        
+        query.getDocuments(source: .default) { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completionHandler([nil],err)
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let address = document.data()["address"] as! [String:Any]
+                    let contact = document.data()["contact"] as! [String:Any]
+                    
+                    let addressObj = Address(data: address)
+                    
+                    let contactObj = Contact(data: contact)
+                    
+                    let businessObj = Business(data: document.data(), addressObj: addressObj!, contactObj: contactObj!)
+                    businesses.append(businessObj!)
+                }
+                
+                completionHandler(businesses,nil)
+            }
+        }
+    }
+    
+    func readHighlightBusiness(limit:Int,completionHandler: @escaping ([Business?], Error?) -> Void) {
+        
+        guard let country = appDelegate.currentCountry?.name else {return}
+        
+        let businessRef = self.db.collection(FIRCollectionReference.business)
+        let query = businessRef.whereField("country", isEqualTo: country).limit(to: limit).order(by: "creationDate", descending: true)
+        
+        var businesses = [Business]()
+        
+        query.getDocuments(source: .default) { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completionHandler([nil],err)
+                
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let address = document.data()["address"] as! [String:Any]
+                    let contact = document.data()["contact"] as! [String:Any]
+                    
+                    let addressObj = Address(data: address)
+                    
+                    let contactObj = Contact(data: contact)
+                    
+                    let businessObj = Business(data: document.data(), addressObj: addressObj!, contactObj: contactObj!)
+                    businesses.append(businessObj!)
+                }
+                
+                completionHandler(businesses,nil)
             }
         }
     }
