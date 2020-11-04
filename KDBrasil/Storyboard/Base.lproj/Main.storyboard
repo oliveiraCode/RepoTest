@@ -242,7 +242,7 @@ Avalie! É simples e rápido!</string>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="uia-89-ZAN" id="DvG-ky-d2D"/>
-                        <segue destination="XXj-RY-4rM" kind="presentation" identifier="showMainVC" modalTransitionStyle="crossDissolve" id="JAb-lj-eZx"/>
+                        <segue destination="XXj-RY-4rM" kind="presentation" identifier="showMainVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="JAb-lj-eZx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rn0-CG-jhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,7 +368,7 @@ Avalie! É simples e rápido!</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="vtX-Ij-hho" kind="presentation" id="VDB-jn-RtI"/>
+                                            <segue destination="vtX-Ij-hho" kind="presentation" modalPresentationStyle="fullScreen" id="VDB-jn-RtI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -387,7 +387,7 @@ Avalie! É simples e rápido!</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalTransitionStyle="coverVertical" id="vye-vK-sui"/>
+                                    <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="vye-vK-sui"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -423,7 +423,7 @@ Avalie! É simples e rápido!</string>
                         <outlet property="btnFacebook" destination="EEm-O6-msI" id="AVU-wr-A7Q"/>
                         <outlet property="btnGoogle" destination="Rio-yK-Z7M" id="RHv-7N-boW"/>
                         <outlet property="btnLogin" destination="Tzw-pT-lbJ" id="JVM-mf-zD0"/>
-                        <segue destination="GSf-Da-pIc" kind="presentation" identifier="showLoginVC" id="Bnc-ZM-LDf"/>
+                        <segue destination="GSf-Da-pIc" kind="presentation" identifier="showLoginVC" modalPresentationStyle="fullScreen" id="Bnc-ZM-LDf"/>
                         <segue destination="wzV-5h-3nR" kind="presentation" identifier="showCustomAlertUserTypeVC" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="GMc-wi-Qdn"/>
                     </connections>
                 </viewController>
@@ -957,11 +957,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="HDn-uM-p6d" customClass="MyBusinessViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="geq-GP-zba">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1213"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1245"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWP-YH-iob">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1213"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1245"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e59-Es-xzB" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1225"/>
@@ -1591,8 +1591,8 @@ Avalie! É simples e rápido!</string>
                         <outlet property="tfWhatsapp" destination="v72-tU-kfM" id="JxJ-7K-rnU"/>
                         <outlet property="tvDescription" destination="P4Z-rx-DFA" id="tmV-GR-KI9"/>
                         <segue destination="gTG-kR-dhJ" kind="unwind" identifier="unWindSegueToBusinessesTableVC" unwindAction="unWindToBusinessesTableVCWithSegue:" id="LrE-0U-Jpv"/>
-                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" id="inQ-jt-2Y3"/>
-                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" id="eTG-5Z-qd2"/>
+                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" modalPresentationStyle="fullScreen" id="inQ-jt-2Y3"/>
+                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" modalPresentationStyle="fullScreen" id="eTG-5Z-qd2"/>
                         <segue destination="RdK-EK-A61" kind="show" identifier="showPhotosVC" id="0b5-qw-tic"/>
                     </connections>
                 </viewController>
@@ -1606,11 +1606,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="jfU-co-VIq" customClass="CategoryViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7S-oY-b0u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7oF-bN-2w8">
-                                <rect key="frame" x="0.0" y="56" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCategory" id="yiR-7b-5zC">
@@ -1668,11 +1668,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="SQd-D4-d1Y" customClass="HighlightViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C7Q-Qk-7rR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1312"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="QDh-WV-aCI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1312"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-RY-MKq" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1301"/>
@@ -2101,7 +2101,7 @@ Avalie! É simples e rápido!</string>
                         <outlet property="pageControl" destination="zVt-3Z-h2g" id="6nT-VX-S7u"/>
                         <segue destination="e6s-pT-abj" kind="show" identifier="showDetailsBusinessVC" id="p3T-du-TBv"/>
                         <segue destination="hL3-Nu-xiI" kind="show" identifier="showBusinessesVC" id="ZM5-Ch-ZAH"/>
-                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" id="DgE-3v-lbk"/>
+                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" modalPresentationStyle="fullScreen" id="DgE-3v-lbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lh-j1-MNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2113,11 +2113,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="uyk-pH-KWL" customClass="MapViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4g-Ep-3k5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8w-gw-5Te">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wu8-3j-8G3">
                                         <rect key="frame" x="20" y="121" width="335" height="40"/>
@@ -2132,7 +2132,7 @@ Avalie! É simples e rápido!</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-Nm-r5N">
-                                        <rect key="frame" x="62.5" y="248.5" width="250" height="45"/>
+                                        <rect key="frame" x="62.5" y="264.5" width="250" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Hgi-wh-ZQV"/>
                                             <constraint firstAttribute="width" constant="250" id="e4v-Ib-zzT"/>
@@ -2168,7 +2168,7 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bs8-OY-BxF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <connections>
                                     <outlet property="delegate" destination="uyk-pH-KWL" id="Jhd-qY-gkz"/>
                                 </connections>
@@ -2203,11 +2203,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="D9a-u1-zNE" customClass="ListViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xnO-Mb-pND">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MYj-Hb-GFb">
-                                <rect key="frame" x="0.0" y="91" width="375" height="451"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="109" id="NKR-Wx-96K">
@@ -2241,7 +2241,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </searchBar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kFS-69-6MK">
-                                <rect key="frame" x="169" y="252.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="268.5" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dSY-jn-6mJ">
@@ -2278,7 +2278,7 @@ Avalie! É simples e rápido!</string>
                     <navigationItem key="navigationItem" title="Lista" id="Xob-9r-MC0">
                         <barButtonItem key="rightBarButtonItem" image="filter" id="uro-Rr-fsH">
                             <connections>
-                                <segue destination="PQN-ZR-5Vf" kind="presentation" identifier="showFilterVC" id="g2d-G1-Rf2"/>
+                                <segue destination="PQN-ZR-5Vf" kind="presentation" identifier="showFilterVC" modalPresentationStyle="fullScreen" id="g2d-G1-Rf2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2298,7 +2298,7 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <tableViewController id="hL3-Nu-xiI" customClass="BusinessesTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LHr-FS-lVq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -2324,9 +2324,9 @@ Avalie! É simples e rápido!</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showNewBusinessVC" modalTransitionStyle="coverVertical" id="DfJ-5a-P3z"/>
+                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showNewBusinessVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="DfJ-5a-P3z"/>
                         <segue destination="e6s-pT-abj" kind="show" identifier="showDetailsBusinessVC" id="b73-yD-mxL"/>
-                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showEditBusinessVC" modalTransitionStyle="coverVertical" id="Nlq-Rp-ged"/>
+                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showEditBusinessVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Nlq-Rp-ged"/>
                         <segue destination="Qwy-g5-a0s" kind="presentation" identifier="showLoginVC" modalTransitionStyle="coverVertical" id="A0m-MP-Nvr"/>
                     </connections>
                 </tableViewController>
@@ -2337,9 +2337,9 @@ Avalie! É simples e rápido!</string>
         <!--Ajustes-->
         <scene sceneID="TiP-GM-qWK">
             <objects>
-                <viewController id="aom-8U-VlI" customClass="MyKDViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="aom-8U-VlI" customClass="MyKDViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cOD-xi-ykb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRv-z5-hMt">
@@ -2380,7 +2380,7 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-Ou-pdH">
-                                <rect key="frame" x="0.0" y="200" width="375" height="342"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="374"/>
                                 <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreCell" rowHeight="50" id="0WY-eW-iEF">
@@ -2451,7 +2451,7 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <tableViewController id="s79-eb-nnd" customClass="SettingsTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="U6M-I9-Uwt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -2471,9 +2471,9 @@ Avalie! É simples e rápido!</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Configurações" id="8ob-tO-5yv"/>
                     <connections>
-                        <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalTransitionStyle="coverVertical" id="LiO-zd-KxX"/>
-                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showDonateVC" id="XmA-hZ-wvP"/>
-                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" id="wfb-dy-bFe"/>
+                        <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="LiO-zd-KxX"/>
+                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showDonateVC" modalPresentationStyle="fullScreen" id="XmA-hZ-wvP"/>
+                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" modalPresentationStyle="fullScreen" id="wfb-dy-bFe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V72-vG-mDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2485,11 +2485,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="4oG-l0-opw" customClass="TermsOfUseViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1nt-32-jgD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAP-i3-jaO">
-                                <rect key="frame" x="16" y="14" width="343" height="563"/>
+                                <rect key="frame" x="16" y="30" width="343" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="ECk-mu-B68"/>
@@ -2531,11 +2531,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="qAs-er-9JM" customClass="WebViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZJl-Fr-8ZQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XD-mR-HJb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2543,7 +2543,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GEl-sC-A3d">
-                                <rect key="frame" x="169" y="277" width="37" height="37"/>
+                                <rect key="frame" x="169" y="293" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
@@ -2579,7 +2579,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="wsv-x6-7vW" customClass="EditProfileViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n9D-A4-EcB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="2PD-r9-JTV">
@@ -2800,7 +2800,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8E-jF-BRB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="eNy-oH-Tab">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2817,11 +2817,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="e6s-pT-abj" customClass="DetailsBusinessViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgf-jR-ZQJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1268"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vA1-oz-b6z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1268"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oni-p0-GW4" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
@@ -3252,7 +3252,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <outlet property="userNameAndMember" destination="by1-Rf-rla" id="UhX-a0-U4d"/>
                         <segue destination="MNh-3i-qse" kind="unwind" identifier="unWindToListVC" unwindAction="unWindToListWithSegue:" id="bvC-cl-KgR"/>
                         <segue destination="pmy-8A-pXO" kind="show" identifier="showReviewsVC" id="UHu-Jg-ZQ0"/>
-                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showWebVC" id="IBZ-cb-T44"/>
+                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showWebVC" modalPresentationStyle="fullScreen" id="IBZ-cb-T44"/>
                         <segue destination="F8E-jF-BRB" kind="presentation" identifier="showEditBusinessVC" id="tMd-ni-SvK"/>
                     </connections>
                 </viewController>
@@ -3266,7 +3266,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <tableViewController id="pmy-8A-pXO" customClass="ReviewsTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="159" estimatedRowHeight="-1" sectionHeaderHeight="10" sectionFooterHeight="18" id="hEA-Dn-ggo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="M9l-e9-J5Q">
@@ -3437,7 +3437,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <outlet property="lbRatingValueString" destination="rlV-U0-V1u" id="VHw-FQ-2BK"/>
                         <outlet property="ratingView" destination="Zpq-A8-vjV" id="hvx-ii-ix4"/>
                         <segue destination="jSg-MG-XPu" kind="presentation" identifier="showReviewVC" id="49W-QY-9Pb"/>
-                        <segue destination="Qwy-g5-a0s" kind="presentation" identifier="showLoginVC" id="iqm-8w-Zeu"/>
+                        <segue destination="Qwy-g5-a0s" kind="presentation" identifier="showLoginVC" modalPresentationStyle="fullScreen" id="iqm-8w-Zeu"/>
                         <segue destination="cDl-J4-F3l" kind="show" identifier="showViewReviewVC" id="uTp-NP-IEF"/>
                     </connections>
                 </tableViewController>
@@ -3582,9 +3582,9 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <!--Perfil-->
         <scene sceneID="tW4-dl-E7c">
             <objects>
-                <tableViewController id="ZGz-Yy-i4X" customClass="ProfileTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="ZGz-Yy-i4X" customClass="ProfileTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="CmH-jg-4Wd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -3604,7 +3604,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     </tableView>
                     <navigationItem key="navigationItem" title="Perfil" id="wvT-LI-usJ"/>
                     <connections>
-                        <segue destination="rs4-wM-V5Q" kind="presentation" identifier="showEditProfileVC" id="YSC-Qv-HNp"/>
+                        <segue destination="rs4-wM-V5Q" kind="presentation" identifier="showEditProfileVC" modalPresentationStyle="fullScreen" id="YSC-Qv-HNp"/>
                         <segue destination="XfP-tF-Is1" kind="unwind" identifier="unwindToAccountVC" unwindAction="unwindToAccountWithSegue:" id="atG-ey-6xO"/>
                     </connections>
                 </tableViewController>
@@ -3619,7 +3619,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rs4-wM-V5Q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zgu-Ur-Svc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3637,7 +3637,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M8M-jF-9Ea" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NkB-nU-rrS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3664,7 +3664,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     <tabBarItem key="tabBarItem" title="Lista" image="list" id="Zi6-Xb-63W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WZf-cI-6AU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3699,7 +3699,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="cDl-J4-F3l" customClass="ViewReviewViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LSe-MW-qCJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNj-Vv-3Cm">
@@ -3743,7 +3743,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OQx-1F-sjp">
-                                <rect key="frame" x="15" y="313" width="345" height="214"/>
+                                <rect key="frame" x="15" y="313" width="345" height="246"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3800,7 +3800,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nka-3g-b05" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Vck-po-YZy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3819,7 +3819,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     <tabBarItem key="tabBarItem" title="Mapa" image="map" id="8bM-DJ-Fqv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="2Gg-95-kyu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3836,7 +3836,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="RdK-EK-A61" customClass="PhotosViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jzk-Uv-bL5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qMY-02-VA3">
@@ -3923,7 +3923,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController storyboardIdentifier="showCategoryVC" automaticallyAdjustsScrollViewInsets="NO" id="68a-YY-Ty2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Wqb-V1-6k4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3940,11 +3940,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="HHf-Di-yTi" customClass="CountriesViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGc-xs-V01">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zp9-D7-kkq">
-                                <rect key="frame" x="0.0" y="56" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="50" id="P1r-53-9vk" customClass="CountryTableViewCell" customModule="KDBrasil" customModuleProvider="target">
@@ -4045,7 +4045,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E3Y-zc-cCe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="clP-zz-W1g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -4060,11 +4060,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <!--Meu KD-->
         <scene sceneID="4pn-eb-m9S">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sXR-XE-Un7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="sXR-XE-Un7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meu KD" image="mykd" id="85n-nP-qsi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3Vf-ff-FCQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -4083,7 +4083,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     <tabBarItem key="tabBarItem" title="Em destaque" image="highlight" id="UXe-s6-FZd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="JZ6-ir-dSB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -4183,12 +4183,12 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="eTG-5Z-qd2"/>
-        <segue reference="DgE-3v-lbk"/>
-        <segue reference="IBZ-cb-T44"/>
-        <segue reference="LiO-zd-KxX"/>
-        <segue reference="p3T-du-TBv"/>
-        <segue reference="tMd-ni-SvK"/>
+        <segue reference="wfb-dy-bFe"/>
+        <segue reference="inQ-jt-2Y3"/>
+        <segue reference="XmA-hZ-wvP"/>
+        <segue reference="vye-vK-sui"/>
+        <segue reference="b73-yD-mxL"/>
+        <segue reference="DfJ-5a-P3z"/>
         <segue reference="ZM5-Ch-ZAH"/>
         <segue reference="iqm-8w-Zeu"/>
     </inferredMetricsTieBreakers>
