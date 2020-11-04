@@ -58,7 +58,7 @@ enum LocalizationKeys {
     //Share App
     static let shareApp = "Você já conhece o app KD Brasil? Não? 😱😱\nSe liga na novidade e encontre o serviço que você mais precisa.\nBaixe agora, é grátis! \nhttps://itunes.apple.com/ca/app/kd-brasil/id1454261196?mt=8"
     
-    static let urlDonation = "www.paypal.me/lfo"
+    static let urlDonation = "https://www.paypal.me/lfo"
 }
 
 enum periodOfDay {

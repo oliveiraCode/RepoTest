@@ -68,21 +68,26 @@ class Service:NSObject,CLLocationManagerDelegate{
         
         let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         
+        
         switch photoAuthorizationStatus {
         case .authorized:
             completionHandler(.authorized)
-            break
+            
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({ (newStatus) in
                 if newStatus == PHAuthorizationStatus.authorized {
                     completionHandler(.authorized)
                 }
             })
-            break
-        case .denied, .restricted :
+            
+        case .denied, .restricted:
             completionHandler(.denied)
-            break
+        case .limited:
+            if #available(iOS 14, *) {
+                completionHandler(.limited)
+            }
         }
+        
     }
     
     func calculateRating(reviews:[Review]) -> Double {
@@ -144,7 +149,7 @@ class Service:NSObject,CLLocationManagerDelegate{
                 completion(true)
             }
         }
-    
+        
         if appDelegate.currentCountry == nil {
             // get the current locale
             let currentLocale = Locale.current
@@ -164,8 +169,6 @@ class Service:NSObject,CLLocationManagerDelegate{
                 }
             }
         }
-        
-        
     }
     
     
@@ -274,7 +277,7 @@ class Service:NSObject,CLLocationManagerDelegate{
             return "website"
         }
     }
-
-
+    
+    
 }
 

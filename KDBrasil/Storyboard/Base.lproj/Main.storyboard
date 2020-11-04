@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vEr-tp-QiF">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vEr-tp-QiF">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtros" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTc-C8-Dsg">
-                                <rect key="frame" x="0.0" y="270" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="250" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Mt4-yK-5N1"/>
                                 </constraints>
@@ -31,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encontre o que precisa através do novo sistema de filtros." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt5-l4-I1H">
-                                <rect key="frame" x="30" y="320" width="315" height="100"/>
+                                <rect key="frame" x="30" y="300" width="315" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="G5g-c0-8aT"/>
                                 </constraints>
@@ -40,13 +38,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getStart1" translatesAutoresizingMaskIntoConstraints="NO" id="E1c-A5-G9d">
-                                <rect key="frame" x="137.5" y="120" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="100" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="POu-kp-dtY"/>
                                     <constraint firstAttribute="height" constant="100" id="Wex-85-gHb"/>
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hfd-9m-0xQ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LpY-gO-Na5" firstAttribute="leading" secondItem="ZHu-Rb-u4D" secondAttribute="leading" id="4I1-4M-5YN"/>
@@ -62,7 +61,6 @@
                             <constraint firstItem="gt5-l4-I1H" firstAttribute="leading" secondItem="Hfd-9m-0xQ" secondAttribute="leading" constant="30" id="oG9-qh-CeR"/>
                             <constraint firstItem="Hfd-9m-0xQ" firstAttribute="trailing" secondItem="gt5-l4-I1H" secondAttribute="trailing" constant="30" id="uRc-PE-Mhg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hfd-9m-0xQ"/>
                     </view>
                     <connections>
                         <outlet property="imagePage" destination="LpY-gO-Na5" id="IGx-vg-JAc"/>
@@ -84,7 +82,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se conecte facilmente através da sua conta Facebook ou Google" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em0-zo-4mT">
-                                <rect key="frame" x="30" y="320" width="315" height="100"/>
+                                <rect key="frame" x="30" y="300" width="315" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ffS-kR-y0R"/>
                                 </constraints>
@@ -93,7 +91,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autenticação" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7t-4W-8DC">
-                                <rect key="frame" x="0.0" y="270" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="250" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="iPM-Fb-pJZ"/>
                                 </constraints>
@@ -102,13 +100,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getStart2" translatesAutoresizingMaskIntoConstraints="NO" id="9jH-ae-ymq">
-                                <rect key="frame" x="137.5" y="120" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="100" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5qg-j8-Dei"/>
                                     <constraint firstAttribute="width" constant="100" id="5uc-wJ-iVz"/>
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="I6l-cB-efs"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="em0-zo-4mT" firstAttribute="leading" secondItem="I6l-cB-efs" secondAttribute="leading" constant="30" id="6vm-jW-4rt"/>
@@ -124,7 +123,6 @@
                             <constraint firstItem="I6l-cB-efs" firstAttribute="trailing" secondItem="em0-zo-4mT" secondAttribute="trailing" constant="30" id="gH5-eB-2By"/>
                             <constraint firstItem="vpY-ge-5Nu" firstAttribute="leading" secondItem="gMF-dc-nEb" secondAttribute="leading" id="t2R-MJ-NXK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="I6l-cB-efs"/>
                     </view>
                     <connections>
                         <outlet property="imagePage" destination="vpY-ge-5Nu" id="EBQ-XU-KWA"/>
@@ -146,14 +144,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getStart3" translatesAutoresizingMaskIntoConstraints="NO" id="jCF-FG-vZ5">
-                                <rect key="frame" x="137.5" y="120" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="100" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="td3-am-lFO"/>
                                     <constraint firstAttribute="height" constant="100" id="w2Y-D3-vmB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliação" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL9-wh-oQf">
-                                <rect key="frame" x="0.0" y="270" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="250" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GN6-OI-pdA"/>
                                 </constraints>
@@ -162,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrg-qd-65D">
-                                <rect key="frame" x="30" y="320" width="315" height="100"/>
+                                <rect key="frame" x="30" y="300" width="315" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0iX-e4-4It"/>
                                 </constraints>
@@ -173,6 +171,7 @@ Avalie! É simples e rápido!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FXZ-L8-Io9"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TL9-wh-oQf" firstAttribute="leading" secondItem="FXZ-L8-Io9" secondAttribute="leading" id="3qB-bB-Pee"/>
@@ -188,7 +187,6 @@ Avalie! É simples e rápido!</string>
                             <constraint firstAttribute="bottom" secondItem="mJE-Bp-bL5" secondAttribute="bottom" id="lFI-lR-nYd"/>
                             <constraint firstItem="jCF-FG-vZ5" firstAttribute="centerX" secondItem="rjv-SB-vYU" secondAttribute="centerX" id="vLU-TT-ksm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FXZ-L8-Io9"/>
                     </view>
                     <connections>
                         <outlet property="imagePage" destination="mJE-Bp-bL5" id="cws-b0-dXL"/>
@@ -229,6 +227,7 @@ Avalie! É simples e rápido!</string>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EKd-QS-HPS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uia-89-ZAN" firstAttribute="centerY" secondItem="KcU-zv-2pX" secondAttribute="centerY" id="2Zh-eq-kW4"/>
@@ -240,11 +239,10 @@ Avalie! É simples e rápido!</string>
                             <constraint firstAttribute="bottom" secondItem="HpG-uJ-eXa" secondAttribute="bottom" id="wru-fK-aAN"/>
                             <constraint firstItem="r3k-aj-qx8" firstAttribute="centerX" secondItem="KcU-zv-2pX" secondAttribute="centerX" id="yC5-ee-9Av"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EKd-QS-HPS"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="uia-89-ZAN" id="DvG-ky-d2D"/>
-                        <segue destination="XXj-RY-4rM" kind="presentation" identifier="showMainVC" modalTransitionStyle="crossDissolve" id="JAb-lj-eZx"/>
+                        <segue destination="XXj-RY-4rM" kind="presentation" identifier="showMainVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="JAb-lj-eZx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rn0-CG-jhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -256,14 +254,14 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="Qwy-g5-a0s" customClass="LoginMainViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nzm-T9-lXx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_screen" translatesAutoresizingMaskIntoConstraints="NO" id="dhU-oI-Zcu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzw-pT-lbJ">
-                                <rect key="frame" x="32.5" y="165" width="310" height="45"/>
+                                <rect key="frame" x="32.5" y="155" width="310" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Fqb-xh-2FK"/>
@@ -278,7 +276,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_________________    OU    _________________" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcx-pj-z1O">
-                                <rect key="frame" x="32.5" y="250" width="310" height="21"/>
+                                <rect key="frame" x="32.5" y="240" width="310" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6no-vL-3DN"/>
                                     <constraint firstAttribute="width" constant="310" id="8RU-Vp-chO"/>
@@ -288,7 +286,7 @@ Avalie! É simples e rápido!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVN-tR-bUa">
-                                <rect key="frame" x="16" y="20" width="50" height="50"/>
+                                <rect key="frame" x="16" y="0.0" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="f3w-8a-fYO"/>
                                     <constraint firstAttribute="width" constant="50" id="x0l-8h-mFD"/>
@@ -302,7 +300,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEm-O6-msI">
-                                <rect key="frame" x="32.5" y="311" width="310" height="45"/>
+                                <rect key="frame" x="32.5" y="301" width="310" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="TIL-Ei-F0k"/>
@@ -317,7 +315,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rio-yK-Z7M">
-                                <rect key="frame" x="32.5" y="376" width="310" height="45"/>
+                                <rect key="frame" x="32.5" y="366" width="310" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="aBd-rV-h7w"/>
@@ -332,11 +330,11 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="arD-2s-01J">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="169" y="305" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzh-qu-Fsb">
-                                <rect key="frame" x="32.5" y="94" width="310" height="21"/>
+                                <rect key="frame" x="32.5" y="84" width="310" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="KXS-tL-3rl"/>
                                     <constraint firstAttribute="height" constant="21" id="Q1O-vs-Rie"/>
@@ -346,7 +344,7 @@ Avalie! É simples e rápido!</string>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CI0-xJ-pZr">
-                                <rect key="frame" x="78.5" y="451" width="218" height="45"/>
+                                <rect key="frame" x="78.5" y="441" width="218" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GN-3O-ffV">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="45"/>
@@ -370,7 +368,7 @@ Avalie! É simples e rápido!</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="vtX-Ij-hho" kind="presentation" id="VDB-jn-RtI"/>
+                                            <segue destination="vtX-Ij-hho" kind="presentation" modalPresentationStyle="fullScreen" id="VDB-jn-RtI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -379,7 +377,7 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97N-lj-PFn">
-                                <rect key="frame" x="130" y="602" width="115" height="45"/>
+                                <rect key="frame" x="130" y="582" width="115" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="2FQ-Ii-Tln"/>
                                     <constraint firstAttribute="width" constant="115" id="sYM-x9-gjF"/>
@@ -389,10 +387,11 @@ Avalie! É simples e rápido!</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalTransitionStyle="coverVertical" id="vye-vK-sui"/>
+                                    <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="vye-vK-sui"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nbb-Oy-zVZ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Rio-yK-Z7M" firstAttribute="top" secondItem="EEm-O6-msI" secondAttribute="bottom" constant="20" id="1Qu-F7-FEN"/>
@@ -418,14 +417,13 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="EEm-O6-msI" firstAttribute="centerX" secondItem="nzm-T9-lXx" secondAttribute="centerX" id="u32-Wo-yMy"/>
                             <constraint firstItem="97N-lj-PFn" firstAttribute="centerX" secondItem="nzm-T9-lXx" secondAttribute="centerX" id="y6x-Hs-kaK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nbb-Oy-zVZ"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="arD-2s-01J" id="8rX-iY-s5A"/>
                         <outlet property="btnFacebook" destination="EEm-O6-msI" id="AVU-wr-A7Q"/>
                         <outlet property="btnGoogle" destination="Rio-yK-Z7M" id="RHv-7N-boW"/>
                         <outlet property="btnLogin" destination="Tzw-pT-lbJ" id="JVM-mf-zD0"/>
-                        <segue destination="GSf-Da-pIc" kind="presentation" identifier="showLoginVC" id="Bnc-ZM-LDf"/>
+                        <segue destination="GSf-Da-pIc" kind="presentation" identifier="showLoginVC" modalPresentationStyle="fullScreen" id="Bnc-ZM-LDf"/>
                         <segue destination="wzV-5h-3nR" kind="presentation" identifier="showCustomAlertUserTypeVC" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="GMc-wi-Qdn"/>
                     </connections>
                 </viewController>
@@ -438,14 +436,14 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="GSf-Da-pIc" customClass="LoginViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qVN-Ov-X3I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_screen" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-ye-gsg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             </imageView>
                             <stackView contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O6X-In-PNY">
-                                <rect key="frame" x="32.5" y="221" width="310" height="100"/>
+                                <rect key="frame" x="32.5" y="201" width="310" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tNC-PN-uu0" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
@@ -453,7 +451,6 @@ Avalie! É simples e rápido!</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4hI-2N-1uh"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartInsertDeleteType="no"/>
                                         <userDefinedRuntimeAttributes>
@@ -471,7 +468,7 @@ Avalie! É simples e rápido!</string>
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -501,7 +498,7 @@ Avalie! É simples e rápido!</string>
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -514,8 +511,8 @@ Avalie! É simples e rápido!</string>
                                     <constraint firstAttribute="width" constant="310" id="8ws-Ss-BSL"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYu-s6-7yA">
-                                <rect key="frame" x="32.5" y="476" width="310" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYu-s6-7yA">
+                                <rect key="frame" x="32.5" y="456" width="310" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Dpi-MX-tq7"/>
                                     <constraint firstAttribute="width" constant="310" id="bur-AR-TqE"/>
@@ -528,11 +525,11 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lBX-1F-Rke">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="169" y="305" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFH-0P-ud1">
-                                <rect key="frame" x="16" y="20" width="50" height="50"/>
+                                <rect key="frame" x="16" y="0.0" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GqU-9w-fmO"/>
                                     <constraint firstAttribute="width" constant="50" id="MJT-L1-CSP"/>
@@ -548,7 +545,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo(a) de volta!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-LW-DZz">
-                                <rect key="frame" x="32.5" y="100" width="310" height="21"/>
+                                <rect key="frame" x="32.5" y="80" width="310" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="N6d-zR-Z52"/>
                                     <constraint firstAttribute="width" constant="310" id="Ybm-yC-fXP"/>
@@ -558,7 +555,7 @@ Avalie! É simples e rápido!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite seu e-mail e senha para fazer login em sua conta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5H-rP-7CQ">
-                                <rect key="frame" x="32.5" y="126" width="310" height="50"/>
+                                <rect key="frame" x="32.5" y="106" width="310" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PA8-TL-X3N"/>
                                     <constraint firstAttribute="width" constant="310" id="niY-1W-P6b"/>
@@ -567,8 +564,8 @@ Avalie! É simples e rápido!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8R9-fH-cFt">
-                                <rect key="frame" x="32.5" y="361" width="310" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8R9-fH-cFt">
+                                <rect key="frame" x="32.5" y="341" width="310" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1bG-o7-Tfp"/>
@@ -584,6 +581,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="QLB-dp-pyC"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="B5H-rP-7CQ" firstAttribute="centerX" secondItem="qVN-Ov-X3I" secondAttribute="centerX" id="3Hv-tN-TIB"/>
@@ -605,7 +603,6 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="pYu-s6-7yA" firstAttribute="centerX" secondItem="qVN-Ov-X3I" secondAttribute="centerX" id="wVg-mQ-1yu"/>
                             <constraint firstItem="O6X-In-PNY" firstAttribute="centerX" secondItem="qVN-Ov-X3I" secondAttribute="centerX" id="y6E-2e-k5q"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QLB-dp-pyC"/>
                     </view>
                     <navigationItem key="navigationItem" id="ayZ-kM-c8f"/>
                     <connections>
@@ -624,16 +621,16 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController storyboardIdentifier="showCustomAlertUserTypeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wzV-5h-3nR" customClass="CustomAlertViewUserType" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N54-Td-jU9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVM-pw-EvJ">
-                                <rect key="frame" x="15" y="213.5" width="345" height="240"/>
+                                <rect key="frame" x="15" y="203.5" width="345" height="240"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_screen" translatesAutoresizingMaskIntoConstraints="NO" id="WwC-1Z-K59">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="240"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmo-Mn-4mv">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmo-Mn-4mv">
                                         <rect key="frame" x="172.5" y="190" width="172.5" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -648,7 +645,7 @@ Avalie! É simples e rápido!</string>
                                             <action selector="btnOKTapped:" destination="wzV-5h-3nR" eventType="touchUpInside" id="N1i-mT-LI7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBE-zk-EfJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBE-zk-EfJ">
                                         <rect key="frame" x="0.0" y="190" width="172.5" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -708,12 +705,12 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dlL-on-ZAj"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FVM-pw-EvJ" firstAttribute="centerY" secondItem="N54-Td-jU9" secondAttribute="centerY" id="NvP-8d-gdG"/>
                             <constraint firstItem="FVM-pw-EvJ" firstAttribute="centerX" secondItem="N54-Td-jU9" secondAttribute="centerX" id="fkr-j5-eKh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dlL-on-ZAj"/>
                     </view>
                     <connections>
                         <outlet property="alertView" destination="FVM-pw-EvJ" id="RE3-r0-Tzg"/>
@@ -731,14 +728,14 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="vtX-Ij-hho" customClass="CreateAccountViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S6n-2y-SRx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_screen" translatesAutoresizingMaskIntoConstraints="NO" id="Hcw-tM-cTk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="VHZ-Tw-LDw">
-                                <rect key="frame" x="127.5" y="70" width="120" height="120"/>
+                                <rect key="frame" x="127.5" y="50" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="R7g-56-n6r"/>
@@ -746,7 +743,7 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </imageView>
                             <stackView contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="XZ5-Rv-SJ8">
-                                <rect key="frame" x="30" y="295" width="315" height="173"/>
+                                <rect key="frame" x="30" y="275" width="315" height="173"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ALA-8D-i7B" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
@@ -754,7 +751,6 @@ Avalie! É simples e rápido!</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Z3V-rs-EGC"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" returnKeyType="next" smartInsertDeleteType="no"/>
                                         <userDefinedRuntimeAttributes>
@@ -769,7 +765,7 @@ Avalie! É simples e rápido!</string>
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -785,7 +781,6 @@ Avalie! É simples e rápido!</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="JfK-aO-kvw"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartInsertDeleteType="no"/>
                                         <userDefinedRuntimeAttributes>
@@ -800,7 +795,7 @@ Avalie! É simples e rápido!</string>
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -827,7 +822,7 @@ Avalie! É simples e rápido!</string>
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -844,8 +839,8 @@ Avalie! É simples e rápido!</string>
                                     <constraint firstAttribute="height" constant="173" id="OiF-Zl-oug"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAI-X9-Ifu">
-                                <rect key="frame" x="30" y="498" width="315" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAI-X9-Ifu">
+                                <rect key="frame" x="30" y="478" width="315" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="kBu-R2-FbI"/>
@@ -860,11 +855,11 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0c4-MD-INr">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="169" y="305" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="BPL-gp-9du">
-                                <rect key="frame" x="35" y="235" width="305" height="36"/>
+                                <rect key="frame" x="35" y="215" width="305" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="n6N-mK-TLK"/>
                                 </constraints>
@@ -875,7 +870,7 @@ Avalie! É simples e rápido!</string>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlV-ne-YpJ">
-                                <rect key="frame" x="16" y="20" width="50" height="50"/>
+                                <rect key="frame" x="16" y="0.0" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Bjt-uW-EHs"/>
                                     <constraint firstAttribute="height" constant="50" id="Hs1-Dv-4tg"/>
@@ -890,7 +885,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao clicar em &quot;Entrar&quot;, você concorda com nossos Termos de uso e nossa Política de privacidade" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8z-Ue-eck">
-                                <rect key="frame" x="30" y="548" width="315" height="40"/>
+                                <rect key="frame" x="30" y="528" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BSC-Cc-T9L"/>
                                     <constraint firstAttribute="width" constant="315" id="vOl-1f-ct4"/>
@@ -900,7 +895,7 @@ Avalie! É simples e rápido!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8k-N0-Azi">
-                                <rect key="frame" x="167.5" y="110" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="90" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="QT7-ie-Fqc"/>
                                     <constraint firstAttribute="height" constant="40" id="kkN-En-Y6r"/>
@@ -913,6 +908,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="knf-rU-GOc"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BlV-ne-YpJ" firstAttribute="top" secondItem="S6n-2y-SRx" secondAttribute="topMargin" id="0AZ-l4-hvS"/>
@@ -938,7 +934,6 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="v8k-N0-Azi" firstAttribute="centerX" secondItem="S6n-2y-SRx" secondAttribute="centerX" id="npq-L8-Voa"/>
                             <constraint firstItem="c8z-Ue-eck" firstAttribute="top" secondItem="AAI-X9-Ifu" secondAttribute="bottom" constant="5" id="yGl-gQ-LF9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="knf-rU-GOc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nova conta" id="VZP-CA-0NI"/>
                     <connections>
@@ -962,11 +957,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="HDn-uM-p6d" customClass="MyBusinessViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="geq-GP-zba">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1225"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1245"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWP-YH-iob">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1225"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1245"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e59-Es-xzB" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1225"/>
@@ -976,7 +971,7 @@ Avalie! É simples e rápido!</string>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bJO-9v-9iR">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="140" id="veF-c3-kJ5"/>
                                                         </constraints>
@@ -1030,13 +1025,13 @@ Avalie! É simples e rápido!</string>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-A8-GpP">
                                                         <rect key="frame" x="23" y="39" width="329" height="1.5"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1.5" id="lIw-fq-0Dn"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGZ-Bc-wu1">
-                                                        <rect key="frame" x="23" y="55" width="313" height="27"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGZ-Bc-wu1">
+                                                        <rect key="frame" x="23" y="55" width="313.5" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="DAS-Q5-OAO"/>
                                                         </constraints>
@@ -1048,7 +1043,7 @@ Avalie! É simples e rápido!</string>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkN-mz-Yrb">
-                                                        <rect key="frame" x="344" y="56" width="11" height="27"/>
+                                                        <rect key="frame" x="344.5" y="56" width="10.5" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="ciz-h6-psG"/>
                                                         </constraints>
@@ -1101,7 +1096,7 @@ Avalie! É simples e rápido!</string>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqF-PW-5ul">
                                                         <rect key="frame" x="23" y="39" width="329" height="1.5"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1.5" id="HQ5-Mh-dKn"/>
                                                         </constraints>
@@ -1111,7 +1106,6 @@ Avalie! É simples e rápido!</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="0KG-bj-vXf"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1127,7 +1121,6 @@ Avalie! É simples e rápido!</string>
                                                             <constraint firstAttribute="height" constant="40" id="VC2-Fl-oZa"/>
                                                             <constraint firstAttribute="width" constant="90" id="hV0-su-NKS"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1143,7 +1136,6 @@ Avalie! É simples e rápido!</string>
                                                             <constraint firstAttribute="height" constant="40" id="CdS-pY-iOD"/>
                                                             <constraint firstAttribute="width" constant="120" id="bZm-ES-7Zt"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1158,7 +1150,6 @@ Avalie! É simples e rápido!</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="uFM-2J-vjz"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1174,7 +1165,6 @@ Avalie! É simples e rápido!</string>
                                                             <constraint firstAttribute="width" constant="90" id="mE3-eP-4Ms"/>
                                                             <constraint firstAttribute="height" constant="40" id="x3w-eW-fEg"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1190,7 +1180,6 @@ Avalie! É simples e rápido!</string>
                                                             <constraint firstAttribute="width" constant="120" id="1q6-mt-Aby"/>
                                                             <constraint firstAttribute="height" constant="40" id="JCZ-uh-cvm"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1278,7 +1267,7 @@ Avalie! É simples e rápido!</string>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-Fd-obX">
                                                         <rect key="frame" x="23" y="39" width="329" height="1.5"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1.5" id="lBt-rW-whM"/>
                                                         </constraints>
@@ -1325,7 +1314,7 @@ Avalie! É simples e rápido!</string>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shg-gV-Wwa">
                                                         <rect key="frame" x="23" y="39" width="329" height="1.5"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1.5" id="rHQ-6D-WJi"/>
                                                         </constraints>
@@ -1335,7 +1324,6 @@ Avalie! É simples e rápido!</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="EcW-DO-Ahm"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1397,8 +1385,7 @@ Avalie! É simples e rápido!</string>
                                                         <rect key="frame" x="50" y="139" width="275" height="200"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hIg-w5-vBT" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="39"/>
-                                                                <nil key="textColor"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="41.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -1409,8 +1396,7 @@ Avalie! É simples e rápido!</string>
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7qn-xX-mtX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="50" width="275" height="39.5"/>
-                                                                <nil key="textColor"/>
+                                                                <rect key="frame" x="0.0" y="52.5" width="275" height="41"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -1421,8 +1407,7 @@ Avalie! É simples e rápido!</string>
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WhatsApp" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v72-tU-kfM" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="100.5" width="275" height="39"/>
-                                                                <nil key="textColor"/>
+                                                                <rect key="frame" x="0.0" y="104.5" width="275" height="41.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -1433,8 +1418,7 @@ Avalie! É simples e rápido!</string>
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website ou página do Facebook" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T0T-PF-t0U" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="150.5" width="275" height="49.5"/>
-                                                                <nil key="textColor"/>
+                                                                <rect key="frame" x="0.0" y="157" width="275" height="43"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -1460,7 +1444,7 @@ Avalie! É simples e rápido!</string>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cH9-CJ-p7L">
                                                         <rect key="frame" x="23" y="39" width="329" height="1.5"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1.5" id="pcQ-Xc-rRc"/>
                                                         </constraints>
@@ -1531,7 +1515,7 @@ Avalie! É simples e rápido!</string>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="y7d-kz-eUx" firstAttribute="leading" secondItem="e59-Es-xzB" secondAttribute="leading" id="74p-o1-cAh"/>
                                             <constraint firstItem="4NH-lC-c6h" firstAttribute="top" secondItem="e59-Es-xzB" secondAttribute="top" id="9oF-ob-MMc"/>
@@ -1564,6 +1548,7 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="n0P-Hn-fdH"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pWP-YH-iob" firstAttribute="leading" secondItem="n0P-Hn-fdH" secondAttribute="leading" id="3id-v8-ABK"/>
@@ -1572,7 +1557,6 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="pWP-YH-iob" firstAttribute="trailing" secondItem="n0P-Hn-fdH" secondAttribute="trailing" id="baY-II-B38"/>
                             <constraint firstItem="pWP-YH-iob" firstAttribute="top" secondItem="n0P-Hn-fdH" secondAttribute="top" id="dgb-p0-lkC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="n0P-Hn-fdH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Novo Anúncio" id="rZO-P5-hmv">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="MYs-E1-w87">
@@ -1607,8 +1591,8 @@ Avalie! É simples e rápido!</string>
                         <outlet property="tfWhatsapp" destination="v72-tU-kfM" id="JxJ-7K-rnU"/>
                         <outlet property="tvDescription" destination="P4Z-rx-DFA" id="tmV-GR-KI9"/>
                         <segue destination="gTG-kR-dhJ" kind="unwind" identifier="unWindSegueToBusinessesTableVC" unwindAction="unWindToBusinessesTableVCWithSegue:" id="LrE-0U-Jpv"/>
-                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" id="inQ-jt-2Y3"/>
-                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" id="eTG-5Z-qd2"/>
+                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" modalPresentationStyle="fullScreen" id="inQ-jt-2Y3"/>
+                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" modalPresentationStyle="fullScreen" id="eTG-5Z-qd2"/>
                         <segue destination="RdK-EK-A61" kind="show" identifier="showPhotosVC" id="0b5-qw-tic"/>
                     </connections>
                 </viewController>
@@ -1622,15 +1606,15 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="jfU-co-VIq" customClass="CategoryViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7S-oY-b0u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7oF-bN-2w8">
-                                <rect key="frame" x="0.0" y="56" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCategory" id="yiR-7b-5zC">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yiR-7b-5zC" id="pRt-M3-gzE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1651,6 +1635,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </searchBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="X88-9Q-Jjq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7oF-bN-2w8" firstAttribute="bottom" secondItem="X88-9Q-Jjq" secondAttribute="bottom" id="4U4-ad-J22"/>
@@ -1661,7 +1646,6 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="7oF-bN-2w8" firstAttribute="trailing" secondItem="X88-9Q-Jjq" secondAttribute="trailing" id="qYW-Si-bX8"/>
                             <constraint firstItem="7oF-bN-2w8" firstAttribute="leading" secondItem="X88-9Q-Jjq" secondAttribute="leading" id="sse-B2-jLq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="X88-9Q-Jjq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Categorias" id="zFh-l9-mhx">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="bI3-Sn-kA5">
@@ -1684,11 +1668,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="SQd-D4-d1Y" customClass="HighlightViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C7Q-Qk-7rR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1292"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1312"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="QDh-WV-aCI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1292"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1312"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-RY-MKq" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1301"/>
@@ -1740,7 +1724,7 @@ Avalie! É simples e rápido!</string>
                                                                         </label>
                                                                     </subviews>
                                                                 </view>
-                                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="HqF-t0-BI8" firstAttribute="trailing" secondItem="LhI-yX-jHc" secondAttribute="trailingMargin" constant="5" id="LQf-ea-Za0"/>
                                                                     <constraint firstItem="cz1-nB-th7" firstAttribute="top" secondItem="HqF-t0-BI8" secondAttribute="bottom" id="Mew-6G-tIT"/>
@@ -1790,7 +1774,7 @@ Avalie! É simples e rápido!</string>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categorias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwJ-ap-9jE">
                                                         <rect key="frame" x="15" y="10" width="260" height="30"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="kJh-0n-ltA"/>
                                                         </constraints>
@@ -1798,9 +1782,9 @@ Avalie! É simples e rápido!</string>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSY-Zy-6mh">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSY-Zy-6mh">
                                                         <rect key="frame" x="275" y="10" width="90" height="30"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="dfI-Pr-OBY"/>
                                                             <constraint firstAttribute="height" constant="30" id="pz0-jv-moU"/>
@@ -1815,7 +1799,7 @@ Avalie! É simples e rápido!</string>
                                                     </button>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="llq-15-M0K">
                                                         <rect key="frame" x="0.0" y="40" width="375" height="110"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="110" id="GhB-fd-G06"/>
                                                         </constraints>
@@ -1871,7 +1855,7 @@ Avalie! É simples e rápido!</string>
                                                         </connections>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="llq-15-M0K" firstAttribute="top" secondItem="jwJ-ap-9jE" secondAttribute="bottom" id="5G7-po-89G"/>
                                                     <constraint firstItem="llq-15-M0K" firstAttribute="leading" secondItem="C88-zr-QVe" secondAttribute="leading" id="6WM-NN-T2G"/>
@@ -2065,7 +2049,7 @@ Avalie! É simples e rápido!</string>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="A7p-EX-cpg" firstAttribute="leading" secondItem="liZ-WI-94A" secondAttribute="leading" id="2yx-iQ-N7i"/>
                                             <constraint firstItem="2Vx-1m-Ulo" firstAttribute="top" secondItem="KcC-RY-MKq" secondAttribute="top" id="73L-yA-kiB"/>
@@ -2099,14 +2083,14 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="uMP-hz-5Mg"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QDh-WV-aCI" firstAttribute="top" secondItem="C7Q-Qk-7rR" secondAttribute="top" id="DO4-qC-bXa"/>
                             <constraint firstItem="uMP-hz-5Mg" firstAttribute="bottom" secondItem="QDh-WV-aCI" secondAttribute="bottom" id="JUd-5A-rhD"/>
                             <constraint firstItem="QDh-WV-aCI" firstAttribute="leading" secondItem="uMP-hz-5Mg" secondAttribute="leading" id="eh3-wU-vfa"/>
                             <constraint firstItem="uMP-hz-5Mg" firstAttribute="trailing" secondItem="QDh-WV-aCI" secondAttribute="trailing" id="u20-Ji-1AF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="uMP-hz-5Mg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Destaque" id="v7t-4p-urB"/>
                     <size key="freeformSize" width="375" height="1405"/>
@@ -2117,7 +2101,7 @@ Avalie! É simples e rápido!</string>
                         <outlet property="pageControl" destination="zVt-3Z-h2g" id="6nT-VX-S7u"/>
                         <segue destination="e6s-pT-abj" kind="show" identifier="showDetailsBusinessVC" id="p3T-du-TBv"/>
                         <segue destination="hL3-Nu-xiI" kind="show" identifier="showBusinessesVC" id="ZM5-Ch-ZAH"/>
-                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" id="DgE-3v-lbk"/>
+                        <segue destination="68a-YY-Ty2" kind="presentation" identifier="showCategoryVC" modalPresentationStyle="fullScreen" id="DgE-3v-lbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lh-j1-MNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2129,11 +2113,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="uyk-pH-KWL" customClass="MapViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4g-Ep-3k5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8w-gw-5Te">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wu8-3j-8G3">
                                         <rect key="frame" x="20" y="121" width="335" height="40"/>
@@ -2147,8 +2131,8 @@ Avalie! É simples e rápido!</string>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-Nm-r5N">
-                                        <rect key="frame" x="62.5" y="254.5" width="250" height="45"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-Nm-r5N">
+                                        <rect key="frame" x="62.5" y="264.5" width="250" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Hgi-wh-ZQV"/>
                                             <constraint firstAttribute="width" constant="250" id="e4v-Ib-zzT"/>
@@ -2184,12 +2168,13 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bs8-OY-BxF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <connections>
                                     <outlet property="delegate" destination="uyk-pH-KWL" id="Jhd-qY-gkz"/>
                                 </connections>
                             </mapView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ciA-QZ-9jV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Bs8-OY-BxF" firstAttribute="top" secondItem="ciA-QZ-9jV" secondAttribute="top" id="GH0-FT-YSo"/>
@@ -2201,7 +2186,6 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="n8w-gw-5Te" firstAttribute="leading" secondItem="ciA-QZ-9jV" secondAttribute="leading" id="rb1-KV-b0u"/>
                             <constraint firstItem="ciA-QZ-9jV" firstAttribute="trailing" secondItem="n8w-gw-5Te" secondAttribute="trailing" id="yrz-Rn-9Y6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ciA-QZ-9jV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mapa" id="KGD-4p-1x8"/>
                     <connections>
@@ -2219,11 +2203,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="D9a-u1-zNE" customClass="ListViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xnO-Mb-pND">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MYj-Hb-GFb">
-                                <rect key="frame" x="0.0" y="91" width="375" height="463"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="109" id="NKR-Wx-96K">
@@ -2257,7 +2241,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </searchBar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kFS-69-6MK">
-                                <rect key="frame" x="169" y="258.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="268.5" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dSY-jn-6mJ">
@@ -2274,6 +2258,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="yZL-XM-7Q4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yZL-XM-7Q4" firstAttribute="trailing" secondItem="MYj-Hb-GFb" secondAttribute="trailing" id="1Px-zt-LUC"/>
@@ -2289,12 +2274,11 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="yT2-Yr-hWq" firstAttribute="top" secondItem="yZL-XM-7Q4" secondAttribute="top" id="sov-qP-DhI"/>
                             <constraint firstItem="kFS-69-6MK" firstAttribute="centerX" secondItem="xnO-Mb-pND" secondAttribute="centerX" id="yHA-2J-Xa3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yZL-XM-7Q4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lista" id="Xob-9r-MC0">
                         <barButtonItem key="rightBarButtonItem" image="filter" id="uro-Rr-fsH">
                             <connections>
-                                <segue destination="PQN-ZR-5Vf" kind="presentation" identifier="showFilterVC" id="g2d-G1-Rf2"/>
+                                <segue destination="PQN-ZR-5Vf" kind="presentation" identifier="showFilterVC" modalPresentationStyle="fullScreen" id="g2d-G1-Rf2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2314,7 +2298,7 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <tableViewController id="hL3-Nu-xiI" customClass="BusinessesTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LHr-FS-lVq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -2340,9 +2324,9 @@ Avalie! É simples e rápido!</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showNewBusinessVC" modalTransitionStyle="coverVertical" id="DfJ-5a-P3z"/>
+                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showNewBusinessVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="DfJ-5a-P3z"/>
                         <segue destination="e6s-pT-abj" kind="show" identifier="showDetailsBusinessVC" id="b73-yD-mxL"/>
-                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showEditBusinessVC" modalTransitionStyle="coverVertical" id="Nlq-Rp-ged"/>
+                        <segue destination="F8E-jF-BRB" kind="presentation" identifier="showEditBusinessVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Nlq-Rp-ged"/>
                         <segue destination="Qwy-g5-a0s" kind="presentation" identifier="showLoginVC" modalTransitionStyle="coverVertical" id="A0m-MP-Nvr"/>
                     </connections>
                 </tableViewController>
@@ -2353,9 +2337,9 @@ Avalie! É simples e rápido!</string>
         <!--Ajustes-->
         <scene sceneID="TiP-GM-qWK">
             <objects>
-                <viewController id="aom-8U-VlI" customClass="MyKDViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="aom-8U-VlI" customClass="MyKDViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cOD-xi-ykb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRv-z5-hMt">
@@ -2396,14 +2380,14 @@ Avalie! É simples e rápido!</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-Ou-pdH">
-                                <rect key="frame" x="0.0" y="200" width="375" height="354"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="374"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreCell" rowHeight="50" id="0WY-eW-iEF">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0WY-eW-iEF" id="2Kt-1K-DPb">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2414,6 +2398,7 @@ Avalie! É simples e rápido!</string>
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5BQ-aB-Jhc"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5BQ-aB-Jhc" firstAttribute="trailing" secondItem="KcC-Ou-pdH" secondAttribute="trailing" id="95R-dZ-ZX3"/>
@@ -2424,7 +2409,6 @@ Avalie! É simples e rápido!</string>
                             <constraint firstItem="hRv-z5-hMt" firstAttribute="top" secondItem="cOD-xi-ykb" secondAttribute="top" id="jmY-Fl-jNc"/>
                             <constraint firstItem="hRv-z5-hMt" firstAttribute="trailing" secondItem="5BQ-aB-Jhc" secondAttribute="trailing" id="yDj-9x-awD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5BQ-aB-Jhc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Ajustes" id="Mbu-HM-bZE"/>
                     <connections>
@@ -2467,15 +2451,15 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <tableViewController id="s79-eb-nnd" customClass="SettingsTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="U6M-I9-Uwt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="50" id="xT6-Pq-epY">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xT6-Pq-epY" id="5EA-CS-0CB">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2487,9 +2471,9 @@ Avalie! É simples e rápido!</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Configurações" id="8ob-tO-5yv"/>
                     <connections>
-                        <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalTransitionStyle="coverVertical" id="LiO-zd-KxX"/>
-                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showDonateVC" id="XmA-hZ-wvP"/>
-                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" id="wfb-dy-bFe"/>
+                        <segue destination="M8M-jF-9Ea" kind="presentation" identifier="showTermsOfUseVC" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="LiO-zd-KxX"/>
+                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showDonateVC" modalPresentationStyle="fullScreen" id="XmA-hZ-wvP"/>
+                        <segue destination="E3Y-zc-cCe" kind="presentation" identifier="showCountryVC" modalPresentationStyle="fullScreen" id="wfb-dy-bFe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V72-vG-mDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2501,11 +2485,11 @@ Avalie! É simples e rápido!</string>
             <objects>
                 <viewController id="4oG-l0-opw" customClass="TermsOfUseViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1nt-32-jgD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAP-i3-jaO">
-                                <rect key="frame" x="16" y="20" width="343" height="563"/>
+                                <rect key="frame" x="16" y="30" width="343" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="ECk-mu-B68"/>
@@ -2520,12 +2504,12 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="XnZ-xj-wH5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iAP-i3-jaO" firstAttribute="centerX" secondItem="1nt-32-jgD" secondAttribute="centerX" id="Fi2-Nk-zAI"/>
                             <constraint firstItem="iAP-i3-jaO" firstAttribute="centerY" secondItem="1nt-32-jgD" secondAttribute="centerY" id="kUm-ut-Bie"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="XnZ-xj-wH5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Termos de uso" id="qmT-hA-cuC">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="gsy-kZ-9kY">
@@ -2547,11 +2531,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="qAs-er-9JM" customClass="WebViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZJl-Fr-8ZQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XD-mR-HJb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2559,10 +2543,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GEl-sC-A3d">
-                                <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                <rect key="frame" x="169" y="293" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="voE-Sm-W6f"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3XD-mR-HJb" firstAttribute="top" secondItem="voE-Sm-W6f" secondAttribute="top" id="Eqc-SG-fQa"/>
@@ -2572,7 +2557,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="3XD-mR-HJb" firstAttribute="bottom" secondItem="voE-Sm-W6f" secondAttribute="bottom" id="oUy-d0-bt3"/>
                             <constraint firstItem="3XD-mR-HJb" firstAttribute="trailing" secondItem="voE-Sm-W6f" secondAttribute="trailing" id="tqK-xm-nfj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="voE-Sm-W6f"/>
                     </view>
                     <navigationItem key="navigationItem" title="Doação" id="5R4-9n-hbu">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Ue9-E3-QoF">
@@ -2595,7 +2579,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="wsv-x6-7vW" customClass="EditProfileViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n9D-A4-EcB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="2PD-r9-JTV">
@@ -2611,7 +2595,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ozu-WY-exs"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" smartInsertDeleteType="no"/>
                                 <userDefinedRuntimeAttributes>
@@ -2623,7 +2606,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="SXk-je-w6U"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="phonePad" smartInsertDeleteType="no"/>
                                 <userDefinedRuntimeAttributes>
@@ -2638,7 +2620,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gUk-8V-rDa"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="phonePad" smartInsertDeleteType="no"/>
                                 <userDefinedRuntimeAttributes>
@@ -2681,7 +2662,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="mWP-ox-g5H"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" smartInsertDeleteType="no"/>
                                 <userDefinedRuntimeAttributes>
@@ -2696,7 +2676,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Xhe-pu-8T7"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" smartInsertDeleteType="no"/>
                                 <userDefinedRuntimeAttributes>
@@ -2747,6 +2726,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="NR9-cK-ZYQ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="31K-ge-nV6" firstAttribute="top" secondItem="ttn-K8-vxS" secondAttribute="bottom" constant="15" id="149-r0-GjO"/>
@@ -2783,7 +2763,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="Im9-Wj-lFT" firstAttribute="leading" secondItem="NR9-cK-ZYQ" secondAttribute="leading" constant="60" id="yWn-46-HaW"/>
                             <constraint firstItem="WXD-tO-I5H" firstAttribute="top" secondItem="r6s-dL-TyO" secondAttribute="bottom" constant="20" id="zRn-lu-UPl"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="NR9-cK-ZYQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Editar Perfil" id="qRe-hZ-QzQ">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="Z9N-FA-onV">
@@ -2821,7 +2800,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8E-jF-BRB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="eNy-oH-Tab">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2838,11 +2817,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="e6s-pT-abj" customClass="DetailsBusinessViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgf-jR-ZQJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vA1-oz-b6z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oni-p0-GW4" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1280"/>
@@ -2939,7 +2918,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNW-1Z-cF7">
                                                         <rect key="frame" x="23" y="39" width="329" height="1.5"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1.5" id="Gz4-VN-tIv"/>
                                                         </constraints>
@@ -2988,7 +2967,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TP1-V4-h1r">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TP1-V4-h1r">
                                                         <rect key="frame" x="129" y="31" width="120" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="ep6-ce-wWq"/>
@@ -3043,28 +3022,28 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="27T-ua-S2g">
                                                         <rect key="frame" x="60" y="131.5" width="280" height="135"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-jz-hv5">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-jz-hv5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                                                                 <state key="normal" title="Indisponível"/>
                                                                 <connections>
                                                                     <action selector="btnPhone:" destination="e6s-pT-abj" eventType="touchUpInside" id="Csg-fz-apU"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="178-gB-DZJ">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="178-gB-DZJ">
                                                                 <rect key="frame" x="0.0" y="35" width="280" height="30"/>
                                                                 <state key="normal" title="Indisponível"/>
                                                                 <connections>
                                                                     <action selector="btnWhatsApp:" destination="e6s-pT-abj" eventType="touchUpInside" id="0Q8-Mf-dbb"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MO7-Bg-bGJ">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MO7-Bg-bGJ">
                                                                 <rect key="frame" x="0.0" y="70" width="280" height="30"/>
                                                                 <state key="normal" title="Indisponível"/>
                                                                 <connections>
                                                                     <action selector="btnEmail:" destination="e6s-pT-abj" eventType="touchUpInside" id="U9Q-t9-aZM"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHz-D7-hcU">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHz-D7-hcU">
                                                                 <rect key="frame" x="0.0" y="105" width="280" height="30"/>
                                                                 <state key="normal" title="Indisponível"/>
                                                                 <connections>
@@ -3141,7 +3120,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKo-9d-HQR">
                                                         <rect key="frame" x="24" y="46" width="327" height="1.5"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1.5" id="XMY-bG-TdR"/>
                                                         </constraints>
@@ -3212,7 +3191,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="KxY-jI-df2" firstAttribute="top" secondItem="oni-p0-GW4" secondAttribute="top" id="1At-OA-A4q"/>
                                             <constraint firstItem="yLT-Od-2gG" firstAttribute="top" secondItem="PuJ-NL-Ia8" secondAttribute="bottom" constant="5" id="1yj-Hh-nJx"/>
@@ -3243,6 +3222,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="sU9-hZ-1wd"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vA1-oz-b6z" firstAttribute="top" secondItem="sU9-hZ-1wd" secondAttribute="top" id="5Yg-bn-cOl"/>
@@ -3252,7 +3232,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="vA1-oz-b6z" firstAttribute="leading" secondItem="sU9-hZ-1wd" secondAttribute="leading" id="htO-9g-GsE"/>
                             <constraint firstItem="vA1-oz-b6z" firstAttribute="trailing" secondItem="sU9-hZ-1wd" secondAttribute="trailing" id="kU4-OB-oQY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sU9-hZ-1wd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Anúncio" id="iEF-FE-dXr"/>
                     <size key="freeformSize" width="375" height="1393"/>
@@ -3273,7 +3252,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <outlet property="userNameAndMember" destination="by1-Rf-rla" id="UhX-a0-U4d"/>
                         <segue destination="MNh-3i-qse" kind="unwind" identifier="unWindToListVC" unwindAction="unWindToListWithSegue:" id="bvC-cl-KgR"/>
                         <segue destination="pmy-8A-pXO" kind="show" identifier="showReviewsVC" id="UHu-Jg-ZQ0"/>
-                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showWebVC" id="IBZ-cb-T44"/>
+                        <segue destination="Nka-3g-b05" kind="presentation" identifier="showWebVC" modalPresentationStyle="fullScreen" id="IBZ-cb-T44"/>
                         <segue destination="F8E-jF-BRB" kind="presentation" identifier="showEditBusinessVC" id="tMd-ni-SvK"/>
                     </connections>
                 </viewController>
@@ -3287,9 +3266,9 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <tableViewController id="pmy-8A-pXO" customClass="ReviewsTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="159" estimatedRowHeight="-1" sectionHeaderHeight="10" sectionFooterHeight="18" id="hEA-Dn-ggo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="M9l-e9-J5Q">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3367,7 +3346,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <rect key="frame" x="0.0" y="203.5" width="375" height="159"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AcB-vk-mJS" id="r6Q-td-caF">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="158.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="159"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMk-Hr-dal" customClass="CosmosView" customModule="Cosmos">
@@ -3387,7 +3366,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ji2-zb-uqV">
-                                            <rect key="frame" x="22" y="11" width="305" height="21"/>
+                                            <rect key="frame" x="22" y="11" width="312" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="bDA-Qz-j77"/>
                                             </constraints>
@@ -3396,7 +3375,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4M-if-0xZ">
-                                            <rect key="frame" x="149" y="34" width="177" height="21"/>
+                                            <rect key="frame" x="149" y="34" width="184" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="eQ8-Pj-zIo"/>
                                             </constraints>
@@ -3405,13 +3384,13 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernu" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-8K-GdS">
-                                            <rect key="frame" x="22" y="62" width="305" height="64"/>
+                                            <rect key="frame" x="22" y="62" width="312" height="64"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="who + date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DA-NH-Omn">
-                                            <rect key="frame" x="22" y="127" width="305" height="21"/>
+                                            <rect key="frame" x="22" y="127" width="312" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="HRU-cz-Mvc"/>
                                             </constraints>
@@ -3458,7 +3437,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                         <outlet property="lbRatingValueString" destination="rlV-U0-V1u" id="VHw-FQ-2BK"/>
                         <outlet property="ratingView" destination="Zpq-A8-vjV" id="hvx-ii-ix4"/>
                         <segue destination="jSg-MG-XPu" kind="presentation" identifier="showReviewVC" id="49W-QY-9Pb"/>
-                        <segue destination="Qwy-g5-a0s" kind="presentation" identifier="showLoginVC" id="iqm-8w-Zeu"/>
+                        <segue destination="Qwy-g5-a0s" kind="presentation" identifier="showLoginVC" modalPresentationStyle="fullScreen" id="iqm-8w-Zeu"/>
                         <segue destination="cDl-J4-F3l" kind="show" identifier="showViewReviewVC" id="uTp-NP-IEF"/>
                     </connections>
                 </tableViewController>
@@ -3471,7 +3450,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="ffJ-0R-htm" customClass="MyReviewViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UvR-kj-9uA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FAd-C9-q7U">
@@ -3490,7 +3469,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-3l-e2g" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="212" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3515,7 +3494,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F8F-Uc-0Zd">
-                                <rect key="frame" x="15" y="390" width="345" height="188"/>
+                                <rect key="frame" x="15" y="390" width="345" height="176"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3525,7 +3504,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GnE-Tr-9pg"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
@@ -3548,6 +3526,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nP8-TW-Cn2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="puP-W7-SNc" firstAttribute="leading" secondItem="nP8-TW-Cn2" secondAttribute="leading" constant="15" id="9GF-4G-94A"/>
@@ -3574,7 +3553,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="nP8-TW-Cn2" firstAttribute="trailing" secondItem="aqm-rh-sra" secondAttribute="trailing" constant="30" id="wLd-md-RcK"/>
                             <constraint firstItem="F8F-Uc-0Zd" firstAttribute="leading" secondItem="nP8-TW-Cn2" secondAttribute="leading" constant="15" id="wPd-JY-xBt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nP8-TW-Cn2"/>
                     </view>
                     <navigationItem key="navigationItem" id="IGP-AG-MwJ">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="ZKS-At-wIt">
@@ -3604,17 +3582,17 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <!--Perfil-->
         <scene sceneID="tW4-dl-E7c">
             <objects>
-                <tableViewController id="ZGz-Yy-i4X" customClass="ProfileTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="ZGz-Yy-i4X" customClass="ProfileTableViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="CmH-jg-4Wd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="50" id="2X5-Ai-38N">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2X5-Ai-38N" id="wZi-Lg-Znn">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -3626,7 +3604,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     </tableView>
                     <navigationItem key="navigationItem" title="Perfil" id="wvT-LI-usJ"/>
                     <connections>
-                        <segue destination="rs4-wM-V5Q" kind="presentation" identifier="showEditProfileVC" id="YSC-Qv-HNp"/>
+                        <segue destination="rs4-wM-V5Q" kind="presentation" identifier="showEditProfileVC" modalPresentationStyle="fullScreen" id="YSC-Qv-HNp"/>
                         <segue destination="XfP-tF-Is1" kind="unwind" identifier="unwindToAccountVC" unwindAction="unwindToAccountWithSegue:" id="atG-ey-6xO"/>
                     </connections>
                 </tableViewController>
@@ -3641,7 +3619,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rs4-wM-V5Q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zgu-Ur-Svc">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3659,7 +3637,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M8M-jF-9Ea" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NkB-nU-rrS">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3686,7 +3664,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     <tabBarItem key="tabBarItem" title="Lista" image="list" id="Zi6-Xb-63W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WZf-cI-6AU">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3704,7 +3682,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jSg-MG-XPu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="He5-45-wYt">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3721,7 +3699,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="cDl-J4-F3l" customClass="ViewReviewViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LSe-MW-qCJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNj-Vv-3Cm">
@@ -3749,7 +3727,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csM-61-Zwo" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="75" y="202" width="225" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -3765,7 +3743,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OQx-1F-sjp">
-                                <rect key="frame" x="15" y="313" width="345" height="226"/>
+                                <rect key="frame" x="15" y="313" width="345" height="246"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3781,6 +3759,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="slZ-yz-uei"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Cvz-Vd-hEu" firstAttribute="leading" secondItem="slZ-yz-uei" secondAttribute="leading" constant="30" id="6ag-MS-R9W"/>
@@ -3801,7 +3780,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="OQx-1F-sjp" firstAttribute="leading" secondItem="slZ-yz-uei" secondAttribute="leading" constant="15" id="yNj-qV-O28"/>
                             <constraint firstItem="slZ-yz-uei" firstAttribute="trailing" secondItem="OQx-1F-sjp" secondAttribute="trailing" constant="15" id="zLD-xH-2Te"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="slZ-yz-uei"/>
                     </view>
                     <connections>
                         <outlet property="imgBusiness" destination="PNj-Vv-3Cm" id="W3b-jq-Hrg"/>
@@ -3822,7 +3800,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nka-3g-b05" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Vck-po-YZy">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3841,7 +3819,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     <tabBarItem key="tabBarItem" title="Mapa" image="map" id="8bM-DJ-Fqv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="2Gg-95-kyu">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3858,12 +3836,12 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="RdK-EK-A61" customClass="PhotosViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jzk-Uv-bL5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qMY-02-VA3">
                                 <rect key="frame" x="12.5" y="30" width="350" height="130"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="6bM-xc-D0i"/>
                                     <constraint firstAttribute="height" constant="130" id="uq5-HK-0PV"/>
@@ -3917,7 +3895,8 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="R7h-qY-COC"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qsg-7G-X6s" firstAttribute="top" secondItem="qMY-02-VA3" secondAttribute="bottom" constant="80" id="HQF-fa-PCW"/>
                             <constraint firstItem="qMY-02-VA3" firstAttribute="top" secondItem="R7h-qY-COC" secondAttribute="top" constant="30" id="HWJ-6b-r7C"/>
@@ -3928,7 +3907,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="Qsg-7G-X6s" firstAttribute="leading" secondItem="R7h-qY-COC" secondAttribute="leading" id="q4h-ch-M62"/>
                             <constraint firstItem="qMY-02-VA3" firstAttribute="centerX" secondItem="Jzk-Uv-bL5" secondAttribute="centerX" id="vvS-bp-xPo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="R7h-qY-COC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Fotos" id="euU-Hc-ame"/>
                     <connections>
@@ -3945,7 +3923,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController storyboardIdentifier="showCategoryVC" automaticallyAdjustsScrollViewInsets="NO" id="68a-YY-Ty2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Wqb-V1-6k4">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3962,18 +3940,18 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <objects>
                 <viewController id="HHf-Di-yTi" customClass="CountriesViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGc-xs-V01">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zp9-D7-kkq">
-                                <rect key="frame" x="0.0" y="56" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" rowHeight="50" id="P1r-53-9vk" customClass="CountryTableViewCell" customModule="KDBrasil" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P1r-53-9vk" id="Kc9-cC-4Tg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hWy-V0-QxJ">
@@ -3984,7 +3962,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQs-zc-3pt">
-                                                    <rect key="frame" x="62" y="14.5" width="215" height="21"/>
+                                                    <rect key="frame" x="62" y="14.5" width="214" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="VZg-cg-2Rw"/>
                                                     </constraints>
@@ -3993,7 +3971,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v10-Tn-Uyu">
-                                                    <rect key="frame" x="285" y="14.5" width="50" height="21"/>
+                                                    <rect key="frame" x="284" y="14.5" width="50" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="DYa-8N-0Yc"/>
                                                         <constraint firstAttribute="height" constant="21" id="qlR-5C-9zX"/>
@@ -4033,6 +4011,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                                 </connections>
                             </searchBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="KDQ-HE-MQj"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zp9-D7-kkq" firstAttribute="top" secondItem="jGY-Ua-Fs6" secondAttribute="bottom" id="0dv-Ma-qUs"/>
@@ -4043,7 +4022,6 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                             <constraint firstItem="jGY-Ua-Fs6" firstAttribute="leading" secondItem="KDQ-HE-MQj" secondAttribute="leading" id="xwZ-Di-haN"/>
                             <constraint firstItem="zp9-D7-kkq" firstAttribute="leading" secondItem="KDQ-HE-MQj" secondAttribute="leading" id="zB8-wq-Hbt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KDQ-HE-MQj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Países" id="cnx-Xp-CI4">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="7di-gO-K59">
@@ -4067,7 +4045,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E3Y-zc-cCe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="clP-zz-W1g">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -4082,11 +4060,11 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <!--Meu KD-->
         <scene sceneID="4pn-eb-m9S">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sXR-XE-Un7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="sXR-XE-Un7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Meu KD" image="mykd" id="85n-nP-qsi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3Vf-ff-FCQ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -4105,7 +4083,7 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
                     <tabBarItem key="tabBarItem" title="Em destaque" image="highlight" id="UXe-s6-FZd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="JZ6-ir-dSB">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -4118,6 +4096,102 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
             <point key="canvasLocation" x="7616.8000000000002" y="-120.08995502248877"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="31K-ge-nV6">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+        <designable name="7qn-xX-mtX">
+            <size key="intrinsicContentSize" width="275" height="39.220703125"/>
+        </designable>
+        <designable name="ALA-8D-i7B">
+            <size key="intrinsicContentSize" width="315" height="39.220703125"/>
+        </designable>
+        <designable name="Ceb-3l-e2g">
+            <size key="intrinsicContentSize" width="225" height="41"/>
+        </designable>
+        <designable name="Cxx-gd-d64">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+        <designable name="Dwz-ii-3l6">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+        <designable name="G3f-dX-BSU">
+            <size key="intrinsicContentSize" width="90" height="39.220703125"/>
+        </designable>
+        <designable name="Gwq-F8-IMq">
+            <size key="intrinsicContentSize" width="303" height="39.220703125"/>
+        </designable>
+        <designable name="ILs-yn-hwB">
+            <size key="intrinsicContentSize" width="100" height="16"/>
+        </designable>
+        <designable name="Im9-Wj-lFT">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+        <designable name="JaC-fs-gee">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+        <designable name="L2P-jz-GEg">
+            <size key="intrinsicContentSize" width="315" height="39.220703125"/>
+        </designable>
+        <designable name="NQq-wC-Piu">
+            <size key="intrinsicContentSize" width="120" height="39.220703125"/>
+        </designable>
+        <designable name="SMk-Hr-dal">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+        <designable name="T0T-PF-t0U">
+            <size key="intrinsicContentSize" width="275" height="39.220703125"/>
+        </designable>
+        <designable name="Y2f-LS-ry4">
+            <size key="intrinsicContentSize" width="245" height="39.220703125"/>
+        </designable>
+        <designable name="csM-61-Zwo">
+            <size key="intrinsicContentSize" width="225" height="41"/>
+        </designable>
+        <designable name="fB7-l0-ten">
+            <size key="intrinsicContentSize" width="115" height="19"/>
+        </designable>
+        <designable name="hIg-w5-vBT">
+            <size key="intrinsicContentSize" width="275" height="39.220703125"/>
+        </designable>
+        <designable name="osZ-sE-hni">
+            <size key="intrinsicContentSize" width="315" height="39.220703125"/>
+        </designable>
+        <designable name="qv2-gh-44N">
+            <size key="intrinsicContentSize" width="90" height="39.220703125"/>
+        </designable>
+        <designable name="qyc-sM-y4r">
+            <size key="intrinsicContentSize" width="120" height="39.220703125"/>
+        </designable>
+        <designable name="tNC-PN-uu0">
+            <size key="intrinsicContentSize" width="310" height="39.220703125"/>
+        </designable>
+        <designable name="ttn-K8-vxS">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+        <designable name="u6I-fq-s4R">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+        <designable name="v72-tU-kfM">
+            <size key="intrinsicContentSize" width="275" height="39.220703125"/>
+        </designable>
+        <designable name="veF-Up-dSG">
+            <size key="intrinsicContentSize" width="310" height="39.220703125"/>
+        </designable>
+        <designable name="wWe-mB-Ttf">
+            <size key="intrinsicContentSize" width="255" height="39.220703125"/>
+        </designable>
+    </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="wfb-dy-bFe"/>
+        <segue reference="inQ-jt-2Y3"/>
+        <segue reference="XmA-hZ-wvP"/>
+        <segue reference="vye-vK-sui"/>
+        <segue reference="b73-yD-mxL"/>
+        <segue reference="DfJ-5a-P3z"/>
+        <segue reference="ZM5-Ch-ZAH"/>
+        <segue reference="iqm-8w-Zeu"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="email" width="30" height="30"/>
         <image name="email_color" width="48" height="48"/>
@@ -4140,15 +4214,89 @@ Você não pode utilizar o aplicativo para qualquer finalidade ilegal ou não au
         <image name="user" width="625" height="626"/>
         <image name="website_url" width="48" height="48"/>
         <image name="whatsapp_color" width="96" height="96"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="eTG-5Z-qd2"/>
-        <segue reference="DgE-3v-lbk"/>
-        <segue reference="IBZ-cb-T44"/>
-        <segue reference="LiO-zd-KxX"/>
-        <segue reference="p3T-du-TBv"/>
-        <segue reference="tMd-ni-SvK"/>
-        <segue reference="ZM5-Ch-ZAH"/>
-        <segue reference="iqm-8w-Zeu"/>
-    </inferredMetricsTieBreakers>
 </document>

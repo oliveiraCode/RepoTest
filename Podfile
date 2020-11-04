@@ -21,7 +21,8 @@ target 'KDBrasil' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'SkyFloatingLabelTextField'
-  pod 'ReachabilitySwift', '<= 4.3.0'
+  #pod 'ReachabilitySwift', '<= 4.3.0'
+  pod 'ReachabilitySwift'
   pod 'PhoneNumberKit'
 
 end

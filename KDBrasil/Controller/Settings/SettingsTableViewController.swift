@@ -128,7 +128,16 @@ class SettingsTableViewController: BaseTableViewController {
                 
                 break
             case 1:
-                performSegue(withIdentifier: "showDonateVC", sender: nil)
+                
+                self.showAlert(title: "", message: General.featureUnavailable)
+                
+//                guard let url = URL(string: LocalizationKeys.urlDonation) else {
+//                    return //be safe
+//                }
+//                if UIApplication.shared.canOpenURL(url) {
+//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                }
+
                 break
             case 2:
                 
@@ -154,18 +163,7 @@ class SettingsTableViewController: BaseTableViewController {
         }
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "showDonateVC" {
-            let navController = segue.destination as! UINavigationController
-            let destController = navController.topViewController as! WebViewController
-            destController.urlSelected = LocalizationKeys.urlDonation
-        }
-    
-    }
-    
-    
+ 
 }
 
 extension SettingsTableViewController:MFMailComposeViewControllerDelegate{

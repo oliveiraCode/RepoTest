@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,10 +13,10 @@
             <objects>
                 <viewController id="1Od-lq-sfw" customClass="FilterViewController" customModule="KDBrasil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xv8-SX-Wq8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYy-JM-K2I">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYy-JM-K2I">
                                 <rect key="frame" x="62.5" y="420" width="250" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -40,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="330"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUj-1e-1Uw">
-                                                <rect key="frame" x="18" y="210" width="72" height="30"/>
+                                                <rect key="frame" x="18" y="210" width="71.5" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="9TV-kW-D4A"/>
                                                 </constraints>
@@ -80,7 +78,7 @@
                                                     <action selector="segmentedControlOrderBy:" destination="1Od-lq-sfw" eventType="valueChanged" id="nf1-Cq-jqM"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0y-1E-2v4">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0y-1E-2v4">
                                                 <rect key="frame" x="117" y="135" width="210" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="hqj-bG-eou"/>
@@ -89,7 +87,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Selecionar"/>
                                                 <connections>
-                                                    <segue destination="kGT-f7-qJ7" kind="presentation" identifier="showCategoryVC" id="52x-WL-Cwe"/>
+                                                    <segue destination="kGT-f7-qJ7" kind="presentation" identifier="showCategoryVC" modalPresentationStyle="fullScreen" id="52x-WL-Cwe"/>
                                                 </connections>
                                             </button>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="KBu-Bp-Q5L">
@@ -239,6 +237,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="efy-L5-VIo"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SYy-JM-K2I" firstAttribute="top" secondItem="LtW-sz-VyB" secondAttribute="bottom" constant="70" id="Fpw-wN-CfI"/>
@@ -247,7 +246,6 @@
                             <constraint firstItem="efy-L5-VIo" firstAttribute="trailing" secondItem="LtW-sz-VyB" secondAttribute="trailing" constant="15" id="mBG-Ca-Vc6"/>
                             <constraint firstItem="LtW-sz-VyB" firstAttribute="leading" secondItem="efy-L5-VIo" secondAttribute="leading" constant="15" id="ug8-fu-vUa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="efy-L5-VIo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Filtrar" id="HZD-PN-Z50">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="cJs-4N-W6y">
@@ -286,7 +284,7 @@
                 <navigationController storyboardIdentifier="showFilterVC" automaticallyAdjustsScrollViewInsets="NO" id="aHQ-qc-a1e" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="LvV-dV-9JL">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -299,4 +297,18 @@
             <point key="canvasLocation" x="7632.8000000000002" y="-1248.1259370314845"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Mir-cc-XWs">
+            <size key="intrinsicContentSize" width="45" height="9"/>
+        </designable>
+        <designable name="NhF-cD-npH">
+            <size key="intrinsicContentSize" width="45" height="9"/>
+        </designable>
+        <designable name="TR5-9q-cHS">
+            <size key="intrinsicContentSize" width="45" height="9"/>
+        </designable>
+        <designable name="VsD-jK-AoN">
+            <size key="intrinsicContentSize" width="45" height="9"/>
+        </designable>
+    </designables>
 </document>
